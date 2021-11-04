@@ -1,0 +1,813 @@
+syntax = "proto3";
+option go_package = "./proto";
+package proto;
+
+// Аргументы RI_SDK_InitSDK
+message RI_SDK_InitSDKParams {
+  int64 logLevel = 1;
+}
+
+// Возвращаемые значения RI_SDK_InitSDK
+message RI_SDK_InitSDKReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_CreateBasic
+message RI_SDK_CreateBasicParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_CreateBasic
+message RI_SDK_CreateBasicReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// АргументыRI_SDK_DestroyComponent
+message RI_SDK_DestroyComponentParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_DestroyComponent
+message RI_SDK_DestroyComponentReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// АргументыRI_SDK_DestroyComponent
+message RI_SDK_DestroySDKParams {
+  bool isForce = 1;
+}
+
+// Возвращаемые значения RI_SDK_DestroyComponent
+message RI_SDK_DestroySDKReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Connector_I2C_OpenParams
+message RI_SDK_Connector_I2C_OpenParams {
+  int64 descriptor = 1;
+  uint64 addr = 2;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_OpenReturn
+message RI_SDK_Connector_I2C_OpenReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+message Empty {}
+
+// Аргументы RI_SDK_Connector_I2C_ExtendParams
+message RI_SDK_Connector_I2C_ExtendParams {
+  int64 connectorDescriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_ExtendReturn
+message RI_SDK_Connector_I2C_ExtendReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Connector_I2C_ExtendParams
+message RI_SDK_Connector_I2C_StateParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_ExtendReturn
+message RI_SDK_Connector_I2C_StateReturn {
+  int64 state = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Connector_I2C_CloseAllParams
+message RI_SDK_Connector_I2C_CloseAllParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_CloseAllReturn
+message RI_SDK_Connector_I2C_CloseAllReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Connector_I2C_CloseParams
+message RI_SDK_Connector_I2C_CloseParams {
+  int64 descriptor = 1;
+  uint64 addr = 2;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_CloseReturn
+message RI_SDK_Connector_I2C_CloseReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Connector_I2C_WriteBytesParams
+message RI_SDK_Connector_I2C_WriteBytesParams {
+  int64 descriptor = 1;
+  uint64 addr = 2;
+  bytes buf = 3;
+  int64 len = 4;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_WriteBytesReturn
+message RI_SDK_Connector_I2C_WriteBytesReturn {
+  int64 wroteBytesLen = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Connector_I2C_ReadBytesParams
+message RI_SDK_Connector_I2C_ReadBytesParams {
+  int64 descriptor = 1;
+  uint64 addr = 2;
+  bytes buf = 3;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_ReadBytesReturn
+message RI_SDK_Connector_I2C_ReadBytesReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+  int64 readedBytesLen = 3;
+}
+
+// Аргументы RI_SDK_Connector_I2C_ReadBytesParams
+message RI_SDK_Connector_I2C_WriteByteParams {
+  int64 descriptor = 1;
+  uint64 addr = 2;
+  bytes value = 3;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_WriteByteReturn
+message RI_SDK_Connector_I2C_WriteByteReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Connector_I2C_ReadByteParams
+message RI_SDK_Connector_I2C_ReadByteParams {
+  int64 descriptor = 1;
+  uint64 addr = 2;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_ReadByteReturn
+message RI_SDK_Connector_I2C_ReadByteReturn {
+  bytes value = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_GetResolution
+message RI_SDK_Sigmod_PWM_GetResolutionParams {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_GetResolution
+message RI_SDK_Sigmod_PWM_GetResolutioneReturn {
+  int64 resolution = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_GetFreqParams
+message RI_SDK_Sigmod_PWM_GetFreqParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_sigmod_PWM_GetFreqReturn
+message RI_SDK_Sigmod_PWM_GetFreqReturn {
+  int64 freq = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_SetFreqParams
+message RI_SDK_Sigmod_PWM_SetFreqParams {
+  int64 descriptor = 1;
+  int64 freq = 2;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_SetFreqReturn
+message RI_SDK_Sigmod_PWM_SetFreqReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_WriteRegBytesParams
+message RI_SDK_Sigmod_PWM_WriteRegBytesParams {
+  int64 descriptor = 1;
+  bytes reg = 2;
+  bytes buf = 3;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_WriteRegBytesReturn
+message RI_SDK_Sigmod_PWM_WriteRegBytesReturn {
+  int64 wroteBytesLen = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_ReadRegBytesParams
+message RI_SDK_Sigmod_PWM_ReadRegBytesParams {
+  int64 descriptor = 1;
+  bytes reg = 2;
+  bytes  buf = 3;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_ReadRegBytesReturn
+message RI_SDK_Sigmod_PWM_ReadRegBytesReturn {
+  int64 readedBytesLen = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_WriteRegByteParams
+message RI_SDK_Sigmod_PWM_WriteRegByteParams {
+  int64 descriptor = 1;
+  bytes reg = 2;
+  bytes value = 3;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_WriteRegByteReturn
+message RI_SDK_Sigmod_PWM_WriteRegByteReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_ReadRegByteParams
+message RI_SDK_Sigmod_PWM_ReadRegByteParams {
+  int64 descriptor = 1;
+  bytes reg = 2;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_ReadRegByteReturn
+message RI_SDK_Sigmod_PWM_ReadRegByteReturn {
+  bytes value = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Executor_Extend
+message RI_SDK_Executor_ExtendParams {
+  int64 basic = 1;
+}
+
+// Возвращаемые значения RI_SDK_Executor_Extend
+message RI_SDK_Executor_ExtendReturn {
+  int64 desrciptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Executor_State
+message RI_SDK_Executor_StateParams {
+  int64 desrciptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Executor_State
+message RI_SDK_Executor_StateReturn {
+  int64 state = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Connector_Extend
+message RI_SDK_Connector_ExtendParams {
+  int64 basic = 1;
+}
+
+// Возвращаемые значения RI_SDK_Connector_Extend
+message RI_SDK_Connector_ExtendReturn {
+  int64 desrciptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_Extend
+message RI_SDK_Sigmod_PWM_ExtendParams {
+  int64 con = 1;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_Extend
+message RI_SDK_Sigmod_PWM_ExtendReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_Extend
+message RI_SDK_Exec_ServoDrive_ExtendParams {
+  int64 exec = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_Extend
+message RI_SDK_Exec_ServoDrive_ExtendReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Exec_RGB_LED_Extend
+message RI_SDK_Exec_RGB_LED_ExtendParams {
+  int64 exec = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RGB_LED_Extend
+message RI_SDK_Exec_RGB_LED_ExtendReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_GetPortFreqParams
+message RI_SDK_Sigmod_PWM_GetPortFreqParams {
+  int64 descriptor = 1;
+  int64 port = 2;
+}
+
+// Возвращаемые значения RI_SDK_sigmod_PWM_GetPortFreqReturn
+message RI_SDK_Sigmod_PWM_GetPortFreqReturn {
+  int64 freq = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_CreateGroupComponent
+message RI_SDK_CreateGroupComponentParams {
+  string group = 1;
+}
+
+// Возвращаемые значения RI_SDK_CreateGroupComponent
+message RI_SDK_CreateGroupComponentReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_CreateDeviceComponent
+message RI_SDK_CreateDeviceComponentParams {
+  string group = 1;
+  string device = 2;
+}
+
+// Возвращаемые значения RI_SDK_CreateDeviceComponent
+message RI_SDK_CreateDeviceComponentReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_CreateModelComponent
+message RI_SDK_CreateModelComponentParams {
+  string group = 1;
+  string device = 2;
+  string model = 3;
+}
+
+// Возвращаемые значения RI_SDK_CreateModelComponent
+message RI_SDK_CreateModelComponentReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_LinkPWMToController
+message RI_SDK_LinkPWMToControllerParams {
+  int64 pwmDescriptor = 1;
+  int64 controllerDescriptor = 2;
+  uint64 addr = 3;
+}
+
+// Возвращаемые значения RI_SDK_LinkPWMToController
+message RI_SDK_LinkPWMToControllerReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_LinkServodriveToController
+message RI_SDK_LinkServodriveToControllerParams {
+  int64 servodriveDescriptor = 1;
+  int64 pwmDescriptor = 2;
+  int64 port = 3;
+}
+
+// Возвращаемые значения RI_SDK_LinkServodriveToController
+message RI_SDK_LinkServodriveToControllerReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_LinkLedToController
+message RI_SDK_LinkLedToControllerParams {
+  int64 ledDescriptor = 1;
+  int64 pwmDescriptor = 2;
+  int64 rport = 3;
+  int64 gport = 4;
+  int64 bport = 5;
+}
+
+// Возвращаемые значения RI_SDK_LinkLedToController
+message RI_SDK_LinkLedToControllerReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_CustomDeviceInit
+message RI_SDK_Exec_ServoDrive_CustomDeviceInitParams {
+  int64 desrciptor = 1;
+  int64 maxImpulse = 2;
+  int64 maxSpeed = 3;
+  int64 pulseRange = 4;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_CustomDeviceInit
+message RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_SetPortFreqParams
+message RI_SDK_Sigmod_PWM_SetPortFreqParams {
+  int64 descriptor = 1;
+  int64 port = 2;
+  int64 freq = 3;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_SetPortFreqReturn
+message RI_SDK_Sigmod_PWM_SetPortFreqReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_TurnByDutyCycle
+message RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams {
+  int64 desrciptor = 1;
+  int64 steps = 2;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_TurnByDutyCycle
+message RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы messageRI_SDK_Sigmod_PWM_ResetAllParams
+message RI_SDK_Sigmod_PWM_ResetAllParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_ResetAllReturn
+message RI_SDK_Sigmod_PWM_ResetAllReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_TurnByPulse
+message RI_SDK_Exec_ServoDrive_TurnByPulseParams {
+  int64 desrciptor = 1;
+  int64 pulse = 2;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_TurnByPulse
+message RI_SDK_Exec_ServoDrive_TurnByPulseReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_ResetPortParams
+message RI_SDK_Sigmod_PWM_ResetPortParams {
+  int64 descriptor = 1;
+  int64 port = 2;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_ResetPortReturn
+message RI_SDK_Sigmod_PWM_ResetPortReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_GetCurrentAngle
+message RI_SDK_Exec_ServoDrive_GetCurrentAngleParams {
+  int64 desrciptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_GetCurrentAngle
+message RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn {
+  int64 angle = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_GetState
+message RI_SDK_Exec_ServoDrive_GetStateParams {
+  int64 desrciptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_GetState
+message RI_SDK_Exec_ServoDrive_GetStateReturn {
+  int64 state = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_GetPortDutyCycleParams
+message RI_SDK_Sigmod_PWM_GetPortDutyCycleParams {
+  int64 descriptor = 1;
+  int64 port = 2;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn
+message RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn {
+  int64 on = 1;
+  int64 off = 2;
+  string errorText = 3;
+  int64 errorCode = 4;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_SetPortDutyCycleParams
+message RI_SDK_Sigmod_PWM_SetPortDutyCycleParams {
+  int64 descriptor = 1;
+  int64 port = 2;
+  int64 on = 3;
+  int64 off = 4;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn
+message RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_MinStepRotate
+message RI_SDK_Exec_ServoDrive_MinStepRotateParams {
+  int64 descriptor = 1;
+  int64 direction = 2;
+  int64 speed = 3;
+  bool async = 4;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_MinStepRotate
+message RI_SDK_Exec_ServoDrive_MinStepRotateReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_Turn
+message RI_SDK_Exec_ServoDrive_TurnParams {
+  int64 descriptor = 1;
+  int64 angle = 2;
+  int64 speed = 3;
+  bool async = 4;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_Turn
+message RI_SDK_Exec_ServoDrive_TurnReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_Stop
+message RI_SDK_Exec_ServoDrive_StopParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_Stop
+message RI_SDK_Exec_ServoDrive_StopReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_Rotate
+message RI_SDK_Exec_ServoDrive_RotateParams {
+  int64 descriptor = 1;
+  int64 direction = 2;
+  int64 speed = 3;
+  bool async = 4;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_Rotate
+message RI_SDK_Exec_ServoDrive_RotateReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeed
+message RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams {
+  int64 descriptor = 1;
+  int64 direction = 2;
+  int64 speed = 3;
+  bool async = 4;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeed
+message RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed
+message RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams {
+  int64 descriptor = 1;
+  int64 angle = 2;
+  int64 speed = 3;
+  bool async = 4;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed
+message RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RGB_LED_SinglePulse
+message RI_SDK_Exec_RGB_LED_SinglePulseParams {
+  int64 descriptor = 1;
+  int64 r = 2;
+  int64 g = 3;
+  int64 b = 4;
+  int64 duration = 5;
+  bool async = 6;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RGB_LED_SinglePulse
+message RI_SDK_Exec_RGB_LED_SinglePulseReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RGB_LED_Stop
+message RI_SDK_Exec_RGB_LED_StopParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RGB_LED_Stop
+message RI_SDK_Exec_RGB_LED_StopReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RGB_LED_GetState
+message RI_SDK_Exec_RGB_LED_GetStateParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RGB_LED_GetState
+message RI_SDK_Exec_RGB_LED_GetStateReturn {
+  int64 state = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Exec_RGB_LED_GetColor
+message RI_SDK_Exec_RGB_LED_GetColorParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RGB_LED_GetColor
+message RI_SDK_Exec_RGB_LED_GetColorReturn {
+  int64 r = 1;
+  int64 g = 2;
+  int64 b = 3;
+  string errorText = 4;
+  int64 errorCode = 5;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_CloseParams
+message RI_SDK_Sigmod_PWM_CloseParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_CloseReturn
+message RI_SDK_Sigmod_PWM_CloseReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RGB_LED_FlashingWithFrequency
+message RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams {
+  int64 descriptor = 1;
+  int64 r = 2;
+  int64 g = 3;
+  int64 b = 4;
+  int64 frequency = 5;
+  int64 qty = 6;
+  bool async = 7;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RGB_LED_FlashingWithFrequency
+message RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RGB_LED_FlashingWithPause
+message RI_SDK_Exec_RGB_LED_FlashingWithPauseParams {
+  int64 descriptor = 1;
+  int64 r = 2;
+  int64 g = 3;
+  int64 b = 4;
+  int64 duration = 5;
+  int64 pause = 6;
+  int64 qty = 7;
+  bool async = 8;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RGB_LED_FlashingWithPause
+message RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RGB_LED_Flicker
+message RI_SDK_Exec_RGB_LED_FlickerParams {
+  int64 descriptor = 1;
+  int64 r = 2;
+  int64 g = 3;
+  int64 b = 4;
+  int64 duration = 5;
+  int64 qty = 6;
+  bool async = 7;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RGB_LED_Flicker
+message RI_SDK_Exec_RGB_LED_FlickerReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+service RoboSdk {
+  rpc RI_SDK_InitSDK(RI_SDK_InitSDKParams) returns (RI_SDK_InitSDKReturn);
+  rpc RI_SDK_CreateBasic(RI_SDK_CreateBasicParams) returns (RI_SDK_CreateBasicReturn);
+  rpc RI_SDK_DestroyComponent(RI_SDK_DestroyComponentParams) returns (RI_SDK_DestroyComponentReturn);
+  rpc RI_SDK_DestroySDK(RI_SDK_DestroySDKParams) returns (RI_SDK_DestroySDKReturn);
+  rpc RI_SDK_CreateGroupComponent(RI_SDK_CreateGroupComponentParams) returns (RI_SDK_CreateGroupComponentReturn);
+  rpc RI_SDK_CreateDeviceComponent(RI_SDK_CreateDeviceComponentParams) returns (RI_SDK_CreateDeviceComponentReturn);
+  rpc RI_SDK_CreateModelComponent(RI_SDK_CreateModelComponentParams) returns (RI_SDK_CreateModelComponentReturn);
+  rpc RI_SDK_LinkPWMToController(RI_SDK_LinkPWMToControllerParams) returns (RI_SDK_LinkPWMToControllerReturn);
+  rpc RI_SDK_LinkServodriveToController(RI_SDK_LinkServodriveToControllerParams) returns (RI_SDK_LinkServodriveToControllerReturn);
+  rpc RI_SDK_LinkLedToController(RI_SDK_LinkLedToControllerParams) returns (RI_SDK_LinkLedToControllerReturn);
+
+
+  rpc RI_SDK_Executor_Extend(RI_SDK_Executor_ExtendParams) returns(RI_SDK_Executor_ExtendReturn);
+  rpc RI_SDK_Executor_State(RI_SDK_Executor_StateParams) returns(RI_SDK_Executor_StateReturn);
+
+  rpc RI_SDK_Connector_Extend(RI_SDK_Connector_ExtendParams) returns(RI_SDK_Connector_ExtendReturn);
+
+
+  rpc RI_SDK_Connector_I2C_Open(RI_SDK_Connector_I2C_OpenParams) returns (RI_SDK_Connector_I2C_OpenReturn);
+  rpc RI_SDK_Connector_I2C_Extend(RI_SDK_Connector_I2C_ExtendParams) returns (RI_SDK_Connector_I2C_ExtendReturn);
+  rpc RI_SDK_Connector_I2C_State(RI_SDK_Connector_I2C_StateParams) returns (RI_SDK_Connector_I2C_StateReturn);
+  rpc RI_SDK_Connector_I2C_CloseAll(RI_SDK_Connector_I2C_CloseAllParams) returns (RI_SDK_Connector_I2C_CloseAllReturn);
+  rpc RI_SDK_Connector_I2C_Close(RI_SDK_Connector_I2C_CloseParams) returns (RI_SDK_Connector_I2C_CloseReturn);
+  rpc RI_SDK_Connector_I2C_WriteBytes(RI_SDK_Connector_I2C_WriteBytesParams) returns (RI_SDK_Connector_I2C_WriteBytesReturn);
+  rpc RI_SDK_Connector_I2C_ReadBytes(RI_SDK_Connector_I2C_ReadBytesParams) returns (RI_SDK_Connector_I2C_ReadBytesReturn);
+  rpc RI_SDK_Connector_I2C_WriteByte(RI_SDK_Connector_I2C_WriteByteParams) returns (RI_SDK_Connector_I2C_WriteByteReturn);
+  rpc RI_SDK_Connector_I2C_ReadByte(RI_SDK_Connector_I2C_ReadByteParams) returns (RI_SDK_Connector_I2C_ReadByteReturn);
+
+  rpc RI_SDK_Sigmod_PWM_GetResolution(RI_SDK_Sigmod_PWM_GetResolutionParams) returns(RI_SDK_Sigmod_PWM_GetResolutioneReturn);
+  rpc RI_SDK_Sigmod_PWM_GetFreq(RI_SDK_Sigmod_PWM_GetFreqParams) returns(RI_SDK_Sigmod_PWM_GetFreqReturn);
+  rpc RI_SDK_Sigmod_PWM_SetFreq(RI_SDK_Sigmod_PWM_SetFreqParams) returns(RI_SDK_Sigmod_PWM_SetFreqReturn);
+  rpc RI_SDK_Sigmod_PWM_WriteRegBytes(RI_SDK_Sigmod_PWM_WriteRegBytesParams) returns(RI_SDK_Sigmod_PWM_WriteRegBytesReturn);
+  rpc RI_SDK_Sigmod_PWM_ReadRegBytes(RI_SDK_Sigmod_PWM_ReadRegBytesParams) returns(RI_SDK_Sigmod_PWM_ReadRegBytesReturn);
+  rpc RI_SDK_Sigmod_PWM_WriteByte(RI_SDK_Sigmod_PWM_WriteRegByteParams) returns(RI_SDK_Sigmod_PWM_WriteRegByteReturn);
+  rpc RI_SDK_Sigmod_PWM_ReadByte(RI_SDK_Sigmod_PWM_ReadRegByteParams) returns(RI_SDK_Sigmod_PWM_ReadRegByteReturn);
+  rpc RI_SDK_Sigmod_PWM_Extend(RI_SDK_Sigmod_PWM_ExtendParams) returns(RI_SDK_Sigmod_PWM_ExtendReturn);
+  rpc RI_SDK_Sigmod_PWM_GetPortFreq(RI_SDK_Sigmod_PWM_GetPortFreqParams) returns(RI_SDK_Sigmod_PWM_GetPortFreqReturn);
+  rpc RI_SDK_Sigmod_PWM_SetPortFreq(RI_SDK_Sigmod_PWM_SetPortFreqParams) returns(RI_SDK_Sigmod_PWM_SetPortFreqReturn);
+  rpc RI_SDK_Sigmod_PWM_ResetAll(RI_SDK_Sigmod_PWM_ResetAllParams) returns(RI_SDK_Sigmod_PWM_ResetAllReturn);
+  rpc RI_SDK_Sigmod_PWM_ResetPort(RI_SDK_Sigmod_PWM_ResetPortParams) returns(RI_SDK_Sigmod_PWM_ResetPortReturn);
+  rpc RI_SDK_Sigmod_PWM_SetPortDutyCycle(RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) returns(RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn);
+  rpc RI_SDK_Sigmod_PWM_GetPortDutyCycle(RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) returns(RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn);
+  rpc RI_SDK_Sigmod_PWM_Close(RI_SDK_Sigmod_PWM_CloseParams) returns(RI_SDK_Sigmod_PWM_CloseReturn);
+
+  rpc RI_SDK_Exec_ServoDrive_Extend(RI_SDK_Exec_ServoDrive_ExtendParams) returns(RI_SDK_Exec_ServoDrive_ExtendReturn);
+  rpc RI_SDK_Exec_ServoDrive_CustomDeviceInit(RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) returns(RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn);
+  rpc RI_SDK_Exec_ServoDrive_TurnByDutyCycle(RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams) returns(RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn);
+  rpc RI_SDK_Exec_ServoDrive_TurnByPulse(RI_SDK_Exec_ServoDrive_TurnByPulseParams) returns(RI_SDK_Exec_ServoDrive_TurnByPulseReturn);
+  rpc RI_SDK_Exec_ServoDrive_GetCurrentAngle(RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) returns(RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn);
+  rpc RI_SDK_Exec_ServoDrive_GetState(RI_SDK_Exec_ServoDrive_GetStateParams) returns(RI_SDK_Exec_ServoDrive_GetStateReturn);
+  rpc RI_SDK_Exec_ServoDrive_MinStepRotate(RI_SDK_Exec_ServoDrive_MinStepRotateParams) returns(RI_SDK_Exec_ServoDrive_MinStepRotateReturn);
+  rpc RI_SDK_Exec_ServoDrive_Turn(RI_SDK_Exec_ServoDrive_TurnParams) returns(RI_SDK_Exec_ServoDrive_TurnReturn);
+  rpc RI_SDK_Exec_ServoDrive_Stop(RI_SDK_Exec_ServoDrive_StopParams) returns(RI_SDK_Exec_ServoDrive_StopReturn);
+  rpc RI_SDK_Exec_ServoDrive_Rotate(RI_SDK_Exec_ServoDrive_RotateParams) returns(RI_SDK_Exec_ServoDrive_RotateReturn);
+  rpc RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeed(RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) returns(RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn);
+  rpc RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) returns(RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn);
+  
+  rpc RI_SDK_Exec_RGB_LED_Extend(RI_SDK_Exec_RGB_LED_ExtendParams) returns(RI_SDK_Exec_RGB_LED_ExtendReturn);
+  rpc RI_SDK_Exec_RGB_LED_SinglePulse(RI_SDK_Exec_RGB_LED_SinglePulseParams) returns(RI_SDK_Exec_RGB_LED_SinglePulseReturn);
+  rpc RI_SDK_Exec_RGB_LED_Stop(RI_SDK_Exec_RGB_LED_StopParams) returns(RI_SDK_Exec_RGB_LED_StopReturn);
+  rpc RI_SDK_Exec_RGB_LED_GetState(RI_SDK_Exec_RGB_LED_GetStateParams) returns(RI_SDK_Exec_RGB_LED_GetStateReturn);
+  rpc RI_SDK_Exec_RGB_LED_GetColor(RI_SDK_Exec_RGB_LED_GetColorParams) returns(RI_SDK_Exec_RGB_LED_GetColorReturn);
+  rpc RI_SDK_Exec_RGB_LED_FlashingWithFrequency(RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams) returns(RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn);
+  rpc RI_SDK_Exec_RGB_LED_FlashingWithPause(RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) returns(RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn);
+  rpc RI_SDK_Exec_RGB_LED_Flicker(RI_SDK_Exec_RGB_LED_FlickerParams) returns(RI_SDK_Exec_RGB_LED_FlickerReturn);
+
+}
