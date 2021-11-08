@@ -6,4 +6,4 @@ export GOARCH=386
 export PATH=$GOROOT/bin:$PATH
 
 protoc --version
-protoc -I proto/ proto/RoboSdk.proto --go_out=. --go-grpc_out=.
+protoc -I proto/ proto/RoboSdk.proto --go_out=plugins=grpc:.
