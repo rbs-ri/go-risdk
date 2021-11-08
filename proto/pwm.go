@@ -13,6 +13,18 @@ func (m *GRPCClient) RI_SDK_Sigmod_PWM_Extend(con int64) (descriptor int64, erro
 	return resp.Descriptor_, resp.ErrorText, resp.ErrorCode, nil
 }
 
+// RI_SDK_Sigmod_PWM_ExtendToModel - расширяет pwm до модели
+func (m *GRPCClient) RI_SDK_Sigmod_PWM_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_Sigmod_PWM_ExtendToModel(context.Background(), &RI_SDK_Sigmod_PWM_ExtendToModelParams{
+		BaseDescriptor: baseDescriptor,
+		ModelName:      modelName,
+	})
+	if err != nil {
+		return
+	}
+	return resp.Descriptor_, resp.ErrorText, resp.ErrorCode, nil
+}
+
 // RI_SDK_Sigmod_PWM_GetResolution - функция получения разрешения ШИМ
 func (m *GRPCClient) RI_SDK_Sigmod_PWM_GetResolution(descriptor int64) (resolution int, errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Sigmod_PWM_GetResolution(context.Background(), &RI_SDK_Sigmod_PWM_GetResolutionParams{
@@ -104,6 +116,18 @@ func (m *GRPCServer) RI_SDK_Sigmod_PWM_Extend(
 	req *RI_SDK_Sigmod_PWM_ExtendParams) (*RI_SDK_Sigmod_PWM_ExtendReturn, error) {
 	descriptor, errorText, errorCode, err := m.Impl.RI_SDK_Sigmod_PWM_Extend(req.Con)
 	return &RI_SDK_Sigmod_PWM_ExtendReturn{
+		Descriptor_: descriptor,
+		ErrorText:   errorText,
+		ErrorCode:   errorCode,
+	}, err
+}
+
+// RI_SDK_Sigmod_PWM_ExtendToModel - расширяет pwm до модели
+func (m *GRPCServer) RI_SDK_Sigmod_PWM_ExtendToModel(
+	ctx context.Context,
+	req *RI_SDK_Sigmod_PWM_ExtendToModelParams) (*RI_SDK_Sigmod_PWM_ExtendToModelReturn, error) {
+	descriptor, errorText, errorCode, err := m.Impl.RI_SDK_Sigmod_PWM_ExtendToModel(req.BaseDescriptor, req.ModelName)
+	return &RI_SDK_Sigmod_PWM_ExtendToModelReturn{
 		Descriptor_: descriptor,
 		ErrorText:   errorText,
 		ErrorCode:   errorCode,

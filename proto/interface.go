@@ -3,6 +3,7 @@ package proto
 
 import (
 	"context"
+	"plugin"
 
 	"google.golang.org/grpc"
 
@@ -29,6 +30,7 @@ type RoboSdkApi interface {
 
 	RI_SDK_Connector_I2C_Open(descriptor int64, addr uint8) (errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_Extend(connectorDescriptor int64) (descriptor int64, errorText string, errorCode int64, err error)
+	RI_SDK_Connector_I2C_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_State(descriptor int64) (state int, errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_CloseAll(descriptor int64) (errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_Close(descriptor int64, addr uint8) (errorText string, errorCode int64, err error)
@@ -37,6 +39,7 @@ type RoboSdkApi interface {
 	RI_SDK_Connector_I2C_WriteByte(descriptor int64, addr uint8, value byte) (errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_ReadByte(descriptor int64, addr uint8) (value byte, errorText string, errorCode int64, err error)
 
+	RI_SDK_Sigmod_PWM_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error)
 	RI_SDK_Sigmod_PWM_GetResolution(descriptor int64) (resolution int, errorText string, errorCode int64, err error)
 	RI_SDK_Sigmod_PWM_GetFreq(descriptor int64) (freq int64, errorText string, errorCode int64, err error)
 	RI_SDK_Sigmod_PWM_SetFreq(descriptor int64, freq int64) (errorText string, errorCode int64, err error)
@@ -54,6 +57,7 @@ type RoboSdkApi interface {
 	RI_SDK_Sigmod_PWM_Close(descriptor int64) (errorText string, errorCode int64, err error)
 
 	RI_SDK_Exec_ServoDrive_Extend(exec int64) (descriptor int64, errorText string, errorCode int64, err error)
+	RI_SDK_Exec_ServoDrive_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error)
 	RI_SDK_Exec_ServoDrive_CustomDeviceInit(desrciptor, maxImpulse, maxSpeed, pulseRange int64) (errorText string, errorCode int64, err error)
 	RI_SDK_Exec_ServoDrive_TurnByDutyCycle(desrciptor, steps int64) (errorText string, errorCode int64, err error)
 	RI_SDK_Exec_ServoDrive_TurnByPulse(desrciptor, pulse int64) (errorText string, errorCode int64, err error)
@@ -67,6 +71,7 @@ type RoboSdkApi interface {
 	RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(descriptor, angle, speed int64, async bool) (errorText string, errorCode int64, err error)
 
 	RI_SDK_Exec_RGB_LED_Extend(exec int64) (descriptor int64, errorText string, errorCode int64, err error)
+	RI_SDK_Exec_RGB_LED_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error)
 	RI_SDK_Exec_RGB_LED_SinglePulse(descriptor, r, g, b, duration int64, async bool) (errorText string, errorCode int64, err error)
 	RI_SDK_Exec_RGB_LED_Stop(descriptor int64) (errorText string, errorCode int64, err error)
 	RI_SDK_Exec_RGB_LED_GetState(descriptor int64) (state int64, errorText string, errorCode int64, err error)

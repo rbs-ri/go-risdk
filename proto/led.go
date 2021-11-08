@@ -13,6 +13,18 @@ func (m *GRPCClient) RI_SDK_Exec_RGB_LED_Extend(exec int64) (descriptor int64, e
 	return resp.Descriptor_, resp.ErrorText, resp.ErrorCode, nil
 }
 
+// RI_SDK_Exec_RGB_LED_ExtendToModel - расширяет светодиод до модели
+func (m *GRPCClient) RI_SDK_Exec_RGB_LED_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_Exec_RGB_LED_ExtendToModel(context.Background(), &RI_SDK_Exec_RGB_LED_ExtendToModelParams{
+		BaseDescriptor: baseDescriptor,
+		ModelName:      modelName,
+	})
+	if err != nil {
+		return
+	}
+	return resp.Descriptor_, resp.ErrorText, resp.ErrorCode, nil
+}
+
 // RI_SDK_Exec_RGB_LED_SinglePulse - Одиночный световой импульса (непрерывное свечение)
 func (m *GRPCClient) RI_SDK_Exec_RGB_LED_SinglePulse(descriptor, r, g, b, duration int64, async bool) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_RGB_LED_SinglePulse(context.Background(), &RI_SDK_Exec_RGB_LED_SinglePulseParams{
@@ -120,6 +132,18 @@ func (m *GRPCServer) RI_SDK_Exec_RGB_LED_Extend(
 	req *RI_SDK_Exec_RGB_LED_ExtendParams) (*RI_SDK_Exec_RGB_LED_ExtendReturn, error) {
 	descriptor, errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_Extend(req.Exec)
 	return &RI_SDK_Exec_RGB_LED_ExtendReturn{
+		Descriptor_: descriptor,
+		ErrorText:   errorText,
+		ErrorCode:   errorCode,
+	}, err
+}
+
+// RI_SDK_Exec_RGB_LED_ExtendToModel - расширяет светодиод до модели
+func (m *GRPCServer) RI_SDK_Exec_RGB_LED_ExtendToModel(
+	ctx context.Context,
+	req *RI_SDK_Exec_RGB_LED_ExtendToModelParams) (*RI_SDK_Exec_RGB_LED_ExtendToModelReturn, error) {
+	descriptor, errorText, errorCode, err := m.Impl.RI_SDK_Exec_RGB_LED_ExtendToModel(req.BaseDescriptor, req.ModelName)
+	return &RI_SDK_Exec_RGB_LED_ExtendToModelReturn{
 		Descriptor_: descriptor,
 		ErrorText:   errorText,
 		ErrorCode:   errorCode,

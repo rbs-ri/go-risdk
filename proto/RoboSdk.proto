@@ -743,6 +743,58 @@ message RI_SDK_Exec_RGB_LED_FlickerReturn {
   int64 errorCode = 2;
 }
 
+// Аргументы RI_SDK_Connector_I2C_ExtendToModel
+message RI_SDK_Connector_I2C_ExtendToModelParams {
+  int64 baseDescriptor = 1;
+  string modelName = 2;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_ExtendToModel
+message RI_SDK_Connector_I2C_ExtendToModelReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sigmod_PWM_ExtendToModel
+message RI_SDK_Sigmod_PWM_ExtendToModelParams {
+  int64 baseDescriptor = 1;
+  string modelName = 2;
+}
+
+// Возвращаемые значения RI_SDK_Sigmod_PWM_ExtendToModel
+message RI_SDK_Sigmod_PWM_ExtendToModelReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_ExtendToModel
+message RI_SDK_Exec_ServoDrive_ExtendToModelParams {
+  int64 baseDescriptor = 1;
+  string modelName = 2;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_ExtendToModel
+message RI_SDK_Exec_ServoDrive_ExtendToModelReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Exec_RGB_LED_ExtendToModel
+message RI_SDK_Exec_RGB_LED_ExtendToModelParams {
+  int64 baseDescriptor = 1;
+  string modelName = 2;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RGB_LED_ExtendToModel
+message RI_SDK_Exec_RGB_LED_ExtendToModelReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
 service RoboSdk {
   rpc RI_SDK_InitSDK(RI_SDK_InitSDKParams) returns (RI_SDK_InitSDKReturn);
   rpc RI_SDK_CreateBasic(RI_SDK_CreateBasicParams) returns (RI_SDK_CreateBasicReturn);
@@ -763,6 +815,7 @@ service RoboSdk {
 
 
   rpc RI_SDK_Connector_I2C_Open(RI_SDK_Connector_I2C_OpenParams) returns (RI_SDK_Connector_I2C_OpenReturn);
+  rpc RI_SDK_Connector_I2C_ExtendToModel(RI_SDK_Connector_I2C_ExtendToModelParams) returns (RI_SDK_Connector_I2C_ExtendToModelReturn);
   rpc RI_SDK_Connector_I2C_Extend(RI_SDK_Connector_I2C_ExtendParams) returns (RI_SDK_Connector_I2C_ExtendReturn);
   rpc RI_SDK_Connector_I2C_State(RI_SDK_Connector_I2C_StateParams) returns (RI_SDK_Connector_I2C_StateReturn);
   rpc RI_SDK_Connector_I2C_CloseAll(RI_SDK_Connector_I2C_CloseAllParams) returns (RI_SDK_Connector_I2C_CloseAllReturn);
@@ -772,6 +825,7 @@ service RoboSdk {
   rpc RI_SDK_Connector_I2C_WriteByte(RI_SDK_Connector_I2C_WriteByteParams) returns (RI_SDK_Connector_I2C_WriteByteReturn);
   rpc RI_SDK_Connector_I2C_ReadByte(RI_SDK_Connector_I2C_ReadByteParams) returns (RI_SDK_Connector_I2C_ReadByteReturn);
 
+  rpc RI_SDK_Sigmod_PWM_ExtendToModel(RI_SDK_Sigmod_PWM_ExtendToModelParams) returns(RI_SDK_Sigmod_PWM_ExtendToModelReturn);
   rpc RI_SDK_Sigmod_PWM_GetResolution(RI_SDK_Sigmod_PWM_GetResolutionParams) returns(RI_SDK_Sigmod_PWM_GetResolutioneReturn);
   rpc RI_SDK_Sigmod_PWM_GetFreq(RI_SDK_Sigmod_PWM_GetFreqParams) returns(RI_SDK_Sigmod_PWM_GetFreqReturn);
   rpc RI_SDK_Sigmod_PWM_SetFreq(RI_SDK_Sigmod_PWM_SetFreqParams) returns(RI_SDK_Sigmod_PWM_SetFreqReturn);
@@ -789,6 +843,7 @@ service RoboSdk {
   rpc RI_SDK_Sigmod_PWM_Close(RI_SDK_Sigmod_PWM_CloseParams) returns(RI_SDK_Sigmod_PWM_CloseReturn);
 
   rpc RI_SDK_Exec_ServoDrive_Extend(RI_SDK_Exec_ServoDrive_ExtendParams) returns(RI_SDK_Exec_ServoDrive_ExtendReturn);
+  rpc RI_SDK_Exec_ServoDrive_ExtendToModel(RI_SDK_Exec_ServoDrive_ExtendToModelParams) returns(RI_SDK_Exec_ServoDrive_ExtendToModelReturn);
   rpc RI_SDK_Exec_ServoDrive_CustomDeviceInit(RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) returns(RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn);
   rpc RI_SDK_Exec_ServoDrive_TurnByDutyCycle(RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams) returns(RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn);
   rpc RI_SDK_Exec_ServoDrive_TurnByPulse(RI_SDK_Exec_ServoDrive_TurnByPulseParams) returns(RI_SDK_Exec_ServoDrive_TurnByPulseReturn);
@@ -800,8 +855,9 @@ service RoboSdk {
   rpc RI_SDK_Exec_ServoDrive_Rotate(RI_SDK_Exec_ServoDrive_RotateParams) returns(RI_SDK_Exec_ServoDrive_RotateReturn);
   rpc RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeed(RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) returns(RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn);
   rpc RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) returns(RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn);
-  
+
   rpc RI_SDK_Exec_RGB_LED_Extend(RI_SDK_Exec_RGB_LED_ExtendParams) returns(RI_SDK_Exec_RGB_LED_ExtendReturn);
+  rpc RI_SDK_Exec_RGB_LED_ExtendToModel(RI_SDK_Exec_RGB_LED_ExtendToModelParams) returns(RI_SDK_Exec_RGB_LED_ExtendToModelReturn);
   rpc RI_SDK_Exec_RGB_LED_SinglePulse(RI_SDK_Exec_RGB_LED_SinglePulseParams) returns(RI_SDK_Exec_RGB_LED_SinglePulseReturn);
   rpc RI_SDK_Exec_RGB_LED_Stop(RI_SDK_Exec_RGB_LED_StopParams) returns(RI_SDK_Exec_RGB_LED_StopReturn);
   rpc RI_SDK_Exec_RGB_LED_GetState(RI_SDK_Exec_RGB_LED_GetStateParams) returns(RI_SDK_Exec_RGB_LED_GetStateReturn);

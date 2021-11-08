@@ -13,6 +13,18 @@ func (m *GRPCClient) RI_SDK_Exec_ServoDrive_Extend(exec int64) (descriptor int64
 	return resp.Descriptor_, resp.ErrorText, resp.ErrorCode, nil
 }
 
+// RI_SDK_Exec_ServoDrive_ExtendToModel - расширяет сервопривод до модели
+func (m *GRPCClient) RI_SDK_Exec_ServoDrive_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_Exec_ServoDrive_ExtendToModel(context.Background(), &RI_SDK_Exec_ServoDrive_ExtendToModelParams{
+		BaseDescriptor: baseDescriptor,
+		ModelName:      modelName,
+	})
+	if err != nil {
+		return
+	}
+	return resp.Descriptor_, resp.ErrorText, resp.ErrorCode, nil
+}
+
 // RI_SDK_Exec_ServoDrive_CustomDeviceInit - Инициализация кастомного сервопривода - Инициализация кастомного сервопривода
 func (m *GRPCClient) RI_SDK_Exec_ServoDrive_CustomDeviceInit(descriptor, maxImpulse, maxSpeed, pulseRange int64) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_ServoDrive_CustomDeviceInit(context.Background(), &RI_SDK_Exec_ServoDrive_CustomDeviceInitParams{
@@ -166,6 +178,18 @@ func (m *GRPCServer) RI_SDK_Exec_ServoDrive_Extend(
 	req *RI_SDK_Exec_ServoDrive_ExtendParams) (*RI_SDK_Exec_ServoDrive_ExtendReturn, error) {
 	descriptor, errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_Extend(req.Exec)
 	return &RI_SDK_Exec_ServoDrive_ExtendReturn{
+		Descriptor_: descriptor,
+		ErrorText:   errorText,
+		ErrorCode:   errorCode,
+	}, err
+}
+
+// RI_SDK_Exec_ServoDrive_ExtendToModel - расширяет сервопривод до модели
+func (m *GRPCServer) RI_SDK_Exec_ServoDrive_ExtendToModel(
+	ctx context.Context,
+	req *RI_SDK_Exec_ServoDrive_ExtendToModelParams) (*RI_SDK_Exec_ServoDrive_ExtendToModelReturn, error) {
+	descriptor, errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_ExtendToModel(req.BaseDescriptor, req.ModelName)
+	return &RI_SDK_Exec_ServoDrive_ExtendToModelReturn{
 		Descriptor_: descriptor,
 		ErrorText:   errorText,
 		ErrorCode:   errorCode,

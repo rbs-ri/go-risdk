@@ -25,6 +25,18 @@ func (m *GRPCClient) RI_SDK_Connector_I2C_Extend(connectorDescriptor int64) (des
 	return resp.Descriptor_, resp.ErrorText, resp.ErrorCode, nil
 }
 
+// RI_SDK_Connector_I2C_ExtendToModel - расширяет i2c адаптер до модели
+func (m *GRPCClient) RI_SDK_Connector_I2C_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_Connector_I2C_ExtendToModel(context.Background(), &RI_SDK_Connector_I2C_ExtendToModelParams{
+		BaseDescriptor: baseDescriptor,
+		ModelName:      modelName,
+	})
+	if err != nil {
+		return
+	}
+	return resp.Descriptor_, resp.ErrorText, resp.ErrorCode, nil
+}
+
 // RI_SDK_Connector_I2C_State -  функция чтения состояния
 func (m *GRPCClient) RI_SDK_Connector_I2C_State(descriptor int64) (state int, errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Connector_I2C_State(context.Background(), &RI_SDK_Connector_I2C_StateParams{
@@ -128,6 +140,18 @@ func (m *GRPCServer) RI_SDK_Connector_I2C_Extend(
 	req *RI_SDK_Connector_I2C_ExtendParams) (*RI_SDK_Connector_I2C_ExtendReturn, error) {
 	descriptor, errorText, errorCode, err := m.Impl.RI_SDK_Connector_I2C_Extend(req.ConnectorDescriptor)
 	return &RI_SDK_Connector_I2C_ExtendReturn{
+		Descriptor_: descriptor,
+		ErrorText:   errorText,
+		ErrorCode:   errorCode,
+	}, err
+}
+
+// RI_SDK_Connector_I2C_ExtendToModel - расширяет i2c адаптер до модели
+func (m *GRPCServer) RI_SDK_Connector_I2C_ExtendToModel(
+	ctx context.Context,
+	req *RI_SDK_Connector_I2C_ExtendToModelParams) (*RI_SDK_Connector_I2C_ExtendToModelReturn, error) {
+	descriptor, errorText, errorCode, err := m.Impl.RI_SDK_Connector_I2C_ExtendToModel(req.BaseDescriptor, req.ModelName)
+	return &RI_SDK_Connector_I2C_ExtendToModelReturn{
 		Descriptor_: descriptor,
 		ErrorText:   errorText,
 		ErrorCode:   errorCode,
