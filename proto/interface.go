@@ -3,7 +3,6 @@ package proto
 
 import (
 	"context"
-	"plugin"
 
 	"google.golang.org/grpc"
 
