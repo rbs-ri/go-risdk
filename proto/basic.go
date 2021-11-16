@@ -206,7 +206,7 @@ func (m *GRPCServer) RI_SDK_LinkServodriveToController(
 func (m *GRPCServer) RI_SDK_LinkLedToController(
 	ctx context.Context,
 	req *RI_SDK_LinkLedToControllerParams) (*RI_SDK_LinkLedToControllerReturn, error) {
-	errorText, errorCode, err := m.Impl.RI_SDK_LinkLedToController(req.LedDescriptor, req.PwmDescriptor, req.Rport, req.Gport, req.Gport)
+	errorText, errorCode, err := m.Impl.RI_SDK_LinkLedToController(req.LedDescriptor, req.PwmDescriptor, req.Rport, req.Gport, req.Bport)
 	return &RI_SDK_LinkLedToControllerReturn{
 		ErrorText: errorText,
 		ErrorCode: errorCode,

@@ -222,7 +222,7 @@ func (m *GRPCServer) RI_SDK_Exec_ServoDrive_TurnByDutyCycle(
 func (m *GRPCServer) RI_SDK_Exec_ServoDrive_TurnByPulse(
 	ctx context.Context,
 	req *RI_SDK_Exec_ServoDrive_TurnByPulseParams) (*RI_SDK_Exec_ServoDrive_TurnByPulseReturn, error) {
-	errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_TurnByDutyCycle(req.Desrciptor, req.Pulse)
+	errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_TurnByPulse(req.Desrciptor, req.Pulse)
 	return &RI_SDK_Exec_ServoDrive_TurnByPulseReturn{
 		ErrorText: errorText,
 		ErrorCode: errorCode,
