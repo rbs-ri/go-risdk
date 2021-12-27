@@ -8,9 +8,11 @@ import (
 	"log"
 	"os"
 	"os/exec"
+	"os/signal"
 	"path/filepath"
 	"runtime"
 	"sync"
+	"syscall"
 )
 
 // ClientRPC - объект для работы с API SDK по RPC
@@ -28,6 +30,17 @@ func GetClientRPC() *ClientRPC {
 			RoboSdkApi: roboSdkApi,
 		}
 	}
+
+	// Закрытие соединение с RPC, когда выполнение программы было прекращено, до ее завершения.
+	// Здесь отслеживается системное событие завершения программы.
+	// Если не убивать килент, то процесс остается и может блокировать подачу сигнала на устройство.
+	c := make(chan os.Signal)
+	signal.Notify(c, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM)
+	go func() {
+		<-c
+		clientRPC.Client.Kill()
+		os.Exit(0)
+	}()
 
 	return clientRPC
 }
