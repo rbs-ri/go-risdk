@@ -19,7 +19,10 @@ import (
 var clientRPC *ClientRPC
 var mu sync.Mutex
 
-// GetClientRPC - получаем объект для работы с API SDK по RPC
+/*
+	GetClientRPC - получаем объект для работы с API SDK по RPC.
+	SDK находится в директории исполнения программы
+*/
 func GetClientRPC() *ClientRPC {
 	mu.Lock()
 	defer mu.Unlock()
@@ -31,17 +34,26 @@ func GetClientRPC() *ClientRPC {
 		}
 	}
 
-	// Закрытие соединение с RPC, когда выполнение программы было прекращено, до ее завершения.
-	// Здесь отслеживается системное событие завершения программы.
-	// Если не убивать килент, то процесс остается и может блокировать подачу сигнала на устройство.
-	c := make(chan os.Signal)
-	signal.Notify(c, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM)
-	go func() {
-		<-c
-		clientRPC.Client.Kill()
-		os.Exit(0)
-	}()
+	killAfterCloseSignal()
+	return clientRPC
+}
 
+/*
+	GetClientRPCWithPath - получаем объект для работы с API SDK по RPC.
+	SDK находится в указанной директории
+*/
+func GetClientRPCWithPath(path string) *ClientRPC {
+	mu.Lock()
+	defer mu.Unlock()
+	if clientRPC == nil {
+		client, roboSdkApi := initClientWithPath(path)
+		clientRPC = &ClientRPC{
+			Client:     client,
+			RoboSdkApi: roboSdkApi,
+		}
+	}
+
+	killAfterCloseSignal()
 	return clientRPC
 }
 
@@ -76,6 +88,33 @@ func initClient() (client *plugin.Client, roboSdkApi proto.RoboSdkApi) {
 		os.Exit(1)
 	}
 
+	client, roboSdkApi = getClient(path, risdkName)
+	return
+}
+
+// initClientWithPath - Создает клиента для получения доступа к API SDK по RPC, SDK находится в указанной директории
+func initClientWithPath(path string) (client *plugin.Client, roboSdkApi proto.RoboSdkApi) {
+	// We don't want to see the plugin logs.
+	log.SetOutput(ioutil.Discard)
+
+	// Determine os AND select risdk filename
+
+	var risdkName string
+	switch runtime.GOOS {
+	case "windows":
+		risdkName = "risdk.exe"
+	case "linux":
+		risdkName = "risdk.bin"
+	default:
+		fmt.Println("Incompatible OS (Support windows, linux only)")
+		os.Exit(1)
+	}
+
+	client, roboSdkApi = getClient(path, risdkName)
+	return
+}
+
+func getClient(path, risdkName string) (client *plugin.Client, roboSdkApi proto.RoboSdkApi) {
 	// We're a host. Start by launching the plugin process.
 	client = plugin.NewClient(&plugin.ClientConfig{
 		HandshakeConfig: proto.Handshake,
@@ -100,5 +139,19 @@ func initClient() (client *plugin.Client, roboSdkApi proto.RoboSdkApi) {
 	}
 
 	roboSdkApi = raw.(proto.RoboSdkApi)
-	return
+
+	return client, roboSdkApi
+}
+
+func killAfterCloseSignal() {
+	// Закрытие соединение с RPC, когда выполнение программы было прекращено, до ее завершения.
+	// Здесь отслеживается системное событие завершения программы.
+	// Если не убивать клиент, то процесс остается и может блокировать подачу сигнала на устройство.
+	c := make(chan os.Signal)
+	signal.Notify(c, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM)
+	go func() {
+		<-c
+		clientRPC.Client.Kill()
+		os.Exit(0)
+	}()
 }
