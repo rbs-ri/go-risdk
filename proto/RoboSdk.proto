@@ -420,6 +420,19 @@ message RI_SDK_LinkLedToControllerReturn {
   int64 errorCode = 2;
 }
 
+// Аргументы RI_SDK_LinkVoltageSensorToController
+message RI_SDK_LinkVoltageSensorToControllerParams {
+  int64 sensorDescriptor = 1;
+  int64 i2cAdapterDescriptor = 2;
+  uint64 addr = 3;
+}
+
+// Возвращаемые значения RI_SDK_LinkVoltageSensorToController
+message RI_SDK_LinkVoltageSensorToControllerReturn {
+  string errorText = 1; 
+  int64 errorCode = 2;
+}
+
 // Аргументы RI_SDK_Exec_ServoDrive_CustomDeviceInit
 message RI_SDK_Exec_ServoDrive_CustomDeviceInitParams {
   int64 desrciptor = 1;
@@ -795,6 +808,108 @@ message RI_SDK_Exec_RGB_LED_ExtendToModelReturn {
   int64 errorCode = 3;
 }
 
+// Аргументы RI_SDK_Sensor_VoltageSensor_Extend
+message RI_SDK_Sensor_VoltageSensor_ExtendParams {
+  int64 exec = 1;
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_Extend
+message RI_SDK_Sensor_VoltageSensor_ExtendReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_ExtendToModel
+message RI_SDK_Sensor_VoltageSensor_ExtendToModelParams {
+  int64 baseDescriptor = 1;
+  string modelName = 2;
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_ExtendToModel
+message RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_CustomDeviceInit
+message RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams {
+  int64 desrciptor = 1;
+  double lsbBus = 2;
+  double lsbShunt = 3;
+  double shuntResist = 4;
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_CustomDeviceInit
+message RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Voltage
+message RI_SDK_Sensor_VoltageSensor_VoltageParams {
+  int64 desrciptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_Voltage
+message RI_SDK_Sensor_VoltageSensor_VoltageReturn {
+  float result = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_VoltageShunt
+message RI_SDK_Sensor_VoltageSensor_VoltageShuntParams {
+  int64 desrciptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_VoltageShunt
+message RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn {
+  float result = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Current
+message RI_SDK_Sensor_VoltageSensor_CurrentParams {
+  int64 desrciptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_Current
+message RI_SDK_Sensor_VoltageSensor_CurrentReturn {
+  float result = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Power
+message RI_SDK_Sensor_VoltageSensor_PowerParams {
+  int64 desrciptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_Power
+message RI_SDK_Sensor_VoltageSensor_PowerReturn {
+  float result = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Sense
+message RI_SDK_Sensor_VoltageSensor_SenseParams {
+  int64 desrciptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_Sense
+message RI_SDK_Sensor_VoltageSensor_SenseReturn {
+  float voltage = 1;
+  float voltageShunt = 2;
+  float current = 3;
+  float power = 4;
+  string errorText = 5;
+  int64 errorCode = 6;
+}
+
 service RoboSdk {
   rpc RI_SDK_InitSDK(RI_SDK_InitSDKParams) returns (RI_SDK_InitSDKReturn);
   rpc RI_SDK_CreateBasic(RI_SDK_CreateBasicParams) returns (RI_SDK_CreateBasicReturn);
@@ -806,6 +921,8 @@ service RoboSdk {
   rpc RI_SDK_LinkPWMToController(RI_SDK_LinkPWMToControllerParams) returns (RI_SDK_LinkPWMToControllerReturn);
   rpc RI_SDK_LinkServodriveToController(RI_SDK_LinkServodriveToControllerParams) returns (RI_SDK_LinkServodriveToControllerReturn);
   rpc RI_SDK_LinkLedToController(RI_SDK_LinkLedToControllerParams) returns (RI_SDK_LinkLedToControllerReturn);
+  rpc RI_SDK_LinkVoltageSensorToController(RI_SDK_LinkVoltageSensorToControllerParams) returns (RI_SDK_LinkVoltageSensorToControllerReturn);
+
 
 
   rpc RI_SDK_Executor_Extend(RI_SDK_Executor_ExtendParams) returns(RI_SDK_Executor_ExtendReturn);
@@ -866,4 +983,13 @@ service RoboSdk {
   rpc RI_SDK_Exec_RGB_LED_FlashingWithPause(RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) returns(RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn);
   rpc RI_SDK_Exec_RGB_LED_Flicker(RI_SDK_Exec_RGB_LED_FlickerParams) returns(RI_SDK_Exec_RGB_LED_FlickerReturn);
 
+  rpc RI_SDK_Sensor_VoltageSensor_Extend(RI_SDK_Sensor_VoltageSensor_ExtendParams) returns(RI_SDK_Sensor_VoltageSensor_ExtendReturn);
+  rpc RI_SDK_Sensor_VoltageSensor_ExtendToModel(RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) returns(RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn);
+  rpc RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) returns(RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn);
+  rpc RI_SDK_Sensor_VoltageSensor_Voltage(RI_SDK_Sensor_VoltageSensor_VoltageParams) returns(RI_SDK_Sensor_VoltageSensor_VoltageReturn);
+  rpc RI_SDK_Sensor_VoltageSensor_VoltageShunt(RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) returns(RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn);
+  rpc RI_SDK_Sensor_VoltageSensor_Current(RI_SDK_Sensor_VoltageSensor_CurrentParams) returns(RI_SDK_Sensor_VoltageSensor_CurrentReturn);
+  rpc RI_SDK_Sensor_VoltageSensor_Power(RI_SDK_Sensor_VoltageSensor_PowerParams) returns(RI_SDK_Sensor_VoltageSensor_PowerReturn);
+  rpc RI_SDK_Sensor_VoltageSensor_Sense(RI_SDK_Sensor_VoltageSensor_SenseParams) returns(RI_SDK_Sensor_VoltageSensor_SenseReturn);
+  
 }

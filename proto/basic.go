@@ -99,6 +99,19 @@ func (m *GRPCClient) RI_SDK_LinkLedToController(ledDescriptor, pwmDescriptor, rp
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
+// RI_SDK_LinkVoltageSensorToController - связывает датчик тока с I2C адаптером.
+func (m *GRPCClient) RI_SDK_LinkVoltageSensorToController(SensorDescriptor, I2CAdapterDescriptor int64, addr uint64) (errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_LinkVoltageSensorToController(context.Background(), &RI_SDK_LinkVoltageSensorToControllerParams{
+		SensorDescriptor:     SensorDescriptor,
+		I2CAdapterDescriptor: I2CAdapterDescriptor,
+		Addr:                 addr,
+	})
+	if err != nil {
+		return
+	}
+	return resp.ErrorText, resp.ErrorCode, nil
+}
+
 // RI_SDK_DestroyComponent - удаление компонента
 func (m *GRPCClient) RI_SDK_DestroyComponent(descriptor int64) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_DestroyComponent(context.Background(), &RI_SDK_DestroyComponentParams{
@@ -208,6 +221,17 @@ func (m *GRPCServer) RI_SDK_LinkLedToController(
 	req *RI_SDK_LinkLedToControllerParams) (*RI_SDK_LinkLedToControllerReturn, error) {
 	errorText, errorCode, err := m.Impl.RI_SDK_LinkLedToController(req.LedDescriptor, req.PwmDescriptor, req.Rport, req.Gport, req.Bport)
 	return &RI_SDK_LinkLedToControllerReturn{
+		ErrorText: errorText,
+		ErrorCode: errorCode,
+	}, err
+}
+
+// RI_SDK_LinkVoltageSensorToController - связывает датчик тока с I2C.
+func (m *GRPCServer) RI_SDK_LinkVoltageSensorToController(
+	ctx context.Context,
+	req *RI_SDK_LinkVoltageSensorToControllerParams) (*RI_SDK_LinkVoltageSensorToControllerReturn, error) {
+	errorText, errorCode, err := m.Impl.RI_SDK_LinkVoltageSensorToController(req.SensorDescriptor, req.I2CAdapterDescriptor, req.Addr)
+	return &RI_SDK_LinkVoltageSensorToControllerReturn{
 		ErrorText: errorText,
 		ErrorCode: errorCode,
 	}, err

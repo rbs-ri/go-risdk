@@ -3389,6 +3389,118 @@ func (m *RI_SDK_LinkLedToControllerReturn) GetErrorCode() int64 {
 	return 0
 }
 
+// Аргументы RI_SDK_LinkVoltageSensorToController
+type RI_SDK_LinkVoltageSensorToControllerParams struct {
+	SensorDescriptor     int64    `protobuf:"varint,1,opt,name=sensorDescriptor,proto3" json:"sensorDescriptor,omitempty"`
+	I2CAdapterDescriptor int64    `protobuf:"varint,2,opt,name=i2cAdapterDescriptor,proto3" json:"i2cAdapterDescriptor,omitempty"`
+	Addr                 uint64   `protobuf:"varint,3,opt,name=addr,proto3" json:"addr,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_LinkVoltageSensorToControllerParams) Reset() {
+	*m = RI_SDK_LinkVoltageSensorToControllerParams{}
+}
+func (m *RI_SDK_LinkVoltageSensorToControllerParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_LinkVoltageSensorToControllerParams) ProtoMessage() {}
+func (*RI_SDK_LinkVoltageSensorToControllerParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{67}
+}
+
+func (m *RI_SDK_LinkVoltageSensorToControllerParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_LinkVoltageSensorToControllerParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_LinkVoltageSensorToControllerParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerParams.Merge(m, src)
+}
+func (m *RI_SDK_LinkVoltageSensorToControllerParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerParams.Size(m)
+}
+func (m *RI_SDK_LinkVoltageSensorToControllerParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerParams proto.InternalMessageInfo
+
+func (m *RI_SDK_LinkVoltageSensorToControllerParams) GetSensorDescriptor() int64 {
+	if m != nil {
+		return m.SensorDescriptor
+	}
+	return 0
+}
+
+func (m *RI_SDK_LinkVoltageSensorToControllerParams) GetI2CAdapterDescriptor() int64 {
+	if m != nil {
+		return m.I2CAdapterDescriptor
+	}
+	return 0
+}
+
+func (m *RI_SDK_LinkVoltageSensorToControllerParams) GetAddr() uint64 {
+	if m != nil {
+		return m.Addr
+	}
+	return 0
+}
+
+// Возвращаемые значения RI_SDK_LinkVoltageSensorToController
+type RI_SDK_LinkVoltageSensorToControllerReturn struct {
+	ErrorText            string   `protobuf:"bytes,1,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,2,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_LinkVoltageSensorToControllerReturn) Reset() {
+	*m = RI_SDK_LinkVoltageSensorToControllerReturn{}
+}
+func (m *RI_SDK_LinkVoltageSensorToControllerReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_LinkVoltageSensorToControllerReturn) ProtoMessage() {}
+func (*RI_SDK_LinkVoltageSensorToControllerReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{68}
+}
+
+func (m *RI_SDK_LinkVoltageSensorToControllerReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_LinkVoltageSensorToControllerReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_LinkVoltageSensorToControllerReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerReturn.Merge(m, src)
+}
+func (m *RI_SDK_LinkVoltageSensorToControllerReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerReturn.Size(m)
+}
+func (m *RI_SDK_LinkVoltageSensorToControllerReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_LinkVoltageSensorToControllerReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_LinkVoltageSensorToControllerReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_LinkVoltageSensorToControllerReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
 // Аргументы RI_SDK_Exec_ServoDrive_CustomDeviceInit
 type RI_SDK_Exec_ServoDrive_CustomDeviceInitParams struct {
 	Desrciptor           int64    `protobuf:"varint,1,opt,name=desrciptor,proto3" json:"desrciptor,omitempty"`
@@ -3408,7 +3520,7 @@ func (m *RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{67}
+	return fileDescriptor_075c0a5d977b1e4e, []int{69}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) XXX_Unmarshal(b []byte) error {
@@ -3474,7 +3586,7 @@ func (m *RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{68}
+	return fileDescriptor_075c0a5d977b1e4e, []int{70}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn) XXX_Unmarshal(b []byte) error {
@@ -3523,7 +3635,7 @@ func (m *RI_SDK_Sigmod_PWM_SetPortFreqParams) Reset()         { *m = RI_SDK_Sigm
 func (m *RI_SDK_Sigmod_PWM_SetPortFreqParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_SetPortFreqParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_SetPortFreqParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{69}
+	return fileDescriptor_075c0a5d977b1e4e, []int{71}
 }
 
 func (m *RI_SDK_Sigmod_PWM_SetPortFreqParams) XXX_Unmarshal(b []byte) error {
@@ -3578,7 +3690,7 @@ func (m *RI_SDK_Sigmod_PWM_SetPortFreqReturn) Reset()         { *m = RI_SDK_Sigm
 func (m *RI_SDK_Sigmod_PWM_SetPortFreqReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_SetPortFreqReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_SetPortFreqReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{70}
+	return fileDescriptor_075c0a5d977b1e4e, []int{72}
 }
 
 func (m *RI_SDK_Sigmod_PWM_SetPortFreqReturn) XXX_Unmarshal(b []byte) error {
@@ -3630,7 +3742,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{71}
+	return fileDescriptor_075c0a5d977b1e4e, []int{73}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams) XXX_Unmarshal(b []byte) error {
@@ -3682,7 +3794,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{72}
+	return fileDescriptor_075c0a5d977b1e4e, []int{74}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn) XXX_Unmarshal(b []byte) error {
@@ -3729,7 +3841,7 @@ func (m *RI_SDK_Sigmod_PWM_ResetAllParams) Reset()         { *m = RI_SDK_Sigmod_
 func (m *RI_SDK_Sigmod_PWM_ResetAllParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ResetAllParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ResetAllParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{73}
+	return fileDescriptor_075c0a5d977b1e4e, []int{75}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ResetAllParams) XXX_Unmarshal(b []byte) error {
@@ -3770,7 +3882,7 @@ func (m *RI_SDK_Sigmod_PWM_ResetAllReturn) Reset()         { *m = RI_SDK_Sigmod_
 func (m *RI_SDK_Sigmod_PWM_ResetAllReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ResetAllReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ResetAllReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{74}
+	return fileDescriptor_075c0a5d977b1e4e, []int{76}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ResetAllReturn) XXX_Unmarshal(b []byte) error {
@@ -3820,7 +3932,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnByPulseParams) Reset() {
 func (m *RI_SDK_Exec_ServoDrive_TurnByPulseParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_TurnByPulseParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_TurnByPulseParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{75}
+	return fileDescriptor_075c0a5d977b1e4e, []int{77}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnByPulseParams) XXX_Unmarshal(b []byte) error {
@@ -3870,7 +3982,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnByPulseReturn) Reset() {
 func (m *RI_SDK_Exec_ServoDrive_TurnByPulseReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_TurnByPulseReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_TurnByPulseReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{76}
+	return fileDescriptor_075c0a5d977b1e4e, []int{78}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnByPulseReturn) XXX_Unmarshal(b []byte) error {
@@ -3918,7 +4030,7 @@ func (m *RI_SDK_Sigmod_PWM_ResetPortParams) Reset()         { *m = RI_SDK_Sigmod
 func (m *RI_SDK_Sigmod_PWM_ResetPortParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ResetPortParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ResetPortParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{77}
+	return fileDescriptor_075c0a5d977b1e4e, []int{79}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ResetPortParams) XXX_Unmarshal(b []byte) error {
@@ -3966,7 +4078,7 @@ func (m *RI_SDK_Sigmod_PWM_ResetPortReturn) Reset()         { *m = RI_SDK_Sigmod
 func (m *RI_SDK_Sigmod_PWM_ResetPortReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ResetPortReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ResetPortReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{78}
+	return fileDescriptor_075c0a5d977b1e4e, []int{80}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ResetPortReturn) XXX_Unmarshal(b []byte) error {
@@ -4017,7 +4129,7 @@ func (m *RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{79}
+	return fileDescriptor_075c0a5d977b1e4e, []int{81}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) XXX_Unmarshal(b []byte) error {
@@ -4063,7 +4175,7 @@ func (m *RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{80}
+	return fileDescriptor_075c0a5d977b1e4e, []int{82}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn) XXX_Unmarshal(b []byte) error {
@@ -4117,7 +4229,7 @@ func (m *RI_SDK_Exec_ServoDrive_GetStateParams) Reset()         { *m = RI_SDK_Ex
 func (m *RI_SDK_Exec_ServoDrive_GetStateParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_GetStateParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_GetStateParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{81}
+	return fileDescriptor_075c0a5d977b1e4e, []int{83}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_GetStateParams) XXX_Unmarshal(b []byte) error {
@@ -4159,7 +4271,7 @@ func (m *RI_SDK_Exec_ServoDrive_GetStateReturn) Reset()         { *m = RI_SDK_Ex
 func (m *RI_SDK_Exec_ServoDrive_GetStateReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_GetStateReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_GetStateReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{82}
+	return fileDescriptor_075c0a5d977b1e4e, []int{84}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_GetStateReturn) XXX_Unmarshal(b []byte) error {
@@ -4216,7 +4328,7 @@ func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) Reset() {
 func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{83}
+	return fileDescriptor_075c0a5d977b1e4e, []int{85}
 }
 
 func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) XXX_Unmarshal(b []byte) error {
@@ -4268,7 +4380,7 @@ func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn) Reset() {
 func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{84}
+	return fileDescriptor_075c0a5d977b1e4e, []int{86}
 }
 
 func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn) XXX_Unmarshal(b []byte) error {
@@ -4334,7 +4446,7 @@ func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) Reset() {
 func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{85}
+	return fileDescriptor_075c0a5d977b1e4e, []int{87}
 }
 
 func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) XXX_Unmarshal(b []byte) error {
@@ -4398,7 +4510,7 @@ func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn) Reset() {
 func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{86}
+	return fileDescriptor_075c0a5d977b1e4e, []int{88}
 }
 
 func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn) XXX_Unmarshal(b []byte) error {
@@ -4452,7 +4564,7 @@ func (m *RI_SDK_Exec_ServoDrive_MinStepRotateParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_MinStepRotateParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_MinStepRotateParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{87}
+	return fileDescriptor_075c0a5d977b1e4e, []int{89}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_MinStepRotateParams) XXX_Unmarshal(b []byte) error {
@@ -4518,7 +4630,7 @@ func (m *RI_SDK_Exec_ServoDrive_MinStepRotateReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_MinStepRotateReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_MinStepRotateReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{88}
+	return fileDescriptor_075c0a5d977b1e4e, []int{90}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_MinStepRotateReturn) XXX_Unmarshal(b []byte) error {
@@ -4568,7 +4680,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnParams) Reset()         { *m = RI_SDK_Exec_S
 func (m *RI_SDK_Exec_ServoDrive_TurnParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_TurnParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_TurnParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{89}
+	return fileDescriptor_075c0a5d977b1e4e, []int{91}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnParams) XXX_Unmarshal(b []byte) error {
@@ -4630,7 +4742,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnReturn) Reset()         { *m = RI_SDK_Exec_S
 func (m *RI_SDK_Exec_ServoDrive_TurnReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_TurnReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_TurnReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{90}
+	return fileDescriptor_075c0a5d977b1e4e, []int{92}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnReturn) XXX_Unmarshal(b []byte) error {
@@ -4677,7 +4789,7 @@ func (m *RI_SDK_Exec_ServoDrive_StopParams) Reset()         { *m = RI_SDK_Exec_S
 func (m *RI_SDK_Exec_ServoDrive_StopParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_StopParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_StopParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{91}
+	return fileDescriptor_075c0a5d977b1e4e, []int{93}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_StopParams) XXX_Unmarshal(b []byte) error {
@@ -4718,7 +4830,7 @@ func (m *RI_SDK_Exec_ServoDrive_StopReturn) Reset()         { *m = RI_SDK_Exec_S
 func (m *RI_SDK_Exec_ServoDrive_StopReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_StopReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_StopReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{92}
+	return fileDescriptor_075c0a5d977b1e4e, []int{94}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_StopReturn) XXX_Unmarshal(b []byte) error {
@@ -4768,7 +4880,7 @@ func (m *RI_SDK_Exec_ServoDrive_RotateParams) Reset()         { *m = RI_SDK_Exec
 func (m *RI_SDK_Exec_ServoDrive_RotateParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_RotateParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_RotateParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{93}
+	return fileDescriptor_075c0a5d977b1e4e, []int{95}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_RotateParams) XXX_Unmarshal(b []byte) error {
@@ -4830,7 +4942,7 @@ func (m *RI_SDK_Exec_ServoDrive_RotateReturn) Reset()         { *m = RI_SDK_Exec
 func (m *RI_SDK_Exec_ServoDrive_RotateReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_RotateReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_RotateReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{94}
+	return fileDescriptor_075c0a5d977b1e4e, []int{96}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_RotateReturn) XXX_Unmarshal(b []byte) error {
@@ -4884,7 +4996,7 @@ func (m *RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{95}
+	return fileDescriptor_075c0a5d977b1e4e, []int{97}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) XXX_Unmarshal(b []byte) error {
@@ -4950,7 +5062,7 @@ func (m *RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{96}
+	return fileDescriptor_075c0a5d977b1e4e, []int{98}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn) XXX_Unmarshal(b []byte) error {
@@ -5004,7 +5116,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{97}
+	return fileDescriptor_075c0a5d977b1e4e, []int{99}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) XXX_Unmarshal(b []byte) error {
@@ -5070,7 +5182,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{98}
+	return fileDescriptor_075c0a5d977b1e4e, []int{100}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn) XXX_Unmarshal(b []byte) error {
@@ -5122,7 +5234,7 @@ func (m *RI_SDK_Exec_RGB_LED_SinglePulseParams) Reset()         { *m = RI_SDK_Ex
 func (m *RI_SDK_Exec_RGB_LED_SinglePulseParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_SinglePulseParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_SinglePulseParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{99}
+	return fileDescriptor_075c0a5d977b1e4e, []int{101}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_SinglePulseParams) XXX_Unmarshal(b []byte) error {
@@ -5198,7 +5310,7 @@ func (m *RI_SDK_Exec_RGB_LED_SinglePulseReturn) Reset()         { *m = RI_SDK_Ex
 func (m *RI_SDK_Exec_RGB_LED_SinglePulseReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_SinglePulseReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_SinglePulseReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{100}
+	return fileDescriptor_075c0a5d977b1e4e, []int{102}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_SinglePulseReturn) XXX_Unmarshal(b []byte) error {
@@ -5245,7 +5357,7 @@ func (m *RI_SDK_Exec_RGB_LED_StopParams) Reset()         { *m = RI_SDK_Exec_RGB_
 func (m *RI_SDK_Exec_RGB_LED_StopParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_StopParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_StopParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{101}
+	return fileDescriptor_075c0a5d977b1e4e, []int{103}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_StopParams) XXX_Unmarshal(b []byte) error {
@@ -5286,7 +5398,7 @@ func (m *RI_SDK_Exec_RGB_LED_StopReturn) Reset()         { *m = RI_SDK_Exec_RGB_
 func (m *RI_SDK_Exec_RGB_LED_StopReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_StopReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_StopReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{102}
+	return fileDescriptor_075c0a5d977b1e4e, []int{104}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_StopReturn) XXX_Unmarshal(b []byte) error {
@@ -5333,7 +5445,7 @@ func (m *RI_SDK_Exec_RGB_LED_GetStateParams) Reset()         { *m = RI_SDK_Exec_
 func (m *RI_SDK_Exec_RGB_LED_GetStateParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_GetStateParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_GetStateParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{103}
+	return fileDescriptor_075c0a5d977b1e4e, []int{105}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_GetStateParams) XXX_Unmarshal(b []byte) error {
@@ -5375,7 +5487,7 @@ func (m *RI_SDK_Exec_RGB_LED_GetStateReturn) Reset()         { *m = RI_SDK_Exec_
 func (m *RI_SDK_Exec_RGB_LED_GetStateReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_GetStateReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_GetStateReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{104}
+	return fileDescriptor_075c0a5d977b1e4e, []int{106}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_GetStateReturn) XXX_Unmarshal(b []byte) error {
@@ -5429,7 +5541,7 @@ func (m *RI_SDK_Exec_RGB_LED_GetColorParams) Reset()         { *m = RI_SDK_Exec_
 func (m *RI_SDK_Exec_RGB_LED_GetColorParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_GetColorParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_GetColorParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{105}
+	return fileDescriptor_075c0a5d977b1e4e, []int{107}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_GetColorParams) XXX_Unmarshal(b []byte) error {
@@ -5473,7 +5585,7 @@ func (m *RI_SDK_Exec_RGB_LED_GetColorReturn) Reset()         { *m = RI_SDK_Exec_
 func (m *RI_SDK_Exec_RGB_LED_GetColorReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_GetColorReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_GetColorReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{106}
+	return fileDescriptor_075c0a5d977b1e4e, []int{108}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_GetColorReturn) XXX_Unmarshal(b []byte) error {
@@ -5541,7 +5653,7 @@ func (m *RI_SDK_Sigmod_PWM_CloseParams) Reset()         { *m = RI_SDK_Sigmod_PWM
 func (m *RI_SDK_Sigmod_PWM_CloseParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_CloseParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_CloseParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{107}
+	return fileDescriptor_075c0a5d977b1e4e, []int{109}
 }
 
 func (m *RI_SDK_Sigmod_PWM_CloseParams) XXX_Unmarshal(b []byte) error {
@@ -5582,7 +5694,7 @@ func (m *RI_SDK_Sigmod_PWM_CloseReturn) Reset()         { *m = RI_SDK_Sigmod_PWM
 func (m *RI_SDK_Sigmod_PWM_CloseReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_CloseReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_CloseReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{108}
+	return fileDescriptor_075c0a5d977b1e4e, []int{110}
 }
 
 func (m *RI_SDK_Sigmod_PWM_CloseReturn) XXX_Unmarshal(b []byte) error {
@@ -5639,7 +5751,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams) String() string {
 }
 func (*RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams) ProtoMessage() {}
 func (*RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{109}
+	return fileDescriptor_075c0a5d977b1e4e, []int{111}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams) XXX_Unmarshal(b []byte) error {
@@ -5726,7 +5838,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn) String() string {
 }
 func (*RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{110}
+	return fileDescriptor_075c0a5d977b1e4e, []int{112}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn) XXX_Unmarshal(b []byte) error {
@@ -5784,7 +5896,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) String() string {
 }
 func (*RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) ProtoMessage() {}
 func (*RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{111}
+	return fileDescriptor_075c0a5d977b1e4e, []int{113}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) XXX_Unmarshal(b []byte) error {
@@ -5878,7 +5990,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn) String() string {
 }
 func (*RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{112}
+	return fileDescriptor_075c0a5d977b1e4e, []int{114}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn) XXX_Unmarshal(b []byte) error {
@@ -5931,7 +6043,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlickerParams) Reset()         { *m = RI_SDK_Exec_R
 func (m *RI_SDK_Exec_RGB_LED_FlickerParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_FlickerParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_FlickerParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{113}
+	return fileDescriptor_075c0a5d977b1e4e, []int{115}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlickerParams) XXX_Unmarshal(b []byte) error {
@@ -6014,7 +6126,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlickerReturn) Reset()         { *m = RI_SDK_Exec_R
 func (m *RI_SDK_Exec_RGB_LED_FlickerReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_FlickerReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_FlickerReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{114}
+	return fileDescriptor_075c0a5d977b1e4e, []int{116}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlickerReturn) XXX_Unmarshal(b []byte) error {
@@ -6064,7 +6176,7 @@ func (m *RI_SDK_Connector_I2C_ExtendToModelParams) Reset() {
 func (m *RI_SDK_Connector_I2C_ExtendToModelParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Connector_I2C_ExtendToModelParams) ProtoMessage()    {}
 func (*RI_SDK_Connector_I2C_ExtendToModelParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{115}
+	return fileDescriptor_075c0a5d977b1e4e, []int{117}
 }
 
 func (m *RI_SDK_Connector_I2C_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
@@ -6115,7 +6227,7 @@ func (m *RI_SDK_Connector_I2C_ExtendToModelReturn) Reset() {
 func (m *RI_SDK_Connector_I2C_ExtendToModelReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Connector_I2C_ExtendToModelReturn) ProtoMessage()    {}
 func (*RI_SDK_Connector_I2C_ExtendToModelReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{116}
+	return fileDescriptor_075c0a5d977b1e4e, []int{118}
 }
 
 func (m *RI_SDK_Connector_I2C_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
@@ -6170,7 +6282,7 @@ func (m *RI_SDK_Sigmod_PWM_ExtendToModelParams) Reset()         { *m = RI_SDK_Si
 func (m *RI_SDK_Sigmod_PWM_ExtendToModelParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ExtendToModelParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ExtendToModelParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{117}
+	return fileDescriptor_075c0a5d977b1e4e, []int{119}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
@@ -6219,7 +6331,7 @@ func (m *RI_SDK_Sigmod_PWM_ExtendToModelReturn) Reset()         { *m = RI_SDK_Si
 func (m *RI_SDK_Sigmod_PWM_ExtendToModelReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ExtendToModelReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ExtendToModelReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{118}
+	return fileDescriptor_075c0a5d977b1e4e, []int{120}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
@@ -6278,7 +6390,7 @@ func (m *RI_SDK_Exec_ServoDrive_ExtendToModelParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_ExtendToModelParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_ExtendToModelParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{119}
+	return fileDescriptor_075c0a5d977b1e4e, []int{121}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
@@ -6331,7 +6443,7 @@ func (m *RI_SDK_Exec_ServoDrive_ExtendToModelReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_ExtendToModelReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_ExtendToModelReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{120}
+	return fileDescriptor_075c0a5d977b1e4e, []int{122}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
@@ -6388,7 +6500,7 @@ func (m *RI_SDK_Exec_RGB_LED_ExtendToModelParams) Reset() {
 func (m *RI_SDK_Exec_RGB_LED_ExtendToModelParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_ExtendToModelParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_ExtendToModelParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{121}
+	return fileDescriptor_075c0a5d977b1e4e, []int{123}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
@@ -6439,7 +6551,7 @@ func (m *RI_SDK_Exec_RGB_LED_ExtendToModelReturn) Reset() {
 func (m *RI_SDK_Exec_RGB_LED_ExtendToModelReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_ExtendToModelReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_ExtendToModelReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{122}
+	return fileDescriptor_075c0a5d977b1e4e, []int{124}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
@@ -6475,6 +6587,874 @@ func (m *RI_SDK_Exec_RGB_LED_ExtendToModelReturn) GetErrorText() string {
 }
 
 func (m *RI_SDK_Exec_RGB_LED_ExtendToModelReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Extend
+type RI_SDK_Sensor_VoltageSensor_ExtendParams struct {
+	Exec                 int64    `protobuf:"varint,1,opt,name=exec,proto3" json:"exec,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_ExtendParams{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Sensor_VoltageSensor_ExtendParams) ProtoMessage()    {}
+func (*RI_SDK_Sensor_VoltageSensor_ExtendParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{125}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendParams.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendParams.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) GetExec() int64 {
+	if m != nil {
+		return m.Exec
+	}
+	return 0
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_Extend
+type RI_SDK_Sensor_VoltageSensor_ExtendReturn struct {
+	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	ErrorText            string   `protobuf:"bytes,2,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,3,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_ExtendReturn{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Sensor_VoltageSensor_ExtendReturn) ProtoMessage()    {}
+func (*RI_SDK_Sensor_VoltageSensor_ExtendReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{126}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendReturn.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendReturn.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_ExtendToModel
+type RI_SDK_Sensor_VoltageSensor_ExtendToModelParams struct {
+	BaseDescriptor       int64    `protobuf:"varint,1,opt,name=baseDescriptor,proto3" json:"baseDescriptor,omitempty"`
+	ModelName            string   `protobuf:"bytes,2,opt,name=modelName,proto3" json:"modelName,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_ExtendToModelParams{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) ProtoMessage() {}
+func (*RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{127}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelParams.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelParams.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) GetBaseDescriptor() int64 {
+	if m != nil {
+		return m.BaseDescriptor
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) GetModelName() string {
+	if m != nil {
+		return m.ModelName
+	}
+	return ""
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_ExtendToModel
+type RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn struct {
+	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	ErrorText            string   `protobuf:"bytes,2,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,3,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) ProtoMessage() {}
+func (*RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{128}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_CustomDeviceInit
+type RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams struct {
+	Desrciptor           int64    `protobuf:"varint,1,opt,name=desrciptor,proto3" json:"desrciptor,omitempty"`
+	LsbBus               float64  `protobuf:"fixed64,2,opt,name=lsbBus,proto3" json:"lsbBus,omitempty"`
+	LsbShunt             float64  `protobuf:"fixed64,3,opt,name=lsbShunt,proto3" json:"lsbShunt,omitempty"`
+	ShuntResist          float64  `protobuf:"fixed64,4,opt,name=shuntResist,proto3" json:"shuntResist,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) ProtoMessage() {}
+func (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{129}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) GetDesrciptor() int64 {
+	if m != nil {
+		return m.Desrciptor
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) GetLsbBus() float64 {
+	if m != nil {
+		return m.LsbBus
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) GetLsbShunt() float64 {
+	if m != nil {
+		return m.LsbShunt
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) GetShuntResist() float64 {
+	if m != nil {
+		return m.ShuntResist
+	}
+	return 0
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_CustomDeviceInit
+type RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn struct {
+	ErrorText            string   `protobuf:"bytes,1,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,2,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) ProtoMessage() {}
+func (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{130}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Voltage
+type RI_SDK_Sensor_VoltageSensor_VoltageParams struct {
+	Desrciptor           int64    `protobuf:"varint,1,opt,name=desrciptor,proto3" json:"desrciptor,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageParams) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_VoltageParams{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Sensor_VoltageSensor_VoltageParams) ProtoMessage() {}
+func (*RI_SDK_Sensor_VoltageSensor_VoltageParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{131}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageParams.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageParams.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageParams) GetDesrciptor() int64 {
+	if m != nil {
+		return m.Desrciptor
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Voltage
+type RI_SDK_Sensor_VoltageSensor_VoltageReturn struct {
+	Result               float32  `protobuf:"fixed32,1,opt,name=result,proto3" json:"result,omitempty"`
+	ErrorText            string   `protobuf:"bytes,2,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,3,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_VoltageReturn{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Sensor_VoltageSensor_VoltageReturn) ProtoMessage() {}
+func (*RI_SDK_Sensor_VoltageSensor_VoltageReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{132}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageReturn.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageReturn.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) GetResult() float32 {
+	if m != nil {
+		return m.Result
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_VoltageShunt
+type RI_SDK_Sensor_VoltageSensor_VoltageShuntParams struct {
+	Desrciptor           int64    `protobuf:"varint,1,opt,name=desrciptor,proto3" json:"desrciptor,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_VoltageShuntParams{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) ProtoMessage() {}
+func (*RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{133}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntParams.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntParams.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) GetDesrciptor() int64 {
+	if m != nil {
+		return m.Desrciptor
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_VoltageShunt
+type RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn struct {
+	Result               float32  `protobuf:"fixed32,1,opt,name=result,proto3" json:"result,omitempty"`
+	ErrorText            string   `protobuf:"bytes,2,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,3,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) ProtoMessage() {}
+func (*RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{134}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) GetResult() float32 {
+	if m != nil {
+		return m.Result
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Current
+type RI_SDK_Sensor_VoltageSensor_CurrentParams struct {
+	Desrciptor           int64    `protobuf:"varint,1,opt,name=desrciptor,proto3" json:"desrciptor,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentParams) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_CurrentParams{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Sensor_VoltageSensor_CurrentParams) ProtoMessage() {}
+func (*RI_SDK_Sensor_VoltageSensor_CurrentParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{135}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentParams.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentParams.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentParams) GetDesrciptor() int64 {
+	if m != nil {
+		return m.Desrciptor
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Current
+type RI_SDK_Sensor_VoltageSensor_CurrentReturn struct {
+	Result               float32  `protobuf:"fixed32,1,opt,name=result,proto3" json:"result,omitempty"`
+	ErrorText            string   `protobuf:"bytes,2,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,3,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_CurrentReturn{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Sensor_VoltageSensor_CurrentReturn) ProtoMessage() {}
+func (*RI_SDK_Sensor_VoltageSensor_CurrentReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{136}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentReturn.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentReturn.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_CurrentReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) GetResult() float32 {
+	if m != nil {
+		return m.Result
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Power
+type RI_SDK_Sensor_VoltageSensor_PowerParams struct {
+	Desrciptor           int64    `protobuf:"varint,1,opt,name=desrciptor,proto3" json:"desrciptor,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_PowerParams{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Sensor_VoltageSensor_PowerParams) ProtoMessage()    {}
+func (*RI_SDK_Sensor_VoltageSensor_PowerParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{137}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerParams.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerParams.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) GetDesrciptor() int64 {
+	if m != nil {
+		return m.Desrciptor
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Power
+type RI_SDK_Sensor_VoltageSensor_PowerReturn struct {
+	Result               float32  `protobuf:"fixed32,1,opt,name=result,proto3" json:"result,omitempty"`
+	ErrorText            string   `protobuf:"bytes,2,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,3,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_PowerReturn{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Sensor_VoltageSensor_PowerReturn) ProtoMessage()    {}
+func (*RI_SDK_Sensor_VoltageSensor_PowerReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{138}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerReturn.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerReturn.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_PowerReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) GetResult() float32 {
+	if m != nil {
+		return m.Result
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Sense
+type RI_SDK_Sensor_VoltageSensor_SenseParams struct {
+	Desrciptor           int64    `protobuf:"varint,1,opt,name=desrciptor,proto3" json:"desrciptor,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_SenseParams{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Sensor_VoltageSensor_SenseParams) ProtoMessage()    {}
+func (*RI_SDK_Sensor_VoltageSensor_SenseParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{139}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseParams.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseParams.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) GetDesrciptor() int64 {
+	if m != nil {
+		return m.Desrciptor
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_Sense
+type RI_SDK_Sensor_VoltageSensor_SenseReturn struct {
+	Voltage              float32  `protobuf:"fixed32,1,opt,name=voltage,proto3" json:"voltage,omitempty"`
+	VoltageShunt         float32  `protobuf:"fixed32,2,opt,name=voltageShunt,proto3" json:"voltageShunt,omitempty"`
+	Current              float32  `protobuf:"fixed32,3,opt,name=current,proto3" json:"current,omitempty"`
+	Power                float32  `protobuf:"fixed32,4,opt,name=power,proto3" json:"power,omitempty"`
+	ErrorText            string   `protobuf:"bytes,5,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,6,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) Reset() {
+	*m = RI_SDK_Sensor_VoltageSensor_SenseReturn{}
+}
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Sensor_VoltageSensor_SenseReturn) ProtoMessage()    {}
+func (*RI_SDK_Sensor_VoltageSensor_SenseReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{140}
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseReturn.Merge(m, src)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseReturn.Size(m)
+}
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Sensor_VoltageSensor_SenseReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) GetVoltage() float32 {
+	if m != nil {
+		return m.Voltage
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) GetVoltageShunt() float32 {
+	if m != nil {
+		return m.VoltageShunt
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) GetCurrent() float32 {
+	if m != nil {
+		return m.Current
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) GetPower() float32 {
+	if m != nil {
+		return m.Power
+	}
+	return 0
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) GetErrorCode() int64 {
 	if m != nil {
 		return m.ErrorCode
 	}
@@ -6549,6 +7529,8 @@ func init() {
 	proto.RegisterType((*RI_SDK_LinkServodriveToControllerReturn)(nil), "proto.RI_SDK_LinkServodriveToControllerReturn")
 	proto.RegisterType((*RI_SDK_LinkLedToControllerParams)(nil), "proto.RI_SDK_LinkLedToControllerParams")
 	proto.RegisterType((*RI_SDK_LinkLedToControllerReturn)(nil), "proto.RI_SDK_LinkLedToControllerReturn")
+	proto.RegisterType((*RI_SDK_LinkVoltageSensorToControllerParams)(nil), "proto.RI_SDK_LinkVoltageSensorToControllerParams")
+	proto.RegisterType((*RI_SDK_LinkVoltageSensorToControllerReturn)(nil), "proto.RI_SDK_LinkVoltageSensorToControllerReturn")
 	proto.RegisterType((*RI_SDK_Exec_ServoDrive_CustomDeviceInitParams)(nil), "proto.RI_SDK_Exec_ServoDrive_CustomDeviceInitParams")
 	proto.RegisterType((*RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn)(nil), "proto.RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn")
 	proto.RegisterType((*RI_SDK_Sigmod_PWM_SetPortFreqParams)(nil), "proto.RI_SDK_Sigmod_PWM_SetPortFreqParams")
@@ -6605,6 +7587,22 @@ func init() {
 	proto.RegisterType((*RI_SDK_Exec_ServoDrive_ExtendToModelReturn)(nil), "proto.RI_SDK_Exec_ServoDrive_ExtendToModelReturn")
 	proto.RegisterType((*RI_SDK_Exec_RGB_LED_ExtendToModelParams)(nil), "proto.RI_SDK_Exec_RGB_LED_ExtendToModelParams")
 	proto.RegisterType((*RI_SDK_Exec_RGB_LED_ExtendToModelReturn)(nil), "proto.RI_SDK_Exec_RGB_LED_ExtendToModelReturn")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_ExtendParams)(nil), "proto.RI_SDK_Sensor_VoltageSensor_ExtendParams")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_ExtendReturn)(nil), "proto.RI_SDK_Sensor_VoltageSensor_ExtendReturn")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_ExtendToModelParams)(nil), "proto.RI_SDK_Sensor_VoltageSensor_ExtendToModelParams")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn)(nil), "proto.RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams)(nil), "proto.RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn)(nil), "proto.RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_VoltageParams)(nil), "proto.RI_SDK_Sensor_VoltageSensor_VoltageParams")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_VoltageReturn)(nil), "proto.RI_SDK_Sensor_VoltageSensor_VoltageReturn")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_VoltageShuntParams)(nil), "proto.RI_SDK_Sensor_VoltageSensor_VoltageShuntParams")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn)(nil), "proto.RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_CurrentParams)(nil), "proto.RI_SDK_Sensor_VoltageSensor_CurrentParams")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_CurrentReturn)(nil), "proto.RI_SDK_Sensor_VoltageSensor_CurrentReturn")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_PowerParams)(nil), "proto.RI_SDK_Sensor_VoltageSensor_PowerParams")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_PowerReturn)(nil), "proto.RI_SDK_Sensor_VoltageSensor_PowerReturn")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_SenseParams)(nil), "proto.RI_SDK_Sensor_VoltageSensor_SenseParams")
+	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_SenseReturn)(nil), "proto.RI_SDK_Sensor_VoltageSensor_SenseReturn")
 }
 
 func init() {
@@ -6612,185 +7610,211 @@ func init() {
 }
 
 var fileDescriptor_075c0a5d977b1e4e = []byte{
-	// 2844 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xc4, 0x5c, 0x6d, 0x73, 0x1c, 0x47,
-	0xf1, 0xaf, 0xd5, 0x49, 0x96, 0x3d, 0x65, 0xbb, 0xfc, 0xdf, 0xbf, 0x08, 0x66, 0x6c, 0x9c, 0x64,
-	0xe3, 0x38, 0xce, 0x93, 0x0d, 0xb2, 0x49, 0x95, 0x43, 0x51, 0x60, 0x9d, 0x6c, 0x95, 0x89, 0x1d,
-	0x54, 0x7b, 0x76, 0x54, 0xe1, 0xc1, 0xc7, 0xea, 0x6e, 0x74, 0xbe, 0xe8, 0x6e, 0xf7, 0xb4, 0xb7,
-	0x27, 0x4b, 0x01, 0x92, 0x50, 0x21, 0xae, 0x24, 0x45, 0x55, 0x28, 0xaa, 0x80, 0x17, 0xbc, 0xa1,
-	0x0a, 0x5e, 0xc1, 0x1b, 0xf8, 0x08, 0x7c, 0x04, 0xbe, 0x11, 0xb5, 0xb3, 0x73, 0xb3, 0xbb, 0x33,
-	0x3d, 0x0f, 0xab, 0x5b, 0x1d, 0xaf, 0xb4, 0x33, 0xd7, 0xd3, 0xfd, 0xeb, 0x9e, 0xa7, 0x9e, 0x99,
-	0x6e, 0xa1, 0x33, 0x7e, 0xb4, 0x1d, 0xb5, 0xba, 0xbb, 0xd7, 0x46, 0x71, 0x94, 0x44, 0xee, 0x12,
-	0xfd, 0xe3, 0xad, 0xa2, 0x15, 0xff, 0x5e, 0xbb, 0xb5, 0xfe, 0x4e, 0xfb, 0x5e, 0xd8, 0x4f, 0x5a,
-	0xeb, 0xef, 0x6c, 0x06, 0x71, 0x30, 0x1c, 0xbb, 0x18, 0x9d, 0x1c, 0x44, 0xbd, 0xfb, 0x64, 0x9f,
-	0x0c, 0xce, 0x3b, 0x2f, 0x38, 0x57, 0x1b, 0x3e, 0x2f, 0x7b, 0xbe, 0xd8, 0xc6, 0x27, 0xc9, 0x24,
-	0x0e, 0xdd, 0x8b, 0xe8, 0x14, 0x89, 0xe3, 0x28, 0x7e, 0x48, 0x0e, 0x12, 0xda, 0xe8, 0x94, 0x9f,
-	0x57, 0xf0, 0x5f, 0x9b, 0x51, 0x97, 0x9c, 0x5f, 0xa0, 0x2c, 0xf3, 0x0a, 0xef, 0x6d, 0x74, 0x9e,
-	0xf1, 0x6c, 0xc6, 0x24, 0x48, 0xc8, 0x5a, 0x30, 0xee, 0x77, 0x18, 0x96, 0x4b, 0x08, 0x75, 0xc9,
-	0xb8, 0x13, 0xf7, 0x47, 0x49, 0x14, 0x33, 0x34, 0x85, 0x1a, 0x6f, 0x1f, 0x6a, 0xcb, 0x30, 0x19,
-	0xda, 0x96, 0x31, 0x2f, 0x68, 0x31, 0x37, 0x44, 0xcc, 0xdf, 0x47, 0xdf, 0x64, 0x72, 0xd7, 0xc9,
-	0x38, 0x89, 0xa3, 0xc3, 0x66, 0x34, 0x1c, 0x45, 0x21, 0x09, 0x13, 0x4b, 0xe0, 0x3f, 0x51, 0x32,
-	0xa8, 0xc1, 0xa2, 0x37, 0xd0, 0xd7, 0xcb, 0xcc, 0xf3, 0xce, 0x3d, 0x8f, 0x96, 0xfb, 0xe3, 0xbb,
-	0x51, 0xdc, 0x21, 0x94, 0xe9, 0x49, 0x7f, 0x5a, 0xf4, 0x1e, 0x01, 0x8d, 0x6a, 0xc0, 0xf2, 0x08,
-	0x3d, 0x3f, 0xed, 0xa1, 0x28, 0x0c, 0x49, 0x27, 0x89, 0xe2, 0xf6, 0xbd, 0xd5, 0x66, 0xfb, 0x47,
-	0x23, 0x12, 0xda, 0xd9, 0xca, 0x75, 0xd1, 0x62, 0xd0, 0xed, 0xc6, 0x94, 0xf7, 0xa2, 0x4f, 0xbf,
-	0xbd, 0x9f, 0x69, 0xd8, 0xd6, 0x80, 0x7a, 0x19, 0x2d, 0xdd, 0x19, 0x8e, 0x92, 0x43, 0xef, 0x11,
-	0x7a, 0x11, 0x94, 0x73, 0xe7, 0x20, 0x21, 0x61, 0x97, 0x29, 0xf0, 0x2d, 0xf4, 0xff, 0x9d, 0xe9,
-	0xaf, 0xeb, 0xa2, 0x26, 0xd0, 0x4f, 0xde, 0xc7, 0x5a, 0xb6, 0x73, 0x18, 0xc0, 0x6b, 0xe8, 0x05,
-	0x10, 0x40, 0x2b, 0x09, 0x12, 0x62, 0x39, 0x86, 0x13, 0x1d, 0x0f, 0xa6, 0xc3, 0x0a, 0x5a, 0x1a,
-	0xa7, 0x45, 0xd6, 0x3c, 0x2b, 0xcc, 0x84, 0xfc, 0x0e, 0x7a, 0x09, 0x94, 0xda, 0x1c, 0x44, 0x63,
-	0x72, 0x7b, 0x30, 0xb0, 0x04, 0x1f, 0x18, 0xd8, 0xd4, 0x30, 0x88, 0xde, 0x53, 0xd8, 0x87, 0x8a,
-	0x98, 0x61, 0xec, 0x3f, 0xd6, 0xf1, 0xad, 0x01, 0xf7, 0xc7, 0xe8, 0x65, 0x90, 0xff, 0x56, 0xdc,
-	0x4f, 0xc8, 0xda, 0x61, 0x42, 0xc6, 0x47, 0x07, 0xef, 0x9e, 0x43, 0x8d, 0xed, 0xc9, 0x0e, 0xed,
-	0xd6, 0xd3, 0x7e, 0xfa, 0x99, 0xd6, 0x0c, 0x48, 0x78, 0x7e, 0x91, 0x36, 0x4f, 0x3f, 0xbd, 0x2f,
-	0x1c, 0x23, 0x02, 0xa6, 0xe6, 0x65, 0x74, 0xe6, 0x69, 0x1c, 0xb1, 0xba, 0xfb, 0x24, 0x64, 0x20,
-	0xca, 0x95, 0x33, 0x0d, 0xb7, 0x01, 0xba, 0x0c, 0x42, 0xf1, 0x49, 0xd0, 0xad, 0xdd, 0x16, 0xde,
-	0x97, 0x8e, 0x49, 0xdc, 0xec, 0xfd, 0xeb, 0x5e, 0x41, 0x67, 0x63, 0x12, 0x74, 0x49, 0x97, 0x5b,
-	0x2d, 0xd3, 0x5a, 0xa8, 0xf5, 0x46, 0x0a, 0x2c, 0xbc, 0x17, 0x66, 0x50, 0x7d, 0x05, 0x2d, 0xed,
-	0x07, 0x83, 0x09, 0x61, 0xca, 0x67, 0x05, 0x6f, 0xdb, 0x24, 0xb1, 0x86, 0xd1, 0xfd, 0xbe, 0x62,
-	0xe2, 0x4f, 0x2d, 0x3c, 0xc3, 0xc4, 0x7c, 0x6a, 0x60, 0x9d, 0xaf, 0x89, 0x99, 0xee, 0x4e, 0x41,
-	0xf7, 0x99, 0x06, 0xe9, 0xa7, 0xf9, 0x84, 0x69, 0xf5, 0x7b, 0xc3, 0xa8, 0xdb, 0xde, 0xdc, 0x7a,
-	0xd0, 0xde, 0x20, 0x89, 0x4f, 0xc6, 0xd1, 0x60, 0x92, 0xf4, 0x23, 0xdb, 0xbd, 0x76, 0x16, 0x14,
-	0xbf, 0x71, 0xd0, 0x15, 0x03, 0x0a, 0x92, 0x6f, 0x6d, 0x31, 0xaf, 0x9c, 0xc2, 0xc8, 0x6b, 0x66,
-	0x82, 0x71, 0x9b, 0xbb, 0x06, 0x65, 0x14, 0x77, 0x63, 0xb2, 0x67, 0xb9, 0x39, 0xec, 0x69, 0x58,
-	0x30, 0x0d, 0x5c, 0xb4, 0xb8, 0x13, 0x93, 0x3d, 0xd6, 0x98, 0x7e, 0xcf, 0x84, 0xfa, 0x11, 0x24,
-	0xb2, 0x55, 0x05, 0x35, 0x87, 0xb4, 0x90, 0x43, 0x2a, 0xf8, 0x49, 0x32, 0xdb, 0x1a, 0x26, 0xd3,
-	0x2e, 0x34, 0xee, 0xe8, 0x6c, 0xf5, 0x49, 0xaf, 0xca, 0xf2, 0x78, 0x0e, 0x35, 0x62, 0xd2, 0xa3,
-	0x02, 0x4e, 0xfb, 0xe9, 0x27, 0xb0, 0x38, 0x7e, 0xe1, 0x18, 0xa5, 0xcd, 0x6d, 0x5b, 0xf8, 0x80,
-	0xaf, 0x54, 0x05, 0x28, 0xe9, 0x3c, 0x3f, 0x06, 0xbd, 0x0b, 0x9b, 0x82, 0x42, 0x18, 0x53, 0x5b,
-	0x5e, 0xd8, 0x1d, 0x68, 0x61, 0x9f, 0x49, 0xf1, 0x10, 0xc2, 0x52, 0xec, 0x83, 0x23, 0x2b, 0x6e,
-	0xda, 0x12, 0x14, 0xf2, 0x6a, 0x18, 0xc5, 0x5b, 0x7c, 0xdd, 0x86, 0xed, 0x7b, 0x54, 0x95, 0x0a,
-	0x1b, 0x02, 0xcc, 0xf8, 0xd8, 0x36, 0x84, 0x9b, 0xe8, 0x22, 0x13, 0x7c, 0xe7, 0x80, 0x74, 0x26,
-	0xe9, 0x46, 0x54, 0x3a, 0xb1, 0xac, 0xa0, 0xa5, 0xed, 0xf4, 0xa8, 0x3c, 0x75, 0xcb, 0x69, 0xc1,
-	0xfb, 0x50, 0xd5, 0xaa, 0x74, 0x20, 0x89, 0x3b, 0xa2, 0x01, 0x58, 0xcd, 0x4c, 0x88, 0xbf, 0x87,
-	0x2e, 0x88, 0xb2, 0xe5, 0xb3, 0x88, 0x52, 0xb4, 0x17, 0x29, 0x9a, 0x1f, 0xdb, 0x31, 0xe4, 0x3b,
-	0xfc, 0x00, 0x9f, 0xef, 0xf5, 0x16, 0x26, 0xfe, 0x85, 0xb2, 0xd9, 0x1c, 0x6c, 0xbc, 0x8a, 0x2e,
-	0xc9, 0xc3, 0xb1, 0x04, 0xfa, 0x1c, 0x6a, 0x74, 0xf8, 0x86, 0x9c, 0x7e, 0x7a, 0xbf, 0x54, 0xb7,
-	0x99, 0xc3, 0x31, 0xf5, 0x16, 0x9f, 0x40, 0x69, 0xb7, 0xb6, 0x5b, 0x24, 0xde, 0x8f, 0xd6, 0xe3,
-	0xfe, 0x3e, 0x29, 0xc3, 0x76, 0xd1, 0x22, 0x39, 0x20, 0x53, 0x53, 0xd3, 0x6f, 0xef, 0xd7, 0x8e,
-	0xa1, 0xed, 0x1c, 0xe0, 0xbf, 0xc5, 0x4f, 0x6a, 0x14, 0x82, 0xbf, 0xb1, 0xd6, 0xbe, 0x7f, 0x67,
-	0xdd, 0x8c, 0xfd, 0x23, 0x5d, 0xbb, 0x39, 0xe0, 0x7e, 0x1f, 0x5a, 0xb7, 0x36, 0x48, 0xb2, 0x19,
-	0xc5, 0x15, 0x1d, 0x92, 0x51, 0x14, 0x27, 0x53, 0x87, 0x24, 0xfd, 0xf6, 0x26, 0x06, 0xd6, 0xc7,
-	0xe4, 0x5e, 0xdd, 0xca, 0x2f, 0x5c, 0xe8, 0x45, 0xe1, 0x46, 0x1c, 0x4d, 0x46, 0xe2, 0xa5, 0xdd,
-	0x0a, 0x5a, 0xea, 0xa5, 0xf5, 0x6c, 0xff, 0xc8, 0x0a, 0xc5, 0xbb, 0x1a, 0xa0, 0xe9, 0x1c, 0x7a,
-	0xc3, 0x47, 0x5e, 0x09, 0xc0, 0x3a, 0xd9, 0xef, 0x77, 0x88, 0x15, 0x78, 0xf7, 0x39, 0x74, 0xa2,
-	0x4b, 0xc9, 0x99, 0x50, 0x56, 0xf2, 0x3e, 0x71, 0xf4, 0x4c, 0xe7, 0xa0, 0x56, 0x4f, 0xb0, 0xeb,
-	0x83, 0xa8, 0x4b, 0x06, 0x33, 0x69, 0x95, 0x52, 0x0f, 0x53, 0x2e, 0x54, 0xd8, 0x29, 0x3f, 0x2b,
-	0x48, 0x1d, 0x58, 0x16, 0x34, 0x07, 0x4d, 0x7f, 0xe7, 0xf0, 0xf9, 0x7c, 0xbf, 0x1f, 0xee, 0x6e,
-	0x6e, 0x3d, 0x78, 0x18, 0x35, 0xa3, 0x30, 0x89, 0xa3, 0xc1, 0x80, 0xc4, 0x4c, 0xd3, 0xcb, 0xe8,
-	0xcc, 0xe8, 0xe9, 0x50, 0xba, 0x3e, 0x2c, 0x57, 0xba, 0xab, 0x68, 0xa5, 0xc3, 0x5b, 0x16, 0x88,
-	0xb3, 0x29, 0x06, 0xfe, 0xc6, 0x8f, 0xaa, 0x0d, 0xf0, 0x0e, 0x09, 0x40, 0x54, 0x83, 0x4b, 0xf5,
-	0x27, 0x07, 0xbd, 0x52, 0x10, 0x40, 0x17, 0xdf, 0x6e, 0xba, 0xf8, 0x02, 0x9a, 0xaf, 0xa2, 0x95,
-	0x31, 0xff, 0x5d, 0x32, 0x00, 0xf8, 0x9b, 0x6c, 0xad, 0x05, 0xc8, 0x5a, 0xd3, 0x05, 0xa8, 0x51,
-	0x58, 0x80, 0x88, 0x05, 0xb0, 0x1a, 0x0c, 0xf0, 0xcf, 0x72, 0x9f, 0xdf, 0x27, 0x5d, 0xb8, 0xcf,
-	0x07, 0xa4, 0x2b, 0xf7, 0x79, 0xa9, 0xd2, 0x52, 0xd7, 0x15, 0xb4, 0x14, 0x17, 0x94, 0xcd, 0x0a,
-	0x74, 0xfe, 0xd0, 0xda, 0xec, 0x7a, 0x2d, 0x2b, 0x50, 0xdf, 0x84, 0xd6, 0x2e, 0x31, 0xdf, 0x84,
-	0x5a, 0xe6, 0xb1, 0x0e, 0x71, 0x0d, 0x26, 0xf9, 0x87, 0x83, 0xde, 0x54, 0xec, 0xc8, 0xcd, 0xc9,
-	0x38, 0x89, 0x86, 0xd9, 0x1a, 0x74, 0x2f, 0xec, 0x27, 0x76, 0x5e, 0x5f, 0xfa, 0xfb, 0x30, 0x38,
-	0xb8, 0x37, 0x1c, 0x4d, 0x06, 0xe3, 0xa9, 0xc0, 0x42, 0x8d, 0x8b, 0xd1, 0xc9, 0x61, 0x70, 0xd0,
-	0x1a, 0x11, 0xd2, 0x65, 0x66, 0xe1, 0xe5, 0xb4, 0x2d, 0x25, 0xf2, 0x83, 0xb0, 0x47, 0x98, 0x79,
-	0x0a, 0x35, 0xde, 0xae, 0x35, 0xd8, 0x1a, 0x4c, 0x33, 0x84, 0x76, 0xc5, 0x56, 0x1d, 0x1b, 0x2e,
-	0xdf, 0x49, 0x1b, 0x85, 0x5b, 0x81, 0xc0, 0x20, 0xae, 0x06, 0x8d, 0xba, 0xe8, 0x0d, 0x85, 0xf9,
-	0x1e, 0x4e, 0xe2, 0x70, 0xed, 0x70, 0x7d, 0x92, 0x1c, 0x36, 0x0f, 0x3b, 0x03, 0x4b, 0x07, 0x3f,
-	0xf3, 0xe0, 0xc9, 0x68, 0xcc, 0x24, 0x65, 0x05, 0xef, 0x03, 0x5b, 0x29, 0x35, 0x68, 0x94, 0x3f,
-	0x99, 0x94, 0x0e, 0x73, 0x63, 0x92, 0xd8, 0xbf, 0x3a, 0x3c, 0xd6, 0xf1, 0xa8, 0x01, 0xe3, 0xcf,
-	0xd1, 0x55, 0xad, 0x3d, 0x36, 0xd3, 0xf1, 0x6d, 0x6f, 0xf1, 0xe2, 0xbc, 0xca, 0x0a, 0xde, 0x8e,
-	0x8d, 0x84, 0x5a, 0xce, 0xe4, 0x2f, 0x2a, 0x2c, 0x95, 0x0e, 0xd2, 0x19, 0x1c, 0xd0, 0xb6, 0x96,
-	0x71, 0x0d, 0xc8, 0xdf, 0x55, 0x8e, 0xc9, 0x0d, 0x92, 0x34, 0x27, 0x71, 0x4c, 0xc2, 0xe4, 0x76,
-	0xd8, 0xb3, 0x1d, 0xf9, 0xa9, 0xab, 0x66, 0xc9, 0x30, 0x3f, 0xec, 0x06, 0x69, 0x71, 0x7a, 0xf2,
-	0xa4, 0x85, 0x99, 0x1c, 0x98, 0x0d, 0x7e, 0xf1, 0x06, 0x20, 0xa8, 0x72, 0x4c, 0x3f, 0x34, 0x32,
-	0x3a, 0xb6, 0x03, 0xfb, 0x63, 0x3e, 0x70, 0xe5, 0x83, 0x07, 0xbc, 0x18, 0x55, 0x1b, 0x57, 0x9f,
-	0x3b, 0x36, 0x02, 0x98, 0x7a, 0x67, 0xd1, 0x02, 0x3f, 0x66, 0x2f, 0x44, 0x61, 0x7a, 0xee, 0x8e,
-	0x76, 0x76, 0x18, 0xbf, 0xf4, 0xb3, 0xac, 0x6a, 0x43, 0xab, 0xea, 0xa2, 0xa8, 0xea, 0x27, 0x20,
-	0x94, 0x56, 0x6d, 0xba, 0x32, 0xf8, 0x0d, 0x11, 0xfe, 0x22, 0x87, 0x5f, 0x58, 0x26, 0x34, 0x08,
-	0x6a, 0x98, 0x6c, 0x7f, 0x74, 0xd0, 0x6b, 0x8a, 0x11, 0xf5, 0xa0, 0x1f, 0xb6, 0x12, 0x32, 0xf2,
-	0x23, 0xfb, 0x27, 0xed, 0x54, 0x58, 0xb7, 0x1f, 0x93, 0x0e, 0x7d, 0x96, 0x60, 0xc2, 0x78, 0x05,
-	0x1d, 0x94, 0x05, 0x5f, 0x22, 0x2b, 0xd0, 0xe9, 0x36, 0x3e, 0x0c, 0x3b, 0x54, 0xfd, 0x93, 0x7e,
-	0x56, 0xf0, 0x9e, 0xd8, 0xe1, 0xaa, 0xc1, 0x04, 0x9f, 0x39, 0x7c, 0x45, 0x83, 0x96, 0x64, 0x4b,
-	0xcd, 0xf9, 0xa2, 0xb1, 0x50, 0x5c, 0x34, 0xaa, 0x68, 0xdc, 0xd6, 0xc2, 0xa8, 0x41, 0xd1, 0xa6,
-	0x52, 0x40, 0x2b, 0x89, 0x46, 0x96, 0x3b, 0x70, 0x5b, 0xcb, 0xa4, 0x06, 0x94, 0x5f, 0xa9, 0xef,
-	0x9d, 0xfe, 0x47, 0x43, 0x31, 0x30, 0x00, 0xaa, 0x41, 0xe9, 0xbf, 0x38, 0xe8, 0xa6, 0x56, 0xc6,
-	0x56, 0x3f, 0x79, 0xe2, 0x93, 0x41, 0x90, 0xf4, 0xf7, 0x09, 0xf5, 0xbf, 0xe7, 0x6e, 0x85, 0xb8,
-	0x2a, 0xc2, 0x7a, 0x56, 0xa7, 0x55, 0xcd, 0x9c, 0x38, 0xaa, 0x51, 0x66, 0x9f, 0xab, 0xa3, 0x6a,
-	0xb8, 0x6a, 0x30, 0xc5, 0x5f, 0x9d, 0xf2, 0xd6, 0x3f, 0xbd, 0xd3, 0x6c, 0xf5, 0xa9, 0x2b, 0x24,
-	0xf9, 0xa5, 0x6a, 0xed, 0x4f, 0x23, 0x67, 0x7a, 0x04, 0x76, 0x68, 0xa9, 0xc7, 0x34, 0x76, 0x7a,
-	0x69, 0x69, 0x9b, 0x6d, 0x43, 0xce, 0x76, 0x7a, 0xfc, 0xeb, 0x4e, 0xe2, 0x80, 0x8e, 0x9d, 0xec,
-	0xa4, 0xcb, 0xcb, 0xb9, 0x5d, 0x4e, 0x14, 0xed, 0xd2, 0x31, 0x82, 0xac, 0xc1, 0x14, 0x3f, 0xe0,
-	0x57, 0xea, 0x65, 0x21, 0xf6, 0x8b, 0xd8, 0x4f, 0xd5, 0x1c, 0x6a, 0xc0, 0xb7, 0xce, 0xaf, 0x06,
-	0x4b, 0xdc, 0x41, 0x57, 0x4f, 0x17, 0x9a, 0xa9, 0xe5, 0x72, 0x6c, 0x7e, 0x9e, 0x1a, 0x7d, 0x33,
-	0x1a, 0x44, 0xb1, 0x25, 0xfa, 0x2f, 0x1d, 0x3d, 0x1b, 0x06, 0x9f, 0x8e, 0x45, 0xa7, 0x34, 0x16,
-	0x17, 0x4a, 0x63, 0xb1, 0x31, 0x1d, 0x8b, 0x25, 0x95, 0x16, 0xb5, 0x2a, 0x2d, 0xa9, 0xa3, 0x4d,
-	0x0b, 0xce, 0x54, 0x85, 0x28, 0xb2, 0x42, 0xb4, 0xa9, 0xc8, 0xa0, 0x86, 0xe1, 0xf2, 0x6f, 0x07,
-	0x5d, 0x87, 0x4c, 0x75, 0x77, 0x10, 0x8c, 0x9f, 0xf4, 0xc3, 0x5e, 0xba, 0x9a, 0xdc, 0x8d, 0xc9,
-	0xde, 0x84, 0x84, 0x9d, 0xc3, 0xda, 0xe7, 0xf8, 0x45, 0x74, 0x6a, 0x67, 0xca, 0x7c, 0x6a, 0x39,
-	0x5e, 0x91, 0x3a, 0xa6, 0x7b, 0xc9, 0x21, 0x9d, 0xe3, 0x0d, 0x3f, 0xfd, 0xcc, 0xe7, 0xfd, 0x72,
-	0x71, 0xde, 0x0f, 0x2b, 0xa8, 0x50, 0x83, 0xc9, 0xfe, 0xe3, 0xa0, 0xd7, 0x4d, 0xf2, 0x36, 0x83,
-	0xc9, 0xfc, 0x97, 0xc4, 0x51, 0x2a, 0x94, 0x99, 0x2b, 0x2b, 0x4c, 0x4d, 0xb8, 0x0c, 0x98, 0xf0,
-	0x64, 0xd1, 0x84, 0x7d, 0x4b, 0x95, 0x6a, 0x30, 0xdf, 0xbf, 0x04, 0x8f, 0x37, 0x97, 0xd5, 0xef,
-	0xec, 0x92, 0x78, 0xae, 0x46, 0xb3, 0x1d, 0x61, 0x6d, 0x2d, 0xe4, 0x1a, 0x8c, 0x32, 0xe2, 0x27,
-	0x2e, 0x28, 0xa4, 0xf8, 0x61, 0x44, 0x5f, 0x3d, 0x98, 0x69, 0xae, 0xa0, 0xb3, 0xdb, 0xc1, 0x58,
-	0xbe, 0x6b, 0x17, 0x6a, 0x53, 0x89, 0xf4, 0x09, 0xe5, 0xdd, 0x60, 0x38, 0x7d, 0x6a, 0xc9, 0x2b,
-	0xbc, 0x67, 0x8e, 0x8d, 0xc8, 0x39, 0xbc, 0xaf, 0x0c, 0xa1, 0xb8, 0xa0, 0xe3, 0xd3, 0x1b, 0x8e,
-	0xb6, 0x9b, 0xb7, 0xd2, 0xb1, 0xf2, 0x80, 0x79, 0x7c, 0x9a, 0x7f, 0xee, 0xd8, 0x09, 0x9d, 0x83,
-	0xfa, 0x11, 0x7f, 0xc6, 0x01, 0x9e, 0xc8, 0x8f, 0x43, 0xf7, 0xcf, 0x1c, 0x0b, 0x89, 0xc7, 0xaf,
-	0xf8, 0xea, 0xb3, 0xb7, 0xd1, 0x32, 0xcb, 0xe7, 0x71, 0x7f, 0x88, 0xce, 0x96, 0xd3, 0x71, 0xdc,
-	0x0b, 0x59, 0x8e, 0xcf, 0x35, 0x28, 0xb3, 0x07, 0xc3, 0x3f, 0x32, 0xcc, 0xef, 0x21, 0x57, 0x4e,
-	0xa5, 0x71, 0x9f, 0x2f, 0x37, 0x91, 0x32, 0x74, 0xb0, 0x9a, 0x80, 0xf1, 0x25, 0x62, 0x5e, 0x09,
-	0x7f, 0x79, 0x75, 0x2f, 0x97, 0xdb, 0xc2, 0xa9, 0x34, 0xd8, 0x40, 0xc5, 0xc4, 0xb4, 0xd0, 0xff,
-	0x49, 0xe9, 0x2b, 0xee, 0x25, 0xb0, 0x69, 0x6e, 0x10, 0xe5, 0xef, 0x8c, 0xe9, 0x1e, 0x8f, 0x2a,
-	0x82, 0x9e, 0xfe, 0xdd, 0xab, 0x90, 0xee, 0x50, 0x64, 0x01, 0xb6, 0xa0, 0x64, 0x22, 0x13, 0x1e,
-	0x83, 0x05, 0xbe, 0xcb, 0xbb, 0xaf, 0x42, 0x9c, 0xc0, 0x88, 0x00, 0x6c, 0x43, 0xaa, 0x50, 0xb4,
-	0xfc, 0x44, 0x0e, 0x2b, 0x0a, 0xbd, 0xd7, 0x63, 0x0b, 0x4a, 0x26, 0x32, 0x44, 0x58, 0xfd, 0x02,
-	0xed, 0xbe, 0x52, 0xe6, 0xa3, 0x7c, 0x36, 0xc7, 0x66, 0x42, 0x26, 0xef, 0xd3, 0xdc, 0x69, 0x50,
-	0x3f, 0xfc, 0xba, 0xd7, 0x64, 0x76, 0xba, 0xb7, 0x6b, 0x6c, 0x4d, 0x0f, 0x6a, 0x2d, 0xbc, 0xb1,
-	0x42, 0x5a, 0x83, 0x0f, 0xc7, 0xd8, 0x4c, 0xc8, 0xe4, 0x6d, 0xa3, 0xe7, 0xe0, 0x90, 0x3e, 0xf7,
-	0xa5, 0x32, 0x0b, 0x30, 0x4e, 0x10, 0xeb, 0x89, 0x98, 0x8c, 0x36, 0xfa, 0x1a, 0x18, 0x7b, 0xe7,
-	0x7a, 0x8a, 0xd6, 0x85, 0x63, 0x24, 0xd6, 0xd2, 0x48, 0x4b, 0x88, 0x18, 0x34, 0x27, 0x2e, 0x21,
-	0x70, 0x2c, 0x1e, 0x36, 0x50, 0x31, 0x31, 0xbb, 0xe8, 0x1b, 0xca, 0x9c, 0x32, 0xf7, 0x8a, 0x8a,
-	0x45, 0x39, 0x99, 0x0d, 0x1b, 0xe9, 0x98, 0xb0, 0x67, 0x85, 0x00, 0x1c, 0xb5, 0xf3, 0xe4, 0x5e,
-	0xd7, 0xb1, 0x03, 0x36, 0x3b, 0x6c, 0xdf, 0x40, 0x9e, 0xfa, 0x00, 0xad, 0x34, 0xf5, 0x95, 0x59,
-	0x70, 0xd8, 0x82, 0x52, 0x9a, 0x04, 0x40, 0xe2, 0x98, 0x38, 0x09, 0x94, 0xf9, 0x69, 0xd8, 0x4c,
-	0xc8, 0xe4, 0x3d, 0x05, 0x82, 0x2e, 0x8b, 0xb9, 0x5e, 0xee, 0x6b, 0x3a, 0x4e, 0xe5, 0xc4, 0x32,
-	0x6c, 0x45, 0x6b, 0x50, 0x94, 0x92, 0xe9, 0x15, 0x2d, 0x1c, 0xef, 0xb1, 0x99, 0x90, 0xc9, 0xfb,
-	0x95, 0x22, 0x2b, 0x32, 0xcf, 0x9b, 0x72, 0xdf, 0xd0, 0xf1, 0x12, 0x33, 0xbc, 0xb0, 0x25, 0x35,
-	0x13, 0xff, 0x21, 0xbf, 0x96, 0x52, 0x24, 0x2f, 0xb9, 0xaf, 0xeb, 0xf8, 0x09, 0x29, 0x55, 0xd8,
-	0x8e, 0xd8, 0x20, 0x9b, 0x83, 0xd4, 0xcb, 0x16, 0x72, 0x9a, 0xb0, 0x1d, 0xb1, 0x61, 0x7c, 0x4d,
-	0x31, 0xea, 0xc7, 0x57, 0x39, 0xf1, 0x08, 0x5b, 0xd1, 0x4a, 0xfd, 0xad, 0x3a, 0x88, 0x88, 0xfd,
-	0xad, 0x3f, 0x20, 0x61, 0x4b, 0x6a, 0x26, 0xfe, 0x23, 0x45, 0x9a, 0x4c, 0x9e, 0xef, 0xa3, 0x11,
-	0x0f, 0x64, 0x27, 0xe1, 0x37, 0xed, 0xa8, 0x89, 0xb4, 0x60, 0xcb, 0x69, 0x3a, 0xe2, 0x82, 0xad,
-	0xca, 0x05, 0xc2, 0x46, 0x3a, 0x9d, 0xb0, 0x96, 0x51, 0x58, 0xcb, 0x52, 0x58, 0x39, 0x27, 0x07,
-	0xec, 0xd8, 0x52, 0xa6, 0x8b, 0xc6, 0xb2, 0x40, 0xfe, 0x0d, 0xb6, 0xa4, 0x96, 0x26, 0x93, 0x22,
-	0xe1, 0x44, 0x9c, 0x4c, 0xda, 0x24, 0x18, 0x6c, 0x47, 0xcc, 0x27, 0xd3, 0x05, 0x05, 0x48, 0x68,
-	0x16, 0x6b, 0x93, 0x50, 0xb0, 0x1d, 0x31, 0xf7, 0xbc, 0x31, 0x0c, 0x10, 0x9a, 0xc2, 0xba, 0x44,
-	0x11, 0x6c, 0x45, 0xcb, 0xa4, 0x3e, 0xe1, 0xff, 0xc1, 0x40, 0x9a, 0x6c, 0xee, 0xcb, 0x86, 0xd9,
-	0xc8, 0xc4, 0x99, 0xc8, 0xa4, 0x55, 0x0a, 0x8e, 0xbc, 0xd6, 0xa8, 0x28, 0x85, 0x7e, 0x63, 0x2b,
-	0x5a, 0x9d, 0xe0, 0x96, 0x95, 0xe0, 0x56, 0x05, 0xc1, 0x72, 0xfc, 0x5a, 0x08, 0xf7, 0x68, 0x16,
-	0x6d, 0x25, 0x6e, 0xbf, 0xca, 0xa0, 0x2e, 0x6c, 0x26, 0x94, 0x5c, 0x29, 0x28, 0xb4, 0x48, 0x74,
-	0xa5, 0xd4, 0x71, 0x4d, 0xd8, 0x82, 0x52, 0x76, 0x23, 0x35, 0x81, 0x16, 0xa2, 0x1b, 0x69, 0x8c,
-	0x0a, 0xc1, 0xf6, 0x0d, 0xb4, 0x40, 0x36, 0xec, 0x81, 0x6c, 0x54, 0x05, 0xa2, 0x08, 0xad, 0xc9,
-	0x0f, 0x0b, 0xe2, 0x5b, 0x87, 0x78, 0x58, 0x80, 0x1f, 0x53, 0xb0, 0x81, 0x4a, 0x1a, 0xd4, 0xf0,
-	0x4d, 0x98, 0x38, 0xa8, 0x75, 0xf9, 0x2b, 0xd8, 0x8a, 0x96, 0x09, 0xfe, 0x6d, 0x9e, 0x0d, 0xa8,
-	0xbd, 0x83, 0x73, 0xbf, 0x6d, 0xc3, 0xb4, 0xbc, 0xfd, 0x57, 0x69, 0xc2, 0xe0, 0xfc, 0x41, 0xb8,
-	0x16, 0xd3, 0xc4, 0xc9, 0xba, 0x37, 0xf5, 0xec, 0xe1, 0x20, 0x60, 0x5c, 0xb1, 0x15, 0xc3, 0xf5,
-	0xfb, 0x3c, 0x19, 0xd9, 0x10, 0x1a, 0xea, 0xde, 0xd0, 0x0b, 0x00, 0xe3, 0x55, 0x71, 0xb5, 0x46,
-	0xf2, 0x24, 0xd1, 0x44, 0x4f, 0x8a, 0x93, 0xc4, 0x18, 0xca, 0x89, 0xed, 0x1b, 0x98, 0xad, 0x23,
-	0xc4, 0x14, 0x9a, 0xac, 0x03, 0xc6, 0x34, 0xe2, 0x6a, 0x8d, 0x24, 0xa7, 0x47, 0x15, 0x1c, 0x28,
-	0x3a, 0x3d, 0xfa, 0x68, 0x44, 0x6c, 0x49, 0x6d, 0x9e, 0x58, 0xa5, 0x90, 0x2d, 0xd3, 0xc4, 0x02,
-	0xe2, 0xce, 0x70, 0x95, 0x26, 0xd2, 0x66, 0x02, 0x75, 0xa7, 0xb8, 0x99, 0xa8, 0x23, 0xbf, 0xb0,
-	0x05, 0xa5, 0x51, 0x64, 0x2b, 0x89, 0x46, 0x26, 0x91, 0x79, 0xfc, 0x02, 0xb6, 0xa0, 0x34, 0x2e,
-	0xa3, 0xcc, 0xd8, 0x86, 0xa5, 0xb1, 0x64, 0x65, 0x2b, 0x5a, 0x26, 0xf8, 0xef, 0x0e, 0xba, 0x56,
-	0x2d, 0x1e, 0xc8, 0xfd, 0xae, 0x0d, 0x7b, 0x45, 0x4c, 0x0f, 0x3e, 0x5a, 0x63, 0x06, 0xf6, 0x6f,
-	0x8e, 0x36, 0xce, 0x5d, 0x86, 0x7a, 0xcb, 0xdc, 0xe7, 0x2a, 0xa0, 0x47, 0x69, 0x2a, 0xf9, 0x5b,
-	0xc0, 0x0b, 0x89, 0xe8, 0x6f, 0x29, 0x33, 0x22, 0xb1, 0x99, 0x50, 0xbe, 0xd2, 0x55, 0x3f, 0xc9,
-	0x88, 0x57, 0xba, 0xa6, 0xe7, 0x22, 0x6c, 0x4d, 0x0f, 0x2f, 0x5b, 0x40, 0xcc, 0x10, 0xb8, 0x6c,
-	0x29, 0x03, 0xa0, 0xb0, 0x25, 0xb5, 0x74, 0x80, 0x90, 0x62, 0x81, 0xc4, 0x03, 0x84, 0x22, 0xdc,
-	0x08, 0x9b, 0xc8, 0xa4, 0xa7, 0x09, 0x30, 0xa2, 0x47, 0x7c, 0x9a, 0xd0, 0x04, 0x0f, 0x61, 0x1b,
-	0x52, 0xa3, 0x54, 0x1a, 0x88, 0x63, 0x92, 0x5a, 0x08, 0xfa, 0xc1, 0x36, 0xa4, 0x4c, 0xea, 0x9f,
-	0x1d, 0xf4, 0xaa, 0x75, 0x44, 0x88, 0xfb, 0x96, 0x86, 0xb1, 0x26, 0x0c, 0x06, 0x57, 0x6e, 0xc7,
-	0xd0, 0x7d, 0xa5, 0x08, 0xa6, 0x93, 0x82, 0x2d, 0xdc, 0x55, 0x4b, 0x09, 0x85, 0x68, 0x13, 0x5c,
-	0xa9, 0x0d, 0xbc, 0x75, 0x08, 0xe1, 0x0d, 0xe0, 0xd6, 0x01, 0x46, 0x6d, 0x60, 0x0b, 0xca, 0x4c,
-	0xe4, 0xda, 0xa9, 0x1f, 0x2f, 0x5f, 0xbb, 0x4e, 0x89, 0xb7, 0x4f, 0xd0, 0x3f, 0x37, 0xfe, 0x1b,
-	0x00, 0x00, 0xff, 0xff, 0x66, 0x8d, 0xb9, 0xac, 0xe9, 0x50, 0x00, 0x00,
+	// 3262 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xc4, 0x5c, 0xe9, 0x8f, 0xdb, 0xc6,
+	0x15, 0x07, 0xa5, 0x3d, 0xec, 0xa9, 0x63, 0xb8, 0xec, 0xd6, 0xdd, 0x4e, 0x5c, 0xc7, 0x61, 0x1c,
+	0xc7, 0x71, 0x12, 0x3b, 0x5d, 0x3b, 0x01, 0xdc, 0xa2, 0x87, 0x77, 0xd7, 0x5e, 0x6c, 0x6d, 0xa7,
+	0x0b, 0xca, 0x07, 0xd2, 0xc3, 0x2a, 0x25, 0xcd, 0xca, 0xca, 0x4a, 0xa4, 0x96, 0xa4, 0xf6, 0x48,
+	0x9b, 0x38, 0x45, 0x0e, 0xc4, 0x41, 0x8b, 0x14, 0x05, 0x7a, 0x00, 0xfd, 0x52, 0xb4, 0xfd, 0x94,
+	0x7e, 0x69, 0xff, 0x84, 0xfe, 0x09, 0x45, 0xff, 0xa1, 0x82, 0xc3, 0xd1, 0x90, 0x9c, 0x9b, 0x2b,
+	0x4a, 0xf9, 0xb4, 0x9a, 0xe1, 0x3b, 0x7e, 0xef, 0xcd, 0x3d, 0xf3, 0xde, 0x82, 0x67, 0xdc, 0xa0,
+	0x15, 0x34, 0x3a, 0x3b, 0x97, 0x87, 0x61, 0x10, 0x07, 0xf6, 0x3c, 0xfe, 0xe3, 0xac, 0x80, 0x25,
+	0x77, 0xb3, 0xd9, 0x58, 0xbf, 0xdd, 0xdc, 0xf4, 0x7b, 0x71, 0x63, 0xfd, 0xf6, 0x96, 0x17, 0x7a,
+	0x83, 0xc8, 0x86, 0xe0, 0x58, 0x3f, 0xe8, 0xde, 0x41, 0x7b, 0xa8, 0xbf, 0x6c, 0x9d, 0xb3, 0x2e,
+	0xd6, 0x5d, 0x5a, 0x76, 0x5c, 0x96, 0xc7, 0x45, 0xf1, 0x28, 0xf4, 0xed, 0x33, 0xe0, 0x38, 0x0a,
+	0xc3, 0x20, 0xbc, 0x87, 0x0e, 0x62, 0xcc, 0x74, 0xdc, 0xcd, 0x2a, 0xe8, 0xd7, 0xb5, 0xa0, 0x83,
+	0x96, 0x6b, 0x58, 0x64, 0x56, 0xe1, 0x7c, 0x07, 0x2c, 0x13, 0x99, 0x6b, 0x21, 0xf2, 0x62, 0xb4,
+	0xea, 0x45, 0xbd, 0x36, 0xc1, 0x72, 0x16, 0x80, 0x0e, 0x8a, 0xda, 0x61, 0x6f, 0x18, 0x07, 0x21,
+	0x41, 0x93, 0xab, 0x71, 0xf6, 0x44, 0xbc, 0x04, 0x93, 0x86, 0xb7, 0x88, 0xb9, 0xa6, 0xc4, 0x5c,
+	0x67, 0x31, 0xff, 0x00, 0x7c, 0x8b, 0xe8, 0x5d, 0x47, 0x51, 0x1c, 0x06, 0x87, 0x6b, 0xc1, 0x60,
+	0x18, 0xf8, 0xc8, 0x8f, 0x0d, 0x81, 0xff, 0x54, 0x2a, 0xa0, 0x02, 0x8f, 0x5e, 0x05, 0xdf, 0x28,
+	0x0a, 0xcf, 0x1a, 0x77, 0x19, 0x2c, 0xf6, 0xa2, 0x5b, 0x41, 0xd8, 0x46, 0x58, 0xe8, 0x31, 0x77,
+	0x5c, 0x74, 0xee, 0x0b, 0x98, 0x2a, 0xc0, 0x72, 0x1f, 0x3c, 0x37, 0x6e, 0xa1, 0xc0, 0xf7, 0x51,
+	0x3b, 0x0e, 0xc2, 0xe6, 0xe6, 0xca, 0x5a, 0xf3, 0xc7, 0x43, 0xe4, 0x9b, 0xf9, 0xca, 0xb6, 0xc1,
+	0x9c, 0xd7, 0xe9, 0x84, 0x58, 0xf6, 0x9c, 0x8b, 0x7f, 0x3b, 0x3f, 0x57, 0x88, 0xad, 0x00, 0xf5,
+	0x22, 0x98, 0xbf, 0x39, 0x18, 0xc6, 0x87, 0xce, 0x7d, 0xf0, 0xbc, 0x50, 0xcf, 0xcd, 0x83, 0x18,
+	0xf9, 0x1d, 0x62, 0xc0, 0xeb, 0xe0, 0x6b, 0xed, 0xf1, 0xd7, 0x75, 0xd6, 0x12, 0xd1, 0x27, 0xe7,
+	0x89, 0x52, 0xec, 0x0c, 0x3a, 0xf0, 0x2a, 0x38, 0x27, 0x04, 0xd0, 0x88, 0xbd, 0x18, 0x19, 0xf6,
+	0xe1, 0x58, 0x25, 0x83, 0xd8, 0xb0, 0x04, 0xe6, 0xa3, 0xa4, 0x48, 0xd8, 0xd3, 0xc2, 0x44, 0xc8,
+	0x6f, 0x82, 0x17, 0x84, 0x5a, 0xd7, 0xfa, 0x41, 0x84, 0x6e, 0xf4, 0xfb, 0x86, 0xe0, 0x3d, 0x8d,
+	0x98, 0x0a, 0x3a, 0xd1, 0x03, 0x89, 0x7f, 0xb0, 0x8a, 0x09, 0xfa, 0xfe, 0x23, 0x95, 0xdc, 0x0a,
+	0x70, 0x3f, 0x01, 0x2f, 0x0a, 0xe5, 0x3f, 0x0c, 0x7b, 0x31, 0x5a, 0x3d, 0x8c, 0x51, 0x74, 0x74,
+	0xf0, 0xf6, 0x29, 0x50, 0x6f, 0x8d, 0xb6, 0x71, 0xb3, 0x9e, 0x70, 0x93, 0x9f, 0x49, 0x4d, 0x1f,
+	0xf9, 0xcb, 0x73, 0x98, 0x3d, 0xf9, 0xe9, 0x3c, 0xb5, 0xb4, 0x08, 0x88, 0x99, 0xe7, 0xc1, 0x33,
+	0xfb, 0x61, 0x40, 0xea, 0xee, 0x20, 0x9f, 0x80, 0x28, 0x56, 0x4e, 0xd4, 0xdd, 0xfa, 0xe0, 0xbc,
+	0x10, 0x8a, 0x8b, 0xbc, 0x4e, 0xe5, 0xbe, 0x70, 0x3e, 0xb3, 0x74, 0xea, 0x26, 0x6f, 0x5f, 0xfb,
+	0x02, 0x38, 0x19, 0x22, 0xaf, 0x83, 0x3a, 0xd4, 0x6b, 0xa9, 0xd5, 0x4c, 0xad, 0x33, 0x94, 0x60,
+	0xa1, 0xad, 0x30, 0x81, 0xe9, 0x4b, 0x60, 0x7e, 0xcf, 0xeb, 0x8f, 0x10, 0x31, 0x3e, 0x2d, 0x38,
+	0x2d, 0x9d, 0xc6, 0x0a, 0x7a, 0xf7, 0xdb, 0x92, 0x81, 0x3f, 0xf6, 0xf0, 0x04, 0x03, 0x73, 0x5f,
+	0x23, 0x3a, 0x9b, 0x13, 0x53, 0xdb, 0xad, 0x9c, 0xed, 0x13, 0x75, 0xd2, 0x0f, 0xb3, 0x01, 0xd3,
+	0xe8, 0x75, 0x07, 0x41, 0xa7, 0xb9, 0xf5, 0xf0, 0x6e, 0x73, 0x03, 0xc5, 0x2e, 0x8a, 0x82, 0xfe,
+	0x28, 0xee, 0x05, 0xa6, 0x6b, 0xed, 0x24, 0x28, 0x3e, 0xb2, 0xc0, 0x05, 0x0d, 0x0a, 0x94, 0x2d,
+	0x6d, 0x21, 0xad, 0x1c, 0xc3, 0xc8, 0x6a, 0x26, 0x82, 0x71, 0x83, 0x6e, 0x0d, 0x8a, 0x28, 0x6e,
+	0x85, 0x68, 0xd7, 0x70, 0x71, 0xd8, 0x55, 0x88, 0x20, 0x16, 0xd8, 0x60, 0x6e, 0x3b, 0x44, 0xbb,
+	0x84, 0x19, 0xff, 0x9e, 0x08, 0xf5, 0x7d, 0x91, 0xca, 0x46, 0x19, 0xd4, 0x14, 0x52, 0x2d, 0x83,
+	0x94, 0xdb, 0x27, 0xf1, 0x62, 0x2b, 0x18, 0x4c, 0x3b, 0xa2, 0x7e, 0x87, 0x47, 0xab, 0x8b, 0xba,
+	0x65, 0xa6, 0xc7, 0x53, 0xa0, 0x1e, 0xa2, 0x2e, 0x56, 0x70, 0xc2, 0x4d, 0x7e, 0x0a, 0x26, 0xc7,
+	0xa7, 0x96, 0x56, 0xdb, 0xcc, 0x96, 0x85, 0x77, 0xe8, 0x4c, 0x95, 0x83, 0x92, 0x8c, 0xf3, 0x29,
+	0xd8, 0x9d, 0x5b, 0x14, 0x24, 0xca, 0x88, 0xd9, 0xfc, 0xc4, 0x6e, 0x89, 0x26, 0xf6, 0x89, 0x0c,
+	0xf7, 0x45, 0x58, 0xf2, 0x6d, 0x70, 0x64, 0xc3, 0x75, 0x4b, 0x82, 0x44, 0x5f, 0x05, 0xbd, 0xf8,
+	0x21, 0x9d, 0xb7, 0xc5, 0xfe, 0x3d, 0xaa, 0x49, 0xb9, 0x05, 0x41, 0x2c, 0x78, 0x6a, 0x0b, 0xc2,
+	0x35, 0x70, 0x86, 0x28, 0xbe, 0x79, 0x80, 0xda, 0xa3, 0x64, 0x21, 0x2a, 0x9c, 0x58, 0x96, 0xc0,
+	0x7c, 0x2b, 0x39, 0x2a, 0x8f, 0xb7, 0xe5, 0xb8, 0xe0, 0xbc, 0x2b, 0xe3, 0x2a, 0x1c, 0x48, 0xc2,
+	0x36, 0xeb, 0x00, 0x52, 0x33, 0x11, 0xe2, 0xef, 0x81, 0x67, 0x59, 0xdd, 0xfc, 0x59, 0x44, 0xaa,
+	0xda, 0x09, 0x24, 0xec, 0x53, 0x3b, 0x86, 0xbc, 0x41, 0x0f, 0xf0, 0xd9, 0x5a, 0x6f, 0xe0, 0xe2,
+	0x5f, 0x4a, 0xd9, 0x66, 0xe0, 0xe3, 0x15, 0x70, 0x96, 0xef, 0x8e, 0x05, 0xd0, 0xa7, 0x40, 0xbd,
+	0x4d, 0x17, 0xe4, 0xe4, 0xa7, 0xf3, 0x2b, 0x39, 0xcf, 0x0c, 0x8e, 0xa9, 0xd7, 0xe9, 0x00, 0x4a,
+	0x9a, 0xb5, 0xd9, 0x40, 0xe1, 0x5e, 0xb0, 0x1e, 0xf6, 0xf6, 0x50, 0x11, 0xb6, 0x0d, 0xe6, 0xd0,
+	0x01, 0x1a, 0xbb, 0x1a, 0xff, 0x76, 0x7e, 0x6d, 0x69, 0x78, 0x67, 0x00, 0xff, 0x4d, 0x7a, 0x52,
+	0xc3, 0x10, 0xdc, 0x8d, 0xd5, 0xe6, 0x9d, 0x9b, 0xeb, 0x7a, 0xec, 0xef, 0xab, 0xf8, 0x66, 0x80,
+	0xfb, 0x6d, 0xd1, 0xbc, 0xb5, 0x81, 0xe2, 0xad, 0x20, 0x2c, 0xb9, 0x21, 0x19, 0x06, 0x61, 0x3c,
+	0xde, 0x90, 0x24, 0xbf, 0x9d, 0x91, 0x46, 0xf4, 0x94, 0xb6, 0x57, 0xd7, 0xb3, 0x0b, 0x17, 0x7c,
+	0x51, 0xb8, 0x11, 0x06, 0xa3, 0x21, 0x7b, 0x69, 0xb7, 0x04, 0xe6, 0xbb, 0x49, 0x3d, 0x59, 0x3f,
+	0xd2, 0x42, 0xfe, 0xae, 0x46, 0xc0, 0x3a, 0x83, 0xd6, 0x70, 0x81, 0x53, 0x00, 0xb0, 0x8e, 0xf6,
+	0x7a, 0x6d, 0x64, 0x04, 0xde, 0x3e, 0x0d, 0x16, 0x3a, 0x98, 0x9c, 0x28, 0x25, 0x25, 0xe7, 0x03,
+	0x4b, 0x2d, 0x74, 0x06, 0x66, 0x75, 0x19, 0xbf, 0xde, 0x0d, 0x3a, 0xa8, 0x3f, 0x91, 0x55, 0x09,
+	0xf5, 0x20, 0x91, 0x82, 0x95, 0x1d, 0x77, 0xd3, 0x02, 0xd7, 0x80, 0x45, 0x45, 0x33, 0xb0, 0xf4,
+	0x77, 0x16, 0x1d, 0xcf, 0x77, 0x7a, 0xfe, 0xce, 0xd6, 0xc3, 0xbb, 0xf7, 0x82, 0xb5, 0xc0, 0x8f,
+	0xc3, 0xa0, 0xdf, 0x47, 0x21, 0xb1, 0xf4, 0x3c, 0x78, 0x66, 0xb8, 0x3f, 0xe0, 0xae, 0x0f, 0x8b,
+	0x95, 0xf6, 0x0a, 0x58, 0x6a, 0x53, 0xce, 0x1c, 0x71, 0x3a, 0xc4, 0x84, 0xdf, 0xe8, 0x51, 0xb5,
+	0x2e, 0xbc, 0x43, 0x12, 0x20, 0xaa, 0x60, 0x4b, 0xf5, 0x27, 0x0b, 0xbc, 0x94, 0x53, 0x80, 0x27,
+	0xdf, 0x4e, 0x32, 0xf9, 0x0a, 0x2c, 0x5f, 0x01, 0x4b, 0x11, 0xfd, 0xce, 0x39, 0x40, 0xf8, 0x8d,
+	0xf7, 0x56, 0x4d, 0xe4, 0xad, 0xf1, 0x04, 0x54, 0xcf, 0x4d, 0x40, 0xc8, 0x00, 0x58, 0x05, 0x0e,
+	0xf8, 0x57, 0xb1, 0xcd, 0xef, 0xa0, 0x8e, 0xb8, 0xcd, 0xfb, 0xa8, 0xc3, 0xb7, 0x79, 0xa1, 0xd2,
+	0xd0, 0xd6, 0x25, 0x30, 0x1f, 0xe6, 0x8c, 0x4d, 0x0b, 0x78, 0xfc, 0xe0, 0xda, 0xf4, 0x7a, 0x2d,
+	0x2d, 0xe0, 0xbd, 0x09, 0xae, 0x9d, 0x27, 0x7b, 0x13, 0xec, 0x99, 0x47, 0x2a, 0xc4, 0x15, 0xb8,
+	0xe4, 0xaf, 0x16, 0xb8, 0x94, 0x53, 0xf0, 0x20, 0xe8, 0xc7, 0x5e, 0x17, 0x35, 0x90, 0x1f, 0x05,
+	0xa1, 0xc0, 0x39, 0x97, 0xc0, 0xa9, 0x08, 0x7f, 0xe3, 0xfc, 0xc3, 0xd5, 0x27, 0x5d, 0xa8, 0xb7,
+	0xd2, 0xbe, 0xd1, 0xf1, 0x86, 0xb1, 0x68, 0x58, 0x88, 0xbe, 0x09, 0x87, 0xc5, 0x63, 0x33, 0x84,
+	0x15, 0x38, 0xe3, 0x9f, 0x16, 0x78, 0x4d, 0xb2, 0x3d, 0x59, 0x1b, 0x45, 0x71, 0x30, 0x48, 0x27,
+	0xe4, 0x4d, 0xbf, 0x17, 0x9b, 0x6d, 0x81, 0x93, 0xef, 0x03, 0xef, 0x60, 0x73, 0x30, 0x1c, 0xf5,
+	0xa3, 0xb1, 0xc2, 0x5c, 0x8d, 0x0d, 0xc1, 0xb1, 0x81, 0x77, 0xd0, 0x18, 0x22, 0xd4, 0x21, 0x7d,
+	0x84, 0x96, 0x13, 0x5e, 0x4c, 0xe4, 0x7a, 0x7e, 0x17, 0x91, 0xbe, 0x92, 0xab, 0x71, 0x76, 0x8c,
+	0xc1, 0x56, 0xe0, 0x9a, 0x81, 0x68, 0x8b, 0xd0, 0xa8, 0x62, 0xf7, 0x41, 0xb7, 0x15, 0xf5, 0xdc,
+	0x15, 0x89, 0xa7, 0x51, 0x57, 0x81, 0x45, 0x1d, 0xf0, 0xaa, 0xc4, 0x7d, 0xf7, 0x46, 0xa1, 0xbf,
+	0x7a, 0xb8, 0x3e, 0x8a, 0x0f, 0xd7, 0x0e, 0xdb, 0x7d, 0xc3, 0xd3, 0x4e, 0x7a, 0x9c, 0x41, 0xc3,
+	0x88, 0x68, 0x4a, 0x0b, 0xce, 0x3b, 0xa6, 0x5a, 0x2a, 0xb0, 0x28, 0x7b, 0x3f, 0x2a, 0x9c, 0x6c,
+	0x23, 0x14, 0x9b, 0x3f, 0xc1, 0x3c, 0x52, 0xc9, 0xa8, 0x00, 0xe3, 0x2f, 0xc0, 0x45, 0xa5, 0x3f,
+	0xb6, 0x92, 0xfe, 0x6d, 0xee, 0xf1, 0xfc, 0xb8, 0x4a, 0x0b, 0xce, 0xb6, 0x89, 0x86, 0x4a, 0x2e,
+	0x28, 0x9e, 0x97, 0x78, 0x2a, 0xe9, 0xa4, 0x13, 0xec, 0xc6, 0x9b, 0x4a, 0xc1, 0x15, 0x20, 0x7f,
+	0x4b, 0xda, 0x27, 0x37, 0x50, 0xbc, 0x36, 0x0a, 0x43, 0xe4, 0xc7, 0x37, 0xfc, 0xae, 0x69, 0xcf,
+	0x4f, 0xf6, 0xad, 0x86, 0x02, 0xb3, 0x93, 0xbf, 0x97, 0x14, 0xc7, 0xc7, 0x70, 0x5c, 0x98, 0x68,
+	0x37, 0xb7, 0x41, 0x6f, 0x21, 0x05, 0x08, 0xca, 0xdc, 0x59, 0x1c, 0x6a, 0x05, 0x4d, 0xed, 0xf6,
+	0xe2, 0x11, 0xed, 0xb8, 0xfc, 0x29, 0x4c, 0x3c, 0x19, 0x95, 0xeb, 0x57, 0x9f, 0x5a, 0x26, 0x0a,
+	0x88, 0x79, 0x27, 0x41, 0x8d, 0xde, 0x39, 0xd4, 0x02, 0xdf, 0x3e, 0x05, 0xea, 0xc1, 0xf6, 0x36,
+	0x91, 0x97, 0xfc, 0x2c, 0x9a, 0x5a, 0x57, 0x9a, 0x3a, 0xc7, 0x9a, 0xfa, 0x81, 0x10, 0x4a, 0xa3,
+	0x32, 0x5b, 0x09, 0xfc, 0x3a, 0x0b, 0x7f, 0x8e, 0xc2, 0xcf, 0x4d, 0x13, 0x0a, 0x04, 0x15, 0x0c,
+	0xb6, 0x3f, 0x66, 0x1b, 0x2c, 0xb6, 0x47, 0xdd, 0xed, 0xf9, 0x8d, 0x18, 0x0d, 0xdd, 0xc0, 0xfc,
+	0x7d, 0x3f, 0x51, 0xd6, 0xe9, 0x85, 0xa8, 0x8d, 0xdf, 0x68, 0x88, 0x32, 0x5a, 0x81, 0x3b, 0x65,
+	0x6e, 0x2f, 0x91, 0x16, 0xf0, 0x70, 0x8b, 0x0e, 0xfd, 0x36, 0x36, 0xff, 0x98, 0x9b, 0x16, 0x72,
+	0xdb, 0x2a, 0x25, 0xae, 0x0a, 0x5c, 0xf0, 0xb1, 0x45, 0x67, 0x34, 0xd1, 0x94, 0x6c, 0x68, 0x39,
+	0x9d, 0x34, 0x6a, 0xf9, 0x49, 0xa3, 0x8c, 0xc5, 0x4d, 0x25, 0x8c, 0x0a, 0x0c, 0x5d, 0x93, 0x2a,
+	0x68, 0xc4, 0xc1, 0xd0, 0x70, 0x05, 0x6e, 0x2a, 0x85, 0x54, 0x80, 0xf2, 0x73, 0xf9, 0x25, 0xdc,
+	0x97, 0xd4, 0x15, 0x3d, 0x0d, 0xa0, 0x6a, 0xce, 0x39, 0xd7, 0x94, 0x3a, 0x1e, 0xf6, 0xe2, 0xc7,
+	0x2e, 0xea, 0x7b, 0x71, 0x6f, 0x0f, 0xe1, 0xfd, 0xf7, 0xcc, 0xbd, 0x10, 0x96, 0x45, 0x58, 0xcd,
+	0xec, 0xb4, 0xa2, 0x18, 0x13, 0x47, 0x75, 0xca, 0xe4, 0x63, 0x75, 0x58, 0x0e, 0x57, 0x05, 0xae,
+	0xf8, 0xbb, 0x55, 0x5c, 0xfa, 0xc7, 0x17, 0xbc, 0x8d, 0x1e, 0xde, 0x0a, 0x71, 0xfb, 0x52, 0xb9,
+	0xf5, 0x27, 0x80, 0x35, 0x3e, 0xe5, 0x5a, 0xb8, 0xd4, 0x25, 0x16, 0x5b, 0xdd, 0xa4, 0xd4, 0x22,
+	0xcb, 0x90, 0xd5, 0x4a, 0x8e, 0x7f, 0x9d, 0x51, 0xe8, 0xe1, 0xbe, 0x93, 0x1e, 0xfb, 0x69, 0x39,
+	0xf3, 0xcb, 0x42, 0xde, 0x2f, 0x6d, 0x2d, 0xc8, 0x0a, 0x5c, 0xf1, 0x43, 0xfa, 0xbe, 0x50, 0x54,
+	0x62, 0x3e, 0x89, 0xfd, 0x4c, 0x2e, 0xa1, 0x02, 0x7c, 0xeb, 0xf4, 0x9e, 0xb4, 0x20, 0x5d, 0xb8,
+	0xd5, 0x53, 0xc5, 0xa9, 0x2a, 0xa5, 0x4c, 0x6d, 0x9f, 0x27, 0x47, 0xbf, 0x16, 0xf4, 0x83, 0xd0,
+	0x10, 0xfd, 0x67, 0x96, 0x5a, 0x0c, 0x81, 0x8f, 0xfb, 0xa2, 0x55, 0xe8, 0x8b, 0xb5, 0x42, 0x5f,
+	0xac, 0x8f, 0xfb, 0x62, 0xc1, 0xa4, 0x39, 0xa5, 0x49, 0xf3, 0xf2, 0xd0, 0xdb, 0xdc, 0x66, 0xaa,
+	0x44, 0x48, 0x5d, 0x2e, 0xf4, 0x96, 0x15, 0x50, 0x41, 0x77, 0xf9, 0x8f, 0x05, 0xae, 0x88, 0x5c,
+	0x75, 0xab, 0xef, 0x45, 0x8f, 0x7b, 0x7e, 0x37, 0x99, 0x4d, 0x6e, 0x85, 0x68, 0x77, 0x84, 0xfc,
+	0xf6, 0x61, 0xe5, 0x63, 0xfc, 0x0c, 0x38, 0xbe, 0x3d, 0x16, 0x3e, 0xf6, 0x1c, 0xad, 0x48, 0x36,
+	0xa6, 0xbb, 0xf1, 0x21, 0x1e, 0xe3, 0x75, 0x37, 0xf9, 0x99, 0x8d, 0xfb, 0xc5, 0xfc, 0xb8, 0x1f,
+	0x94, 0x30, 0xa1, 0x02, 0x97, 0xfd, 0xd7, 0x02, 0xaf, 0xe8, 0xf4, 0x6d, 0x79, 0xa3, 0xd9, 0x4f,
+	0x89, 0xc3, 0x44, 0x29, 0x71, 0x57, 0x5a, 0x18, 0xbb, 0x70, 0x51, 0xe0, 0xc2, 0x63, 0x79, 0x17,
+	0xf6, 0x0c, 0x4d, 0xaa, 0xc0, 0x7d, 0xff, 0x66, 0x76, 0xbc, 0x99, 0xae, 0x5e, 0x7b, 0x07, 0x85,
+	0x33, 0x75, 0x9a, 0x69, 0x0f, 0x6b, 0x2a, 0x21, 0x57, 0xe0, 0x94, 0x21, 0x3d, 0x71, 0x89, 0xe2,
+	0xab, 0xef, 0x05, 0xf8, 0x09, 0x88, 0xb8, 0xe6, 0x02, 0x38, 0xd9, 0xf2, 0x22, 0xfe, 0xe1, 0x81,
+	0xa9, 0x4d, 0x34, 0xe2, 0xf7, 0xa4, 0xb7, 0xbc, 0xc1, 0xf8, 0xdd, 0x29, 0xab, 0x70, 0x3e, 0xb1,
+	0x4c, 0x54, 0xce, 0xe0, 0xb1, 0x69, 0x20, 0x0a, 0x92, 0x9a, 0x9e, 0xdd, 0xe2, 0xd0, 0xc3, 0x59,
+	0x1b, 0x1d, 0x4a, 0x0f, 0x98, 0xd3, 0xb3, 0xfc, 0x53, 0xcb, 0x4c, 0xe9, 0x0c, 0xcc, 0x0f, 0xe8,
+	0x9b, 0x96, 0x20, 0x5e, 0x60, 0x1a, 0xb6, 0x7f, 0x6c, 0x19, 0x68, 0x9c, 0x81, 0xe1, 0xdf, 0xcf,
+	0x6e, 0x56, 0xf0, 0x23, 0x4d, 0xb3, 0xf0, 0x64, 0xa3, 0x0f, 0xb4, 0xc8, 0x8d, 0x5a, 0x85, 0x80,
+	0x19, 0x18, 0xb2, 0x4f, 0xd7, 0x5c, 0x05, 0x8e, 0x69, 0xb4, 0xe4, 0x6f, 0xad, 0x12, 0x9a, 0x67,
+	0xe0, 0x88, 0x2f, 0xb2, 0x53, 0xa2, 0x10, 0xcf, 0x11, 0x1f, 0xc7, 0x4e, 0x83, 0x85, 0x7e, 0xd4,
+	0x5a, 0x1d, 0xa5, 0x4f, 0x26, 0x96, 0x4b, 0x4a, 0x38, 0xd9, 0x2d, 0x6a, 0x35, 0x1e, 0x8f, 0xfc,
+	0xf4, 0x62, 0xd1, 0x72, 0x69, 0xd9, 0x3e, 0x07, 0xbe, 0x12, 0x25, 0x3f, 0x5c, 0x14, 0xf5, 0xa2,
+	0x74, 0x9f, 0x6a, 0xb9, 0xf9, 0xaa, 0xdc, 0xc9, 0xd1, 0x08, 0x6b, 0x05, 0x0b, 0xdb, 0x6d, 0xf0,
+	0xb2, 0x4a, 0x23, 0x29, 0x19, 0x5e, 0x40, 0x3f, 0x31, 0x12, 0x46, 0x50, 0x9f, 0x06, 0x0b, 0x21,
+	0x8a, 0x46, 0xfd, 0x14, 0x72, 0xcd, 0x25, 0xa5, 0x89, 0x1a, 0x7b, 0x0b, 0x5c, 0x36, 0x00, 0x80,
+	0x5b, 0xc3, 0xd0, 0xa4, 0x8f, 0x2c, 0x73, 0x91, 0x53, 0x34, 0x4c, 0xd3, 0x4c, 0xe4, 0x9d, 0xa2,
+	0x9a, 0x66, 0x22, 0xc2, 0xa6, 0x68, 0xcd, 0x26, 0x9d, 0xec, 0x85, 0x00, 0xb6, 0x82, 0x7d, 0x66,
+	0x9f, 0x29, 0xb7, 0xe5, 0x3d, 0x03, 0x51, 0x5f, 0x9e, 0x25, 0xc9, 0x1f, 0xd3, 0xc1, 0xf3, 0x3f,
+	0xcb, 0x40, 0x16, 0x31, 0x65, 0x19, 0x2c, 0xee, 0xa5, 0x1f, 0x89, 0x2d, 0xe3, 0xa2, 0xed, 0x80,
+	0x13, 0x7b, 0xb9, 0x2e, 0x89, 0xed, 0xa9, 0xb9, 0x85, 0xba, 0x84, 0xbb, 0x9d, 0xb6, 0x31, 0x36,
+	0xa8, 0xe6, 0x8e, 0x8b, 0xf8, 0x90, 0x92, 0x78, 0x0c, 0xcf, 0x4d, 0x35, 0x37, 0x2d, 0x14, 0x1d,
+	0x34, 0xaf, 0x74, 0xd0, 0x02, 0xe3, 0xa0, 0x95, 0xbf, 0xad, 0x83, 0x45, 0x92, 0x2d, 0x6c, 0xff,
+	0x08, 0x9c, 0x2c, 0x26, 0xfb, 0xda, 0xcf, 0xa6, 0x19, 0xc4, 0x97, 0x45, 0x79, 0xc3, 0x50, 0xfc,
+	0x91, 0x78, 0xe0, 0x01, 0xb0, 0xf9, 0x44, 0x5d, 0xfb, 0xb9, 0x22, 0x0b, 0x97, 0xff, 0x0b, 0xe5,
+	0x04, 0x44, 0x2e, 0x62, 0xb3, 0x56, 0x69, 0x5c, 0x97, 0x7d, 0xbe, 0xc8, 0x2b, 0x4e, 0xd4, 0x85,
+	0x1a, 0x2a, 0xa2, 0xa6, 0x01, 0xbe, 0xca, 0x25, 0xc7, 0xda, 0x67, 0x85, 0xac, 0x99, 0x43, 0xa4,
+	0xdf, 0x89, 0xd0, 0x5d, 0x1a, 0xb3, 0x2c, 0x0a, 0x2c, 0xb4, 0x2f, 0x8a, 0x6c, 0x17, 0xc5, 0x2d,
+	0x42, 0x03, 0x4a, 0xa2, 0x32, 0xa6, 0x11, 0xde, 0xc2, 0xa8, 0x3f, 0xfb, 0x65, 0x91, 0x24, 0x61,
+	0xbc, 0x21, 0x34, 0x21, 0x95, 0x18, 0x5a, 0x0c, 0xc0, 0x13, 0x1b, 0x2a, 0x8a, 0x06, 0x84, 0x06,
+	0x94, 0x44, 0xa5, 0x0f, 0xa0, 0x3c, 0xbe, 0xcd, 0x7e, 0xa9, 0x28, 0x47, 0x1a, 0x94, 0x07, 0xf5,
+	0x84, 0x44, 0xdf, 0x87, 0xd9, 0x29, 0x5c, 0x1e, 0x56, 0x66, 0x5f, 0xe6, 0xc5, 0xa9, 0x22, 0xe3,
+	0xa0, 0x31, 0xbd, 0xd0, 0x6a, 0x26, 0x82, 0x4b, 0x64, 0xb5, 0x30, 0x2c, 0x0d, 0xea, 0x09, 0x89,
+	0xbe, 0xdf, 0x64, 0x99, 0x29, 0xca, 0x78, 0x29, 0xfb, 0xdb, 0xbc, 0x44, 0x4d, 0xf8, 0x17, 0x2c,
+	0xc3, 0x42, 0xe0, 0xb4, 0xc0, 0x69, 0x71, 0xfe, 0x82, 0xfd, 0x42, 0x51, 0x98, 0x30, 0x29, 0x02,
+	0xaa, 0x89, 0x88, 0x8e, 0x26, 0xf8, 0xba, 0x30, 0xd1, 0xc0, 0x76, 0x24, 0xdc, 0xb9, 0x6b, 0x62,
+	0xa8, 0xa4, 0xe1, 0x66, 0x34, 0x36, 0x43, 0x80, 0x9d, 0xd1, 0xc4, 0x89, 0x07, 0x50, 0x43, 0x45,
+	0xd4, 0xec, 0x80, 0x6f, 0x4a, 0x13, 0xe8, 0xed, 0x0b, 0x32, 0x11, 0xc5, 0xcc, 0x7d, 0xa8, 0xa5,
+	0x23, 0xca, 0x3e, 0xc9, 0x45, 0x1b, 0xcb, 0x2f, 0x47, 0xec, 0x2b, 0x2a, 0x71, 0x82, 0x23, 0x10,
+	0x34, 0x67, 0xe0, 0x67, 0x22, 0x01, 0x2d, 0x37, 0x13, 0x49, 0x53, 0xfe, 0xa1, 0x01, 0x25, 0x37,
+	0x26, 0x05, 0x59, 0xf2, 0xec, 0x98, 0x94, 0x26, 0xe3, 0x43, 0x3d, 0x21, 0xd1, 0xb7, 0x2f, 0xc8,
+	0x30, 0xc9, 0x27, 0xb6, 0xdb, 0x97, 0x54, 0x92, 0x8a, 0x59, 0xf4, 0xd0, 0x88, 0x56, 0x63, 0x28,
+	0x26, 0x53, 0x1b, 0x9a, 0xbb, 0xbe, 0x87, 0x7a, 0x42, 0xa2, 0xef, 0x3d, 0xc9, 0xbf, 0x80, 0xc8,
+	0x92, 0xc4, 0xed, 0x57, 0x55, 0xb2, 0xd8, 0x74, 0x76, 0x68, 0x48, 0x4d, 0xd4, 0xbf, 0x4b, 0x9f,
+	0x9d, 0x24, 0x99, 0xda, 0xf6, 0x2b, 0x2a, 0x79, 0x4c, 0xfe, 0x38, 0x34, 0x23, 0xd6, 0xe8, 0xa6,
+	0x20, 0xd5, 0xba, 0x99, 0x04, 0x6e, 0x68, 0x46, 0xac, 0xe9, 0x5f, 0x63, 0x8c, 0xea, 0xfe, 0x55,
+	0xcc, 0xb2, 0x86, 0x46, 0xb4, 0x5c, 0x7b, 0xcb, 0x2e, 0x1a, 0xd9, 0xf6, 0x56, 0x5f, 0x80, 0x42,
+	0x43, 0x6a, 0xa2, 0xfe, 0x7d, 0x49, 0x4e, 0x70, 0x96, 0xdc, 0xac, 0x50, 0x2f, 0x48, 0xc5, 0x86,
+	0xaf, 0x99, 0x51, 0x23, 0x6e, 0xc2, 0xe6, 0x73, 0x92, 0xd9, 0x09, 0x5b, 0x96, 0xf8, 0x0c, 0xb5,
+	0x74, 0x2a, 0x65, 0x0d, 0xad, 0xb2, 0x86, 0xa1, 0xb2, 0x62, 0x02, 0xb2, 0xb0, 0x61, 0x0b, 0x69,
+	0xbd, 0x0a, 0xcf, 0x0a, 0x92, 0x8d, 0xa1, 0x21, 0x35, 0x37, 0x98, 0x24, 0xd9, 0xb5, 0xec, 0x60,
+	0x52, 0x66, 0xfc, 0x42, 0x33, 0x62, 0x3a, 0x98, 0x9e, 0x95, 0x80, 0x14, 0x8d, 0x62, 0x65, 0xc6,
+	0x2d, 0x34, 0x23, 0xa6, 0x07, 0x01, 0x28, 0x06, 0x28, 0x1a, 0xc2, 0xaa, 0xac, 0x58, 0x68, 0x44,
+	0x4b, 0xb4, 0x3e, 0xa6, 0xff, 0xae, 0x89, 0x1b, 0x6c, 0xf6, 0x8b, 0x9a, 0xd1, 0x48, 0xd4, 0xe9,
+	0xc8, 0xb8, 0x59, 0x4a, 0x9c, 0x66, 0xa6, 0x30, 0x91, 0xcb, 0x73, 0x83, 0x46, 0xb4, 0x2a, 0xc5,
+	0x0d, 0x23, 0xc5, 0x8d, 0x12, 0x8a, 0xf9, 0xf8, 0x74, 0x5f, 0xdc, 0xa2, 0x69, 0x34, 0x35, 0xbb,
+	0xfc, 0x4a, 0x83, 0xb6, 0xa1, 0x9e, 0x90, 0xdb, 0x4a, 0x89, 0x42, 0x87, 0xd9, 0xad, 0x94, 0x3c,
+	0x6e, 0x19, 0x1a, 0x50, 0xf2, 0xdb, 0x48, 0x45, 0x20, 0x25, 0xbb, 0x8d, 0xd4, 0x46, 0x7d, 0x42,
+	0x73, 0x06, 0x25, 0x90, 0x0d, 0x73, 0x20, 0x1b, 0x65, 0x81, 0x48, 0x42, 0x67, 0xb3, 0xc3, 0x02,
+	0x1b, 0xcb, 0xc0, 0x1e, 0x16, 0xc4, 0xc1, 0x12, 0x50, 0x43, 0xc5, 0x75, 0x6a, 0xf1, 0x4b, 0x17,
+	0xdb, 0xa9, 0x55, 0xc9, 0xba, 0xd0, 0x88, 0x96, 0x3f, 0x60, 0x2a, 0xdf, 0xd8, 0xd8, 0x03, 0xa6,
+	0xc1, 0x2b, 0x20, 0x2c, 0xc3, 0x42, 0xe0, 0xfc, 0x81, 0x79, 0xf6, 0x52, 0xe4, 0xc1, 0xd8, 0xd7,
+	0xd4, 0xe2, 0xc5, 0xef, 0x18, 0xb0, 0x24, 0x17, 0xc1, 0xf5, 0xfb, 0xec, 0x3f, 0xaf, 0x68, 0x52,
+	0x3f, 0xec, 0xab, 0x6a, 0x05, 0xc2, 0x7c, 0x14, 0x58, 0x8e, 0x89, 0x1f, 0x24, 0x8a, 0xec, 0x08,
+	0x76, 0x90, 0x68, 0x53, 0x35, 0xa0, 0x39, 0x83, 0xde, 0x3b, 0x4c, 0xce, 0x80, 0xce, 0x3b, 0xc2,
+	0x9c, 0x05, 0x58, 0x8e, 0x89, 0xdb, 0xf4, 0xc8, 0x82, 0xff, 0xd9, 0x4d, 0x8f, 0x3a, 0xdb, 0x00,
+	0x1a, 0x52, 0xeb, 0x07, 0x56, 0x21, 0x24, 0x5b, 0x37, 0xb0, 0x04, 0x71, 0xe5, 0xb0, 0x0c, 0x0b,
+	0xb7, 0x98, 0x88, 0x9a, 0x93, 0x5d, 0x4c, 0xe4, 0x91, 0xdd, 0xd0, 0x80, 0x52, 0xab, 0xb2, 0x11,
+	0x07, 0x43, 0x9d, 0xca, 0x2c, 0x3e, 0x11, 0x1a, 0x50, 0x6a, 0xa7, 0x51, 0xe2, 0x6c, 0xcd, 0xd4,
+	0x58, 0xf0, 0xb2, 0x11, 0x2d, 0x51, 0xfc, 0x45, 0xf6, 0x2a, 0x66, 0x18, 0xef, 0x6b, 0x7f, 0xd7,
+	0x44, 0xbc, 0x24, 0x66, 0x17, 0x1e, 0x8d, 0x99, 0x80, 0xfd, 0x87, 0xa5, 0xcc, 0x63, 0xe3, 0xa1,
+	0x5e, 0xd7, 0xb7, 0xb9, 0x0c, 0xe8, 0x51, 0x58, 0xb9, 0xfd, 0x96, 0x20, 0x02, 0x82, 0xdd, 0x6f,
+	0x49, 0xff, 0xfd, 0x03, 0xd4, 0x13, 0xf2, 0x37, 0xcc, 0xf2, 0x90, 0x0b, 0xf6, 0x86, 0x59, 0x17,
+	0x0e, 0x02, 0x8d, 0xe9, 0xc5, 0xd3, 0x96, 0x20, 0x26, 0x58, 0x38, 0x6d, 0x49, 0x03, 0x9c, 0xa1,
+	0x21, 0x35, 0x77, 0x80, 0xe0, 0x62, 0x7d, 0xd9, 0x03, 0x84, 0x24, 0x9c, 0x18, 0xea, 0xc8, 0xb8,
+	0x97, 0x12, 0x61, 0xc4, 0x2e, 0xfb, 0x52, 0xa2, 0x08, 0x0e, 0x86, 0x26, 0xa4, 0x5a, 0xad, 0x38,
+	0xd0, 0x56, 0xa7, 0x35, 0x17, 0xd4, 0x0b, 0x4d, 0x48, 0x89, 0xd6, 0xbf, 0x58, 0xf4, 0x85, 0x59,
+	0x1f, 0xf1, 0x69, 0xbf, 0xa9, 0x10, 0xac, 0x08, 0x73, 0x85, 0xa5, 0xf9, 0x08, 0xba, 0xcf, 0x25,
+	0xc1, 0xf2, 0x5c, 0x30, 0xa5, 0xbd, 0x62, 0xa8, 0x21, 0x17, 0x4d, 0x0a, 0x4b, 0xf1, 0x88, 0x97,
+	0x0e, 0x26, 0x7c, 0x51, 0xb8, 0x74, 0x08, 0xa3, 0x32, 0xa1, 0x01, 0xa5, 0xe0, 0xc4, 0x21, 0x0f,
+	0xd3, 0xe1, 0x4e, 0x1c, 0xba, 0xa0, 0x28, 0x68, 0xce, 0xc0, 0xf7, 0x15, 0x7d, 0xbc, 0x10, 0xdb,
+	0x57, 0x4c, 0x63, 0x9b, 0x60, 0x69, 0x3e, 0x7e, 0xed, 0x30, 0x8a, 0xc8, 0x61, 0xd7, 0x8e, 0x12,
+	0x21, 0x47, 0xf0, 0x28, 0xac, 0x04, 0xe6, 0xd3, 0x2c, 0x2d, 0x4a, 0x15, 0xa5, 0x62, 0xbf, 0x6e,
+	0xa0, 0xa2, 0x10, 0xf2, 0x03, 0x4b, 0x70, 0x10, 0x2c, 0x7f, 0xd6, 0x84, 0xc0, 0xe5, 0x23, 0x66,
+	0xec, 0x37, 0xcc, 0xc5, 0xe7, 0xa2, 0x76, 0x60, 0x59, 0x36, 0x43, 0x37, 0x91, 0x6d, 0xb5, 0x91,
+	0x9b, 0x0a, 0x21, 0x37, 0xb0, 0x04, 0x07, 0xbf, 0xfc, 0xca, 0x23, 0x57, 0xd8, 0xe5, 0x57, 0x17,
+	0x2e, 0x03, 0x8d, 0xe9, 0x0d, 0x51, 0xe0, 0xa0, 0x13, 0x23, 0x14, 0xb9, 0x50, 0x17, 0x68, 0x4c,
+	0x9f, 0xa2, 0x58, 0x3d, 0xfe, 0x93, 0xc5, 0xcb, 0x57, 0x30, 0x4b, 0x6b, 0x01, 0xff, 0xb9, 0xfa,
+	0xff, 0x00, 0x00, 0x00, 0xff, 0xff, 0xd7, 0xfa, 0x7b, 0x48, 0x63, 0x5e, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -6815,6 +7839,7 @@ type RoboSdkClient interface {
 	RI_SDK_LinkPWMToController(ctx context.Context, in *RI_SDK_LinkPWMToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkPWMToControllerReturn, error)
 	RI_SDK_LinkServodriveToController(ctx context.Context, in *RI_SDK_LinkServodriveToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkServodriveToControllerReturn, error)
 	RI_SDK_LinkLedToController(ctx context.Context, in *RI_SDK_LinkLedToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkLedToControllerReturn, error)
+	RI_SDK_LinkVoltageSensorToController(ctx context.Context, in *RI_SDK_LinkVoltageSensorToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkVoltageSensorToControllerReturn, error)
 	RI_SDK_Executor_Extend(ctx context.Context, in *RI_SDK_Executor_ExtendParams, opts ...grpc.CallOption) (*RI_SDK_Executor_ExtendReturn, error)
 	RI_SDK_Executor_State(ctx context.Context, in *RI_SDK_Executor_StateParams, opts ...grpc.CallOption) (*RI_SDK_Executor_StateReturn, error)
 	RI_SDK_Connector_Extend(ctx context.Context, in *RI_SDK_Connector_ExtendParams, opts ...grpc.CallOption) (*RI_SDK_Connector_ExtendReturn, error)
@@ -6866,6 +7891,14 @@ type RoboSdkClient interface {
 	RI_SDK_Exec_RGB_LED_FlashingWithFrequency(ctx context.Context, in *RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn, error)
 	RI_SDK_Exec_RGB_LED_FlashingWithPause(ctx context.Context, in *RI_SDK_Exec_RGB_LED_FlashingWithPauseParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn, error)
 	RI_SDK_Exec_RGB_LED_Flicker(ctx context.Context, in *RI_SDK_Exec_RGB_LED_FlickerParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RGB_LED_FlickerReturn, error)
+	RI_SDK_Sensor_VoltageSensor_Extend(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_ExtendParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_ExtendReturn, error)
+	RI_SDK_Sensor_VoltageSensor_ExtendToModel(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn, error)
+	RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn, error)
+	RI_SDK_Sensor_VoltageSensor_Voltage(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_VoltageParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_VoltageReturn, error)
+	RI_SDK_Sensor_VoltageSensor_VoltageShunt(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn, error)
+	RI_SDK_Sensor_VoltageSensor_Current(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_CurrentParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_CurrentReturn, error)
+	RI_SDK_Sensor_VoltageSensor_Power(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_PowerParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_PowerReturn, error)
+	RI_SDK_Sensor_VoltageSensor_Sense(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_SenseParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_SenseReturn, error)
 }
 
 type roboSdkClient struct {
@@ -6960,6 +7993,15 @@ func (c *roboSdkClient) RI_SDK_LinkServodriveToController(ctx context.Context, i
 func (c *roboSdkClient) RI_SDK_LinkLedToController(ctx context.Context, in *RI_SDK_LinkLedToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkLedToControllerReturn, error) {
 	out := new(RI_SDK_LinkLedToControllerReturn)
 	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_LinkLedToController", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_LinkVoltageSensorToController(ctx context.Context, in *RI_SDK_LinkVoltageSensorToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkVoltageSensorToControllerReturn, error) {
+	out := new(RI_SDK_LinkVoltageSensorToControllerReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_LinkVoltageSensorToController", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -7425,6 +8467,78 @@ func (c *roboSdkClient) RI_SDK_Exec_RGB_LED_Flicker(ctx context.Context, in *RI_
 	return out, nil
 }
 
+func (c *roboSdkClient) RI_SDK_Sensor_VoltageSensor_Extend(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_ExtendParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_ExtendReturn, error) {
+	out := new(RI_SDK_Sensor_VoltageSensor_ExtendReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_Extend", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Sensor_VoltageSensor_ExtendToModel(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn, error) {
+	out := new(RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_ExtendToModel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn, error) {
+	out := new(RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_CustomDeviceInit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Sensor_VoltageSensor_Voltage(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_VoltageParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_VoltageReturn, error) {
+	out := new(RI_SDK_Sensor_VoltageSensor_VoltageReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_Voltage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Sensor_VoltageSensor_VoltageShunt(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn, error) {
+	out := new(RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_VoltageShunt", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Sensor_VoltageSensor_Current(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_CurrentParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_CurrentReturn, error) {
+	out := new(RI_SDK_Sensor_VoltageSensor_CurrentReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_Current", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Sensor_VoltageSensor_Power(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_PowerParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_PowerReturn, error) {
+	out := new(RI_SDK_Sensor_VoltageSensor_PowerReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_Power", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Sensor_VoltageSensor_Sense(ctx context.Context, in *RI_SDK_Sensor_VoltageSensor_SenseParams, opts ...grpc.CallOption) (*RI_SDK_Sensor_VoltageSensor_SenseReturn, error) {
+	out := new(RI_SDK_Sensor_VoltageSensor_SenseReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_Sense", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // RoboSdkServer is the server API for RoboSdk service.
 type RoboSdkServer interface {
 	RI_SDK_InitSDK(context.Context, *RI_SDK_InitSDKParams) (*RI_SDK_InitSDKReturn, error)
@@ -7437,6 +8551,7 @@ type RoboSdkServer interface {
 	RI_SDK_LinkPWMToController(context.Context, *RI_SDK_LinkPWMToControllerParams) (*RI_SDK_LinkPWMToControllerReturn, error)
 	RI_SDK_LinkServodriveToController(context.Context, *RI_SDK_LinkServodriveToControllerParams) (*RI_SDK_LinkServodriveToControllerReturn, error)
 	RI_SDK_LinkLedToController(context.Context, *RI_SDK_LinkLedToControllerParams) (*RI_SDK_LinkLedToControllerReturn, error)
+	RI_SDK_LinkVoltageSensorToController(context.Context, *RI_SDK_LinkVoltageSensorToControllerParams) (*RI_SDK_LinkVoltageSensorToControllerReturn, error)
 	RI_SDK_Executor_Extend(context.Context, *RI_SDK_Executor_ExtendParams) (*RI_SDK_Executor_ExtendReturn, error)
 	RI_SDK_Executor_State(context.Context, *RI_SDK_Executor_StateParams) (*RI_SDK_Executor_StateReturn, error)
 	RI_SDK_Connector_Extend(context.Context, *RI_SDK_Connector_ExtendParams) (*RI_SDK_Connector_ExtendReturn, error)
@@ -7488,6 +8603,14 @@ type RoboSdkServer interface {
 	RI_SDK_Exec_RGB_LED_FlashingWithFrequency(context.Context, *RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams) (*RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn, error)
 	RI_SDK_Exec_RGB_LED_FlashingWithPause(context.Context, *RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) (*RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn, error)
 	RI_SDK_Exec_RGB_LED_Flicker(context.Context, *RI_SDK_Exec_RGB_LED_FlickerParams) (*RI_SDK_Exec_RGB_LED_FlickerReturn, error)
+	RI_SDK_Sensor_VoltageSensor_Extend(context.Context, *RI_SDK_Sensor_VoltageSensor_ExtendParams) (*RI_SDK_Sensor_VoltageSensor_ExtendReturn, error)
+	RI_SDK_Sensor_VoltageSensor_ExtendToModel(context.Context, *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) (*RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn, error)
+	RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(context.Context, *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn, error)
+	RI_SDK_Sensor_VoltageSensor_Voltage(context.Context, *RI_SDK_Sensor_VoltageSensor_VoltageParams) (*RI_SDK_Sensor_VoltageSensor_VoltageReturn, error)
+	RI_SDK_Sensor_VoltageSensor_VoltageShunt(context.Context, *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) (*RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn, error)
+	RI_SDK_Sensor_VoltageSensor_Current(context.Context, *RI_SDK_Sensor_VoltageSensor_CurrentParams) (*RI_SDK_Sensor_VoltageSensor_CurrentReturn, error)
+	RI_SDK_Sensor_VoltageSensor_Power(context.Context, *RI_SDK_Sensor_VoltageSensor_PowerParams) (*RI_SDK_Sensor_VoltageSensor_PowerReturn, error)
+	RI_SDK_Sensor_VoltageSensor_Sense(context.Context, *RI_SDK_Sensor_VoltageSensor_SenseParams) (*RI_SDK_Sensor_VoltageSensor_SenseReturn, error)
 }
 
 // UnimplementedRoboSdkServer can be embedded to have forward compatible implementations.
@@ -7523,6 +8646,9 @@ func (*UnimplementedRoboSdkServer) RI_SDK_LinkServodriveToController(ctx context
 }
 func (*UnimplementedRoboSdkServer) RI_SDK_LinkLedToController(ctx context.Context, req *RI_SDK_LinkLedToControllerParams) (*RI_SDK_LinkLedToControllerReturn, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_LinkLedToController not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_LinkVoltageSensorToController(ctx context.Context, req *RI_SDK_LinkVoltageSensorToControllerParams) (*RI_SDK_LinkVoltageSensorToControllerReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_LinkVoltageSensorToController not implemented")
 }
 func (*UnimplementedRoboSdkServer) RI_SDK_Executor_Extend(ctx context.Context, req *RI_SDK_Executor_ExtendParams) (*RI_SDK_Executor_ExtendReturn, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Executor_Extend not implemented")
@@ -7676,6 +8802,30 @@ func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RGB_LED_FlashingWithPause(ctx con
 }
 func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RGB_LED_Flicker(ctx context.Context, req *RI_SDK_Exec_RGB_LED_FlickerParams) (*RI_SDK_Exec_RGB_LED_FlickerReturn, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RGB_LED_Flicker not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Sensor_VoltageSensor_Extend(ctx context.Context, req *RI_SDK_Sensor_VoltageSensor_ExtendParams) (*RI_SDK_Sensor_VoltageSensor_ExtendReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Sensor_VoltageSensor_Extend not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Sensor_VoltageSensor_ExtendToModel(ctx context.Context, req *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) (*RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Sensor_VoltageSensor_ExtendToModel not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(ctx context.Context, req *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Sensor_VoltageSensor_CustomDeviceInit not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Sensor_VoltageSensor_Voltage(ctx context.Context, req *RI_SDK_Sensor_VoltageSensor_VoltageParams) (*RI_SDK_Sensor_VoltageSensor_VoltageReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Sensor_VoltageSensor_Voltage not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Sensor_VoltageSensor_VoltageShunt(ctx context.Context, req *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) (*RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Sensor_VoltageSensor_VoltageShunt not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Sensor_VoltageSensor_Current(ctx context.Context, req *RI_SDK_Sensor_VoltageSensor_CurrentParams) (*RI_SDK_Sensor_VoltageSensor_CurrentReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Sensor_VoltageSensor_Current not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Sensor_VoltageSensor_Power(ctx context.Context, req *RI_SDK_Sensor_VoltageSensor_PowerParams) (*RI_SDK_Sensor_VoltageSensor_PowerReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Sensor_VoltageSensor_Power not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Sensor_VoltageSensor_Sense(ctx context.Context, req *RI_SDK_Sensor_VoltageSensor_SenseParams) (*RI_SDK_Sensor_VoltageSensor_SenseReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Sensor_VoltageSensor_Sense not implemented")
 }
 
 func RegisterRoboSdkServer(s *grpc.Server, srv RoboSdkServer) {
@@ -7858,6 +9008,24 @@ func _RoboSdk_RI_SDK_LinkLedToController_Handler(srv interface{}, ctx context.Co
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RoboSdkServer).RI_SDK_LinkLedToController(ctx, req.(*RI_SDK_LinkLedToControllerParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_LinkVoltageSensorToController_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_LinkVoltageSensorToControllerParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_LinkVoltageSensorToController(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_LinkVoltageSensorToController",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_LinkVoltageSensorToController(ctx, req.(*RI_SDK_LinkVoltageSensorToControllerParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -8780,6 +9948,150 @@ func _RoboSdk_RI_SDK_Exec_RGB_LED_Flicker_Handler(srv interface{}, ctx context.C
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RoboSdk_RI_SDK_Sensor_VoltageSensor_Extend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Sensor_VoltageSensor_ExtendParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_Extend(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_Extend",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_Extend(ctx, req.(*RI_SDK_Sensor_VoltageSensor_ExtendParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Sensor_VoltageSensor_ExtendToModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Sensor_VoltageSensor_ExtendToModelParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_ExtendToModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_ExtendToModel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_ExtendToModel(ctx, req.(*RI_SDK_Sensor_VoltageSensor_ExtendToModelParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Sensor_VoltageSensor_CustomDeviceInit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_CustomDeviceInit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(ctx, req.(*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Sensor_VoltageSensor_Voltage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Sensor_VoltageSensor_VoltageParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_Voltage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_Voltage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_Voltage(ctx, req.(*RI_SDK_Sensor_VoltageSensor_VoltageParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Sensor_VoltageSensor_VoltageShunt_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Sensor_VoltageSensor_VoltageShuntParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_VoltageShunt(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_VoltageShunt",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_VoltageShunt(ctx, req.(*RI_SDK_Sensor_VoltageSensor_VoltageShuntParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Sensor_VoltageSensor_Current_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Sensor_VoltageSensor_CurrentParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_Current(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_Current",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_Current(ctx, req.(*RI_SDK_Sensor_VoltageSensor_CurrentParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Sensor_VoltageSensor_Power_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Sensor_VoltageSensor_PowerParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_Power(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_Power",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_Power(ctx, req.(*RI_SDK_Sensor_VoltageSensor_PowerParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Sensor_VoltageSensor_Sense_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Sensor_VoltageSensor_SenseParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_Sense(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Sensor_VoltageSensor_Sense",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Sensor_VoltageSensor_Sense(ctx, req.(*RI_SDK_Sensor_VoltageSensor_SenseParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _RoboSdk_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "proto.RoboSdk",
 	HandlerType: (*RoboSdkServer)(nil),
@@ -8823,6 +10135,10 @@ var _RoboSdk_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RI_SDK_LinkLedToController",
 			Handler:    _RoboSdk_RI_SDK_LinkLedToController_Handler,
+		},
+		{
+			MethodName: "RI_SDK_LinkVoltageSensorToController",
+			Handler:    _RoboSdk_RI_SDK_LinkVoltageSensorToController_Handler,
 		},
 		{
 			MethodName: "RI_SDK_Executor_Extend",
@@ -9027,6 +10343,38 @@ var _RoboSdk_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RI_SDK_Exec_RGB_LED_Flicker",
 			Handler:    _RoboSdk_RI_SDK_Exec_RGB_LED_Flicker_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Sensor_VoltageSensor_Extend",
+			Handler:    _RoboSdk_RI_SDK_Sensor_VoltageSensor_Extend_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Sensor_VoltageSensor_ExtendToModel",
+			Handler:    _RoboSdk_RI_SDK_Sensor_VoltageSensor_ExtendToModel_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Sensor_VoltageSensor_CustomDeviceInit",
+			Handler:    _RoboSdk_RI_SDK_Sensor_VoltageSensor_CustomDeviceInit_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Sensor_VoltageSensor_Voltage",
+			Handler:    _RoboSdk_RI_SDK_Sensor_VoltageSensor_Voltage_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Sensor_VoltageSensor_VoltageShunt",
+			Handler:    _RoboSdk_RI_SDK_Sensor_VoltageSensor_VoltageShunt_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Sensor_VoltageSensor_Current",
+			Handler:    _RoboSdk_RI_SDK_Sensor_VoltageSensor_Current_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Sensor_VoltageSensor_Power",
+			Handler:    _RoboSdk_RI_SDK_Sensor_VoltageSensor_Power_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Sensor_VoltageSensor_Sense",
+			Handler:    _RoboSdk_RI_SDK_Sensor_VoltageSensor_Sense_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
