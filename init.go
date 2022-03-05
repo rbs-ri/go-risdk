@@ -2,8 +2,6 @@ package risdk
 
 import (
 	"fmt"
-	"github.com/hashicorp/go-plugin"
-	"github.com/rbs-ri/go-risdk/proto"
 	"io/ioutil"
 	"log"
 	"os"
@@ -13,6 +11,9 @@ import (
 	"runtime"
 	"sync"
 	"syscall"
+
+	"github.com/hashicorp/go-plugin"
+	"github.com/rbs-ri/go-risdk/proto"
 )
 
 // ClientRPC - объект для работы с API SDK по RPC
@@ -32,9 +33,10 @@ func GetClientRPC() *ClientRPC {
 			Client:     client,
 			RoboSdkApi: roboSdkApi,
 		}
+
+		killAfterCloseSignal()
 	}
 
-	killAfterCloseSignal()
 	return clientRPC
 }
 
@@ -51,9 +53,10 @@ func GetClientRPCWithPath(path string) *ClientRPC {
 			Client:     client,
 			RoboSdkApi: roboSdkApi,
 		}
+
+		killAfterCloseSignal()
 	}
 
-	killAfterCloseSignal()
 	return clientRPC
 }
 
