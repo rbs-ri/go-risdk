@@ -35,7 +35,7 @@ type RoboSdkApi interface {
 	RI_SDK_Connector_I2C_CloseAll(descriptor int64) (errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_Close(descriptor int64, addr uint8) (errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_WriteBytes(descriptor int64, addr uint8, buf []byte, length int) (wroteBytesLen int64, errorText string, errorCode int64, err error)
-	RI_SDK_Connector_I2C_ReadBytes(descriptor int64, addr uint8, buf []byte) (readedBytesLen int64, errorText string, errorCode int64, err error)
+	RI_SDK_Connector_I2C_ReadBytes(descriptor int64, addr uint8, readBytesLen int64) (buf []byte, errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_WriteByte(descriptor int64, addr uint8, value byte) (errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_ReadByte(descriptor int64, addr uint8) (value byte, errorText string, errorCode int64, err error)
 
@@ -44,7 +44,7 @@ type RoboSdkApi interface {
 	RI_SDK_Sigmod_PWM_GetFreq(descriptor int64) (freq int64, errorText string, errorCode int64, err error)
 	RI_SDK_Sigmod_PWM_SetFreq(descriptor int64, freq int64) (errorText string, errorCode int64, err error)
 	RI_SDK_Sigmod_PWM_WriteRegBytes(descriptor int64, reg byte, buf []byte) (wroteBytesLen int64, errorText string, errorCode int64, err error)
-	RI_SDK_Sigmod_PWM_ReadRegBytes(descriptor int64, reg byte, buf []byte) (readedBytesLen int64, errorText string, errorCode int64, err error)
+	RI_SDK_Sigmod_PWM_ReadRegBytes(descriptor int64, reg byte, readBytesLen int64) (buf []byte, errorText string, errorCode int64, err error)
 	RI_SDK_Sigmod_PWM_WriteByte(descriptor int64, reg byte, value byte) (errorText string, errorCode int64, err error)
 	RI_SDK_Sigmod_PWM_ReadByte(descriptor int64, reg byte) (value byte, errorText string, errorCode int64, err error)
 	RI_SDK_Sigmod_PWM_Extend(con int64) (desrciptor int64, errorText string, errorCode int64, err error)

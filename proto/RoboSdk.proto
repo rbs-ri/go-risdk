@@ -127,17 +127,17 @@ message RI_SDK_Connector_I2C_WriteBytesReturn {
 message RI_SDK_Connector_I2C_ReadBytesParams {
   int64 descriptor = 1;
   uint64 addr = 2;
-  bytes buf = 3;
+  int64 readBytesLen = 3;
 }
 
 // Возвращаемые значения RI_SDK_Connector_I2C_ReadBytesReturn
 message RI_SDK_Connector_I2C_ReadBytesReturn {
-  string errorText = 1;
-  int64 errorCode = 2;
-  int64 readedBytesLen = 3;
+  bytes buf = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
 }
 
-// Аргументы RI_SDK_Connector_I2C_ReadBytesParams
+// Аргументы RI_SDK_Connector_I2C_WriteByteParams
 message RI_SDK_Connector_I2C_WriteByteParams {
   int64 descriptor = 1;
   uint64 addr = 2;
@@ -219,12 +219,12 @@ message RI_SDK_Sigmod_PWM_WriteRegBytesReturn {
 message RI_SDK_Sigmod_PWM_ReadRegBytesParams {
   int64 descriptor = 1;
   bytes reg = 2;
-  bytes  buf = 3;
+  int64 readBytesLen = 3;
 }
 
 // Возвращаемые значения RI_SDK_Sigmod_PWM_ReadRegBytesReturn
 message RI_SDK_Sigmod_PWM_ReadRegBytesReturn {
-  int64 readedBytesLen = 1;
+  bytes buf = 1;
   string errorText = 2;
   int64 errorCode = 3;
 }

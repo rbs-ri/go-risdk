@@ -73,16 +73,16 @@ func (m *GRPCClient) RI_SDK_Sigmod_PWM_WriteRegBytes(descriptor int64, reg byte,
 }
 
 // RI_SDK_Sigmod_PWM_ReadRegBytes - Читает с указанного регистра n-кол-во байт
-func (m *GRPCClient) RI_SDK_Sigmod_PWM_ReadRegBytes(descriptor int64, reg byte, buf []byte) (readedBytesLen int64, errorText string, errorCode int64, err error) {
+func (m *GRPCClient) RI_SDK_Sigmod_PWM_ReadRegBytes(descriptor int64, reg byte, readBytesLen int64) (buf []byte, errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Sigmod_PWM_ReadRegBytes(context.Background(), &RI_SDK_Sigmod_PWM_ReadRegBytesParams{
-		Descriptor_: descriptor,
-		Reg:         []byte{reg},
-		Buf:         buf,
+		Descriptor_:  descriptor,
+		Reg:          []byte{reg},
+		ReadBytesLen: readBytesLen,
 	})
 	if err != nil {
 		return
 	}
-	return resp.ReadedBytesLen, resp.ErrorText, resp.ErrorCode, nil
+	return resp.Buf, resp.ErrorText, resp.ErrorCode, nil
 }
 
 // RI_SDK_Sigmod_PWM_WriteByte - Пишет байт в заданный регистр
@@ -270,11 +270,11 @@ func (m *GRPCServer) RI_SDK_Sigmod_PWM_WriteRegBytes(
 func (m *GRPCServer) RI_SDK_Sigmod_PWM_ReadRegBytes(
 	ctx context.Context,
 	req *RI_SDK_Sigmod_PWM_ReadRegBytesParams) (*RI_SDK_Sigmod_PWM_ReadRegBytesReturn, error) {
-	readedBytesLen, errorText, errorCode, err := m.Impl.RI_SDK_Sigmod_PWM_ReadRegBytes(req.Descriptor_, req.Reg[0], req.Buf)
+	buf, errorText, errorCode, err := m.Impl.RI_SDK_Sigmod_PWM_ReadRegBytes(req.Descriptor_, req.Reg[0], req.ReadBytesLen)
 	return &RI_SDK_Sigmod_PWM_ReadRegBytesReturn{
-		ReadedBytesLen: readedBytesLen,
-		ErrorText:      errorText,
-		ErrorCode:      errorCode,
+		Buf:       buf,
+		ErrorText: errorText,
+		ErrorCode: errorCode,
 	}, err
 }
 

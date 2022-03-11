@@ -86,16 +86,16 @@ func (m *GRPCClient) RI_SDK_Connector_I2C_WriteBytes(descriptor int64, addr uint
 }
 
 // RI_SDK_Connector_I2C_ReadBytes - читает байты с I2C-устройства
-func (m *GRPCClient) RI_SDK_Connector_I2C_ReadBytes(descriptor int64, addr uint8, buf []byte) (readedBytesLen int64, errorText string, errorCode int64, err error) {
+func (m *GRPCClient) RI_SDK_Connector_I2C_ReadBytes(descriptor int64, addr uint8, readBytesLen int64) (buf []byte, errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Connector_I2C_ReadBytes(context.Background(), &RI_SDK_Connector_I2C_ReadBytesParams{
-		Descriptor_: descriptor,
-		Addr:        uint64(addr),
-		Buf:         buf,
+		Descriptor_:  descriptor,
+		Addr:         uint64(addr),
+		ReadBytesLen: readBytesLen,
 	})
 	if err != nil {
 		return
 	}
-	return resp.ReadedBytesLen, resp.ErrorText, resp.ErrorCode, nil
+	return resp.Buf, resp.ErrorText, resp.ErrorCode, nil
 }
 
 // RI_SDK_Connector_I2C_WriteByte - отправляет байт на I2C-устройство
@@ -208,11 +208,11 @@ func (m *GRPCServer) RI_SDK_Connector_I2C_WriteBytes(
 func (m *GRPCServer) RI_SDK_Connector_I2C_ReadBytes(
 	ctx context.Context,
 	req *RI_SDK_Connector_I2C_ReadBytesParams) (*RI_SDK_Connector_I2C_ReadBytesReturn, error) {
-	readedBytesLen, errorText, errorCode, err := m.Impl.RI_SDK_Connector_I2C_ReadBytes(req.Descriptor_, uint8(req.Addr), req.Buf)
+	buf, errorText, errorCode, err := m.Impl.RI_SDK_Connector_I2C_ReadBytes(req.Descriptor_, uint8(req.Addr), req.ReadBytesLen)
 	return &RI_SDK_Connector_I2C_ReadBytesReturn{
-		ErrorText:      errorText,
-		ErrorCode:      errorCode,
-		ReadedBytesLen: readedBytesLen,
+		ErrorText: errorText,
+		ErrorCode: errorCode,
+		Buf:       buf,
 	}, err
 }
 
