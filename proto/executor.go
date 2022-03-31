@@ -41,9 +41,9 @@ func (m *GRPCServer) RI_SDK_Executor_Extend(
 func (m *GRPCServer) RI_SDK_Executor_State(
 	ctx context.Context,
 	req *RI_SDK_Executor_StateParams) (*RI_SDK_Executor_StateReturn, error) {
-	descriptor, errorText, errorCode, err := m.Impl.RI_SDK_Executor_Extend(req.Desrciptor)
+	state, errorText, errorCode, err := m.Impl.RI_SDK_Executor_State(req.Desrciptor)
 	return &RI_SDK_Executor_StateReturn{
-		State:     descriptor,
+		State:     state,
 		ErrorText: errorText,
 		ErrorCode: errorCode,
 	}, err
