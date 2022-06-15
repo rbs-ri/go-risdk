@@ -21,9 +21,22 @@ var clientRPC *ClientRPC
 var mu sync.Mutex
 
 /*
-	GetClientRPC - получаем объект для работы с API SDK по RPC.
+	GenerateClientRPC - генератор уникального клиента.
 	SDK находится в директории исполнения программы
 */
+func GenerateClientRPC(path string) *ClientRPC {
+
+	client, roboSdkApi := initClientWithPath(path)
+	newClientRPC := &ClientRPC{
+		Client:     client,
+		RoboSdkApi: roboSdkApi,
+	}
+
+	killAfterCloseSignal(newClientRPC)
+
+	return newClientRPC
+}
+
 func GetClientRPC() *ClientRPC {
 	mu.Lock()
 	defer mu.Unlock()
@@ -34,7 +47,8 @@ func GetClientRPC() *ClientRPC {
 			RoboSdkApi: roboSdkApi,
 		}
 
-		killAfterCloseSignal()
+		killAfterCloseSignalGlobal()
+
 	}
 
 	return clientRPC
@@ -54,7 +68,7 @@ func GetClientRPCWithPath(path string) *ClientRPC {
 			RoboSdkApi: roboSdkApi,
 		}
 
-		killAfterCloseSignal()
+		killAfterCloseSignalGlobal()
 	}
 
 	return clientRPC
@@ -146,7 +160,7 @@ func getClient(path, risdkName string) (client *plugin.Client, roboSdkApi proto.
 	return client, roboSdkApi
 }
 
-func killAfterCloseSignal() {
+func killAfterCloseSignalGlobal() {
 	// Закрытие соединение с RPC, когда выполнение программы было прекращено, до ее завершения.
 	// Здесь отслеживается системное событие завершения программы.
 	// Если не убивать клиент, то процесс остается и может блокировать подачу сигнала на устройство.
@@ -157,4 +171,14 @@ func killAfterCloseSignal() {
 		clientRPC.Client.Kill()
 		os.Exit(0)
 	}()
+}
+
+func killAfterCloseSignal(client *ClientRPC) {
+	c := make(chan os.Signal)
+	signal.Notify(c, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM)
+	go func(client *ClientRPC) {
+		<-c
+		client.Client.Kill()
+		os.Exit(0)
+	}(client)
 }
