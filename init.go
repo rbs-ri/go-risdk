@@ -12,6 +12,7 @@ import (
 	"sync"
 	"syscall"
 
+	"github.com/hashicorp/go-hclog"
 	"github.com/hashicorp/go-plugin"
 	"github.com/rbs-ri/go-risdk/proto"
 )
@@ -19,6 +20,10 @@ import (
 // ClientRPC - объект для работы с API SDK по RPC
 var clientRPC *ClientRPC
 var mu sync.Mutex
+
+type controlSignal int
+
+const Stop controlSignal = 0
 
 /*
 	GenerateClientRPC - генератор уникального клиента.
@@ -28,8 +33,9 @@ func GenerateClientRPC(path string) *ClientRPC {
 
 	client, roboSdkApi := initClientWithPath(path)
 	newClientRPC := &ClientRPC{
-		Client:     client,
-		RoboSdkApi: roboSdkApi,
+		Client:        client,
+		RoboSdkApi:    roboSdkApi,
+		controlSignal: make(chan controlSignal),
 	}
 
 	killAfterCloseSignal(newClientRPC)
@@ -43,8 +49,9 @@ func GetClientRPC() *ClientRPC {
 	if clientRPC == nil {
 		client, roboSdkApi := initClient()
 		clientRPC = &ClientRPC{
-			Client:     client,
-			RoboSdkApi: roboSdkApi,
+			Client:        client,
+			RoboSdkApi:    roboSdkApi,
+			controlSignal: make(chan controlSignal),
 		}
 
 		killAfterCloseSignalGlobal()
@@ -64,8 +71,9 @@ func GetClientRPCWithPath(path string) *ClientRPC {
 	if clientRPC == nil {
 		client, roboSdkApi := initClientWithPath(path)
 		clientRPC = &ClientRPC{
-			Client:     client,
-			RoboSdkApi: roboSdkApi,
+			Client:        client,
+			RoboSdkApi:    roboSdkApi,
+			controlSignal: make(chan controlSignal),
 		}
 
 		killAfterCloseSignalGlobal()
@@ -76,8 +84,18 @@ func GetClientRPCWithPath(path string) *ClientRPC {
 
 // clientRPC - Стуктура для для работы с API SDK по RPC
 type ClientRPC struct {
-	Client     *plugin.Client   //клиент
-	RoboSdkApi proto.RoboSdkApi //
+	Client        *plugin.Client   //клиент
+	RoboSdkApi    proto.RoboSdkApi //
+	controlSignal chan controlSignal
+}
+
+/*
+	StopClient - остановка работы клиента.
+*/
+func StopClient(client *ClientRPC) {
+	client.controlSignal <- Stop
+
+	return
 }
 
 // initClient - Создает клиента для получения доступа к API SDK по RPC
@@ -137,6 +155,11 @@ func getClient(path, risdkName string) (client *plugin.Client, roboSdkApi proto.
 		HandshakeConfig: proto.Handshake,
 		Plugins:         proto.PluginMap,
 		Cmd:             exec.Command(filepath.Join(path, risdkName)),
+		Logger: hclog.New(&hclog.LoggerOptions{
+			Output: ioutil.Discard,
+			Level:  hclog.Trace,
+			Name:   "plugin",
+		}),
 		AllowedProtocols: []plugin.Protocol{
 			plugin.ProtocolNetRPC, plugin.ProtocolGRPC},
 	})
@@ -168,17 +191,31 @@ func killAfterCloseSignalGlobal() {
 	signal.Notify(c, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM)
 	go func() {
 		<-c
-		clientRPC.Client.Kill()
-		os.Exit(0)
+		select {
+		case <-c:
+			clientRPC.Client.Kill()
+			os.Exit(0)
+		case s := <-clientRPC.controlSignal:
+			if s == Stop {
+				clientRPC.Client.Kill()
+				return
+			}
+		}
 	}()
 }
 
 func killAfterCloseSignal(client *ClientRPC) {
+
 	c := make(chan os.Signal)
 	signal.Notify(c, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM)
 	go func(client *ClientRPC) {
-		<-c
-		client.Client.Kill()
-		os.Exit(0)
+		select {
+		case <-c:
+			client.Client.Kill()
+			os.Exit(0)
+		case <-client.controlSignal:
+			return
+		}
+
 	}(client)
 }
