@@ -13,6 +13,17 @@ func (m *GRPCClient) RI_SDK_InitSDK(logLevel int64) (errorText string, errorCode
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
+// RI_SDK_Device_ModelList - Чтение списка доступных моделей
+func (m *GRPCClient) RI_SDK_Device_ModelList(deviceType string) (modelList string, errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_Device_ModelList(context.Background(), &RI_SDK_Device_ModelListParams{
+		DeviceType: deviceType,
+	})
+	if err != nil {
+		return
+	}
+	return resp.ModelList, resp.ErrorText, resp.ErrorCode, nil
+}
+
 // RI_SDK_CreateBasic - Создание базового компонента
 func (m *GRPCClient) RI_SDK_CreateBasic() (descriptor int64, errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_CreateBasic(context.Background(), &RI_SDK_CreateBasicParams{})
@@ -140,6 +151,18 @@ func (m *GRPCServer) RI_SDK_InitSDK(
 	req *RI_SDK_InitSDKParams) (*RI_SDK_InitSDKReturn, error) {
 	errorText, errorCode, err := m.Impl.RI_SDK_InitSDK(req.LogLevel)
 	return &RI_SDK_InitSDKReturn{
+		ErrorText: errorText,
+		ErrorCode: errorCode,
+	}, err
+}
+
+// RI_SDK_Device_ModelList - Чтение списка доступных моделей
+func (m *GRPCServer) RI_SDK_Device_ModelList(
+	ctx context.Context,
+	req *RI_SDK_Device_ModelListParams) (*RI_SDK_Device_ModelListReturn, error) {
+	modelList, errorText, errorCode, err := m.Impl.RI_SDK_Device_ModelList(req.DeviceType)
+	return &RI_SDK_Device_ModelListReturn{
+		ModelList: modelList,
 		ErrorText: errorText,
 		ErrorCode: errorCode,
 	}, err

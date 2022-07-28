@@ -13,6 +13,18 @@ message RI_SDK_InitSDKReturn {
   int64 errorCode = 2;
 }
 
+// Аргументы RI_SDK_Device_ModelList
+message RI_SDK_Device_ModelListParams {
+  string deviceType = 1;
+}
+
+// Возвращаемые значения RI_SDK_Device_ModelList
+message RI_SDK_Device_ModelListReturn {
+  string modelList = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
 // Аргументы RI_SDK_CreateBasic
 message RI_SDK_CreateBasicParams {
   int64 descriptor = 1;
@@ -437,8 +449,9 @@ message RI_SDK_LinkVoltageSensorToControllerReturn {
 message RI_SDK_Exec_ServoDrive_CustomDeviceInitParams {
   int64 desrciptor = 1;
   int64 maxImpulse = 2;
-  int64 maxSpeed = 3;
-  int64 pulseRange = 4;
+  int64 minImpulse = 3;
+  int64 maxSpeed = 4;
+  int64 rangeAngle = 5;
 }
 
 // Возвращаемые значения RI_SDK_Exec_ServoDrive_CustomDeviceInit
@@ -912,6 +925,7 @@ message RI_SDK_Sensor_VoltageSensor_SenseReturn {
 
 service RoboSdk {
   rpc RI_SDK_InitSDK(RI_SDK_InitSDKParams) returns (RI_SDK_InitSDKReturn);
+  rpc RI_SDK_Device_ModelList(RI_SDK_Device_ModelListParams) returns (RI_SDK_Device_ModelListReturn);
   rpc RI_SDK_CreateBasic(RI_SDK_CreateBasicParams) returns (RI_SDK_CreateBasicReturn);
   rpc RI_SDK_DestroyComponent(RI_SDK_DestroyComponentParams) returns (RI_SDK_DestroyComponentReturn);
   rpc RI_SDK_DestroySDK(RI_SDK_DestroySDKParams) returns (RI_SDK_DestroySDKReturn);
