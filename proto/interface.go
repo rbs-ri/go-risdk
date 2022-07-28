@@ -64,6 +64,7 @@ type RoboSdkApi interface {
 	RI_SDK_Exec_ServoDrive_TurnByPulse(desrciptor, pulse int64) (errorText string, errorCode int64, err error)
 	RI_SDK_Exec_ServoDrive_GetCurrentAngle(desrciptor int64) (angle int64, errorText string, errorCode int64, err error)
 	RI_SDK_Exec_ServoDrive_GetState(desrciptor int64) (state int64, errorText string, errorCode int64, err error)
+	RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange(descriptor int64) (errorText string, errorCode int64, err error)
 	RI_SDK_Exec_ServoDrive_MinStepRotate(descriptor, direction, speed int64, async bool) (errorText string, errorCode int64, err error)
 	RI_SDK_Exec_ServoDrive_Turn(descriptor, angle, speed int64, async bool) (errorText string, errorCode int64, err error)
 	RI_SDK_Exec_ServoDrive_Stop(descriptor int64) (errorText string, errorCode int64, err error)

@@ -544,6 +544,17 @@ message RI_SDK_Exec_ServoDrive_GetStateReturn {
   int64 errorCode = 3;
 }
 
+// Аргументы RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange
+message RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange
+message RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
 // Аргументы RI_SDK_Sigmod_PWM_GetPortDutyCycleParams
 message RI_SDK_Sigmod_PWM_GetPortDutyCycleParams {
   int64 descriptor = 1;
@@ -980,6 +991,7 @@ service RoboSdk {
   rpc RI_SDK_Exec_ServoDrive_TurnByPulse(RI_SDK_Exec_ServoDrive_TurnByPulseParams) returns(RI_SDK_Exec_ServoDrive_TurnByPulseReturn);
   rpc RI_SDK_Exec_ServoDrive_GetCurrentAngle(RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) returns(RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn);
   rpc RI_SDK_Exec_ServoDrive_GetState(RI_SDK_Exec_ServoDrive_GetStateParams) returns(RI_SDK_Exec_ServoDrive_GetStateReturn);
+  rpc RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange (RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeParams) returns (RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeReturn);
   rpc RI_SDK_Exec_ServoDrive_MinStepRotate(RI_SDK_Exec_ServoDrive_MinStepRotateParams) returns(RI_SDK_Exec_ServoDrive_MinStepRotateReturn);
   rpc RI_SDK_Exec_ServoDrive_Turn(RI_SDK_Exec_ServoDrive_TurnParams) returns(RI_SDK_Exec_ServoDrive_TurnReturn);
   rpc RI_SDK_Exec_ServoDrive_Stop(RI_SDK_Exec_ServoDrive_StopParams) returns(RI_SDK_Exec_ServoDrive_StopReturn);
