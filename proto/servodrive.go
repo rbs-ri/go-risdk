@@ -26,12 +26,13 @@ func (m *GRPCClient) RI_SDK_Exec_ServoDrive_ExtendToModel(baseDescriptor int64, 
 }
 
 // RI_SDK_Exec_ServoDrive_CustomDeviceInit - Инициализация кастомного сервопривода - Инициализация кастомного сервопривода
-func (m *GRPCClient) RI_SDK_Exec_ServoDrive_CustomDeviceInit(descriptor, maxImpulse, maxSpeed, pulseRange int64) (errorText string, errorCode int64, err error) {
+func (m *GRPCClient) RI_SDK_Exec_ServoDrive_CustomDeviceInit(descriptor, maxImpulse, minImpulse, maxSpeed, rangeAngle int64) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_ServoDrive_CustomDeviceInit(context.Background(), &RI_SDK_Exec_ServoDrive_CustomDeviceInitParams{
 		Desrciptor: descriptor,
 		MaxImpulse: maxImpulse,
+		MinImpulse: minImpulse,
 		MaxSpeed:   maxSpeed,
-		PulseRange: pulseRange,
+		RangeAngle: rangeAngle,
 	})
 	if err != nil {
 		return
@@ -83,6 +84,17 @@ func (m *GRPCClient) RI_SDK_Exec_ServoDrive_GetState(descriptor int64) (state in
 		return
 	}
 	return resp.State, resp.ErrorText, resp.ErrorCode, nil
+}
+
+// RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange - Устанавливает сервопривод в середину рабочего диапазона
+func (m *GRPCClient) RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange(descriptor int64) (errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange(context.Background(), &RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeParams{
+		Descriptor_: descriptor,
+	})
+	if err != nil {
+		return
+	}
+	return resp.ErrorText, resp.ErrorCode, nil
 }
 
 // RI_SDK_Exec_ServoDrive_MinStepRotate - Выполняет поворот сервопривода на минимальный шаг
@@ -200,7 +212,7 @@ func (m *GRPCServer) RI_SDK_Exec_ServoDrive_ExtendToModel(
 func (m *GRPCServer) RI_SDK_Exec_ServoDrive_CustomDeviceInit(
 	ctx context.Context,
 	req *RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) (*RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn, error) {
-	errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_CustomDeviceInit(req.Desrciptor, req.MaxImpulse, req.MaxSpeed, req.PulseRange)
+	errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_CustomDeviceInit(req.Desrciptor, req.MaxImpulse, req.MinImpulse, req.MaxSpeed, req.RangeAngle)
 	return &RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn{
 		ErrorText: errorText,
 		ErrorCode: errorCode,
@@ -248,6 +260,17 @@ func (m *GRPCServer) RI_SDK_Exec_ServoDrive_GetState(
 	state, errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_GetState(req.Desrciptor)
 	return &RI_SDK_Exec_ServoDrive_GetStateReturn{
 		State:     state,
+		ErrorText: errorText,
+		ErrorCode: errorCode,
+	}, err
+}
+
+// RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange - Устанавливает сервопривод в середину рабочего диапазона
+func (m *GRPCServer) RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange(
+	ctx context.Context,
+	req *RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeParams) (*RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeReturn, error) {
+	errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange(req.Descriptor_)
+	return &RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeReturn{
 		ErrorText: errorText,
 		ErrorCode: errorCode,
 	}, err

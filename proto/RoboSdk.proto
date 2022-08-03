@@ -13,6 +13,18 @@ message RI_SDK_InitSDKReturn {
   int64 errorCode = 2;
 }
 
+// Аргументы RI_SDK_Device_ModelList
+message RI_SDK_Device_ModelListParams {
+  string deviceType = 1;
+}
+
+// Возвращаемые значения RI_SDK_Device_ModelList
+message RI_SDK_Device_ModelListReturn {
+  string modelList = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
 // Аргументы RI_SDK_CreateBasic
 message RI_SDK_CreateBasicParams {
   int64 descriptor = 1;
@@ -437,8 +449,9 @@ message RI_SDK_LinkVoltageSensorToControllerReturn {
 message RI_SDK_Exec_ServoDrive_CustomDeviceInitParams {
   int64 desrciptor = 1;
   int64 maxImpulse = 2;
-  int64 maxSpeed = 3;
-  int64 pulseRange = 4;
+  int64 minImpulse = 3;
+  int64 maxSpeed = 4;
+  int64 rangeAngle = 5;
 }
 
 // Возвращаемые значения RI_SDK_Exec_ServoDrive_CustomDeviceInit
@@ -529,6 +542,17 @@ message RI_SDK_Exec_ServoDrive_GetStateReturn {
   int64 state = 1;
   string errorText = 2;
   int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange
+message RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange
+message RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
 }
 
 // Аргументы RI_SDK_Sigmod_PWM_GetPortDutyCycleParams
@@ -839,6 +863,8 @@ message RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams {
   double lsbBus = 2;
   double lsbShunt = 3;
   double shuntResist = 4;
+  int64 regVoltageShunt = 5;
+  int64 regVoltageBus = 6;
 }
 
 // Возвращаемые значения RI_SDK_Sensor_VoltageSensor_CustomDeviceInit
@@ -912,6 +938,7 @@ message RI_SDK_Sensor_VoltageSensor_SenseReturn {
 
 service RoboSdk {
   rpc RI_SDK_InitSDK(RI_SDK_InitSDKParams) returns (RI_SDK_InitSDKReturn);
+  rpc RI_SDK_Device_ModelList(RI_SDK_Device_ModelListParams) returns (RI_SDK_Device_ModelListReturn);
   rpc RI_SDK_CreateBasic(RI_SDK_CreateBasicParams) returns (RI_SDK_CreateBasicReturn);
   rpc RI_SDK_DestroyComponent(RI_SDK_DestroyComponentParams) returns (RI_SDK_DestroyComponentReturn);
   rpc RI_SDK_DestroySDK(RI_SDK_DestroySDKParams) returns (RI_SDK_DestroySDKReturn);
@@ -966,6 +993,7 @@ service RoboSdk {
   rpc RI_SDK_Exec_ServoDrive_TurnByPulse(RI_SDK_Exec_ServoDrive_TurnByPulseParams) returns(RI_SDK_Exec_ServoDrive_TurnByPulseReturn);
   rpc RI_SDK_Exec_ServoDrive_GetCurrentAngle(RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) returns(RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn);
   rpc RI_SDK_Exec_ServoDrive_GetState(RI_SDK_Exec_ServoDrive_GetStateParams) returns(RI_SDK_Exec_ServoDrive_GetStateReturn);
+  rpc RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRange (RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeParams) returns (RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeReturn);
   rpc RI_SDK_Exec_ServoDrive_MinStepRotate(RI_SDK_Exec_ServoDrive_MinStepRotateParams) returns(RI_SDK_Exec_ServoDrive_MinStepRotateReturn);
   rpc RI_SDK_Exec_ServoDrive_Turn(RI_SDK_Exec_ServoDrive_TurnParams) returns(RI_SDK_Exec_ServoDrive_TurnReturn);
   rpc RI_SDK_Exec_ServoDrive_Stop(RI_SDK_Exec_ServoDrive_StopParams) returns(RI_SDK_Exec_ServoDrive_StopReturn);
