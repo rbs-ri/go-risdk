@@ -26,14 +26,14 @@ func (m *GRPCClient) RI_SDK_Sensor_VoltageSensor_ExtendToModel(baseDescriptor in
 }
 
 // RI_SDK_Sensor_VoltageSensor_CustomDeviceInit - Инициализация кастомного датчика тока
-func (m *GRPCClient) RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(desrciptor int64, lsbBus, lsbShunt, shuntResist float64, regVoltageShunt, regVoltageBus int64) (errorText string, errorCode int64, err error) {
+func (m *GRPCClient) RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(desrciptor int64, lsbBus, lsbShunt, shuntResist float64, regVoltageShunt, regVoltageBus byte) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(context.Background(), &RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams{
 		Desrciptor:      desrciptor,
 		LsbBus:          lsbBus,
 		LsbShunt:        lsbShunt,
 		ShuntResist:     shuntResist,
-		RegVoltageShunt: regVoltageShunt,
-		RegVoltageBus:   regVoltageBus,
+		RegVoltageShunt: []byte{regVoltageShunt},
+		RegVoltageBus:   []byte{regVoltageBus},
 	})
 	if err != nil {
 		return
@@ -124,7 +124,7 @@ func (m *GRPCServer) RI_SDK_Sensor_VoltageSensor_ExtendToModel(
 func (m *GRPCServer) RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(
 	ctx context.Context,
 	req *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn, error) {
-	errorText, errorCode, err := m.Impl.RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(req.Desrciptor, req.LsbBus, req.LsbShunt, req.ShuntResist, req.RegVoltageShunt, req.RegVoltageBus)
+	errorText, errorCode, err := m.Impl.RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(req.Desrciptor, req.LsbBus, req.LsbShunt, req.ShuntResist, req.RegVoltageShunt[0], req.RegVoltageBus[0])
 	return &RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn{
 		ErrorText: errorText,
 		ErrorCode: errorCode,

@@ -95,7 +95,7 @@ type RoboSdkApi interface {
 
 	RI_SDK_Sensor_VoltageSensor_Extend(exec int64) (descriptor int64, errorText string, errorCode int64, err error)
 	RI_SDK_Sensor_VoltageSensor_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error)
-	RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(desrciptor int64, lsbBus, lsbShunt, shuntResist float64, regVoltageShunt, regVoltageBus int64) (errorText string, errorCode int64, err error)
+	RI_SDK_Sensor_VoltageSensor_CustomDeviceInit(desrciptor int64, lsbBus, lsbShunt, shuntResist float64, regVoltageShunt, regVoltageBus byte) (errorText string, errorCode int64, err error)
 	RI_SDK_Sensor_VoltageSensor_Voltage(descriptor int64) (voltage float32, errorText string, errorCode int64, err error)
 	RI_SDK_Sensor_VoltageSensor_VoltageShunt(descriptor int64) (voltageShunt float32, errorText string, errorCode int64, err error)
 	RI_SDK_Sensor_VoltageSensor_Current(descriptor int64) (current float32, errorText string, errorCode int64, err error)
