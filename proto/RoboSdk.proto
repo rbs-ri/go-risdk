@@ -327,6 +327,18 @@ message RI_SDK_Exec_ServoDrive_ExtendReturn {
   int64 errorCode = 3;
 }
 
+// Аргументы RI_SDK_Exec_RServoDrive_Extend
+message RI_SDK_Exec_RServoDrive_ExtendParams {
+  int64 exec = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_Extend
+message RI_SDK_Exec_RServoDrive_ExtendReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
 // Аргументы RI_SDK_Exec_RGB_LED_Extend
 message RI_SDK_Exec_RGB_LED_ExtendParams {
   int64 exec = 1;
@@ -413,6 +425,19 @@ message RI_SDK_LinkServodriveToControllerParams {
 
 // Возвращаемые значения RI_SDK_LinkServodriveToController
 message RI_SDK_LinkServodriveToControllerReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_LinkRServodriveToController
+message RI_SDK_LinkRServodriveToControllerParams {
+  int64 servodriveDescriptor = 1;
+  int64 pwmDescriptor = 2;
+  int64 port = 3;
+}
+
+// Возвращаемые значения RI_SDK_LinkRServodriveToController
+message RI_SDK_LinkRServodriveToControllerReturn {
   string errorText = 1;
   int64 errorCode = 2;
 }
@@ -664,6 +689,100 @@ message RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn {
   int64 errorCode = 2;
 }
 
+// Аргументы RI_SDK_Exec_RServoDrive_CustomDeviceInit
+message RI_SDK_Exec_RServoDrive_CustomDeviceInitParams {
+  int64 descriptor = 1;
+  int64 minPulseClockwise = 2;
+  int64 maxPulseClockwise = 3;
+  int64 minPulseCounterClockwise = 4;
+  int64 maxPulseCounterClockwise = 5;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_CustomDeviceInit
+message RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_Stop
+message RI_SDK_Exec_RServoDrive_StopParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_Stop
+message RI_SDK_Exec_RServoDrive_StopReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_RotateByPulseOverTime
+message RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams {
+  int64 descriptor = 1;
+  int64 pulse = 2;
+  int64 timeout = 3;
+  bool async = 4;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_RotateByPulseOverTime
+message RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_RotateByPulse
+message RI_SDK_Exec_RServoDrive_RotateByPulseParams {
+  int64 descriptor = 1;
+  int64 pulse = 2;
+  bool async = 3;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_RotateByPulse
+message RI_SDK_Exec_RServoDrive_RotateByPulseReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime
+message RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams {
+  int64 descriptor = 1;
+  int64 direction = 2;
+  int64 speed = 3;
+  int64 timeout = 4;
+  bool async = 5;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime
+message RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed
+message RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams {
+  int64 descriptor = 1;
+  int64 direction = 2;
+  int64 speed = 3;
+  bool async = 4;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed
+message RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn {
+  string errorText = 1;
+  int64 errorCode = 2;
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_GetState
+message RI_SDK_Exec_RServoDrive_GetStateParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_GetState
+message RI_SDK_Exec_RServoDrive_GetStateReturn {
+  int64 state = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
 // Аргументы RI_SDK_Exec_RGB_LED_SinglePulse
 message RI_SDK_Exec_RGB_LED_SinglePulseParams {
   int64 descriptor = 1;
@@ -819,6 +938,19 @@ message RI_SDK_Exec_ServoDrive_ExtendToModelReturn {
   int64 errorCode = 3;
 }
 
+// Аргументы RI_SDK_Exec_RServoDrive_ExtendToModel
+message RI_SDK_Exec_RServoDrive_ExtendToModelParams {
+  int64 baseDescriptor = 1;
+  string modelName = 2;
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_ExtendToModel
+message RI_SDK_Exec_RServoDrive_ExtendToModelReturn {
+  int64 descriptor = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
 // Аргументы RI_SDK_Exec_RGB_LED_ExtendToModel
 message RI_SDK_Exec_RGB_LED_ExtendToModelParams {
   int64 baseDescriptor = 1;
@@ -947,6 +1079,7 @@ service RoboSdk {
   rpc RI_SDK_CreateModelComponent(RI_SDK_CreateModelComponentParams) returns (RI_SDK_CreateModelComponentReturn);
   rpc RI_SDK_LinkPWMToController(RI_SDK_LinkPWMToControllerParams) returns (RI_SDK_LinkPWMToControllerReturn);
   rpc RI_SDK_LinkServodriveToController(RI_SDK_LinkServodriveToControllerParams) returns (RI_SDK_LinkServodriveToControllerReturn);
+  rpc RI_SDK_LinkRServodriveToController(RI_SDK_LinkRServodriveToControllerParams) returns (RI_SDK_LinkRServodriveToControllerReturn);
   rpc RI_SDK_LinkLedToController(RI_SDK_LinkLedToControllerParams) returns (RI_SDK_LinkLedToControllerReturn);
   rpc RI_SDK_LinkVoltageSensorToController(RI_SDK_LinkVoltageSensorToControllerParams) returns (RI_SDK_LinkVoltageSensorToControllerReturn);
 
@@ -1000,6 +1133,16 @@ service RoboSdk {
   rpc RI_SDK_Exec_ServoDrive_Rotate(RI_SDK_Exec_ServoDrive_RotateParams) returns(RI_SDK_Exec_ServoDrive_RotateReturn);
   rpc RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeed(RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) returns(RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn);
   rpc RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) returns(RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn);
+
+  rpc RI_SDK_Exec_RServoDrive_Extend(RI_SDK_Exec_RServoDrive_ExtendParams) returns(RI_SDK_Exec_RServoDrive_ExtendReturn);
+  rpc RI_SDK_Exec_RServoDrive_ExtendToModel(RI_SDK_Exec_RServoDrive_ExtendToModelParams) returns(RI_SDK_Exec_RServoDrive_ExtendToModelReturn);
+  rpc RI_SDK_Exec_RServoDrive_CustomDeviceInit(RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) returns(RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn);
+  rpc RI_SDK_Exec_RServoDrive_GetState(RI_SDK_Exec_RServoDrive_GetStateParams) returns(RI_SDK_Exec_RServoDrive_GetStateReturn);
+  rpc RI_SDK_Exec_RServoDrive_Stop(RI_SDK_Exec_RServoDrive_StopParams) returns(RI_SDK_Exec_RServoDrive_StopReturn);
+  rpc RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) returns(RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn);
+  rpc RI_SDK_Exec_RServoDrive_RotateByPulse(RI_SDK_Exec_RServoDrive_RotateByPulseParams) returns(RI_SDK_Exec_RServoDrive_RotateByPulseReturn);
+  rpc RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) returns(RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn);
+  rpc RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) returns(RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn);
 
   rpc RI_SDK_Exec_RGB_LED_Extend(RI_SDK_Exec_RGB_LED_ExtendParams) returns(RI_SDK_Exec_RGB_LED_ExtendReturn);
   rpc RI_SDK_Exec_RGB_LED_ExtendToModel(RI_SDK_Exec_RGB_LED_ExtendToModelParams) returns(RI_SDK_Exec_RGB_LED_ExtendToModelReturn);

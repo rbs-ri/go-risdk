@@ -95,6 +95,19 @@ func (m *GRPCClient) RI_SDK_LinkServodriveToController(servodriveDescriptor, pwm
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
+// RI_SDK_LinkRServodriveToController - связывает сервопривод с ШИМ.
+func (m *GRPCClient) RI_SDK_LinkRServodriveToController(servodriveDescriptor, pwmDescriptor, port int64) (errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_LinkRServodriveToController(context.Background(), &RI_SDK_LinkRServodriveToControllerParams{
+		PwmDescriptor:        pwmDescriptor,
+		ServodriveDescriptor: servodriveDescriptor,
+		Port:                 port,
+	})
+	if err != nil {
+		return
+	}
+	return resp.ErrorText, resp.ErrorCode, nil
+}
+
 // RI_SDK_LinkLedToController - связывает светодиод с ШИМ.
 func (m *GRPCClient) RI_SDK_LinkLedToController(ledDescriptor, pwmDescriptor, rport, gport, bport int64) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_LinkLedToController(context.Background(), &RI_SDK_LinkLedToControllerParams{
@@ -233,6 +246,17 @@ func (m *GRPCServer) RI_SDK_LinkServodriveToController(
 	req *RI_SDK_LinkServodriveToControllerParams) (*RI_SDK_LinkServodriveToControllerReturn, error) {
 	errorText, errorCode, err := m.Impl.RI_SDK_LinkServodriveToController(req.ServodriveDescriptor, req.PwmDescriptor, req.Port)
 	return &RI_SDK_LinkServodriveToControllerReturn{
+		ErrorText: errorText,
+		ErrorCode: errorCode,
+	}, err
+}
+
+// RI_SDK_LinkRServodriveToController - связывает сервопривод с ШИМ.
+func (m *GRPCServer) RI_SDK_LinkRServodriveToController(
+	ctx context.Context,
+	req *RI_SDK_LinkRServodriveToControllerParams) (*RI_SDK_LinkRServodriveToControllerReturn, error) {
+	errorText, errorCode, err := m.Impl.RI_SDK_LinkRServodriveToController(req.ServodriveDescriptor, req.PwmDescriptor, req.Port)
+	return &RI_SDK_LinkRServodriveToControllerReturn{
 		ErrorText: errorText,
 		ErrorCode: errorCode,
 	}, err

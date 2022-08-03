@@ -2641,6 +2641,102 @@ func (m *RI_SDK_Exec_ServoDrive_ExtendReturn) GetErrorCode() int64 {
 	return 0
 }
 
+// Аргументы RI_SDK_Exec_RServoDrive_Extend
+type RI_SDK_Exec_RServoDrive_ExtendParams struct {
+	Exec                 int64    `protobuf:"varint,1,opt,name=exec,proto3" json:"exec,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendParams) Reset()         { *m = RI_SDK_Exec_RServoDrive_ExtendParams{} }
+func (m *RI_SDK_Exec_RServoDrive_ExtendParams) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Exec_RServoDrive_ExtendParams) ProtoMessage()    {}
+func (*RI_SDK_Exec_RServoDrive_ExtendParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{53}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendParams.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendParams.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendParams) GetExec() int64 {
+	if m != nil {
+		return m.Exec
+	}
+	return 0
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_Extend
+type RI_SDK_Exec_RServoDrive_ExtendReturn struct {
+	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	ErrorText            string   `protobuf:"bytes,2,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,3,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendReturn) Reset()         { *m = RI_SDK_Exec_RServoDrive_ExtendReturn{} }
+func (m *RI_SDK_Exec_RServoDrive_ExtendReturn) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Exec_RServoDrive_ExtendReturn) ProtoMessage()    {}
+func (*RI_SDK_Exec_RServoDrive_ExtendReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{54}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendReturn.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendReturn.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendReturn) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
 // Аргументы RI_SDK_Exec_RGB_LED_Extend
 type RI_SDK_Exec_RGB_LED_ExtendParams struct {
 	Exec                 int64    `protobuf:"varint,1,opt,name=exec,proto3" json:"exec,omitempty"`
@@ -2653,7 +2749,7 @@ func (m *RI_SDK_Exec_RGB_LED_ExtendParams) Reset()         { *m = RI_SDK_Exec_RG
 func (m *RI_SDK_Exec_RGB_LED_ExtendParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_ExtendParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_ExtendParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{53}
+	return fileDescriptor_075c0a5d977b1e4e, []int{55}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_ExtendParams) XXX_Unmarshal(b []byte) error {
@@ -2695,7 +2791,7 @@ func (m *RI_SDK_Exec_RGB_LED_ExtendReturn) Reset()         { *m = RI_SDK_Exec_RG
 func (m *RI_SDK_Exec_RGB_LED_ExtendReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_ExtendReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_ExtendReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{54}
+	return fileDescriptor_075c0a5d977b1e4e, []int{56}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_ExtendReturn) XXX_Unmarshal(b []byte) error {
@@ -2750,7 +2846,7 @@ func (m *RI_SDK_Sigmod_PWM_GetPortFreqParams) Reset()         { *m = RI_SDK_Sigm
 func (m *RI_SDK_Sigmod_PWM_GetPortFreqParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_GetPortFreqParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_GetPortFreqParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{55}
+	return fileDescriptor_075c0a5d977b1e4e, []int{57}
 }
 
 func (m *RI_SDK_Sigmod_PWM_GetPortFreqParams) XXX_Unmarshal(b []byte) error {
@@ -2799,7 +2895,7 @@ func (m *RI_SDK_Sigmod_PWM_GetPortFreqReturn) Reset()         { *m = RI_SDK_Sigm
 func (m *RI_SDK_Sigmod_PWM_GetPortFreqReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_GetPortFreqReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_GetPortFreqReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{56}
+	return fileDescriptor_075c0a5d977b1e4e, []int{58}
 }
 
 func (m *RI_SDK_Sigmod_PWM_GetPortFreqReturn) XXX_Unmarshal(b []byte) error {
@@ -2853,7 +2949,7 @@ func (m *RI_SDK_CreateGroupComponentParams) Reset()         { *m = RI_SDK_Create
 func (m *RI_SDK_CreateGroupComponentParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_CreateGroupComponentParams) ProtoMessage()    {}
 func (*RI_SDK_CreateGroupComponentParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{57}
+	return fileDescriptor_075c0a5d977b1e4e, []int{59}
 }
 
 func (m *RI_SDK_CreateGroupComponentParams) XXX_Unmarshal(b []byte) error {
@@ -2895,7 +2991,7 @@ func (m *RI_SDK_CreateGroupComponentReturn) Reset()         { *m = RI_SDK_Create
 func (m *RI_SDK_CreateGroupComponentReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_CreateGroupComponentReturn) ProtoMessage()    {}
 func (*RI_SDK_CreateGroupComponentReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{58}
+	return fileDescriptor_075c0a5d977b1e4e, []int{60}
 }
 
 func (m *RI_SDK_CreateGroupComponentReturn) XXX_Unmarshal(b []byte) error {
@@ -2950,7 +3046,7 @@ func (m *RI_SDK_CreateDeviceComponentParams) Reset()         { *m = RI_SDK_Creat
 func (m *RI_SDK_CreateDeviceComponentParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_CreateDeviceComponentParams) ProtoMessage()    {}
 func (*RI_SDK_CreateDeviceComponentParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{59}
+	return fileDescriptor_075c0a5d977b1e4e, []int{61}
 }
 
 func (m *RI_SDK_CreateDeviceComponentParams) XXX_Unmarshal(b []byte) error {
@@ -2999,7 +3095,7 @@ func (m *RI_SDK_CreateDeviceComponentReturn) Reset()         { *m = RI_SDK_Creat
 func (m *RI_SDK_CreateDeviceComponentReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_CreateDeviceComponentReturn) ProtoMessage()    {}
 func (*RI_SDK_CreateDeviceComponentReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{60}
+	return fileDescriptor_075c0a5d977b1e4e, []int{62}
 }
 
 func (m *RI_SDK_CreateDeviceComponentReturn) XXX_Unmarshal(b []byte) error {
@@ -3055,7 +3151,7 @@ func (m *RI_SDK_CreateModelComponentParams) Reset()         { *m = RI_SDK_Create
 func (m *RI_SDK_CreateModelComponentParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_CreateModelComponentParams) ProtoMessage()    {}
 func (*RI_SDK_CreateModelComponentParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{61}
+	return fileDescriptor_075c0a5d977b1e4e, []int{63}
 }
 
 func (m *RI_SDK_CreateModelComponentParams) XXX_Unmarshal(b []byte) error {
@@ -3111,7 +3207,7 @@ func (m *RI_SDK_CreateModelComponentReturn) Reset()         { *m = RI_SDK_Create
 func (m *RI_SDK_CreateModelComponentReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_CreateModelComponentReturn) ProtoMessage()    {}
 func (*RI_SDK_CreateModelComponentReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{62}
+	return fileDescriptor_075c0a5d977b1e4e, []int{64}
 }
 
 func (m *RI_SDK_CreateModelComponentReturn) XXX_Unmarshal(b []byte) error {
@@ -3167,7 +3263,7 @@ func (m *RI_SDK_LinkPWMToControllerParams) Reset()         { *m = RI_SDK_LinkPWM
 func (m *RI_SDK_LinkPWMToControllerParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_LinkPWMToControllerParams) ProtoMessage()    {}
 func (*RI_SDK_LinkPWMToControllerParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{63}
+	return fileDescriptor_075c0a5d977b1e4e, []int{65}
 }
 
 func (m *RI_SDK_LinkPWMToControllerParams) XXX_Unmarshal(b []byte) error {
@@ -3222,7 +3318,7 @@ func (m *RI_SDK_LinkPWMToControllerReturn) Reset()         { *m = RI_SDK_LinkPWM
 func (m *RI_SDK_LinkPWMToControllerReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_LinkPWMToControllerReturn) ProtoMessage()    {}
 func (*RI_SDK_LinkPWMToControllerReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{64}
+	return fileDescriptor_075c0a5d977b1e4e, []int{66}
 }
 
 func (m *RI_SDK_LinkPWMToControllerReturn) XXX_Unmarshal(b []byte) error {
@@ -3273,7 +3369,7 @@ func (m *RI_SDK_LinkServodriveToControllerParams) Reset() {
 func (m *RI_SDK_LinkServodriveToControllerParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_LinkServodriveToControllerParams) ProtoMessage()    {}
 func (*RI_SDK_LinkServodriveToControllerParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{65}
+	return fileDescriptor_075c0a5d977b1e4e, []int{67}
 }
 
 func (m *RI_SDK_LinkServodriveToControllerParams) XXX_Unmarshal(b []byte) error {
@@ -3330,7 +3426,7 @@ func (m *RI_SDK_LinkServodriveToControllerReturn) Reset() {
 func (m *RI_SDK_LinkServodriveToControllerReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_LinkServodriveToControllerReturn) ProtoMessage()    {}
 func (*RI_SDK_LinkServodriveToControllerReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{66}
+	return fileDescriptor_075c0a5d977b1e4e, []int{68}
 }
 
 func (m *RI_SDK_LinkServodriveToControllerReturn) XXX_Unmarshal(b []byte) error {
@@ -3365,6 +3461,114 @@ func (m *RI_SDK_LinkServodriveToControllerReturn) GetErrorCode() int64 {
 	return 0
 }
 
+// Аргументы RI_SDK_LinkRServodriveToController
+type RI_SDK_LinkRServodriveToControllerParams struct {
+	ServodriveDescriptor int64    `protobuf:"varint,1,opt,name=servodriveDescriptor,proto3" json:"servodriveDescriptor,omitempty"`
+	PwmDescriptor        int64    `protobuf:"varint,2,opt,name=pwmDescriptor,proto3" json:"pwmDescriptor,omitempty"`
+	Port                 int64    `protobuf:"varint,3,opt,name=port,proto3" json:"port,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_LinkRServodriveToControllerParams) Reset() {
+	*m = RI_SDK_LinkRServodriveToControllerParams{}
+}
+func (m *RI_SDK_LinkRServodriveToControllerParams) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_LinkRServodriveToControllerParams) ProtoMessage()    {}
+func (*RI_SDK_LinkRServodriveToControllerParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{69}
+}
+
+func (m *RI_SDK_LinkRServodriveToControllerParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_LinkRServodriveToControllerParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_LinkRServodriveToControllerParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_LinkRServodriveToControllerParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_LinkRServodriveToControllerParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_LinkRServodriveToControllerParams.Merge(m, src)
+}
+func (m *RI_SDK_LinkRServodriveToControllerParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_LinkRServodriveToControllerParams.Size(m)
+}
+func (m *RI_SDK_LinkRServodriveToControllerParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_LinkRServodriveToControllerParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_LinkRServodriveToControllerParams proto.InternalMessageInfo
+
+func (m *RI_SDK_LinkRServodriveToControllerParams) GetServodriveDescriptor() int64 {
+	if m != nil {
+		return m.ServodriveDescriptor
+	}
+	return 0
+}
+
+func (m *RI_SDK_LinkRServodriveToControllerParams) GetPwmDescriptor() int64 {
+	if m != nil {
+		return m.PwmDescriptor
+	}
+	return 0
+}
+
+func (m *RI_SDK_LinkRServodriveToControllerParams) GetPort() int64 {
+	if m != nil {
+		return m.Port
+	}
+	return 0
+}
+
+// Возвращаемые значения RI_SDK_LinkRServodriveToController
+type RI_SDK_LinkRServodriveToControllerReturn struct {
+	ErrorText            string   `protobuf:"bytes,1,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,2,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_LinkRServodriveToControllerReturn) Reset() {
+	*m = RI_SDK_LinkRServodriveToControllerReturn{}
+}
+func (m *RI_SDK_LinkRServodriveToControllerReturn) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_LinkRServodriveToControllerReturn) ProtoMessage()    {}
+func (*RI_SDK_LinkRServodriveToControllerReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{70}
+}
+
+func (m *RI_SDK_LinkRServodriveToControllerReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_LinkRServodriveToControllerReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_LinkRServodriveToControllerReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_LinkRServodriveToControllerReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_LinkRServodriveToControllerReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_LinkRServodriveToControllerReturn.Merge(m, src)
+}
+func (m *RI_SDK_LinkRServodriveToControllerReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_LinkRServodriveToControllerReturn.Size(m)
+}
+func (m *RI_SDK_LinkRServodriveToControllerReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_LinkRServodriveToControllerReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_LinkRServodriveToControllerReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_LinkRServodriveToControllerReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_LinkRServodriveToControllerReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
 // Аргументы RI_SDK_LinkLedToController
 type RI_SDK_LinkLedToControllerParams struct {
 	LedDescriptor        int64    `protobuf:"varint,1,opt,name=ledDescriptor,proto3" json:"ledDescriptor,omitempty"`
@@ -3381,7 +3585,7 @@ func (m *RI_SDK_LinkLedToControllerParams) Reset()         { *m = RI_SDK_LinkLed
 func (m *RI_SDK_LinkLedToControllerParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_LinkLedToControllerParams) ProtoMessage()    {}
 func (*RI_SDK_LinkLedToControllerParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{67}
+	return fileDescriptor_075c0a5d977b1e4e, []int{71}
 }
 
 func (m *RI_SDK_LinkLedToControllerParams) XXX_Unmarshal(b []byte) error {
@@ -3450,7 +3654,7 @@ func (m *RI_SDK_LinkLedToControllerReturn) Reset()         { *m = RI_SDK_LinkLed
 func (m *RI_SDK_LinkLedToControllerReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_LinkLedToControllerReturn) ProtoMessage()    {}
 func (*RI_SDK_LinkLedToControllerReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{68}
+	return fileDescriptor_075c0a5d977b1e4e, []int{72}
 }
 
 func (m *RI_SDK_LinkLedToControllerReturn) XXX_Unmarshal(b []byte) error {
@@ -3503,7 +3707,7 @@ func (m *RI_SDK_LinkVoltageSensorToControllerParams) String() string {
 }
 func (*RI_SDK_LinkVoltageSensorToControllerParams) ProtoMessage() {}
 func (*RI_SDK_LinkVoltageSensorToControllerParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{69}
+	return fileDescriptor_075c0a5d977b1e4e, []int{73}
 }
 
 func (m *RI_SDK_LinkVoltageSensorToControllerParams) XXX_Unmarshal(b []byte) error {
@@ -3562,7 +3766,7 @@ func (m *RI_SDK_LinkVoltageSensorToControllerReturn) String() string {
 }
 func (*RI_SDK_LinkVoltageSensorToControllerReturn) ProtoMessage() {}
 func (*RI_SDK_LinkVoltageSensorToControllerReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{70}
+	return fileDescriptor_075c0a5d977b1e4e, []int{74}
 }
 
 func (m *RI_SDK_LinkVoltageSensorToControllerReturn) XXX_Unmarshal(b []byte) error {
@@ -3617,7 +3821,7 @@ func (m *RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{71}
+	return fileDescriptor_075c0a5d977b1e4e, []int{75}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_CustomDeviceInitParams) XXX_Unmarshal(b []byte) error {
@@ -3690,7 +3894,7 @@ func (m *RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{72}
+	return fileDescriptor_075c0a5d977b1e4e, []int{76}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_CustomDeviceInitReturn) XXX_Unmarshal(b []byte) error {
@@ -3739,7 +3943,7 @@ func (m *RI_SDK_Sigmod_PWM_SetPortFreqParams) Reset()         { *m = RI_SDK_Sigm
 func (m *RI_SDK_Sigmod_PWM_SetPortFreqParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_SetPortFreqParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_SetPortFreqParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{73}
+	return fileDescriptor_075c0a5d977b1e4e, []int{77}
 }
 
 func (m *RI_SDK_Sigmod_PWM_SetPortFreqParams) XXX_Unmarshal(b []byte) error {
@@ -3794,7 +3998,7 @@ func (m *RI_SDK_Sigmod_PWM_SetPortFreqReturn) Reset()         { *m = RI_SDK_Sigm
 func (m *RI_SDK_Sigmod_PWM_SetPortFreqReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_SetPortFreqReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_SetPortFreqReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{74}
+	return fileDescriptor_075c0a5d977b1e4e, []int{78}
 }
 
 func (m *RI_SDK_Sigmod_PWM_SetPortFreqReturn) XXX_Unmarshal(b []byte) error {
@@ -3846,7 +4050,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{75}
+	return fileDescriptor_075c0a5d977b1e4e, []int{79}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnByDutyCycleParams) XXX_Unmarshal(b []byte) error {
@@ -3898,7 +4102,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{76}
+	return fileDescriptor_075c0a5d977b1e4e, []int{80}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnByDutyCycleReturn) XXX_Unmarshal(b []byte) error {
@@ -3945,7 +4149,7 @@ func (m *RI_SDK_Sigmod_PWM_ResetAllParams) Reset()         { *m = RI_SDK_Sigmod_
 func (m *RI_SDK_Sigmod_PWM_ResetAllParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ResetAllParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ResetAllParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{77}
+	return fileDescriptor_075c0a5d977b1e4e, []int{81}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ResetAllParams) XXX_Unmarshal(b []byte) error {
@@ -3986,7 +4190,7 @@ func (m *RI_SDK_Sigmod_PWM_ResetAllReturn) Reset()         { *m = RI_SDK_Sigmod_
 func (m *RI_SDK_Sigmod_PWM_ResetAllReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ResetAllReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ResetAllReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{78}
+	return fileDescriptor_075c0a5d977b1e4e, []int{82}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ResetAllReturn) XXX_Unmarshal(b []byte) error {
@@ -4036,7 +4240,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnByPulseParams) Reset() {
 func (m *RI_SDK_Exec_ServoDrive_TurnByPulseParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_TurnByPulseParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_TurnByPulseParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{79}
+	return fileDescriptor_075c0a5d977b1e4e, []int{83}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnByPulseParams) XXX_Unmarshal(b []byte) error {
@@ -4086,7 +4290,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnByPulseReturn) Reset() {
 func (m *RI_SDK_Exec_ServoDrive_TurnByPulseReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_TurnByPulseReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_TurnByPulseReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{80}
+	return fileDescriptor_075c0a5d977b1e4e, []int{84}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnByPulseReturn) XXX_Unmarshal(b []byte) error {
@@ -4134,7 +4338,7 @@ func (m *RI_SDK_Sigmod_PWM_ResetPortParams) Reset()         { *m = RI_SDK_Sigmod
 func (m *RI_SDK_Sigmod_PWM_ResetPortParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ResetPortParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ResetPortParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{81}
+	return fileDescriptor_075c0a5d977b1e4e, []int{85}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ResetPortParams) XXX_Unmarshal(b []byte) error {
@@ -4182,7 +4386,7 @@ func (m *RI_SDK_Sigmod_PWM_ResetPortReturn) Reset()         { *m = RI_SDK_Sigmod
 func (m *RI_SDK_Sigmod_PWM_ResetPortReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ResetPortReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ResetPortReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{82}
+	return fileDescriptor_075c0a5d977b1e4e, []int{86}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ResetPortReturn) XXX_Unmarshal(b []byte) error {
@@ -4233,7 +4437,7 @@ func (m *RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{83}
+	return fileDescriptor_075c0a5d977b1e4e, []int{87}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_GetCurrentAngleParams) XXX_Unmarshal(b []byte) error {
@@ -4279,7 +4483,7 @@ func (m *RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{84}
+	return fileDescriptor_075c0a5d977b1e4e, []int{88}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_GetCurrentAngleReturn) XXX_Unmarshal(b []byte) error {
@@ -4333,7 +4537,7 @@ func (m *RI_SDK_Exec_ServoDrive_GetStateParams) Reset()         { *m = RI_SDK_Ex
 func (m *RI_SDK_Exec_ServoDrive_GetStateParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_GetStateParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_GetStateParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{85}
+	return fileDescriptor_075c0a5d977b1e4e, []int{89}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_GetStateParams) XXX_Unmarshal(b []byte) error {
@@ -4375,7 +4579,7 @@ func (m *RI_SDK_Exec_ServoDrive_GetStateReturn) Reset()         { *m = RI_SDK_Ex
 func (m *RI_SDK_Exec_ServoDrive_GetStateReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_GetStateReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_GetStateReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{86}
+	return fileDescriptor_075c0a5d977b1e4e, []int{90}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_GetStateReturn) XXX_Unmarshal(b []byte) error {
@@ -4433,7 +4637,7 @@ func (m *RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeParams) String() str
 }
 func (*RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{87}
+	return fileDescriptor_075c0a5d977b1e4e, []int{91}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeParams) XXX_Unmarshal(b []byte) error {
@@ -4478,7 +4682,7 @@ func (m *RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeReturn) String() str
 }
 func (*RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{88}
+	return fileDescriptor_075c0a5d977b1e4e, []int{92}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_SetPositionToMidWorkingRangeReturn) XXX_Unmarshal(b []byte) error {
@@ -4528,7 +4732,7 @@ func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) Reset() {
 func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{89}
+	return fileDescriptor_075c0a5d977b1e4e, []int{93}
 }
 
 func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleParams) XXX_Unmarshal(b []byte) error {
@@ -4580,7 +4784,7 @@ func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn) Reset() {
 func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{90}
+	return fileDescriptor_075c0a5d977b1e4e, []int{94}
 }
 
 func (m *RI_SDK_Sigmod_PWM_GetPortDutyCycleReturn) XXX_Unmarshal(b []byte) error {
@@ -4646,7 +4850,7 @@ func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) Reset() {
 func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{91}
+	return fileDescriptor_075c0a5d977b1e4e, []int{95}
 }
 
 func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleParams) XXX_Unmarshal(b []byte) error {
@@ -4710,7 +4914,7 @@ func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn) Reset() {
 func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{92}
+	return fileDescriptor_075c0a5d977b1e4e, []int{96}
 }
 
 func (m *RI_SDK_Sigmod_PWM_SetPortDutyCycleReturn) XXX_Unmarshal(b []byte) error {
@@ -4764,7 +4968,7 @@ func (m *RI_SDK_Exec_ServoDrive_MinStepRotateParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_MinStepRotateParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_MinStepRotateParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{93}
+	return fileDescriptor_075c0a5d977b1e4e, []int{97}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_MinStepRotateParams) XXX_Unmarshal(b []byte) error {
@@ -4830,7 +5034,7 @@ func (m *RI_SDK_Exec_ServoDrive_MinStepRotateReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_MinStepRotateReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_MinStepRotateReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{94}
+	return fileDescriptor_075c0a5d977b1e4e, []int{98}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_MinStepRotateReturn) XXX_Unmarshal(b []byte) error {
@@ -4880,7 +5084,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnParams) Reset()         { *m = RI_SDK_Exec_S
 func (m *RI_SDK_Exec_ServoDrive_TurnParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_TurnParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_TurnParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{95}
+	return fileDescriptor_075c0a5d977b1e4e, []int{99}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnParams) XXX_Unmarshal(b []byte) error {
@@ -4942,7 +5146,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnReturn) Reset()         { *m = RI_SDK_Exec_S
 func (m *RI_SDK_Exec_ServoDrive_TurnReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_TurnReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_TurnReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{96}
+	return fileDescriptor_075c0a5d977b1e4e, []int{100}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnReturn) XXX_Unmarshal(b []byte) error {
@@ -4989,7 +5193,7 @@ func (m *RI_SDK_Exec_ServoDrive_StopParams) Reset()         { *m = RI_SDK_Exec_S
 func (m *RI_SDK_Exec_ServoDrive_StopParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_StopParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_StopParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{97}
+	return fileDescriptor_075c0a5d977b1e4e, []int{101}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_StopParams) XXX_Unmarshal(b []byte) error {
@@ -5030,7 +5234,7 @@ func (m *RI_SDK_Exec_ServoDrive_StopReturn) Reset()         { *m = RI_SDK_Exec_S
 func (m *RI_SDK_Exec_ServoDrive_StopReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_StopReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_StopReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{98}
+	return fileDescriptor_075c0a5d977b1e4e, []int{102}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_StopReturn) XXX_Unmarshal(b []byte) error {
@@ -5080,7 +5284,7 @@ func (m *RI_SDK_Exec_ServoDrive_RotateParams) Reset()         { *m = RI_SDK_Exec
 func (m *RI_SDK_Exec_ServoDrive_RotateParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_RotateParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_RotateParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{99}
+	return fileDescriptor_075c0a5d977b1e4e, []int{103}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_RotateParams) XXX_Unmarshal(b []byte) error {
@@ -5142,7 +5346,7 @@ func (m *RI_SDK_Exec_ServoDrive_RotateReturn) Reset()         { *m = RI_SDK_Exec
 func (m *RI_SDK_Exec_ServoDrive_RotateReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_ServoDrive_RotateReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_ServoDrive_RotateReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{100}
+	return fileDescriptor_075c0a5d977b1e4e, []int{104}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_RotateReturn) XXX_Unmarshal(b []byte) error {
@@ -5196,7 +5400,7 @@ func (m *RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{101}
+	return fileDescriptor_075c0a5d977b1e4e, []int{105}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) XXX_Unmarshal(b []byte) error {
@@ -5262,7 +5466,7 @@ func (m *RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{102}
+	return fileDescriptor_075c0a5d977b1e4e, []int{106}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn) XXX_Unmarshal(b []byte) error {
@@ -5316,7 +5520,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{103}
+	return fileDescriptor_075c0a5d977b1e4e, []int{107}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) XXX_Unmarshal(b []byte) error {
@@ -5382,7 +5586,7 @@ func (m *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{104}
+	return fileDescriptor_075c0a5d977b1e4e, []int{108}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn) XXX_Unmarshal(b []byte) error {
@@ -5417,6 +5621,802 @@ func (m *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn) GetErrorCode() int6
 	return 0
 }
 
+// Аргументы RI_SDK_Exec_RServoDrive_CustomDeviceInit
+type RI_SDK_Exec_RServoDrive_CustomDeviceInitParams struct {
+	Descriptor_              int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	MinPulseClockwise        int64    `protobuf:"varint,2,opt,name=minPulseClockwise,proto3" json:"minPulseClockwise,omitempty"`
+	MaxPulseClockwise        int64    `protobuf:"varint,3,opt,name=maxPulseClockwise,proto3" json:"maxPulseClockwise,omitempty"`
+	MinPulseCounterClockwise int64    `protobuf:"varint,4,opt,name=minPulseCounterClockwise,proto3" json:"minPulseCounterClockwise,omitempty"`
+	MaxPulseCounterClockwise int64    `protobuf:"varint,5,opt,name=maxPulseCounterClockwise,proto3" json:"maxPulseCounterClockwise,omitempty"`
+	XXX_NoUnkeyedLiteral     struct{} `json:"-"`
+	XXX_unrecognized         []byte   `json:"-"`
+	XXX_sizecache            int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_CustomDeviceInitParams{}
+}
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{109}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitParams.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitParams.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) GetMinPulseClockwise() int64 {
+	if m != nil {
+		return m.MinPulseClockwise
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) GetMaxPulseClockwise() int64 {
+	if m != nil {
+		return m.MaxPulseClockwise
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) GetMinPulseCounterClockwise() int64 {
+	if m != nil {
+		return m.MinPulseCounterClockwise
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) GetMaxPulseCounterClockwise() int64 {
+	if m != nil {
+		return m.MaxPulseCounterClockwise
+	}
+	return 0
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_CustomDeviceInit
+type RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn struct {
+	ErrorText            string   `protobuf:"bytes,1,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,2,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn{}
+}
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{110}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_Stop
+type RI_SDK_Exec_RServoDrive_StopParams struct {
+	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_StopParams) Reset()         { *m = RI_SDK_Exec_RServoDrive_StopParams{} }
+func (m *RI_SDK_Exec_RServoDrive_StopParams) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Exec_RServoDrive_StopParams) ProtoMessage()    {}
+func (*RI_SDK_Exec_RServoDrive_StopParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{111}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_StopParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_StopParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_StopParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopParams.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_StopParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopParams.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_StopParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_StopParams) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_Stop
+type RI_SDK_Exec_RServoDrive_StopReturn struct {
+	ErrorText            string   `protobuf:"bytes,1,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,2,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_StopReturn) Reset()         { *m = RI_SDK_Exec_RServoDrive_StopReturn{} }
+func (m *RI_SDK_Exec_RServoDrive_StopReturn) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Exec_RServoDrive_StopReturn) ProtoMessage()    {}
+func (*RI_SDK_Exec_RServoDrive_StopReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{112}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_StopReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_StopReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_StopReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopReturn.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_StopReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopReturn.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_StopReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_StopReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_StopReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Exec_RServoDrive_StopReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_RotateByPulseOverTime
+type RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams struct {
+	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	Pulse                int64    `protobuf:"varint,2,opt,name=pulse,proto3" json:"pulse,omitempty"`
+	Timeout              int64    `protobuf:"varint,3,opt,name=timeout,proto3" json:"timeout,omitempty"`
+	Async                bool     `protobuf:"varint,4,opt,name=async,proto3" json:"async,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams{}
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{113}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) GetPulse() int64 {
+	if m != nil {
+		return m.Pulse
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) GetTimeout() int64 {
+	if m != nil {
+		return m.Timeout
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) GetAsync() bool {
+	if m != nil {
+		return m.Async
+	}
+	return false
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_RotateByPulseOverTime
+type RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn struct {
+	ErrorText            string   `protobuf:"bytes,1,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,2,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn{}
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{114}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_RotateByPulse
+type RI_SDK_Exec_RServoDrive_RotateByPulseParams struct {
+	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	Pulse                int64    `protobuf:"varint,2,opt,name=pulse,proto3" json:"pulse,omitempty"`
+	Async                bool     `protobuf:"varint,3,opt,name=async,proto3" json:"async,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseParams) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_RotateByPulseParams{}
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_RotateByPulseParams) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_RotateByPulseParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{115}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseParams.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseParams.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseParams) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseParams) GetPulse() int64 {
+	if m != nil {
+		return m.Pulse
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseParams) GetAsync() bool {
+	if m != nil {
+		return m.Async
+	}
+	return false
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_RotateByPulse
+type RI_SDK_Exec_RServoDrive_RotateByPulseReturn struct {
+	ErrorText            string   `protobuf:"bytes,1,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,2,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseReturn) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_RotateByPulseReturn{}
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_RotateByPulseReturn) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_RotateByPulseReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{116}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseReturn.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseReturn.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateByPulseReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateByPulseReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime
+type RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams struct {
+	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	Direction            int64    `protobuf:"varint,2,opt,name=direction,proto3" json:"direction,omitempty"`
+	Speed                int64    `protobuf:"varint,3,opt,name=speed,proto3" json:"speed,omitempty"`
+	Timeout              int64    `protobuf:"varint,4,opt,name=timeout,proto3" json:"timeout,omitempty"`
+	Async                bool     `protobuf:"varint,5,opt,name=async,proto3" json:"async,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams{}
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{117}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) GetDirection() int64 {
+	if m != nil {
+		return m.Direction
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) GetSpeed() int64 {
+	if m != nil {
+		return m.Speed
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) GetTimeout() int64 {
+	if m != nil {
+		return m.Timeout
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) GetAsync() bool {
+	if m != nil {
+		return m.Async
+	}
+	return false
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime
+type RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn struct {
+	ErrorText            string   `protobuf:"bytes,1,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,2,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn{}
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{118}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed
+type RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams struct {
+	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	Direction            int64    `protobuf:"varint,2,opt,name=direction,proto3" json:"direction,omitempty"`
+	Speed                int64    `protobuf:"varint,3,opt,name=speed,proto3" json:"speed,omitempty"`
+	Async                bool     `protobuf:"varint,4,opt,name=async,proto3" json:"async,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams{}
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{119}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) GetDirection() int64 {
+	if m != nil {
+		return m.Direction
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) GetSpeed() int64 {
+	if m != nil {
+		return m.Speed
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) GetAsync() bool {
+	if m != nil {
+		return m.Async
+	}
+	return false
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed
+type RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn struct {
+	ErrorText            string   `protobuf:"bytes,1,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,2,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn{}
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{120}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
+// Аргументы RI_SDK_Exec_RServoDrive_GetState
+type RI_SDK_Exec_RServoDrive_GetStateParams struct {
+	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_GetStateParams) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_GetStateParams{}
+}
+func (m *RI_SDK_Exec_RServoDrive_GetStateParams) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Exec_RServoDrive_GetStateParams) ProtoMessage()    {}
+func (*RI_SDK_Exec_RServoDrive_GetStateParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{121}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_GetStateParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_GetStateParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_GetStateParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateParams.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_GetStateParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateParams.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_GetStateParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_GetStateParams) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_GetState
+type RI_SDK_Exec_RServoDrive_GetStateReturn struct {
+	State                int64    `protobuf:"varint,1,opt,name=state,proto3" json:"state,omitempty"`
+	ErrorText            string   `protobuf:"bytes,2,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,3,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_GetStateReturn) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_GetStateReturn{}
+}
+func (m *RI_SDK_Exec_RServoDrive_GetStateReturn) String() string { return proto.CompactTextString(m) }
+func (*RI_SDK_Exec_RServoDrive_GetStateReturn) ProtoMessage()    {}
+func (*RI_SDK_Exec_RServoDrive_GetStateReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{122}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_GetStateReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_GetStateReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_GetStateReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateReturn.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_GetStateReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateReturn.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_GetStateReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_GetStateReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_GetStateReturn) GetState() int64 {
+	if m != nil {
+		return m.State
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_GetStateReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Exec_RServoDrive_GetStateReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
 // Аргументы RI_SDK_Exec_RGB_LED_SinglePulse
 type RI_SDK_Exec_RGB_LED_SinglePulseParams struct {
 	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
@@ -5434,7 +6434,7 @@ func (m *RI_SDK_Exec_RGB_LED_SinglePulseParams) Reset()         { *m = RI_SDK_Ex
 func (m *RI_SDK_Exec_RGB_LED_SinglePulseParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_SinglePulseParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_SinglePulseParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{105}
+	return fileDescriptor_075c0a5d977b1e4e, []int{123}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_SinglePulseParams) XXX_Unmarshal(b []byte) error {
@@ -5510,7 +6510,7 @@ func (m *RI_SDK_Exec_RGB_LED_SinglePulseReturn) Reset()         { *m = RI_SDK_Ex
 func (m *RI_SDK_Exec_RGB_LED_SinglePulseReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_SinglePulseReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_SinglePulseReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{106}
+	return fileDescriptor_075c0a5d977b1e4e, []int{124}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_SinglePulseReturn) XXX_Unmarshal(b []byte) error {
@@ -5557,7 +6557,7 @@ func (m *RI_SDK_Exec_RGB_LED_StopParams) Reset()         { *m = RI_SDK_Exec_RGB_
 func (m *RI_SDK_Exec_RGB_LED_StopParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_StopParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_StopParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{107}
+	return fileDescriptor_075c0a5d977b1e4e, []int{125}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_StopParams) XXX_Unmarshal(b []byte) error {
@@ -5598,7 +6598,7 @@ func (m *RI_SDK_Exec_RGB_LED_StopReturn) Reset()         { *m = RI_SDK_Exec_RGB_
 func (m *RI_SDK_Exec_RGB_LED_StopReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_StopReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_StopReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{108}
+	return fileDescriptor_075c0a5d977b1e4e, []int{126}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_StopReturn) XXX_Unmarshal(b []byte) error {
@@ -5645,7 +6645,7 @@ func (m *RI_SDK_Exec_RGB_LED_GetStateParams) Reset()         { *m = RI_SDK_Exec_
 func (m *RI_SDK_Exec_RGB_LED_GetStateParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_GetStateParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_GetStateParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{109}
+	return fileDescriptor_075c0a5d977b1e4e, []int{127}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_GetStateParams) XXX_Unmarshal(b []byte) error {
@@ -5687,7 +6687,7 @@ func (m *RI_SDK_Exec_RGB_LED_GetStateReturn) Reset()         { *m = RI_SDK_Exec_
 func (m *RI_SDK_Exec_RGB_LED_GetStateReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_GetStateReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_GetStateReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{110}
+	return fileDescriptor_075c0a5d977b1e4e, []int{128}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_GetStateReturn) XXX_Unmarshal(b []byte) error {
@@ -5741,7 +6741,7 @@ func (m *RI_SDK_Exec_RGB_LED_GetColorParams) Reset()         { *m = RI_SDK_Exec_
 func (m *RI_SDK_Exec_RGB_LED_GetColorParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_GetColorParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_GetColorParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{111}
+	return fileDescriptor_075c0a5d977b1e4e, []int{129}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_GetColorParams) XXX_Unmarshal(b []byte) error {
@@ -5785,7 +6785,7 @@ func (m *RI_SDK_Exec_RGB_LED_GetColorReturn) Reset()         { *m = RI_SDK_Exec_
 func (m *RI_SDK_Exec_RGB_LED_GetColorReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_GetColorReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_GetColorReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{112}
+	return fileDescriptor_075c0a5d977b1e4e, []int{130}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_GetColorReturn) XXX_Unmarshal(b []byte) error {
@@ -5853,7 +6853,7 @@ func (m *RI_SDK_Sigmod_PWM_CloseParams) Reset()         { *m = RI_SDK_Sigmod_PWM
 func (m *RI_SDK_Sigmod_PWM_CloseParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_CloseParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_CloseParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{113}
+	return fileDescriptor_075c0a5d977b1e4e, []int{131}
 }
 
 func (m *RI_SDK_Sigmod_PWM_CloseParams) XXX_Unmarshal(b []byte) error {
@@ -5894,7 +6894,7 @@ func (m *RI_SDK_Sigmod_PWM_CloseReturn) Reset()         { *m = RI_SDK_Sigmod_PWM
 func (m *RI_SDK_Sigmod_PWM_CloseReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_CloseReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_CloseReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{114}
+	return fileDescriptor_075c0a5d977b1e4e, []int{132}
 }
 
 func (m *RI_SDK_Sigmod_PWM_CloseReturn) XXX_Unmarshal(b []byte) error {
@@ -5951,7 +6951,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams) String() string {
 }
 func (*RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams) ProtoMessage() {}
 func (*RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{115}
+	return fileDescriptor_075c0a5d977b1e4e, []int{133}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlashingWithFrequencyParams) XXX_Unmarshal(b []byte) error {
@@ -6038,7 +7038,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn) String() string {
 }
 func (*RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{116}
+	return fileDescriptor_075c0a5d977b1e4e, []int{134}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlashingWithFrequencyReturn) XXX_Unmarshal(b []byte) error {
@@ -6096,7 +7096,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) String() string {
 }
 func (*RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) ProtoMessage() {}
 func (*RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{117}
+	return fileDescriptor_075c0a5d977b1e4e, []int{135}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlashingWithPauseParams) XXX_Unmarshal(b []byte) error {
@@ -6190,7 +7190,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn) String() string {
 }
 func (*RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{118}
+	return fileDescriptor_075c0a5d977b1e4e, []int{136}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlashingWithPauseReturn) XXX_Unmarshal(b []byte) error {
@@ -6243,7 +7243,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlickerParams) Reset()         { *m = RI_SDK_Exec_R
 func (m *RI_SDK_Exec_RGB_LED_FlickerParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_FlickerParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_FlickerParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{119}
+	return fileDescriptor_075c0a5d977b1e4e, []int{137}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlickerParams) XXX_Unmarshal(b []byte) error {
@@ -6326,7 +7326,7 @@ func (m *RI_SDK_Exec_RGB_LED_FlickerReturn) Reset()         { *m = RI_SDK_Exec_R
 func (m *RI_SDK_Exec_RGB_LED_FlickerReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_FlickerReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_FlickerReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{120}
+	return fileDescriptor_075c0a5d977b1e4e, []int{138}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_FlickerReturn) XXX_Unmarshal(b []byte) error {
@@ -6376,7 +7376,7 @@ func (m *RI_SDK_Connector_I2C_ExtendToModelParams) Reset() {
 func (m *RI_SDK_Connector_I2C_ExtendToModelParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Connector_I2C_ExtendToModelParams) ProtoMessage()    {}
 func (*RI_SDK_Connector_I2C_ExtendToModelParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{121}
+	return fileDescriptor_075c0a5d977b1e4e, []int{139}
 }
 
 func (m *RI_SDK_Connector_I2C_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
@@ -6427,7 +7427,7 @@ func (m *RI_SDK_Connector_I2C_ExtendToModelReturn) Reset() {
 func (m *RI_SDK_Connector_I2C_ExtendToModelReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Connector_I2C_ExtendToModelReturn) ProtoMessage()    {}
 func (*RI_SDK_Connector_I2C_ExtendToModelReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{122}
+	return fileDescriptor_075c0a5d977b1e4e, []int{140}
 }
 
 func (m *RI_SDK_Connector_I2C_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
@@ -6482,7 +7482,7 @@ func (m *RI_SDK_Sigmod_PWM_ExtendToModelParams) Reset()         { *m = RI_SDK_Si
 func (m *RI_SDK_Sigmod_PWM_ExtendToModelParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ExtendToModelParams) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ExtendToModelParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{123}
+	return fileDescriptor_075c0a5d977b1e4e, []int{141}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
@@ -6531,7 +7531,7 @@ func (m *RI_SDK_Sigmod_PWM_ExtendToModelReturn) Reset()         { *m = RI_SDK_Si
 func (m *RI_SDK_Sigmod_PWM_ExtendToModelReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sigmod_PWM_ExtendToModelReturn) ProtoMessage()    {}
 func (*RI_SDK_Sigmod_PWM_ExtendToModelReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{124}
+	return fileDescriptor_075c0a5d977b1e4e, []int{142}
 }
 
 func (m *RI_SDK_Sigmod_PWM_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
@@ -6590,7 +7590,7 @@ func (m *RI_SDK_Exec_ServoDrive_ExtendToModelParams) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_ExtendToModelParams) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_ExtendToModelParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{125}
+	return fileDescriptor_075c0a5d977b1e4e, []int{143}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
@@ -6643,7 +7643,7 @@ func (m *RI_SDK_Exec_ServoDrive_ExtendToModelReturn) String() string {
 }
 func (*RI_SDK_Exec_ServoDrive_ExtendToModelReturn) ProtoMessage() {}
 func (*RI_SDK_Exec_ServoDrive_ExtendToModelReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{126}
+	return fileDescriptor_075c0a5d977b1e4e, []int{144}
 }
 
 func (m *RI_SDK_Exec_ServoDrive_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
@@ -6685,6 +7685,118 @@ func (m *RI_SDK_Exec_ServoDrive_ExtendToModelReturn) GetErrorCode() int64 {
 	return 0
 }
 
+// Аргументы RI_SDK_Exec_RServoDrive_ExtendToModel
+type RI_SDK_Exec_RServoDrive_ExtendToModelParams struct {
+	BaseDescriptor       int64    `protobuf:"varint,1,opt,name=baseDescriptor,proto3" json:"baseDescriptor,omitempty"`
+	ModelName            string   `protobuf:"bytes,2,opt,name=modelName,proto3" json:"modelName,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelParams) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_ExtendToModelParams{}
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelParams) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_ExtendToModelParams) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_ExtendToModelParams) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{145}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelParams.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelParams) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelParams.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelParams) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelParams.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelParams) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelParams.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelParams) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelParams.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelParams proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelParams) GetBaseDescriptor() int64 {
+	if m != nil {
+		return m.BaseDescriptor
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelParams) GetModelName() string {
+	if m != nil {
+		return m.ModelName
+	}
+	return ""
+}
+
+// Возвращаемые значения RI_SDK_Exec_RServoDrive_ExtendToModel
+type RI_SDK_Exec_RServoDrive_ExtendToModelReturn struct {
+	Descriptor_          int64    `protobuf:"varint,1,opt,name=descriptor,proto3" json:"descriptor,omitempty"`
+	ErrorText            string   `protobuf:"bytes,2,opt,name=errorText,proto3" json:"errorText,omitempty"`
+	ErrorCode            int64    `protobuf:"varint,3,opt,name=errorCode,proto3" json:"errorCode,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelReturn) Reset() {
+	*m = RI_SDK_Exec_RServoDrive_ExtendToModelReturn{}
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelReturn) String() string {
+	return proto.CompactTextString(m)
+}
+func (*RI_SDK_Exec_RServoDrive_ExtendToModelReturn) ProtoMessage() {}
+func (*RI_SDK_Exec_RServoDrive_ExtendToModelReturn) Descriptor() ([]byte, []int) {
+	return fileDescriptor_075c0a5d977b1e4e, []int{146}
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelReturn.Unmarshal(m, b)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelReturn) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelReturn.Marshal(b, m, deterministic)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelReturn) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelReturn.Merge(m, src)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelReturn) XXX_Size() int {
+	return xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelReturn.Size(m)
+}
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelReturn) XXX_DiscardUnknown() {
+	xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelReturn.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_RI_SDK_Exec_RServoDrive_ExtendToModelReturn proto.InternalMessageInfo
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelReturn) GetDescriptor_() int64 {
+	if m != nil {
+		return m.Descriptor_
+	}
+	return 0
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelReturn) GetErrorText() string {
+	if m != nil {
+		return m.ErrorText
+	}
+	return ""
+}
+
+func (m *RI_SDK_Exec_RServoDrive_ExtendToModelReturn) GetErrorCode() int64 {
+	if m != nil {
+		return m.ErrorCode
+	}
+	return 0
+}
+
 // Аргументы RI_SDK_Exec_RGB_LED_ExtendToModel
 type RI_SDK_Exec_RGB_LED_ExtendToModelParams struct {
 	BaseDescriptor       int64    `protobuf:"varint,1,opt,name=baseDescriptor,proto3" json:"baseDescriptor,omitempty"`
@@ -6700,7 +7812,7 @@ func (m *RI_SDK_Exec_RGB_LED_ExtendToModelParams) Reset() {
 func (m *RI_SDK_Exec_RGB_LED_ExtendToModelParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_ExtendToModelParams) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_ExtendToModelParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{127}
+	return fileDescriptor_075c0a5d977b1e4e, []int{147}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
@@ -6751,7 +7863,7 @@ func (m *RI_SDK_Exec_RGB_LED_ExtendToModelReturn) Reset() {
 func (m *RI_SDK_Exec_RGB_LED_ExtendToModelReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Exec_RGB_LED_ExtendToModelReturn) ProtoMessage()    {}
 func (*RI_SDK_Exec_RGB_LED_ExtendToModelReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{128}
+	return fileDescriptor_075c0a5d977b1e4e, []int{148}
 }
 
 func (m *RI_SDK_Exec_RGB_LED_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
@@ -6807,7 +7919,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) Reset() {
 func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sensor_VoltageSensor_ExtendParams) ProtoMessage()    {}
 func (*RI_SDK_Sensor_VoltageSensor_ExtendParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{129}
+	return fileDescriptor_075c0a5d977b1e4e, []int{149}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_ExtendParams) XXX_Unmarshal(b []byte) error {
@@ -6851,7 +7963,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) Reset() {
 func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sensor_VoltageSensor_ExtendReturn) ProtoMessage()    {}
 func (*RI_SDK_Sensor_VoltageSensor_ExtendReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{130}
+	return fileDescriptor_075c0a5d977b1e4e, []int{150}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_ExtendReturn) XXX_Unmarshal(b []byte) error {
@@ -6910,7 +8022,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) String() string {
 }
 func (*RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) ProtoMessage() {}
 func (*RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{131}
+	return fileDescriptor_075c0a5d977b1e4e, []int{151}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelParams) XXX_Unmarshal(b []byte) error {
@@ -6963,7 +8075,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) String() string {
 }
 func (*RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) ProtoMessage() {}
 func (*RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{132}
+	return fileDescriptor_075c0a5d977b1e4e, []int{152}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_ExtendToModelReturn) XXX_Unmarshal(b []byte) error {
@@ -7026,7 +8138,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) String() string {
 }
 func (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) ProtoMessage() {}
 func (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{133}
+	return fileDescriptor_075c0a5d977b1e4e, []int{153}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams) XXX_Unmarshal(b []byte) error {
@@ -7106,7 +8218,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) String() string {
 }
 func (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) ProtoMessage() {}
 func (*RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{134}
+	return fileDescriptor_075c0a5d977b1e4e, []int{154}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_CustomDeviceInitReturn) XXX_Unmarshal(b []byte) error {
@@ -7157,7 +8269,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_VoltageParams) String() string {
 }
 func (*RI_SDK_Sensor_VoltageSensor_VoltageParams) ProtoMessage() {}
 func (*RI_SDK_Sensor_VoltageSensor_VoltageParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{135}
+	return fileDescriptor_075c0a5d977b1e4e, []int{155}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_VoltageParams) XXX_Unmarshal(b []byte) error {
@@ -7203,7 +8315,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) String() string {
 }
 func (*RI_SDK_Sensor_VoltageSensor_VoltageReturn) ProtoMessage() {}
 func (*RI_SDK_Sensor_VoltageSensor_VoltageReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{136}
+	return fileDescriptor_075c0a5d977b1e4e, []int{156}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_VoltageReturn) XXX_Unmarshal(b []byte) error {
@@ -7261,7 +8373,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) String() string {
 }
 func (*RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) ProtoMessage() {}
 func (*RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{137}
+	return fileDescriptor_075c0a5d977b1e4e, []int{157}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntParams) XXX_Unmarshal(b []byte) error {
@@ -7307,7 +8419,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) String() string {
 }
 func (*RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) ProtoMessage() {}
 func (*RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{138}
+	return fileDescriptor_075c0a5d977b1e4e, []int{158}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_VoltageShuntReturn) XXX_Unmarshal(b []byte) error {
@@ -7365,7 +8477,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_CurrentParams) String() string {
 }
 func (*RI_SDK_Sensor_VoltageSensor_CurrentParams) ProtoMessage() {}
 func (*RI_SDK_Sensor_VoltageSensor_CurrentParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{139}
+	return fileDescriptor_075c0a5d977b1e4e, []int{159}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_CurrentParams) XXX_Unmarshal(b []byte) error {
@@ -7411,7 +8523,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) String() string {
 }
 func (*RI_SDK_Sensor_VoltageSensor_CurrentReturn) ProtoMessage() {}
 func (*RI_SDK_Sensor_VoltageSensor_CurrentReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{140}
+	return fileDescriptor_075c0a5d977b1e4e, []int{160}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_CurrentReturn) XXX_Unmarshal(b []byte) error {
@@ -7467,7 +8579,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) Reset() {
 func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sensor_VoltageSensor_PowerParams) ProtoMessage()    {}
 func (*RI_SDK_Sensor_VoltageSensor_PowerParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{141}
+	return fileDescriptor_075c0a5d977b1e4e, []int{161}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_PowerParams) XXX_Unmarshal(b []byte) error {
@@ -7511,7 +8623,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) Reset() {
 func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sensor_VoltageSensor_PowerReturn) ProtoMessage()    {}
 func (*RI_SDK_Sensor_VoltageSensor_PowerReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{142}
+	return fileDescriptor_075c0a5d977b1e4e, []int{162}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_PowerReturn) XXX_Unmarshal(b []byte) error {
@@ -7567,7 +8679,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) Reset() {
 func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sensor_VoltageSensor_SenseParams) ProtoMessage()    {}
 func (*RI_SDK_Sensor_VoltageSensor_SenseParams) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{143}
+	return fileDescriptor_075c0a5d977b1e4e, []int{163}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_SenseParams) XXX_Unmarshal(b []byte) error {
@@ -7614,7 +8726,7 @@ func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) Reset() {
 func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) String() string { return proto.CompactTextString(m) }
 func (*RI_SDK_Sensor_VoltageSensor_SenseReturn) ProtoMessage()    {}
 func (*RI_SDK_Sensor_VoltageSensor_SenseReturn) Descriptor() ([]byte, []int) {
-	return fileDescriptor_075c0a5d977b1e4e, []int{144}
+	return fileDescriptor_075c0a5d977b1e4e, []int{164}
 }
 
 func (m *RI_SDK_Sensor_VoltageSensor_SenseReturn) XXX_Unmarshal(b []byte) error {
@@ -7731,6 +8843,8 @@ func init() {
 	proto.RegisterType((*RI_SDK_Sigmod_PWM_ExtendReturn)(nil), "proto.RI_SDK_Sigmod_PWM_ExtendReturn")
 	proto.RegisterType((*RI_SDK_Exec_ServoDrive_ExtendParams)(nil), "proto.RI_SDK_Exec_ServoDrive_ExtendParams")
 	proto.RegisterType((*RI_SDK_Exec_ServoDrive_ExtendReturn)(nil), "proto.RI_SDK_Exec_ServoDrive_ExtendReturn")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_ExtendParams)(nil), "proto.RI_SDK_Exec_RServoDrive_ExtendParams")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_ExtendReturn)(nil), "proto.RI_SDK_Exec_RServoDrive_ExtendReturn")
 	proto.RegisterType((*RI_SDK_Exec_RGB_LED_ExtendParams)(nil), "proto.RI_SDK_Exec_RGB_LED_ExtendParams")
 	proto.RegisterType((*RI_SDK_Exec_RGB_LED_ExtendReturn)(nil), "proto.RI_SDK_Exec_RGB_LED_ExtendReturn")
 	proto.RegisterType((*RI_SDK_Sigmod_PWM_GetPortFreqParams)(nil), "proto.RI_SDK_Sigmod_PWM_GetPortFreqParams")
@@ -7745,6 +8859,8 @@ func init() {
 	proto.RegisterType((*RI_SDK_LinkPWMToControllerReturn)(nil), "proto.RI_SDK_LinkPWMToControllerReturn")
 	proto.RegisterType((*RI_SDK_LinkServodriveToControllerParams)(nil), "proto.RI_SDK_LinkServodriveToControllerParams")
 	proto.RegisterType((*RI_SDK_LinkServodriveToControllerReturn)(nil), "proto.RI_SDK_LinkServodriveToControllerReturn")
+	proto.RegisterType((*RI_SDK_LinkRServodriveToControllerParams)(nil), "proto.RI_SDK_LinkRServodriveToControllerParams")
+	proto.RegisterType((*RI_SDK_LinkRServodriveToControllerReturn)(nil), "proto.RI_SDK_LinkRServodriveToControllerReturn")
 	proto.RegisterType((*RI_SDK_LinkLedToControllerParams)(nil), "proto.RI_SDK_LinkLedToControllerParams")
 	proto.RegisterType((*RI_SDK_LinkLedToControllerReturn)(nil), "proto.RI_SDK_LinkLedToControllerReturn")
 	proto.RegisterType((*RI_SDK_LinkVoltageSensorToControllerParams)(nil), "proto.RI_SDK_LinkVoltageSensorToControllerParams")
@@ -7783,6 +8899,20 @@ func init() {
 	proto.RegisterType((*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn)(nil), "proto.RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn")
 	proto.RegisterType((*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams)(nil), "proto.RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams")
 	proto.RegisterType((*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn)(nil), "proto.RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_CustomDeviceInitParams)(nil), "proto.RI_SDK_Exec_RServoDrive_CustomDeviceInitParams")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn)(nil), "proto.RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_StopParams)(nil), "proto.RI_SDK_Exec_RServoDrive_StopParams")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_StopReturn)(nil), "proto.RI_SDK_Exec_RServoDrive_StopReturn")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams)(nil), "proto.RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn)(nil), "proto.RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_RotateByPulseParams)(nil), "proto.RI_SDK_Exec_RServoDrive_RotateByPulseParams")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_RotateByPulseReturn)(nil), "proto.RI_SDK_Exec_RServoDrive_RotateByPulseReturn")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams)(nil), "proto.RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn)(nil), "proto.RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams)(nil), "proto.RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn)(nil), "proto.RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_GetStateParams)(nil), "proto.RI_SDK_Exec_RServoDrive_GetStateParams")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_GetStateReturn)(nil), "proto.RI_SDK_Exec_RServoDrive_GetStateReturn")
 	proto.RegisterType((*RI_SDK_Exec_RGB_LED_SinglePulseParams)(nil), "proto.RI_SDK_Exec_RGB_LED_SinglePulseParams")
 	proto.RegisterType((*RI_SDK_Exec_RGB_LED_SinglePulseReturn)(nil), "proto.RI_SDK_Exec_RGB_LED_SinglePulseReturn")
 	proto.RegisterType((*RI_SDK_Exec_RGB_LED_StopParams)(nil), "proto.RI_SDK_Exec_RGB_LED_StopParams")
@@ -7805,6 +8935,8 @@ func init() {
 	proto.RegisterType((*RI_SDK_Sigmod_PWM_ExtendToModelReturn)(nil), "proto.RI_SDK_Sigmod_PWM_ExtendToModelReturn")
 	proto.RegisterType((*RI_SDK_Exec_ServoDrive_ExtendToModelParams)(nil), "proto.RI_SDK_Exec_ServoDrive_ExtendToModelParams")
 	proto.RegisterType((*RI_SDK_Exec_ServoDrive_ExtendToModelReturn)(nil), "proto.RI_SDK_Exec_ServoDrive_ExtendToModelReturn")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_ExtendToModelParams)(nil), "proto.RI_SDK_Exec_RServoDrive_ExtendToModelParams")
+	proto.RegisterType((*RI_SDK_Exec_RServoDrive_ExtendToModelReturn)(nil), "proto.RI_SDK_Exec_RServoDrive_ExtendToModelReturn")
 	proto.RegisterType((*RI_SDK_Exec_RGB_LED_ExtendToModelParams)(nil), "proto.RI_SDK_Exec_RGB_LED_ExtendToModelParams")
 	proto.RegisterType((*RI_SDK_Exec_RGB_LED_ExtendToModelReturn)(nil), "proto.RI_SDK_Exec_RGB_LED_ExtendToModelReturn")
 	proto.RegisterType((*RI_SDK_Sensor_VoltageSensor_ExtendParams)(nil), "proto.RI_SDK_Sensor_VoltageSensor_ExtendParams")
@@ -7830,220 +8962,246 @@ func init() {
 }
 
 var fileDescriptor_075c0a5d977b1e4e = []byte{
-	// 3406 bytes of a gzipped FileDescriptorProto
-	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xc4, 0x5c, 0xcb, 0x73, 0x1c, 0x57,
-	0xd5, 0xaf, 0x9e, 0xd1, 0xc3, 0xbe, 0x9f, 0x9d, 0xcf, 0x34, 0xc2, 0x88, 0x1b, 0xe3, 0x38, 0x1d,
-	0xc7, 0x71, 0x9c, 0xc4, 0x0e, 0xb2, 0x93, 0x2a, 0x43, 0x01, 0xb1, 0x24, 0x5b, 0x25, 0x2c, 0x07,
-	0x55, 0x8f, 0x6c, 0x55, 0x08, 0x78, 0x18, 0xcd, 0x5c, 0x8d, 0x1b, 0xcd, 0x74, 0x8f, 0xba, 0x7b,
-	0x24, 0x4d, 0x48, 0x6c, 0x53, 0x79, 0x54, 0x42, 0x41, 0x85, 0xa2, 0x8a, 0x47, 0x15, 0x1b, 0xaa,
-	0x60, 0xc5, 0x0a, 0x96, 0x2c, 0x59, 0xb0, 0x62, 0x45, 0xf1, 0xdf, 0xb0, 0xa2, 0xfa, 0xf6, 0xed,
-	0xd7, 0x7d, 0xb7, 0xa6, 0x67, 0xb2, 0x9a, 0xb9, 0xb7, 0xcf, 0xe3, 0x77, 0x4e, 0xdf, 0xf7, 0x3d,
-	0xa7, 0xc1, 0x69, 0xdb, 0xdb, 0xf1, 0x1a, 0x9d, 0xbd, 0xab, 0x03, 0xdf, 0x0b, 0x3d, 0x73, 0x16,
-	0xff, 0x58, 0x4b, 0x60, 0xc1, 0x5e, 0x6f, 0x36, 0x56, 0xef, 0x36, 0xd7, 0x5d, 0x27, 0x6c, 0xac,
-	0xde, 0xdd, 0x6c, 0xf9, 0xad, 0x7e, 0x60, 0x42, 0x70, 0xa2, 0xe7, 0x75, 0x37, 0xd0, 0x01, 0xea,
-	0x2d, 0x1a, 0x17, 0x8c, 0xcb, 0x75, 0x3b, 0x2d, 0x5b, 0x36, 0xcd, 0x63, 0xa3, 0x70, 0xe8, 0xbb,
-	0xe6, 0x39, 0x70, 0x12, 0xf9, 0xbe, 0xe7, 0x6f, 0xa1, 0xa3, 0x10, 0x33, 0x9d, 0xb4, 0xb3, 0x8a,
-	0xf4, 0xe9, 0x8a, 0xd7, 0x41, 0x8b, 0x35, 0x2c, 0x32, 0xab, 0xb0, 0xbe, 0x0b, 0xbe, 0x4e, 0x64,
-	0xae, 0xa2, 0x03, 0xa7, 0x8d, 0x9a, 0xf7, 0xbc, 0x0e, 0xea, 0x6d, 0x38, 0x41, 0x48, 0x00, 0x9d,
-	0x07, 0xa0, 0x83, 0x9f, 0x6c, 0x8d, 0x06, 0x88, 0x48, 0xcf, 0xd5, 0x58, 0x23, 0xa1, 0x80, 0x0c,
-	0x5d, 0x3f, 0xa9, 0x4a, 0xd0, 0xa5, 0x15, 0x45, 0xec, 0x35, 0x29, 0xf6, 0x3a, 0x8d, 0xfd, 0x9b,
-	0x60, 0x91, 0xa8, 0x5e, 0xf1, 0x51, 0x2b, 0x44, 0xcb, 0xad, 0xc0, 0x69, 0xe7, 0x61, 0x07, 0x6d,
-	0xdf, 0x19, 0x84, 0x9e, 0x4f, 0x3c, 0x99, 0xab, 0xb1, 0x0e, 0x78, 0xbc, 0x04, 0xb1, 0x82, 0x77,
-	0x2c, 0xcc, 0x79, 0x7f, 0x07, 0xa1, 0xef, 0x8d, 0x56, 0xbc, 0xfe, 0xc0, 0x73, 0x91, 0x1b, 0x6a,
-	0x02, 0x7f, 0x57, 0x28, 0xa0, 0x82, 0xd6, 0x70, 0x1d, 0x7c, 0xb5, 0x28, 0x3c, 0x6b, 0x98, 0x8b,
-	0x60, 0xde, 0x09, 0xee, 0x78, 0x7e, 0x3b, 0x6e, 0x04, 0x27, 0xec, 0xa4, 0x68, 0xdd, 0xe7, 0x30,
-	0x55, 0x80, 0xe5, 0x3e, 0x78, 0x2e, 0x79, 0x43, 0x9e, 0xeb, 0xa2, 0x76, 0xe8, 0xf9, 0xcd, 0xf5,
-	0xa5, 0x95, 0xe6, 0xf7, 0x07, 0xc8, 0xd5, 0xf3, 0x95, 0x69, 0x82, 0x99, 0x56, 0xa7, 0xe3, 0x63,
-	0xd9, 0x33, 0x36, 0xfe, 0x6f, 0xfd, 0x48, 0x22, 0xb6, 0x02, 0xd4, 0xf3, 0x60, 0xf6, 0x76, 0x7f,
-	0x10, 0x8e, 0xac, 0xfb, 0xe0, 0x79, 0xae, 0x9e, 0xdb, 0x47, 0x21, 0x72, 0x3b, 0xc4, 0x80, 0xd7,
-	0xc1, 0x97, 0xdb, 0xc9, 0xd3, 0x55, 0xda, 0x12, 0xde, 0x23, 0xeb, 0x89, 0x54, 0xec, 0x14, 0x1a,
-	0xf0, 0x32, 0xb8, 0xc0, 0x05, 0xd0, 0x08, 0x5b, 0x21, 0xd2, 0x6c, 0xc3, 0xa1, 0x4c, 0x06, 0xb1,
-	0x61, 0x01, 0xcc, 0x06, 0x51, 0x91, 0xb0, 0xc7, 0x85, 0xb1, 0x90, 0xdf, 0x06, 0x2f, 0x70, 0xb5,
-	0xae, 0xf4, 0xbc, 0x00, 0xdd, 0xea, 0xf5, 0x34, 0xc1, 0xb7, 0x14, 0x62, 0x2a, 0x68, 0x44, 0x0f,
-	0x04, 0xfe, 0xc1, 0x2a, 0xc6, 0x68, 0xfb, 0x0f, 0x65, 0x72, 0x2b, 0xc0, 0xfd, 0x04, 0xbc, 0xc8,
-	0x95, 0xbf, 0xed, 0x3b, 0x21, 0x5a, 0x1e, 0x85, 0x28, 0x38, 0x3e, 0x78, 0xf3, 0x0c, 0xa8, 0xef,
-	0x0c, 0x77, 0xf1, 0x6b, 0x3d, 0x65, 0x47, 0x7f, 0xa3, 0x9a, 0x1e, 0x72, 0x17, 0x67, 0x30, 0x7b,
-	0xf4, 0xd7, 0xfa, 0xcc, 0x50, 0x22, 0x20, 0x66, 0x5e, 0x04, 0xa7, 0x0f, 0x7d, 0x8f, 0xd4, 0x6d,
-	0x20, 0x97, 0x80, 0x28, 0x56, 0x8e, 0xd5, 0xdc, 0x1e, 0x83, 0x8b, 0x5c, 0x28, 0x36, 0x6a, 0x75,
-	0xc6, 0xf5, 0x85, 0x05, 0x4e, 0xf9, 0x89, 0x98, 0x08, 0x7c, 0xac, 0xbc, 0x50, 0x67, 0x85, 0x2a,
-	0xfd, 0xc4, 0x13, 0xc4, 0xaf, 0x46, 0xe6, 0xd7, 0x71, 0xac, 0x1e, 0x08, 0xb4, 0xa6, 0x2f, 0x60,
-	0x0c, 0xab, 0x17, 0xc0, 0xec, 0x41, 0xab, 0x37, 0x44, 0xa4, 0x0d, 0xc4, 0x05, 0x6b, 0x47, 0xa5,
-	0xb1, 0x82, 0x86, 0xfd, 0x8e, 0xa0, 0xcf, 0x27, 0xbe, 0x1c, 0xa3, 0x4f, 0x1e, 0x2a, 0x44, 0x67,
-	0xc3, 0x61, 0x6c, 0xbb, 0x91, 0xb3, 0x7d, 0xac, 0x37, 0xf5, 0x61, 0xd6, 0x57, 0x1a, 0x4e, 0xb7,
-	0xef, 0x75, 0x9a, 0x9b, 0xdb, 0xf7, 0x9a, 0x6b, 0x28, 0xb4, 0x51, 0xe0, 0xf5, 0x86, 0xa1, 0xe3,
-	0xe9, 0x4e, 0xb3, 0xe3, 0xa0, 0xf8, 0xc8, 0x00, 0x97, 0x14, 0x28, 0x50, 0x36, 0xab, 0xf9, 0x69,
-	0x65, 0x02, 0x23, 0xab, 0x19, 0x0b, 0xc6, 0xad, 0x74, 0x55, 0x50, 0x44, 0x71, 0xc7, 0x47, 0xfb,
-	0x9a, 0xf3, 0xc2, 0xbe, 0x44, 0x04, 0xb1, 0xc0, 0x04, 0x33, 0xbb, 0x3e, 0xda, 0x27, 0xcc, 0xf8,
-	0xff, 0x58, 0xa8, 0xef, 0xf3, 0x54, 0x36, 0xca, 0xa0, 0x4e, 0x21, 0xd5, 0x32, 0x48, 0xb9, 0x25,
-	0x12, 0x2b, 0xb6, 0x82, 0xce, 0xb4, 0xc7, 0x6b, 0x77, 0xb8, 0xb7, 0xda, 0xa8, 0x5b, 0x66, 0x64,
-	0x3c, 0x03, 0xea, 0x3e, 0xea, 0x62, 0x05, 0xa7, 0xec, 0xe8, 0x2f, 0x3b, 0x47, 0xe4, 0x67, 0x04,
-	0x91, 0xb6, 0xa9, 0xcd, 0x08, 0xef, 0xa7, 0x23, 0x55, 0x0e, 0x4a, 0xd4, 0xcf, 0xc7, 0xb6, 0xbb,
-	0xdc, 0x7c, 0x20, 0xd0, 0x3e, 0x91, 0xf9, 0xc0, 0xe5, 0x69, 0xcd, 0xbb, 0xff, 0xd8, 0x36, 0xab,
-	0x66, 0x03, 0x81, 0xbe, 0x0a, 0x1a, 0xf0, 0x76, 0x3a, 0x64, 0xf3, 0x3d, 0x79, 0x5c, 0x93, 0x72,
-	0x73, 0x01, 0x5f, 0xf0, 0xc4, 0xe6, 0x82, 0x1b, 0xe0, 0x1c, 0x51, 0x7c, 0xfb, 0x08, 0xb5, 0x87,
-	0xd1, 0x1c, 0x54, 0xd8, 0xa7, 0x2c, 0x80, 0xd9, 0x9d, 0x68, 0x83, 0x9c, 0x2c, 0xc6, 0x71, 0xc1,
-	0x7a, 0x4f, 0xc4, 0x55, 0xd8, 0x86, 0xf8, 0x6d, 0xda, 0x01, 0xa4, 0x66, 0x2c, 0xc4, 0xdf, 0x06,
-	0xcf, 0xd2, 0xba, 0xd9, 0x1d, 0x88, 0x50, 0xb5, 0xe5, 0x09, 0xd8, 0x27, 0xb6, 0xf9, 0x78, 0x23,
-	0xdd, 0xb6, 0x67, 0xd3, 0xbc, 0x86, 0x8b, 0x7f, 0x2a, 0x64, 0x9b, 0x82, 0x8f, 0x97, 0xc0, 0x79,
-	0xb6, 0x39, 0x16, 0x40, 0x9f, 0x01, 0xf5, 0x76, 0x3a, 0x17, 0x47, 0x7f, 0xad, 0xf7, 0xc5, 0x3c,
-	0x53, 0xd8, 0x9c, 0xde, 0x4c, 0x3b, 0x50, 0xf4, 0x5a, 0x9b, 0x0d, 0xe4, 0x1f, 0x78, 0xab, 0xbe,
-	0x73, 0x80, 0x8a, 0xb0, 0x4d, 0x30, 0x83, 0x8e, 0x50, 0xe2, 0x6a, 0xfc, 0xdf, 0xfa, 0x99, 0xa1,
-	0xe0, 0x9d, 0x02, 0xfc, 0x37, 0xd3, 0xfd, 0x19, 0x86, 0x60, 0xaf, 0x2d, 0x37, 0x37, 0x6e, 0xaf,
-	0xaa, 0xb1, 0x3f, 0x96, 0xf1, 0x4d, 0x01, 0xf7, 0x3b, 0xbc, 0x71, 0x6b, 0x0d, 0x85, 0x9b, 0x9e,
-	0x5f, 0x72, 0x2d, 0x32, 0xf0, 0xfc, 0x30, 0x59, 0x8b, 0x44, 0xff, 0xad, 0xa1, 0x42, 0xf4, 0x84,
-	0x56, 0x56, 0x37, 0xb3, 0x63, 0x16, 0x7c, 0x3c, 0xb8, 0xe6, 0x7b, 0xc3, 0x01, 0x7d, 0x54, 0xb7,
-	0x00, 0x66, 0xbb, 0x51, 0x3d, 0x99, 0x3f, 0xe2, 0x42, 0xfe, 0x84, 0x86, 0xc3, 0x3a, 0x85, 0xb7,
-	0x61, 0x03, 0xab, 0x00, 0x20, 0x3e, 0x97, 0xd5, 0x02, 0x6f, 0x9e, 0x05, 0x73, 0xf1, 0xd9, 0x2e,
-	0x51, 0x4a, 0x4a, 0xd6, 0x53, 0x43, 0x2e, 0x74, 0x0a, 0x66, 0x75, 0x29, 0xbf, 0xe2, 0x73, 0xe6,
-	0xb1, 0xac, 0x8a, 0xa8, 0xf1, 0x49, 0x34, 0x56, 0x76, 0xd2, 0x8e, 0x0b, 0xcc, 0x0b, 0x2c, 0x2a,
-	0x9a, 0x82, 0xa5, 0xbf, 0x32, 0xd2, 0xfe, 0xbc, 0xe1, 0xb8, 0x7b, 0x9b, 0xdb, 0xf7, 0xb6, 0xbc,
-	0x15, 0xcf, 0x0d, 0x7d, 0xaf, 0xd7, 0x43, 0x3e, 0xb1, 0xf4, 0x22, 0x38, 0x3d, 0x38, 0xec, 0x33,
-	0x87, 0x86, 0xc5, 0x4a, 0x73, 0x09, 0x2c, 0xb4, 0x53, 0xce, 0x1c, 0x71, 0xdc, 0xc5, 0xb8, 0xcf,
-	0xd2, 0x5d, 0x6a, 0x9d, 0x7b, 0x72, 0xc4, 0x41, 0x54, 0xc1, 0x92, 0xea, 0x77, 0x06, 0x78, 0x29,
-	0xa7, 0x00, 0x0f, 0xbe, 0x9d, 0x68, 0xf0, 0xe5, 0x58, 0xbe, 0x04, 0x16, 0x82, 0xf4, 0x39, 0xe3,
-	0x00, 0xee, 0x33, 0xd6, 0x5b, 0x35, 0x9e, 0xb7, 0x92, 0x01, 0xa8, 0x9e, 0x1b, 0x80, 0x90, 0x06,
-	0xb0, 0x0a, 0x1c, 0xf0, 0xd7, 0xe2, 0x3b, 0xdf, 0x40, 0x1d, 0xfe, 0x3b, 0xef, 0xa1, 0x0e, 0xfb,
-	0xce, 0x0b, 0x95, 0x9a, 0xb6, 0x2e, 0x80, 0x59, 0x3f, 0x67, 0x6c, 0x5c, 0xc0, 0xfd, 0x07, 0xd7,
-	0xc6, 0x87, 0x6a, 0x71, 0x01, 0xaf, 0x4d, 0x70, 0xed, 0x2c, 0x59, 0x9b, 0x60, 0xcf, 0x3c, 0x94,
-	0x21, 0xae, 0xc0, 0x25, 0x7f, 0x34, 0xc0, 0x95, 0x9c, 0x82, 0x07, 0x5e, 0x2f, 0x6c, 0x75, 0x51,
-	0x03, 0xb9, 0x81, 0xe7, 0x73, 0x9c, 0x73, 0x05, 0x9c, 0x09, 0xf0, 0x33, 0xc6, 0x3f, 0x4c, 0x7d,
-	0xd4, 0x84, 0x9c, 0xa5, 0xf6, 0xad, 0x4e, 0x6b, 0x10, 0xf2, 0xba, 0x05, 0xef, 0x19, 0xb7, 0x5b,
-	0x3c, 0xd2, 0x43, 0x58, 0x81, 0x33, 0xfe, 0x65, 0x80, 0xd7, 0x04, 0xcb, 0x93, 0x95, 0x61, 0x10,
-	0x7a, 0xfd, 0x78, 0x40, 0x5e, 0x77, 0x9d, 0x50, 0x6f, 0x09, 0x1c, 0x3d, 0xef, 0xb7, 0x8e, 0xd6,
-	0xfb, 0x83, 0x61, 0x2f, 0x48, 0x14, 0xe6, 0x6a, 0xf0, 0x73, 0xc7, 0x4d, 0x9e, 0xd7, 0xc9, 0xf3,
-	0xb4, 0xc6, 0x84, 0xe0, 0x44, 0xbf, 0x75, 0xd4, 0x18, 0x20, 0xd4, 0x21, 0xad, 0x25, 0x2d, 0xe3,
-	0xa3, 0x9a, 0x96, 0xdb, 0x45, 0xb7, 0xdc, 0x6e, 0x0f, 0x91, 0x56, 0x93, 0xab, 0xb1, 0xf6, 0xb4,
-	0x8d, 0xa9, 0xc0, 0x75, 0x7d, 0xde, 0x12, 0xa2, 0x51, 0xc5, 0xea, 0x24, 0x5d, 0x76, 0xd4, 0x73,
-	0xa7, 0x27, 0x2d, 0x85, 0xba, 0x0a, 0x2c, 0xea, 0x80, 0x57, 0x05, 0xee, 0xdb, 0x1a, 0xfa, 0xee,
-	0xf2, 0x68, 0x75, 0x18, 0x8e, 0x56, 0x46, 0xed, 0x9e, 0xe6, 0x6e, 0x28, 0xde, 0xee, 0xa0, 0x41,
-	0x40, 0x34, 0xc5, 0x05, 0xeb, 0x27, 0xba, 0x5a, 0x2a, 0xb0, 0x28, 0xbb, 0x55, 0x2a, 0xec, 0x7c,
-	0x03, 0x14, 0xea, 0x5f, 0xcc, 0x3c, 0x94, 0xc9, 0xa8, 0x00, 0xe3, 0x8f, 0xc1, 0x65, 0xa9, 0x3f,
-	0x36, 0xa3, 0x6e, 0xa1, 0xef, 0xf1, 0x7c, 0xbf, 0x8b, 0x0b, 0xd6, 0xae, 0x8e, 0x86, 0x4a, 0x0e,
-	0x30, 0x9e, 0x17, 0x78, 0x2a, 0x6a, 0xa4, 0x63, 0xac, 0xd6, 0x9b, 0x52, 0xc1, 0x15, 0x20, 0x7f,
-	0x5b, 0xd8, 0x26, 0xd7, 0x50, 0xb8, 0x32, 0xf4, 0x7d, 0xe4, 0x86, 0x78, 0x88, 0xd1, 0x3c, 0x07,
-	0x78, 0x6a, 0xe8, 0x0a, 0xcc, 0x4e, 0x06, 0x5a, 0x78, 0x50, 0x23, 0xdb, 0x74, 0x5c, 0x18, 0x6b,
-	0xb5, 0xb7, 0x96, 0x1e, 0x50, 0x72, 0x10, 0x94, 0x39, 0xd3, 0x18, 0x29, 0x05, 0x4d, 0xec, 0x74,
-	0xe3, 0x5d, 0x70, 0x53, 0xa0, 0x1a, 0x0f, 0x7c, 0x81, 0x13, 0x3a, 0x9e, 0xbb, 0xe5, 0xdd, 0x73,
-	0x3a, 0xdb, 0x9e, 0xbf, 0xe7, 0xb8, 0x5d, 0x3b, 0x9a, 0x0b, 0x34, 0xfb, 0xf5, 0xe1, 0xb1, 0x84,
-	0x57, 0xd0, 0xd8, 0x1e, 0xa6, 0xdd, 0x91, 0xdd, 0x7b, 0xf2, 0x87, 0xd8, 0x72, 0xbd, 0xe5, 0x53,
-	0x43, 0x47, 0x01, 0x31, 0xe4, 0x19, 0x50, 0x4b, 0x4f, 0x5a, 0x6a, 0x1e, 0x3e, 0xa6, 0xf5, 0x76,
-	0x77, 0x89, 0xbc, 0xe8, 0x6f, 0xd1, 0xd4, 0xba, 0xd4, 0xd4, 0x19, 0xda, 0xd4, 0xa7, 0x5c, 0x28,
-	0x8d, 0xca, 0x6c, 0x25, 0xf0, 0xeb, 0x34, 0xfc, 0x99, 0x14, 0x7e, 0x6e, 0xf0, 0x93, 0x20, 0xa8,
-	0xe0, 0xad, 0xfe, 0x36, 0x5b, 0x56, 0xd2, 0xed, 0xe9, 0x9e, 0xe3, 0x36, 0x42, 0x34, 0xb0, 0x3d,
-	0xfd, 0x58, 0x86, 0x48, 0x59, 0xc7, 0xf1, 0x51, 0x1b, 0x5f, 0x4a, 0x11, 0x65, 0x69, 0x05, 0xee,
-	0x6a, 0x78, 0x85, 0x44, 0x56, 0xd9, 0xb8, 0x80, 0x07, 0x91, 0x60, 0xe4, 0xb6, 0xb1, 0xf9, 0x27,
-	0xec, 0xb8, 0x90, 0x5b, 0x4c, 0x4a, 0x71, 0x55, 0xe0, 0x82, 0x8f, 0x8d, 0x74, 0x9c, 0xe6, 0x4d,
-	0x34, 0x9a, 0x96, 0xa7, 0x43, 0x61, 0x2d, 0x3f, 0x14, 0x96, 0xb1, 0xb8, 0x29, 0x85, 0x51, 0x81,
-	0xa1, 0x2b, 0x42, 0x05, 0x8d, 0xd0, 0x1b, 0x68, 0x8e, 0x3f, 0x4d, 0xa9, 0x90, 0x0a, 0x50, 0x7e,
-	0x2e, 0x3e, 0x7a, 0xfc, 0x82, 0x9a, 0x62, 0x4b, 0x01, 0xa8, 0x9a, 0xdd, 0xdd, 0x0d, 0xa9, 0x8e,
-	0x6d, 0x27, 0x7c, 0x64, 0xa3, 0x5e, 0x2b, 0x74, 0x0e, 0x10, 0xde, 0x55, 0x4c, 0xdd, 0x0b, 0x7e,
-	0x59, 0x84, 0xd5, 0x8c, 0x4e, 0x4b, 0x92, 0x3e, 0x71, 0x5c, 0xa7, 0x8c, 0xdf, 0x57, 0x07, 0xe5,
-	0x70, 0x55, 0xe0, 0x8a, 0x3f, 0x19, 0xc5, 0x05, 0x4d, 0x72, 0xac, 0xdd, 0x70, 0xf0, 0x02, 0x8f,
-	0x59, 0x6d, 0x8b, 0xad, 0x3f, 0x05, 0x8c, 0x64, 0x6f, 0x6f, 0xe0, 0x52, 0x97, 0x58, 0x6c, 0x74,
-	0xa3, 0xd2, 0x0e, 0x99, 0x86, 0x8c, 0x9d, 0x68, 0x53, 0xdb, 0x19, 0xfa, 0x2d, 0xdc, 0x76, 0xe2,
-	0x6d, 0x6b, 0x5a, 0xce, 0xfc, 0x32, 0x97, 0xf7, 0x4b, 0x5b, 0x09, 0xb2, 0x02, 0x57, 0xbc, 0x95,
-	0xde, 0xaa, 0x14, 0x95, 0xe8, 0x0f, 0x62, 0x3f, 0x14, 0x4b, 0xa8, 0x00, 0xdf, 0x6a, 0x7a, 0x3a,
-	0x5c, 0x90, 0xce, 0x5d, 0xc0, 0xca, 0x62, 0x72, 0xa5, 0x52, 0x26, 0xb6, 0x7a, 0x15, 0xa3, 0x5f,
-	0xf1, 0x7a, 0x9e, 0xaf, 0x89, 0xfe, 0xe7, 0x86, 0x5c, 0x0c, 0x81, 0x8f, 0xdb, 0xa2, 0x51, 0x68,
-	0x8b, 0xb5, 0x42, 0x5b, 0xac, 0x27, 0x6d, 0xb1, 0x60, 0xd2, 0x8c, 0xd4, 0xa4, 0x59, 0x71, 0x98,
-	0x71, 0x6e, 0x31, 0x55, 0x22, 0x7c, 0x30, 0x17, 0x66, 0x4c, 0x0b, 0xa8, 0xa0, 0xb9, 0xfc, 0xc3,
-	0x00, 0xd7, 0x78, 0xae, 0xba, 0xd3, 0x6b, 0x05, 0x8f, 0x1c, 0xb7, 0x1b, 0x8d, 0x26, 0x77, 0x7c,
-	0xb4, 0x3f, 0x44, 0x6e, 0x7b, 0x54, 0x79, 0x1f, 0x3f, 0x07, 0x4e, 0xee, 0x26, 0xc2, 0x13, 0xcf,
-	0xa5, 0x15, 0xd1, 0xc2, 0x74, 0x3f, 0x1c, 0xe1, 0x3e, 0x5e, 0xb7, 0xa3, 0xbf, 0x59, 0xbf, 0x9f,
-	0xcf, 0xf7, 0xfb, 0x7e, 0x09, 0x13, 0x2a, 0x70, 0xd9, 0xbf, 0x0d, 0xf0, 0x8a, 0x4a, 0xdf, 0x66,
-	0x6b, 0x38, 0xfd, 0x21, 0x71, 0x10, 0x29, 0x25, 0xee, 0x8a, 0x0b, 0x89, 0x0b, 0xe7, 0x39, 0x2e,
-	0x3c, 0x91, 0x77, 0xa1, 0xa3, 0x69, 0x52, 0x05, 0xee, 0xfb, 0x1b, 0xb5, 0xe2, 0xcd, 0x74, 0x39,
-	0xed, 0x3d, 0xe4, 0x4f, 0xd5, 0x69, 0xba, 0x2d, 0xac, 0x29, 0x85, 0x5c, 0x81, 0x53, 0x06, 0xe9,
-	0x8e, 0x8b, 0x17, 0x4b, 0xbe, 0xe5, 0xe1, 0x8b, 0x2f, 0xe2, 0x9a, 0x4b, 0xe0, 0x99, 0x9d, 0x56,
-	0xc0, 0x5e, 0xb7, 0x50, 0xb5, 0x69, 0xb6, 0xc7, 0xdb, 0xad, 0x7e, 0x72, 0xdb, 0x96, 0x55, 0x58,
-	0x9f, 0x18, 0x3a, 0x2a, 0xa7, 0x70, 0xc5, 0xd6, 0xe7, 0x45, 0x85, 0x4d, 0xce, 0x6e, 0x7e, 0xac,
-	0xe5, 0xb4, 0x8d, 0xf6, 0x85, 0x1b, 0xcc, 0xc9, 0x59, 0xfe, 0xa9, 0xa1, 0xa7, 0x74, 0x0a, 0xe6,
-	0x7b, 0xe9, 0x4d, 0x1e, 0x27, 0x4a, 0x62, 0x12, 0xb6, 0x7f, 0x6c, 0x68, 0x68, 0x9c, 0x82, 0xe1,
-	0xdf, 0xc9, 0x4e, 0x56, 0xf0, 0xd5, 0x54, 0xb3, 0x70, 0x51, 0xa5, 0x0e, 0x2f, 0xc9, 0xf5, 0x5a,
-	0x89, 0x80, 0x29, 0x18, 0x72, 0x98, 0xce, 0xb9, 0x12, 0x1c, 0x93, 0x78, 0x93, 0xbf, 0x34, 0x4a,
-	0x68, 0x9e, 0x82, 0x23, 0xfe, 0x9b, 0xed, 0x12, 0xb9, 0x78, 0x8e, 0x79, 0x25, 0x78, 0x16, 0xcc,
-	0xf5, 0x82, 0x9d, 0xe5, 0x61, 0x7c, 0x11, 0x64, 0xd8, 0xa4, 0x84, 0x93, 0x12, 0x83, 0x9d, 0xc6,
-	0xa3, 0xa1, 0x1b, 0x1f, 0x2c, 0x1a, 0x76, 0x5a, 0x36, 0x2f, 0x80, 0xff, 0x0b, 0xa2, 0x3f, 0x36,
-	0x0a, 0x9c, 0x20, 0x5e, 0xa7, 0x1a, 0x76, 0xbe, 0xca, 0xbc, 0x0c, 0xfe, 0xdf, 0x47, 0xdd, 0x04,
-	0x20, 0x16, 0x12, 0x4f, 0x89, 0x74, 0xb5, 0x79, 0x11, 0x9c, 0xce, 0xaa, 0x22, 0x18, 0xf1, 0x1c,
-	0x59, 0xac, 0xcc, 0xed, 0x44, 0xb5, 0x6c, 0xaf, 0x60, 0xa2, 0xbc, 0x0b, 0x5e, 0x96, 0x69, 0x24,
-	0x25, 0xcd, 0x63, 0xfa, 0x27, 0x5a, 0xc2, 0x08, 0xea, 0xb3, 0x60, 0xce, 0x47, 0xc1, 0xb0, 0x17,
-	0x43, 0xae, 0xd9, 0xa4, 0x34, 0x56, 0xe3, 0xd9, 0x04, 0x57, 0x35, 0x00, 0xe0, 0x37, 0xa2, 0x69,
-	0xd2, 0x47, 0x86, 0xbe, 0xc8, 0x09, 0x1a, 0xa6, 0x78, 0x4d, 0xe4, 0x36, 0xa7, 0x9a, 0xd7, 0x44,
-	0x84, 0x4d, 0xd0, 0x9a, 0xf5, 0x74, 0xf2, 0xe0, 0x02, 0xd8, 0xf4, 0x0e, 0xa9, 0x75, 0xab, 0xd8,
-	0x96, 0x0f, 0x34, 0x44, 0x7d, 0x71, 0x96, 0x44, 0x3f, 0xba, 0x9d, 0xe7, 0x3f, 0x86, 0x86, 0x2c,
-	0x62, 0xca, 0x22, 0x98, 0x3f, 0x88, 0x1f, 0x12, 0x5b, 0x92, 0xa2, 0x69, 0x81, 0x53, 0x07, 0xf9,
-	0xe1, 0xa8, 0x86, 0x1f, 0x17, 0xea, 0x22, 0xee, 0x76, 0xfc, 0x8e, 0xb1, 0x41, 0x35, 0x3b, 0x29,
-	0xe2, 0x4d, 0x4f, 0xe4, 0x31, 0x3c, 0xd6, 0xd5, 0xec, 0xb8, 0x50, 0x74, 0xd0, 0xac, 0xd4, 0x41,
-	0x73, 0x94, 0x83, 0x96, 0xfe, 0x79, 0x07, 0xcc, 0x93, 0x2c, 0x71, 0xf3, 0x7b, 0xe0, 0x99, 0x62,
-	0x92, 0xb7, 0xf9, 0x6c, 0x9c, 0x39, 0x7e, 0x95, 0x97, 0x2f, 0x0e, 0xf9, 0x0f, 0x89, 0x07, 0x50,
-	0x2e, 0x33, 0xb7, 0x98, 0x9b, 0x6d, 0x5e, 0x2c, 0xf2, 0xf1, 0x93, 0xbf, 0xa1, 0x82, 0x8a, 0xa8,
-	0x79, 0x00, 0x4c, 0x36, 0x97, 0xda, 0x7c, 0xae, 0xc8, 0xcb, 0xa4, 0x68, 0x43, 0x31, 0x01, 0x07,
-	0x7e, 0x31, 0xd5, 0x99, 0x85, 0xcf, 0xcb, 0xa5, 0x86, 0x0a, 0x2a, 0xa2, 0xa6, 0x01, 0xbe, 0xc4,
-	0xe4, 0x2f, 0x9b, 0xe7, 0xb9, 0xac, 0x99, 0xdf, 0x85, 0xcf, 0x89, 0xd0, 0xfd, 0x34, 0xc0, 0x9c,
-	0x17, 0x05, 0x6a, 0x5e, 0xe6, 0xd9, 0xce, 0x0b, 0x32, 0x85, 0x1a, 0x94, 0x44, 0x65, 0x98, 0x86,
-	0xe3, 0x73, 0x43, 0x34, 0xcd, 0x97, 0x79, 0x92, 0xb8, 0xc1, 0xa1, 0x50, 0x87, 0x54, 0x60, 0x68,
-	0x31, 0x5a, 0x92, 0x6f, 0x28, 0x2f, 0x74, 0x13, 0x6a, 0x50, 0x12, 0x95, 0x2e, 0x80, 0xe2, 0x60,
-	0x44, 0xf3, 0xa5, 0xa2, 0x1c, 0x61, 0x04, 0x25, 0x54, 0x13, 0x12, 0x7d, 0x1f, 0x66, 0x87, 0x07,
-	0xe2, 0x18, 0x40, 0xf3, 0x2a, 0x2b, 0x4e, 0x16, 0xc6, 0x08, 0xb5, 0xe9, 0xb9, 0x56, 0x53, 0xe1,
-	0x76, 0x3c, 0xab, 0xb9, 0x31, 0x84, 0x50, 0x4d, 0x48, 0xf4, 0xfd, 0xc2, 0x48, 0x53, 0x69, 0xa4,
-	0xc1, 0x6d, 0xe6, 0x37, 0x58, 0x89, 0x8a, 0x58, 0x3d, 0x58, 0x86, 0x85, 0xc0, 0xd9, 0x01, 0x67,
-	0xf9, 0xc9, 0x26, 0xe6, 0x0b, 0x45, 0x61, 0xdc, 0x0c, 0x16, 0x28, 0x27, 0x22, 0x3a, 0x9a, 0xe0,
-	0x2b, 0xdc, 0xac, 0x10, 0xd3, 0x12, 0x70, 0xe7, 0x4e, 0xb7, 0xa1, 0x94, 0x86, 0x19, 0xd1, 0xe8,
-	0x74, 0x0e, 0x7a, 0x44, 0xe3, 0x67, 0x89, 0x40, 0x05, 0x15, 0x51, 0xb3, 0x07, 0xbe, 0x26, 0xfc,
-	0xc6, 0x81, 0x79, 0x49, 0x24, 0xa2, 0xf8, 0x71, 0x05, 0xa8, 0xa4, 0x23, 0xca, 0x3e, 0xc9, 0x85,
-	0x86, 0x8b, 0xcf, 0x74, 0xcc, 0x6b, 0x32, 0x71, 0x9c, 0x9d, 0x1b, 0xd4, 0x67, 0x60, 0x47, 0x22,
-	0x0e, 0x2d, 0x33, 0x12, 0x09, 0xbf, 0xca, 0x00, 0x35, 0x28, 0x99, 0x3e, 0xc9, 0xf9, 0x90, 0x01,
-	0xdd, 0x27, 0x85, 0xdf, 0x4b, 0x80, 0x6a, 0x42, 0xa2, 0xef, 0x90, 0x93, 0x0e, 0x94, 0xff, 0xf6,
-	0x80, 0x79, 0x45, 0x26, 0xa9, 0xf8, 0xa1, 0x03, 0xa8, 0x45, 0xab, 0x30, 0x14, 0x93, 0xc9, 0x0d,
-	0xcd, 0xdd, 0x3a, 0x40, 0x35, 0x21, 0xd1, 0xf7, 0x81, 0xe0, 0x2b, 0x1d, 0x59, 0x1e, 0xbf, 0xf9,
-	0xaa, 0x4c, 0x16, 0xfd, 0xc5, 0x01, 0xa8, 0x49, 0x4d, 0xd4, 0xbf, 0x97, 0xde, 0x96, 0x09, 0x72,
-	0xe7, 0xcd, 0x57, 0x64, 0xf2, 0xa8, 0x14, 0x7f, 0xa8, 0x47, 0xac, 0xd0, 0x9d, 0x82, 0x94, 0xeb,
-	0xa6, 0x12, 0xed, 0xa1, 0x1e, 0xb1, 0xa2, 0x7d, 0x25, 0x18, 0xe5, 0xed, 0xab, 0x98, 0x0d, 0x0f,
-	0xb5, 0x68, 0x99, 0xf7, 0x2d, 0x3a, 0x1f, 0xa5, 0xdf, 0xb7, 0xfc, 0xdc, 0x16, 0x6a, 0x52, 0x13,
-	0xf5, 0x8f, 0x05, 0xb9, 0xdb, 0x59, 0x12, 0xba, 0x44, 0x3d, 0x27, 0x65, 0x1e, 0xbe, 0xa6, 0x47,
-	0x8d, 0x98, 0x01, 0x9b, 0xcd, 0x1d, 0xa7, 0x07, 0x6c, 0x51, 0x82, 0x3a, 0x54, 0xd2, 0xc9, 0x94,
-	0x35, 0x94, 0xca, 0x1a, 0x9a, 0xca, 0x8a, 0x89, 0xe2, 0xdc, 0x17, 0x5b, 0x48, 0xbf, 0x96, 0x78,
-	0x96, 0x93, 0x14, 0x0e, 0x35, 0xa9, 0x99, 0xce, 0x24, 0x48, 0x7a, 0xa6, 0x3b, 0x93, 0x34, 0x33,
-	0x1b, 0xea, 0x11, 0xa7, 0x9d, 0xe9, 0x59, 0x01, 0x48, 0x5e, 0x2f, 0x96, 0xa6, 0x47, 0x43, 0x3d,
-	0xe2, 0x74, 0x23, 0x00, 0xf9, 0x00, 0x79, 0x5d, 0x58, 0x96, 0xc2, 0x0c, 0xb5, 0x68, 0x89, 0xd6,
-	0x47, 0xe9, 0x17, 0xb5, 0x98, 0xce, 0x66, 0xbe, 0xa8, 0xe8, 0x8d, 0x44, 0x9d, 0x8a, 0x8c, 0x19,
-	0xa5, 0xf8, 0x39, 0x81, 0x12, 0x13, 0x99, 0xa4, 0x44, 0xa8, 0x45, 0x2b, 0x53, 0xdc, 0xd0, 0x52,
-	0xdc, 0x28, 0xa1, 0x98, 0x4d, 0x16, 0x70, 0xf9, 0x6f, 0x34, 0x0e, 0x6d, 0xa7, 0xa7, 0x5f, 0x61,
-	0x04, 0x3d, 0x54, 0x13, 0x32, 0x4b, 0x29, 0x5e, 0x1c, 0x37, 0xbd, 0x94, 0x12, 0x07, 0x91, 0x43,
-	0x0d, 0x4a, 0x76, 0x19, 0x29, 0x89, 0xff, 0xa4, 0x97, 0x91, 0xca, 0x60, 0x55, 0xa8, 0xcf, 0x20,
-	0x05, 0xb2, 0xa6, 0x0f, 0x64, 0xad, 0x2c, 0x10, 0x41, 0xc4, 0x6f, 0xb6, 0x59, 0xa0, 0x43, 0x30,
-	0xe8, 0xcd, 0x02, 0x3f, 0xc6, 0x03, 0x2a, 0xa8, 0x98, 0x46, 0xcd, 0xbf, 0xa0, 0xa3, 0x1b, 0xb5,
-	0x2c, 0xb3, 0x1a, 0x6a, 0xd1, 0xb2, 0x1b, 0x4c, 0xe9, 0xd5, 0x20, 0xbd, 0xc1, 0xd4, 0xb8, 0xbc,
-	0x84, 0x65, 0x58, 0x08, 0x9c, 0xdf, 0x50, 0xb7, 0x75, 0x92, 0xa4, 0x24, 0xf3, 0x86, 0x5c, 0x3c,
-	0xff, 0xfa, 0x05, 0x96, 0xe4, 0x22, 0xb8, 0x7e, 0x9d, 0x7d, 0x21, 0x47, 0x91, 0x87, 0x63, 0x5e,
-	0x97, 0x2b, 0xe0, 0x26, 0x07, 0xc1, 0x72, 0x4c, 0x6c, 0x27, 0x91, 0xa4, 0xaa, 0xd0, 0x9d, 0x44,
-	0x99, 0x37, 0x03, 0xf5, 0x19, 0xd4, 0xde, 0xa1, 0x12, 0x38, 0x54, 0xde, 0xe1, 0x26, 0x90, 0xc0,
-	0x72, 0x4c, 0xcc, 0xa2, 0x47, 0x94, 0x89, 0x41, 0x2f, 0x7a, 0xe4, 0xa9, 0x1f, 0x50, 0x93, 0x9a,
-	0xa8, 0xff, 0xbb, 0x01, 0xae, 0x1f, 0x23, 0x63, 0xc2, 0x7c, 0x4b, 0xae, 0x45, 0x9d, 0xca, 0x01,
-	0xc7, 0x90, 0xa0, 0x1e, 0x14, 0x0a, 0x51, 0xf0, 0xaa, 0x41, 0x81, 0x13, 0xca, 0x0f, 0xcb, 0xb0,
-	0x30, 0x13, 0x21, 0xaf, 0x29, 0xd2, 0x13, 0xa1, 0x38, 0x98, 0x1e, 0x6a, 0x50, 0x2a, 0x55, 0x36,
-	0x42, 0x6f, 0xa0, 0x52, 0x99, 0x85, 0x84, 0x42, 0x0d, 0x4a, 0xe5, 0x14, 0x40, 0x9c, 0xad, 0x18,
-	0xd6, 0x0b, 0x5e, 0xd6, 0xa2, 0x25, 0x8a, 0xff, 0x92, 0x5d, 0x1c, 0x6a, 0x86, 0x58, 0x9b, 0xdf,
-	0xd2, 0x11, 0x2f, 0x08, 0x93, 0x86, 0xc7, 0x63, 0x26, 0x60, 0xff, 0x6c, 0x48, 0x13, 0x22, 0x59,
-	0xa8, 0x37, 0xd5, 0xef, 0x5c, 0x04, 0xf4, 0x38, 0xac, 0xcc, 0x5a, 0x91, 0x13, 0x74, 0x42, 0xaf,
-	0x15, 0x85, 0xdf, 0x19, 0x81, 0x6a, 0x42, 0xf6, 0x74, 0x5c, 0x1c, 0xe5, 0x42, 0x9f, 0x8e, 0xab,
-	0x22, 0x70, 0xa0, 0x36, 0x3d, 0x7f, 0xc8, 0xe5, 0x84, 0x61, 0x73, 0x87, 0x5c, 0x61, 0x4c, 0x39,
-	0xd4, 0xa4, 0x66, 0x36, 0x3f, 0x4c, 0x78, 0x35, 0xbd, 0xf9, 0x11, 0x44, 0x70, 0x43, 0x15, 0x19,
-	0x73, 0xcb, 0xc3, 0x0d, 0x92, 0xa6, 0x6f, 0x79, 0x24, 0xf1, 0xd8, 0x50, 0x87, 0x54, 0xa9, 0x15,
-	0xc7, 0x36, 0xab, 0xb4, 0xe6, 0xe2, 0xa8, 0xa1, 0x0e, 0x29, 0xd1, 0xfa, 0x07, 0x23, 0xbd, 0x84,
-	0x57, 0x07, 0xd9, 0x9a, 0x6f, 0x4a, 0x04, 0x4b, 0x22, 0x8b, 0x61, 0x69, 0x3e, 0x82, 0xee, 0x73,
-	0x41, 0x7e, 0x02, 0x13, 0xbf, 0x6a, 0x2e, 0x69, 0x6a, 0xc8, 0x05, 0xf0, 0xc2, 0x52, 0x3c, 0xfc,
-	0xa9, 0x83, 0x8a, 0x18, 0xe5, 0x4e, 0x1d, 0xdc, 0x40, 0x58, 0xa8, 0x41, 0xc9, 0xd9, 0x2d, 0x89,
-	0x23, 0xa3, 0x98, 0xdd, 0x92, 0x2a, 0x0e, 0x0d, 0xea, 0x33, 0xb0, 0x6d, 0x45, 0x1d, 0xa2, 0x45,
-	0xb7, 0x15, 0xdd, 0x70, 0x32, 0x58, 0x9a, 0x8f, 0x9d, 0x3b, 0xb4, 0x82, 0x96, 0xe8, 0xb9, 0xa3,
-	0x44, 0x94, 0x17, 0x3c, 0x0e, 0x2b, 0x81, 0xf9, 0x59, 0x96, 0x89, 0x26, 0x0b, 0xe4, 0x31, 0x5f,
-	0xd7, 0x50, 0x51, 0x88, 0x8a, 0x82, 0x25, 0x38, 0x08, 0x96, 0xdf, 0x2b, 0xa2, 0x0e, 0x0b, 0x91,
-	0x63, 0x6f, 0xe8, 0x8b, 0xcf, 0x05, 0x36, 0xc1, 0xb2, 0x6c, 0x9a, 0x6e, 0x22, 0x5b, 0x02, 0x2d,
-	0x37, 0x15, 0xa2, 0x92, 0x60, 0x09, 0x0e, 0x76, 0xfa, 0x15, 0x07, 0xf7, 0xd0, 0xd3, 0xaf, 0x2a,
-	0xa2, 0x08, 0x6a, 0xd3, 0x6b, 0xa2, 0xc0, 0x71, 0x39, 0x5a, 0x28, 0x72, 0xd1, 0x40, 0x50, 0x9b,
-	0x3e, 0x46, 0xb1, 0x7c, 0xf2, 0x07, 0xf3, 0x57, 0xaf, 0x61, 0x96, 0x9d, 0x39, 0xfc, 0x73, 0xfd,
-	0x7f, 0x01, 0x00, 0x00, 0xff, 0xff, 0xb6, 0xd1, 0x79, 0x76, 0x7e, 0x61, 0x00, 0x00,
+	// 3822 bytes of a gzipped FileDescriptorProto
+	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xcc, 0x5c, 0xdb, 0x8f, 0x1c, 0x47,
+	0xd5, 0x57, 0xef, 0xec, 0x7a, 0xed, 0xfa, 0xec, 0x7c, 0x4e, 0x7f, 0xfb, 0x99, 0xa5, 0x12, 0x72,
+	0xe9, 0x38, 0x89, 0x73, 0x73, 0xc2, 0x3a, 0x09, 0xb2, 0x21, 0x10, 0xef, 0xae, 0xbd, 0x98, 0xd8,
+	0xc9, 0xaa, 0x67, 0x1d, 0x2b, 0x04, 0x3c, 0x99, 0x9d, 0x29, 0x8f, 0x9b, 0x9d, 0xe9, 0x9e, 0xed,
+	0xee, 0xd9, 0x4b, 0xae, 0x86, 0x5c, 0x94, 0x20, 0x50, 0x10, 0x12, 0x17, 0x29, 0x2f, 0x20, 0x22,
+	0x21, 0x21, 0x21, 0xc1, 0x23, 0x8f, 0x08, 0xf1, 0xc4, 0x13, 0xe2, 0xbf, 0xe1, 0x09, 0x75, 0x75,
+	0x75, 0x75, 0x77, 0xdd, 0x7b, 0xa6, 0x67, 0xc2, 0xd3, 0x4c, 0x55, 0x9f, 0xcb, 0xef, 0x9c, 0xae,
+	0x7b, 0xd7, 0x39, 0xe0, 0x84, 0x1b, 0x6c, 0x07, 0xcd, 0xee, 0xce, 0xd9, 0x61, 0x18, 0xc4, 0x81,
+	0xbd, 0x80, 0x7f, 0x9c, 0x15, 0xb0, 0xe4, 0x5e, 0x69, 0x35, 0xd7, 0x5f, 0x6a, 0x5d, 0xf1, 0xbd,
+	0xb8, 0xb9, 0xfe, 0xd2, 0x66, 0x3b, 0x6c, 0x0f, 0x22, 0x1b, 0x82, 0xa3, 0xfd, 0xa0, 0x77, 0x15,
+	0xed, 0xa1, 0xfe, 0xb2, 0xf5, 0x80, 0x75, 0xa6, 0xe1, 0xd2, 0xb2, 0xe3, 0xb2, 0x3c, 0x2e, 0x8a,
+	0x47, 0xa1, 0x6f, 0xdf, 0x0b, 0x8e, 0xa1, 0x30, 0x0c, 0xc2, 0x2d, 0x74, 0x10, 0x63, 0xa6, 0x63,
+	0x6e, 0x5e, 0x41, 0x9f, 0xae, 0x05, 0x5d, 0xb4, 0x3c, 0x87, 0x45, 0xe6, 0x15, 0xce, 0xb7, 0xc0,
+	0x57, 0x88, 0xcc, 0x75, 0xb4, 0xe7, 0x75, 0x50, 0xeb, 0x5a, 0xd0, 0x45, 0xfd, 0xab, 0x5e, 0x14,
+	0x13, 0x40, 0xf7, 0x01, 0xd0, 0xc5, 0x4f, 0xb6, 0x0e, 0x87, 0x88, 0x48, 0x2f, 0xd4, 0x38, 0x87,
+	0x52, 0x01, 0x39, 0xba, 0x41, 0x56, 0x95, 0xa1, 0xa3, 0x15, 0x65, 0xec, 0x73, 0x4a, 0xec, 0x0d,
+	0x16, 0xfb, 0x05, 0xb0, 0x4c, 0x54, 0xaf, 0x85, 0xa8, 0x1d, 0xa3, 0xd5, 0x76, 0xe4, 0x75, 0x8a,
+	0xb0, 0xa3, 0x4e, 0xe8, 0x0d, 0xe3, 0x20, 0x24, 0x9e, 0x2c, 0xd4, 0x38, 0x7b, 0x22, 0x5e, 0x82,
+	0x58, 0xc3, 0x3b, 0x11, 0xe6, 0xa2, 0xbf, 0xa3, 0x38, 0x0c, 0x0e, 0xd7, 0x82, 0xc1, 0x30, 0xf0,
+	0x91, 0x1f, 0x1b, 0x02, 0x7f, 0x5d, 0x2a, 0xa0, 0x86, 0xd6, 0x70, 0x0e, 0x7c, 0xa9, 0x2c, 0x3c,
+	0x6f, 0x98, 0xcb, 0x60, 0xd1, 0x8b, 0x2e, 0x07, 0x61, 0x27, 0x6d, 0x04, 0x47, 0xdd, 0xac, 0xe8,
+	0x5c, 0x17, 0x30, 0xd5, 0x80, 0xe5, 0x3a, 0xb8, 0x3f, 0x7b, 0x43, 0x81, 0xef, 0xa3, 0x4e, 0x1c,
+	0x84, 0xad, 0x2b, 0x2b, 0x6b, 0xad, 0x57, 0x86, 0xc8, 0x37, 0xf3, 0x95, 0x6d, 0x83, 0xf9, 0x76,
+	0xb7, 0x1b, 0x62, 0xd9, 0xf3, 0x2e, 0xfe, 0xef, 0x7c, 0x5f, 0x21, 0xb6, 0x06, 0xd4, 0x8b, 0x60,
+	0xe1, 0xd2, 0x60, 0x18, 0x1f, 0x3a, 0xd7, 0xc1, 0x83, 0x42, 0x3d, 0x97, 0x0e, 0x62, 0xe4, 0x77,
+	0x89, 0x01, 0xcf, 0x80, 0xff, 0xeb, 0x64, 0x4f, 0xd7, 0x59, 0x4b, 0x44, 0x8f, 0x9c, 0xf7, 0x94,
+	0x62, 0x67, 0xd0, 0x80, 0x57, 0xc1, 0x03, 0x42, 0x00, 0xcd, 0xb8, 0x1d, 0x23, 0xc3, 0x36, 0x1c,
+	0xab, 0x64, 0x10, 0x1b, 0x96, 0xc0, 0x42, 0x94, 0x14, 0x09, 0x7b, 0x5a, 0x98, 0x08, 0xf9, 0x25,
+	0xf0, 0x90, 0x50, 0xeb, 0x5a, 0x3f, 0x88, 0xd0, 0xc5, 0x7e, 0xdf, 0x10, 0x7c, 0x5b, 0x23, 0xa6,
+	0x86, 0x46, 0xf4, 0xaa, 0xc4, 0x3f, 0x58, 0xc5, 0x04, 0x6d, 0xff, 0xa6, 0x4a, 0x6e, 0x0d, 0xb8,
+	0xdf, 0x03, 0x0f, 0x0b, 0xe5, 0xdf, 0x08, 0xbd, 0x18, 0xad, 0x1e, 0xc6, 0x28, 0x1a, 0x1f, 0xbc,
+	0x7d, 0x12, 0x34, 0xb6, 0x47, 0xb7, 0xf0, 0x6b, 0x3d, 0xee, 0x26, 0x7f, 0x93, 0x9a, 0x3e, 0xf2,
+	0x97, 0xe7, 0x31, 0x7b, 0xf2, 0xd7, 0xf9, 0xc4, 0xd2, 0x22, 0x20, 0x66, 0x9e, 0x06, 0x27, 0xf6,
+	0xc3, 0x80, 0xd4, 0x5d, 0x45, 0x3e, 0x01, 0x51, 0xae, 0x9c, 0xa8, 0xb9, 0xbd, 0x0b, 0x4e, 0x0b,
+	0xa1, 0xb8, 0xa8, 0xdd, 0x9d, 0xd4, 0x17, 0x0e, 0x38, 0x1e, 0x66, 0x62, 0x12, 0xf0, 0xa9, 0xf2,
+	0x52, 0x9d, 0x13, 0xeb, 0xf4, 0x13, 0x4f, 0x10, 0xbf, 0x5a, 0xb9, 0x5f, 0x27, 0xb1, 0x7a, 0x28,
+	0xd1, 0x4a, 0x5f, 0xc0, 0x04, 0x56, 0x2f, 0x81, 0x85, 0xbd, 0x76, 0x7f, 0x84, 0x48, 0x1b, 0x48,
+	0x0b, 0xce, 0xb6, 0x4e, 0x63, 0x0d, 0x0d, 0xfb, 0x35, 0x49, 0x9f, 0xcf, 0x7c, 0x39, 0x41, 0x9f,
+	0xdc, 0xd7, 0x88, 0xce, 0x87, 0xc3, 0xd4, 0x76, 0xab, 0x60, 0xfb, 0x44, 0x6f, 0xea, 0xfd, 0xbc,
+	0xaf, 0x34, 0xbd, 0xde, 0x20, 0xe8, 0xb6, 0x36, 0x6f, 0x5c, 0x6b, 0x6d, 0xa0, 0xd8, 0x45, 0x51,
+	0xd0, 0x1f, 0xc5, 0x5e, 0x60, 0x3a, 0xcd, 0x4e, 0x82, 0xe2, 0x03, 0x0b, 0x3c, 0xa2, 0x41, 0x81,
+	0xf2, 0x59, 0x2d, 0xa4, 0x95, 0x19, 0x8c, 0xbc, 0x66, 0x22, 0x18, 0x17, 0xe9, 0xaa, 0xa0, 0x8c,
+	0xe2, 0x72, 0x88, 0x76, 0x0d, 0xe7, 0x85, 0x5d, 0x85, 0x08, 0x62, 0x81, 0x0d, 0xe6, 0x6f, 0x85,
+	0x68, 0x97, 0x30, 0xe3, 0xff, 0x13, 0xa1, 0xbe, 0x2e, 0x52, 0xd9, 0xac, 0x82, 0x9a, 0x42, 0x9a,
+	0xcb, 0x21, 0x15, 0x96, 0x48, 0xbc, 0xd8, 0x1a, 0x3a, 0xd3, 0x8e, 0xa8, 0xdd, 0xe1, 0xde, 0xea,
+	0xa2, 0x5e, 0x95, 0x91, 0xf1, 0x24, 0x68, 0x84, 0xa8, 0x87, 0x15, 0x1c, 0x77, 0x93, 0xbf, 0xfc,
+	0x1c, 0x51, 0x9c, 0x11, 0x64, 0xda, 0x66, 0x36, 0x23, 0xbc, 0x4d, 0x47, 0xaa, 0x02, 0x94, 0xa4,
+	0x9f, 0x4f, 0x6c, 0x77, 0xb5, 0xf9, 0x40, 0xa2, 0x7d, 0x2a, 0xf3, 0x81, 0x2f, 0xd2, 0x5a, 0x74,
+	0xff, 0xd8, 0x36, 0xeb, 0x66, 0x03, 0x89, 0xbe, 0x1a, 0x1a, 0xf0, 0x0d, 0x3a, 0x64, 0x8b, 0x3d,
+	0x39, 0xae, 0x49, 0x85, 0xb9, 0x40, 0x2c, 0x78, 0x6a, 0x73, 0xc1, 0xb3, 0xe0, 0x5e, 0xa2, 0xf8,
+	0xd2, 0x01, 0xea, 0x8c, 0x92, 0x39, 0xa8, 0xb4, 0x4f, 0x59, 0x02, 0x0b, 0xdb, 0xc9, 0x06, 0x39,
+	0x5b, 0x8c, 0xe3, 0x82, 0xf3, 0xa6, 0x8c, 0xab, 0xb4, 0x0d, 0x09, 0x3b, 0xac, 0x03, 0x48, 0xcd,
+	0x44, 0x88, 0x5f, 0x00, 0xf7, 0xb0, 0xba, 0xf9, 0x1d, 0x88, 0x54, 0xb5, 0x13, 0x48, 0xd8, 0xa7,
+	0xb6, 0xf9, 0x78, 0x8e, 0x6e, 0xdb, 0xf3, 0x69, 0xde, 0xc0, 0xc5, 0x6f, 0x49, 0xd9, 0x66, 0xe0,
+	0xe3, 0x15, 0x70, 0x1f, 0xdf, 0x1c, 0x4b, 0xa0, 0x4f, 0x82, 0x46, 0x87, 0xce, 0xc5, 0xc9, 0x5f,
+	0xe7, 0x6d, 0x39, 0xcf, 0x0c, 0x36, 0xa7, 0xe7, 0x69, 0x07, 0x4a, 0x5e, 0x6b, 0xab, 0x89, 0xc2,
+	0xbd, 0x60, 0x3d, 0xf4, 0xf6, 0x50, 0x19, 0xb6, 0x0d, 0xe6, 0xd1, 0x01, 0xca, 0x5c, 0x8d, 0xff,
+	0x3b, 0x3f, 0xb4, 0x34, 0xbc, 0x33, 0x80, 0x7f, 0x81, 0x0e, 0x5e, 0x18, 0x82, 0x5b, 0x05, 0xff,
+	0x8f, 0x2c, 0x1d, 0xf3, 0x0c, 0x0c, 0x78, 0x9e, 0x6e, 0x30, 0x53, 0x0c, 0x1b, 0xab, 0xad, 0xab,
+	0x97, 0xd6, 0xf5, 0xe0, 0xdf, 0x55, 0xf1, 0xcd, 0x00, 0xf7, 0x6b, 0xa2, 0x81, 0x77, 0x03, 0xc5,
+	0x9b, 0x41, 0x58, 0x71, 0x31, 0x35, 0x0c, 0xc2, 0x38, 0x5b, 0x4c, 0x25, 0xff, 0x9d, 0x91, 0x46,
+	0xf4, 0x94, 0x96, 0x86, 0xe7, 0xf3, 0x73, 0x22, 0x7c, 0xbe, 0xb9, 0x11, 0x06, 0xa3, 0x21, 0x7b,
+	0xd6, 0xb8, 0x04, 0x16, 0x7a, 0x49, 0x3d, 0x99, 0x00, 0xd3, 0x42, 0xf1, 0x88, 0x49, 0xc0, 0x3a,
+	0x83, 0xb7, 0xe1, 0x02, 0xa7, 0x04, 0x20, 0x3d, 0x58, 0x36, 0x02, 0x6f, 0x9f, 0x02, 0x47, 0xd2,
+	0xc3, 0x69, 0xa2, 0x94, 0x94, 0x9c, 0x3b, 0x96, 0x5a, 0xe8, 0x0c, 0xcc, 0xea, 0x31, 0x7e, 0xc5,
+	0x07, 0xe5, 0x13, 0x59, 0x95, 0x50, 0xe3, 0xa3, 0x74, 0xac, 0xec, 0x98, 0x9b, 0x16, 0xb8, 0x17,
+	0x58, 0x56, 0x34, 0x03, 0x4b, 0x7f, 0x66, 0xd1, 0xfe, 0x7c, 0xd5, 0xf3, 0x77, 0x36, 0x6f, 0x5c,
+	0xdb, 0x0a, 0xd6, 0x02, 0x3f, 0x0e, 0x83, 0x7e, 0x1f, 0x85, 0xc4, 0xd2, 0xd3, 0xe0, 0xc4, 0x70,
+	0x7f, 0xc0, 0x9d, 0x7a, 0x96, 0x2b, 0xed, 0x15, 0xb0, 0xd4, 0xa1, 0x9c, 0x05, 0xe2, 0xb4, 0x8b,
+	0x09, 0x9f, 0xd1, 0x6d, 0x76, 0x43, 0x78, 0xf4, 0x25, 0x40, 0x54, 0xc3, 0x9a, 0xf0, 0x57, 0x16,
+	0x78, 0xb4, 0xa0, 0x00, 0x0f, 0xbe, 0xdd, 0x64, 0xf0, 0x15, 0x58, 0xbe, 0x02, 0x96, 0x22, 0xfa,
+	0x9c, 0x73, 0x80, 0xf0, 0x19, 0xef, 0xad, 0x39, 0x91, 0xb7, 0xb2, 0x01, 0xa8, 0x51, 0x18, 0x80,
+	0x90, 0x01, 0xb0, 0x1a, 0x1c, 0xf0, 0x6b, 0x0b, 0x9c, 0x29, 0xe8, 0x71, 0xff, 0x8b, 0x3c, 0x70,
+	0xcb, 0x04, 0x59, 0x0d, 0x2e, 0xf8, 0x53, 0xb9, 0xd9, 0x5f, 0x45, 0x5d, 0x71, 0xb3, 0xef, 0xa3,
+	0x2e, 0xdf, 0xec, 0x4b, 0x95, 0x86, 0xc6, 0x2e, 0x81, 0x85, 0xb0, 0x60, 0x6d, 0x5a, 0xc0, 0x43,
+	0x08, 0xae, 0x4d, 0x0f, 0x46, 0xd3, 0x02, 0x5e, 0x5f, 0xe2, 0xda, 0x05, 0xb2, 0xbe, 0xc4, 0xae,
+	0xb9, 0xa9, 0x42, 0x5c, 0x83, 0x4b, 0x7e, 0x63, 0x81, 0xc7, 0x0b, 0x0a, 0x5e, 0x0d, 0xfa, 0x71,
+	0xbb, 0x87, 0x9a, 0xc8, 0x8f, 0x82, 0x50, 0xe0, 0x9c, 0xc7, 0xc1, 0xc9, 0x08, 0x3f, 0xe3, 0xfc,
+	0xc3, 0xd5, 0x27, 0x6d, 0xc8, 0x5b, 0xe9, 0x5c, 0xec, 0xb6, 0x87, 0xb1, 0x68, 0x64, 0x10, 0x3d,
+	0x13, 0x8e, 0x0c, 0xb7, 0xcd, 0x10, 0xd6, 0xe0, 0x8c, 0x7f, 0x58, 0xe0, 0x29, 0xc9, 0x12, 0x73,
+	0x6d, 0x14, 0xc5, 0xc1, 0x20, 0x9d, 0x93, 0xae, 0xf8, 0x5e, 0x6c, 0xb6, 0x8d, 0x49, 0x9e, 0x0f,
+	0xda, 0x07, 0x57, 0x06, 0xc3, 0x51, 0x3f, 0xca, 0x14, 0x16, 0x6a, 0xf0, 0x73, 0xcf, 0xcf, 0x9e,
+	0x37, 0xc8, 0x73, 0x5a, 0x63, 0x43, 0x70, 0x74, 0xd0, 0x3e, 0x68, 0x0e, 0x11, 0xea, 0x92, 0xd6,
+	0x42, 0xcb, 0xf8, 0xb8, 0xad, 0xed, 0xf7, 0xd0, 0x45, 0xbf, 0xd7, 0x47, 0xa4, 0xd5, 0x14, 0x6a,
+	0x9c, 0x1d, 0x63, 0x63, 0x6a, 0x70, 0xdd, 0x40, 0xb4, 0x8a, 0x6a, 0xd6, 0xb1, 0x40, 0xa3, 0x2b,
+	0xaf, 0x46, 0xe1, 0x04, 0xac, 0xad, 0x51, 0x57, 0x83, 0x45, 0x5d, 0xf0, 0xa4, 0xc4, 0x7d, 0x5b,
+	0xa3, 0xd0, 0x5f, 0x3d, 0x5c, 0x1f, 0xc5, 0x87, 0x6b, 0x87, 0x9d, 0xbe, 0xe1, 0x8e, 0x36, 0xdd,
+	0xb2, 0xa2, 0x61, 0x44, 0x34, 0xa5, 0x05, 0xe7, 0x07, 0xa6, 0x5a, 0x6a, 0xb0, 0x28, 0xff, 0x32,
+	0x58, 0x3a, 0xbd, 0x88, 0x50, 0x6c, 0xfe, 0x71, 0xed, 0xa6, 0x4a, 0x46, 0x0d, 0x18, 0xdf, 0xa0,
+	0x53, 0x81, 0xd8, 0x1f, 0x9b, 0x49, 0xb7, 0x30, 0xf7, 0x78, 0xb1, 0xdf, 0xa5, 0x85, 0xc2, 0x64,
+	0xa3, 0xd0, 0x50, 0xcb, 0x21, 0xd4, 0x83, 0x12, 0x4f, 0x25, 0x8d, 0x74, 0x82, 0x0d, 0x4b, 0x4b,
+	0x29, 0xb8, 0x06, 0xe4, 0x2f, 0x4b, 0xdb, 0xe4, 0x06, 0x8a, 0xd7, 0x46, 0x61, 0x88, 0xfc, 0x18,
+	0x0f, 0x31, 0x86, 0x67, 0x39, 0x77, 0x2c, 0x53, 0x81, 0xf9, 0xe9, 0x4e, 0x1b, 0x0f, 0x6a, 0xe4,
+	0xa8, 0x05, 0x17, 0x26, 0x5a, 0xf0, 0x6e, 0xd0, 0x43, 0x66, 0x01, 0x82, 0x2a, 0xe7, 0x52, 0x87,
+	0x5a, 0x41, 0x53, 0x3b, 0xa1, 0x7a, 0x1d, 0x9c, 0x97, 0xa8, 0xc6, 0x03, 0x5f, 0xe4, 0xc5, 0x5e,
+	0xe0, 0x6f, 0x05, 0xd7, 0xbc, 0xee, 0x8d, 0x20, 0xdc, 0xf1, 0xfc, 0x9e, 0x9b, 0xcc, 0x05, 0x86,
+	0xfd, 0x7a, 0x7f, 0x2c, 0xe1, 0x35, 0x34, 0xb6, 0x9b, 0xb4, 0x3b, 0xf2, 0xdb, 0x6f, 0xf1, 0x10,
+	0x5b, 0xad, 0xb7, 0x7c, 0x6c, 0x99, 0x28, 0x20, 0x86, 0xdc, 0x05, 0xe6, 0xe8, 0x69, 0xd9, 0x5c,
+	0x80, 0x8f, 0xda, 0x83, 0x5b, 0xb7, 0x88, 0xbc, 0xe4, 0x6f, 0xd9, 0xd4, 0x86, 0xd2, 0xd4, 0x79,
+	0xd6, 0xd4, 0x3b, 0x42, 0x28, 0xcd, 0xda, 0x6c, 0x25, 0xf0, 0x1b, 0x2c, 0xfc, 0x79, 0x0a, 0xbf,
+	0x30, 0xf8, 0x29, 0x10, 0xd4, 0xf0, 0x56, 0x7f, 0x99, 0x2f, 0x2b, 0xd9, 0xf6, 0x74, 0xcd, 0xf3,
+	0x9b, 0x31, 0x1a, 0xba, 0x81, 0xf9, 0x7d, 0x94, 0x44, 0x59, 0xd7, 0x0b, 0x51, 0x07, 0x7f, 0x58,
+	0x24, 0xca, 0x68, 0x05, 0xee, 0x6a, 0x78, 0x85, 0x44, 0x56, 0xd9, 0xb8, 0x80, 0x07, 0x91, 0xe8,
+	0xd0, 0xef, 0x60, 0xf3, 0x8f, 0xba, 0x69, 0xa1, 0xb0, 0x98, 0x54, 0xe2, 0xaa, 0xc1, 0x05, 0x1f,
+	0x5a, 0x74, 0x9c, 0x16, 0x4d, 0x34, 0x86, 0x96, 0xd3, 0xa1, 0x70, 0xae, 0x38, 0x14, 0x56, 0xb1,
+	0xb8, 0xa5, 0x84, 0x51, 0x83, 0xa1, 0x6b, 0x52, 0x05, 0xcd, 0x38, 0x18, 0x1a, 0x8e, 0x3f, 0x2d,
+	0xa5, 0x90, 0x1a, 0x50, 0x7e, 0x2a, 0x3f, 0x3e, 0xfe, 0x82, 0x9a, 0x62, 0x5b, 0x03, 0xa8, 0x9e,
+	0xdd, 0xdd, 0xb3, 0x4a, 0x1d, 0x37, 0xbc, 0xf8, 0xb6, 0x8b, 0xfa, 0xed, 0xd8, 0xdb, 0x43, 0x78,
+	0x57, 0x31, 0x73, 0x2f, 0x84, 0x55, 0x11, 0xd6, 0x33, 0x3a, 0xad, 0x28, 0xfa, 0xc4, 0xb8, 0x4e,
+	0x99, 0xbc, 0xaf, 0x0e, 0xab, 0xe1, 0xaa, 0xc1, 0x15, 0x9f, 0xcf, 0x81, 0xb3, 0xb2, 0xaf, 0x12,
+	0xca, 0x3d, 0xaf, 0xdc, 0x0d, 0x4f, 0x82, 0xbb, 0x07, 0x9e, 0x8f, 0x97, 0xd1, 0x6b, 0xfd, 0xa0,
+	0xb3, 0xb3, 0xef, 0xd1, 0x25, 0x38, 0xff, 0x00, 0x53, 0xb7, 0x0f, 0x18, 0xea, 0x06, 0xa1, 0x66,
+	0x1f, 0xd8, 0x17, 0xc0, 0x32, 0x15, 0x11, 0x8c, 0xfc, 0x18, 0x85, 0x39, 0x53, 0x3a, 0xcd, 0x49,
+	0x9f, 0x63, 0xde, 0x4c, 0x20, 0xcb, 0xbb, 0x40, 0x78, 0x25, 0xcf, 0x9d, 0xbe, 0xb9, 0x97, 0x6a,
+	0x78, 0x29, 0xeb, 0xf4, 0x28, 0x9c, 0xd3, 0x56, 0x61, 0x48, 0x7d, 0x43, 0x2d, 0xa5, 0x06, 0x9c,
+	0x9f, 0x59, 0xe0, 0x9c, 0x4c, 0x45, 0xda, 0x7b, 0xc9, 0x76, 0xea, 0x95, 0x3d, 0x14, 0x6e, 0x79,
+	0x03, 0x64, 0xde, 0x91, 0xf8, 0x8d, 0x9b, 0xbd, 0x0c, 0x16, 0x63, 0x6f, 0x80, 0x82, 0x51, 0x76,
+	0x9c, 0x96, 0x15, 0x25, 0x9d, 0x69, 0xb7, 0x22, 0xb8, 0x1a, 0x1c, 0x72, 0x08, 0x9e, 0x30, 0x52,
+	0x39, 0x91, 0x1f, 0xa8, 0xb5, 0x8d, 0xa2, 0xb5, 0x9e, 0xa1, 0xea, 0x1a, 0xac, 0xfc, 0x9b, 0x05,
+	0x5e, 0x50, 0xeb, 0xe2, 0x46, 0xaa, 0x8a, 0x0d, 0x60, 0x9c, 0xe9, 0xa5, 0xd0, 0x3c, 0xe6, 0x25,
+	0xcd, 0x63, 0xa1, 0xe8, 0xb0, 0xb7, 0xc6, 0x36, 0xa2, 0x06, 0x17, 0xfe, 0xd6, 0x02, 0xcf, 0x55,
+	0xd4, 0x3e, 0xf3, 0x99, 0x39, 0xaa, 0x0c, 0xb1, 0x06, 0xc7, 0x7c, 0x9b, 0xde, 0x36, 0xe4, 0x94,
+	0x0a, 0x77, 0xea, 0xf2, 0xe1, 0xef, 0x4d, 0xbd, 0xa4, 0xa9, 0x6d, 0xd5, 0x7f, 0x67, 0x95, 0x8f,
+	0x09, 0xb2, 0xef, 0xe5, 0x4d, 0x0f, 0x1f, 0x9b, 0x54, 0x18, 0x02, 0x8e, 0x03, 0x2b, 0x3b, 0x31,
+	0xb7, 0x70, 0xa9, 0x47, 0xb4, 0x59, 0xbd, 0xa4, 0xb4, 0x4d, 0xda, 0xba, 0xb5, 0x6d, 0x43, 0x70,
+	0xb4, 0x3b, 0x0a, 0xdb, 0xf8, 0xbd, 0xa7, 0xd3, 0x19, 0x2d, 0xe7, 0x2f, 0xf8, 0x48, 0xf1, 0x05,
+	0x77, 0xb4, 0x20, 0x6b, 0x78, 0xa1, 0x2f, 0xd2, 0xfb, 0x26, 0x65, 0x25, 0xe6, 0xf3, 0xd8, 0xf7,
+	0xe4, 0x12, 0xa6, 0x30, 0xd7, 0x12, 0xe9, 0x15, 0x1b, 0xdb, 0x9e, 0x5a, 0xca, 0xd4, 0x1a, 0x9a,
+	0x1c, 0xfd, 0x5a, 0xd0, 0x0f, 0x42, 0x43, 0xf4, 0x3f, 0xb6, 0xd4, 0x62, 0x08, 0x7c, 0xdc, 0x16,
+	0xad, 0x52, 0x5b, 0x9c, 0x2b, 0xb5, 0xc5, 0x46, 0xd6, 0x16, 0x4b, 0x26, 0xcd, 0x2b, 0x4d, 0x5a,
+	0x90, 0x07, 0x60, 0x15, 0x8e, 0x28, 0x2a, 0x04, 0x56, 0x14, 0x02, 0xb0, 0x58, 0x01, 0x35, 0x34,
+	0x97, 0xbf, 0x5a, 0xe0, 0x69, 0x91, 0xab, 0x2e, 0xf7, 0xdb, 0xd1, 0x6d, 0xcf, 0xef, 0x25, 0x63,
+	0xe2, 0xe5, 0x10, 0xed, 0x8e, 0x90, 0xdf, 0x39, 0xac, 0xbd, 0x8f, 0xdf, 0x0b, 0x8e, 0xdd, 0xca,
+	0x84, 0x67, 0x9e, 0xa3, 0x15, 0xf6, 0x49, 0xd0, 0xd8, 0x8d, 0x0f, 0x71, 0x1f, 0x6f, 0xb8, 0xc9,
+	0xdf, 0xbc, 0xdf, 0x2f, 0x16, 0xfb, 0xfd, 0xa0, 0x82, 0x09, 0x35, 0xb8, 0xec, 0x9f, 0x16, 0xb3,
+	0x34, 0x11, 0xe8, 0xdb, 0x6c, 0x8f, 0x66, 0x3f, 0x24, 0x0e, 0x13, 0xa5, 0xc4, 0x5d, 0x69, 0x21,
+	0x73, 0xe1, 0xa2, 0xc0, 0x85, 0x47, 0x55, 0xab, 0x2d, 0x99, 0x49, 0x35, 0xb8, 0xef, 0xcf, 0xcc,
+	0x39, 0x52, 0xae, 0xcb, 0xeb, 0xec, 0xa0, 0x70, 0xa6, 0x4e, 0x33, 0x6d, 0x61, 0x2d, 0x25, 0xe4,
+	0x1a, 0x9c, 0x32, 0xa4, 0xe7, 0x98, 0xa2, 0x28, 0xbb, 0xad, 0x00, 0xdf, 0xa8, 0x21, 0xae, 0x79,
+	0x04, 0xdc, 0xb5, 0xdd, 0x8e, 0xf8, 0x5b, 0x0c, 0x4c, 0x2d, 0x8d, 0x83, 0x7d, 0xb9, 0x3d, 0xc8,
+	0xae, 0xf1, 0xe4, 0x15, 0xce, 0x47, 0x96, 0x89, 0xca, 0x19, 0xdc, 0xdd, 0x19, 0x88, 0xee, 0xcb,
+	0x4f, 0xcf, 0x6e, 0x71, 0x14, 0xca, 0xac, 0x8d, 0x0e, 0xa5, 0xc7, 0xb6, 0xd3, 0xb3, 0xfc, 0x63,
+	0xcb, 0x4c, 0xe9, 0x0c, 0xcc, 0x8f, 0xe4, 0x9b, 0xbb, 0xe9, 0xd9, 0xff, 0x89, 0x65, 0xa8, 0x75,
+	0x06, 0x0e, 0x08, 0xe8, 0x1d, 0x29, 0xc1, 0xfd, 0xd3, 0x69, 0x18, 0xff, 0xa1, 0x65, 0xa0, 0x71,
+	0x06, 0x86, 0x7f, 0x33, 0xff, 0x60, 0x83, 0x6f, 0xbc, 0xb4, 0x4a, 0xf7, 0x5f, 0xf4, 0x17, 0x77,
+	0x0b, 0xc3, 0x96, 0x42, 0xc0, 0x0c, 0x0c, 0xd9, 0xa7, 0x8b, 0x0e, 0x05, 0x8e, 0x69, 0xbc, 0xc9,
+	0x9f, 0x5a, 0x15, 0x34, 0xcf, 0xc0, 0x11, 0xff, 0xce, 0x0f, 0x9f, 0x85, 0x78, 0xc6, 0xbc, 0x69,
+	0x74, 0x0a, 0x1c, 0xe9, 0x47, 0xdb, 0xab, 0xa3, 0xf4, 0x7e, 0x89, 0xe5, 0x92, 0x12, 0xce, 0x57,
+	0x11, 0x6d, 0x37, 0x6f, 0x8f, 0xfc, 0xf4, 0xd8, 0xcc, 0x72, 0x69, 0xd9, 0x7e, 0x00, 0xfc, 0x4f,
+	0x94, 0xfc, 0x71, 0x51, 0xe4, 0x45, 0xe9, 0x42, 0xdd, 0x72, 0x8b, 0x55, 0xf6, 0x19, 0xf0, 0xbf,
+	0x21, 0xea, 0x65, 0x00, 0xb1, 0x90, 0x74, 0x4d, 0xc0, 0x56, 0xdb, 0xa7, 0xc1, 0x89, 0xbc, 0x2a,
+	0x81, 0x91, 0x2e, 0x12, 0xca, 0x95, 0x85, 0x03, 0x6e, 0x23, 0xdb, 0x6b, 0x58, 0x29, 0xbc, 0x04,
+	0x1e, 0x53, 0x69, 0x24, 0x25, 0xc3, 0xaf, 0xff, 0xef, 0x19, 0x09, 0x23, 0xa8, 0x4f, 0x81, 0x23,
+	0x21, 0x8a, 0x46, 0xfd, 0x14, 0xf2, 0x9c, 0x4b, 0x4a, 0x13, 0x35, 0x9e, 0x4d, 0x7a, 0x0e, 0xad,
+	0x02, 0x80, 0xdf, 0x88, 0xa1, 0x49, 0x1f, 0x58, 0xe6, 0x22, 0xa7, 0x68, 0x98, 0xe6, 0x35, 0x91,
+	0x4b, 0x22, 0xf5, 0xbc, 0x26, 0x22, 0x6c, 0x8a, 0xd6, 0x5c, 0xa1, 0x93, 0x87, 0x10, 0xc0, 0x66,
+	0xb0, 0xcf, 0x2c, 0xdc, 0xe5, 0xb6, 0xbc, 0x63, 0x20, 0xea, 0x8b, 0xb3, 0x24, 0xf9, 0x31, 0xed,
+	0x3c, 0xff, 0xb2, 0x0c, 0x64, 0x11, 0x53, 0x96, 0xc1, 0xe2, 0x5e, 0xfa, 0x90, 0xd8, 0x92, 0x15,
+	0x6d, 0x07, 0x1c, 0xdf, 0x2b, 0x0e, 0x47, 0x73, 0xf8, 0x71, 0xa9, 0x2e, 0xe1, 0xee, 0xa4, 0xef,
+	0x18, 0x1b, 0x34, 0xe7, 0x66, 0x45, 0xbc, 0xeb, 0x4b, 0x3c, 0x86, 0xc7, 0xba, 0x39, 0x37, 0x2d,
+	0x94, 0x1d, 0xb4, 0xa0, 0x74, 0xd0, 0x11, 0xc6, 0x41, 0x2b, 0x9f, 0xbb, 0x60, 0x91, 0x24, 0x10,
+	0xb2, 0xbf, 0x03, 0xee, 0x2a, 0xe7, 0xff, 0xb1, 0xef, 0x49, 0x93, 0x0a, 0x9d, 0x15, 0xa5, 0x12,
+	0x82, 0xe2, 0x87, 0xc4, 0x03, 0xa8, 0x90, 0xb4, 0xa5, 0x9c, 0xb6, 0xc7, 0x3e, 0x5d, 0xe6, 0x13,
+	0xe7, 0x05, 0x82, 0x1a, 0x2a, 0xa2, 0xe6, 0x55, 0x60, 0xf3, 0x69, 0x76, 0xec, 0xfb, 0xcb, 0xbc,
+	0x5c, 0xf6, 0x1e, 0x28, 0x27, 0x10, 0xc0, 0x2f, 0x67, 0xc1, 0xe1, 0xe1, 0x8b, 0xd2, 0xec, 0x40,
+	0x0d, 0x15, 0x51, 0xd3, 0x04, 0x77, 0x73, 0xa9, 0x6d, 0xec, 0xfb, 0x84, 0xac, 0xb9, 0xdf, 0xa5,
+	0xcf, 0x89, 0xd0, 0x5d, 0x1a, 0x7b, 0x28, 0x8a, 0xaf, 0xb1, 0xcf, 0x88, 0x6c, 0x17, 0x85, 0xef,
+	0x40, 0x03, 0x4a, 0xa2, 0x32, 0xa6, 0x91, 0x9a, 0xc2, 0xe0, 0x17, 0xfb, 0x31, 0x91, 0x24, 0x61,
+	0xd8, 0x0d, 0x34, 0x21, 0x95, 0x18, 0x5a, 0x8e, 0x43, 0x11, 0x1b, 0x2a, 0x0a, 0x8a, 0x81, 0x06,
+	0x94, 0x44, 0xa5, 0x0f, 0xa0, 0x3c, 0xcc, 0xc3, 0x7e, 0xb4, 0x2c, 0x47, 0x1a, 0x9b, 0x02, 0xf5,
+	0x84, 0x44, 0xdf, 0xfb, 0xf9, 0xe9, 0x89, 0x3c, 0xba, 0xc2, 0x3e, 0xcb, 0x8b, 0x53, 0x85, 0x47,
+	0x40, 0x63, 0x7a, 0x82, 0xe2, 0xa3, 0xfc, 0x80, 0x55, 0x11, 0xe1, 0x60, 0x3f, 0xcd, 0x8b, 0x55,
+	0x86, 0x69, 0x40, 0x73, 0x06, 0xa1, 0xfb, 0x99, 0x70, 0x02, 0x91, 0xfb, 0x85, 0x31, 0x12, 0x50,
+	0x4f, 0x48, 0xf4, 0xfd, 0x24, 0x0f, 0x7a, 0x54, 0x5e, 0xde, 0xb7, 0xbf, 0xca, 0x4b, 0xd4, 0xc4,
+	0x22, 0xc0, 0x2a, 0x2c, 0x04, 0xce, 0x36, 0x38, 0x25, 0x0e, 0x88, 0xb6, 0x1f, 0x2a, 0x0b, 0x13,
+	0x46, 0x59, 0x43, 0x35, 0x11, 0xd1, 0xd1, 0x02, 0xff, 0x2f, 0x8c, 0x5c, 0xb6, 0x1d, 0x09, 0x77,
+	0xe1, 0x3b, 0x03, 0x54, 0xd2, 0x70, 0x43, 0x2b, 0x1b, 0x72, 0xcc, 0x0e, 0xad, 0xe2, 0x48, 0x66,
+	0xa8, 0xa1, 0x22, 0x6a, 0x76, 0xc0, 0x97, 0xa5, 0x79, 0xb8, 0xec, 0x47, 0x64, 0x22, 0xca, 0x09,
+	0xc0, 0xa0, 0x96, 0x8e, 0xef, 0x20, 0x8a, 0xd3, 0x35, 0xb6, 0x83, 0x68, 0xcf, 0xfe, 0xa0, 0x39,
+	0x03, 0x3f, 0x24, 0x0a, 0x68, 0xb9, 0x21, 0x51, 0x9a, 0x39, 0x0c, 0x1a, 0x50, 0x72, 0x7d, 0x52,
+	0x90, 0x6c, 0x8b, 0xed, 0x93, 0xd2, 0x9c, 0x5e, 0x50, 0x4f, 0x48, 0xf4, 0xed, 0x0b, 0x42, 0xd6,
+	0x8b, 0xf9, 0xb1, 0xec, 0xc7, 0x55, 0x92, 0xca, 0xc9, 0xb8, 0xa0, 0x11, 0xad, 0xc6, 0x50, 0x4c,
+	0xa6, 0x36, 0xb4, 0xf0, 0xfd, 0x07, 0xea, 0x09, 0x89, 0xbe, 0x77, 0x24, 0x99, 0xe4, 0xf2, 0x5c,
+	0x53, 0xf6, 0x93, 0x2a, 0x59, 0x6c, 0x56, 0x2c, 0x68, 0x48, 0x4d, 0xd4, 0xbf, 0x49, 0xbf, 0x5b,
+	0x4a, 0xf2, 0x3b, 0xd9, 0x4f, 0xa8, 0xe4, 0x31, 0x69, 0xa8, 0xa0, 0x19, 0xb1, 0x46, 0x37, 0x05,
+	0xa9, 0xd6, 0xcd, 0x24, 0x83, 0x82, 0x66, 0xc4, 0x9a, 0xf6, 0x95, 0x61, 0x54, 0xb7, 0xaf, 0x72,
+	0xc6, 0x26, 0x68, 0x44, 0xcb, 0xbd, 0x6f, 0xd9, 0x49, 0x35, 0xfb, 0xbe, 0xd5, 0x27, 0xe8, 0xd0,
+	0x90, 0x9a, 0xa8, 0x7f, 0x57, 0x92, 0x5f, 0x28, 0x4f, 0x94, 0xa4, 0x50, 0x2f, 0x48, 0xeb, 0x04,
+	0x9f, 0x32, 0xa3, 0x46, 0xdc, 0x80, 0xcd, 0xe7, 0x37, 0x62, 0x07, 0x6c, 0x59, 0x12, 0x25, 0xa8,
+	0xa5, 0x53, 0x29, 0x6b, 0x6a, 0x95, 0x35, 0x0d, 0x95, 0x95, 0x93, 0x19, 0x09, 0x5f, 0x6c, 0x29,
+	0x45, 0x90, 0xc2, 0xb3, 0x82, 0xc4, 0x45, 0xd0, 0x90, 0x9a, 0xeb, 0x4c, 0x92, 0xc4, 0x3c, 0x6c,
+	0x67, 0x52, 0x66, 0x0f, 0x82, 0x66, 0xc4, 0xb4, 0x33, 0xdd, 0x23, 0x01, 0x29, 0xea, 0xc5, 0xca,
+	0x14, 0x3e, 0xd0, 0x8c, 0x98, 0xee, 0x48, 0xa0, 0x18, 0xa0, 0xa8, 0x0b, 0xab, 0xd2, 0xec, 0x40,
+	0x23, 0x5a, 0xa2, 0xf5, 0x36, 0xcd, 0xfa, 0xca, 0x75, 0x36, 0xfb, 0x61, 0x4d, 0x6f, 0x24, 0xea,
+	0x74, 0x64, 0xdc, 0x28, 0x25, 0x4e, 0xfb, 0xa0, 0x30, 0x91, 0xcb, 0x3b, 0x01, 0x8d, 0x68, 0x55,
+	0x8a, 0x9b, 0x46, 0x8a, 0x9b, 0x15, 0x14, 0xf3, 0xc1, 0x90, 0xbe, 0xf8, 0x8d, 0xa6, 0xa1, 0x7b,
+	0xec, 0xf4, 0x2b, 0x8d, 0x10, 0x84, 0x7a, 0x42, 0x6e, 0x29, 0x25, 0x8a, 0x53, 0x63, 0x97, 0x52,
+	0xf2, 0x20, 0x39, 0x68, 0x40, 0xc9, 0x2f, 0x23, 0x15, 0xf1, 0x2d, 0xec, 0x32, 0x52, 0x1b, 0x8c,
+	0x03, 0xcd, 0x19, 0x94, 0x40, 0x36, 0xcc, 0x81, 0x6c, 0x54, 0x05, 0x22, 0x89, 0x68, 0xca, 0x37,
+	0x0b, 0xec, 0x65, 0x18, 0x76, 0xb3, 0x20, 0xbe, 0x6d, 0x03, 0x35, 0x54, 0x5c, 0xa3, 0x16, 0x7f,
+	0x2a, 0x65, 0x1b, 0xb5, 0x2a, 0xfb, 0x0f, 0x34, 0xa2, 0xe5, 0x37, 0x98, 0xca, 0x8f, 0xb4, 0xec,
+	0x06, 0xd3, 0xe0, 0x33, 0x32, 0xac, 0xc2, 0x42, 0xe0, 0xfc, 0x82, 0xf9, 0x6c, 0xa8, 0xb8, 0x27,
+	0x6e, 0x3f, 0xab, 0x16, 0x2f, 0xfe, 0x0e, 0x04, 0x2b, 0x72, 0x11, 0x5c, 0x3f, 0xb7, 0xca, 0xb7,
+	0x21, 0xe5, 0x71, 0xc6, 0xf6, 0x39, 0xb5, 0x02, 0x61, 0xf0, 0x33, 0xac, 0xc6, 0xc4, 0x77, 0x12,
+	0x45, 0x28, 0x2e, 0xdb, 0x49, 0xb4, 0x71, 0xc1, 0xd0, 0x9c, 0x41, 0xef, 0x1d, 0x26, 0x40, 0x55,
+	0xe7, 0x1d, 0x61, 0x80, 0x2c, 0xac, 0xc6, 0xc4, 0x2d, 0x7a, 0x64, 0x91, 0xa6, 0xec, 0xa2, 0x47,
+	0x1d, 0xda, 0x0a, 0x0d, 0xa9, 0x89, 0xfa, 0xbf, 0x30, 0x77, 0xfb, 0x0d, 0x23, 0x42, 0xed, 0x17,
+	0xd5, 0x5a, 0xf4, 0xa1, 0xaa, 0x70, 0x02, 0x09, 0xfa, 0x41, 0xa1, 0x14, 0xe5, 0xa7, 0x1b, 0x14,
+	0x04, 0xa1, 0x8a, 0xb0, 0x0a, 0x0b, 0x37, 0x11, 0x8a, 0x9a, 0x22, 0x3b, 0x11, 0xca, 0x83, 0x05,
+	0xa1, 0x01, 0xa5, 0x56, 0x65, 0x33, 0x0e, 0x86, 0x3a, 0x95, 0xf9, 0xe5, 0x5c, 0x68, 0x40, 0xa9,
+	0x9d, 0x02, 0x88, 0xb3, 0x35, 0xc3, 0x7a, 0xc9, 0xcb, 0x46, 0xb4, 0x44, 0xf1, 0x1f, 0x2c, 0x70,
+	0xb6, 0x5a, 0x08, 0x99, 0xfd, 0x75, 0x13, 0xf1, 0x92, 0x1b, 0xf8, 0x70, 0x3c, 0x66, 0x02, 0xf6,
+	0x73, 0x4b, 0x99, 0xf0, 0x81, 0x87, 0x7a, 0x5e, 0xff, 0xce, 0x65, 0x40, 0xc7, 0x61, 0xe5, 0xb6,
+	0x3c, 0x92, 0xab, 0x3f, 0xec, 0xce, 0x43, 0x99, 0x0f, 0x0f, 0x9a, 0x11, 0x13, 0xdd, 0x9f, 0xb2,
+	0x97, 0xe7, 0xa5, 0x73, 0xfa, 0x8a, 0x91, 0xd8, 0xf2, 0xa4, 0x5e, 0x89, 0x87, 0x20, 0x2a, 0xa4,
+	0x4e, 0xd2, 0x86, 0x7f, 0xd9, 0xcf, 0x69, 0x14, 0x48, 0xe6, 0xf5, 0xaa, 0x6c, 0x04, 0xda, 0x1d,
+	0x8b, 0xc9, 0xcc, 0x27, 0x9a, 0x27, 0x9e, 0xd2, 0xc8, 0x66, 0x26, 0x0a, 0x53, 0x72, 0xee, 0xdb,
+	0x95, 0x30, 0xce, 0x8c, 0xfd, 0x76, 0xa5, 0x08, 0x69, 0x83, 0x26, 0xa4, 0x44, 0xeb, 0xef, 0x99,
+	0x5c, 0x3d, 0xda, 0xf0, 0x2e, 0xfb, 0x82, 0x46, 0xb8, 0x22, 0x62, 0x0d, 0x8e, 0xc5, 0x6b, 0xd0,
+	0x9e, 0x4b, 0x7c, 0xda, 0xf6, 0x2c, 0x88, 0x21, 0x83, 0x95, 0x78, 0x08, 0xa2, 0xbf, 0x5b, 0xe0,
+	0x6b, 0x63, 0xc6, 0x3e, 0xd9, 0xeb, 0x46, 0xfa, 0x34, 0x01, 0x60, 0x70, 0x42, 0x29, 0xc4, 0x8e,
+	0x3f, 0xb2, 0x97, 0xf1, 0x0d, 0x86, 0xfe, 0x6f, 0x8c, 0xa7, 0x99, 0xe0, 0x1e, 0x93, 0x9b, 0xdb,
+	0x81, 0x0b, 0xee, 0x14, 0xb2, 0x3b, 0x70, 0x69, 0x82, 0x4e, 0xa8, 0x27, 0xe4, 0x3f, 0x7e, 0xca,
+	0x2f, 0x31, 0xb2, 0x1f, 0x3f, 0x75, 0x17, 0x2c, 0xa1, 0x31, 0xbd, 0x78, 0x21, 0x2b, 0x08, 0x33,
+	0x12, 0x2e, 0x64, 0xa5, 0x31, 0x53, 0xd0, 0x90, 0x9a, 0x3b, 0x52, 0xe2, 0xc2, 0x87, 0xd8, 0x23,
+	0x25, 0x49, 0x84, 0x12, 0xd4, 0x91, 0x49, 0x06, 0x42, 0x26, 0x08, 0x48, 0x3c, 0x10, 0x0a, 0xe3,
+	0x8d, 0xa0, 0x09, 0xa9, 0x56, 0x2b, 0x8e, 0xdd, 0xd1, 0x69, 0x2d, 0xc4, 0x09, 0x41, 0x13, 0x52,
+	0xa2, 0xf5, 0x33, 0x8b, 0xde, 0xb1, 0xd2, 0x07, 0x91, 0xd8, 0xcf, 0x2b, 0x04, 0x2b, 0x22, 0x67,
+	0x60, 0x65, 0x3e, 0xd9, 0x90, 0x2b, 0x8b, 0xcf, 0x10, 0x0f, 0xb9, 0xea, 0x00, 0x15, 0x58, 0x89,
+	0x47, 0xbc, 0x20, 0x67, 0x22, 0x22, 0x84, 0x0b, 0x72, 0x61, 0xa0, 0x07, 0x34, 0xa0, 0x14, 0x9c,
+	0x41, 0xc9, 0x2f, 0xbe, 0x72, 0x67, 0x50, 0xba, 0x6b, 0xc6, 0xd0, 0x9c, 0x81, 0x6f, 0x2b, 0xfa,
+	0x1b, 0xb8, 0x6c, 0x5b, 0x31, 0xbd, 0x2d, 0x0c, 0x2b, 0xf3, 0xf1, 0x2b, 0x72, 0xa3, 0x3b, 0xa9,
+	0xec, 0x8a, 0xbc, 0xc2, 0x25, 0x5e, 0x38, 0x0e, 0x2b, 0x81, 0xf9, 0x49, 0x9e, 0xbf, 0x44, 0x75,
+	0x4f, 0xd3, 0x7e, 0xc6, 0x40, 0x45, 0xe9, 0xd2, 0x2b, 0xac, 0xc0, 0xc1, 0xaf, 0x87, 0xb5, 0x77,
+	0x46, 0xd9, 0xf5, 0xb0, 0xe1, 0xbd, 0x55, 0x58, 0x95, 0xcd, 0xd0, 0x4d, 0xe4, 0xa0, 0xc5, 0xc8,
+	0x4d, 0xa5, 0x4b, 0xa7, 0xb0, 0x02, 0x07, 0x3f, 0xfd, 0xca, 0xef, 0x6e, 0xb2, 0xd3, 0xaf, 0xee,
+	0xc2, 0x28, 0x34, 0xa6, 0x37, 0x44, 0x81, 0xaf, 0x5d, 0x1a, 0xa1, 0x28, 0x5c, 0xf6, 0x84, 0xc6,
+	0xf4, 0x29, 0x8a, 0xd5, 0x63, 0xdf, 0x5d, 0x3c, 0xfb, 0x34, 0x66, 0xd9, 0x3e, 0x82, 0x7f, 0xce,
+	0xfd, 0x27, 0x00, 0x00, 0xff, 0xff, 0x2d, 0xf3, 0x57, 0x4d, 0x78, 0x71, 0x00, 0x00,
 }
 
 // Reference imports to suppress errors if they are not otherwise used.
@@ -8068,6 +9226,7 @@ type RoboSdkClient interface {
 	RI_SDK_CreateModelComponent(ctx context.Context, in *RI_SDK_CreateModelComponentParams, opts ...grpc.CallOption) (*RI_SDK_CreateModelComponentReturn, error)
 	RI_SDK_LinkPWMToController(ctx context.Context, in *RI_SDK_LinkPWMToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkPWMToControllerReturn, error)
 	RI_SDK_LinkServodriveToController(ctx context.Context, in *RI_SDK_LinkServodriveToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkServodriveToControllerReturn, error)
+	RI_SDK_LinkRServodriveToController(ctx context.Context, in *RI_SDK_LinkRServodriveToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkRServodriveToControllerReturn, error)
 	RI_SDK_LinkLedToController(ctx context.Context, in *RI_SDK_LinkLedToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkLedToControllerReturn, error)
 	RI_SDK_LinkVoltageSensorToController(ctx context.Context, in *RI_SDK_LinkVoltageSensorToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkVoltageSensorToControllerReturn, error)
 	RI_SDK_Executor_Extend(ctx context.Context, in *RI_SDK_Executor_ExtendParams, opts ...grpc.CallOption) (*RI_SDK_Executor_ExtendReturn, error)
@@ -8113,6 +9272,15 @@ type RoboSdkClient interface {
 	RI_SDK_Exec_ServoDrive_Rotate(ctx context.Context, in *RI_SDK_Exec_ServoDrive_RotateParams, opts ...grpc.CallOption) (*RI_SDK_Exec_ServoDrive_RotateReturn, error)
 	RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeed(ctx context.Context, in *RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams, opts ...grpc.CallOption) (*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn, error)
 	RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(ctx context.Context, in *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams, opts ...grpc.CallOption) (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn, error)
+	RI_SDK_Exec_RServoDrive_Extend(ctx context.Context, in *RI_SDK_Exec_RServoDrive_ExtendParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_ExtendReturn, error)
+	RI_SDK_Exec_RServoDrive_ExtendToModel(ctx context.Context, in *RI_SDK_Exec_RServoDrive_ExtendToModelParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_ExtendToModelReturn, error)
+	RI_SDK_Exec_RServoDrive_CustomDeviceInit(ctx context.Context, in *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn, error)
+	RI_SDK_Exec_RServoDrive_GetState(ctx context.Context, in *RI_SDK_Exec_RServoDrive_GetStateParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_GetStateReturn, error)
+	RI_SDK_Exec_RServoDrive_Stop(ctx context.Context, in *RI_SDK_Exec_RServoDrive_StopParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_StopReturn, error)
+	RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(ctx context.Context, in *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn, error)
+	RI_SDK_Exec_RServoDrive_RotateByPulse(ctx context.Context, in *RI_SDK_Exec_RServoDrive_RotateByPulseParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_RotateByPulseReturn, error)
+	RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(ctx context.Context, in *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn, error)
+	RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(ctx context.Context, in *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn, error)
 	RI_SDK_Exec_RGB_LED_Extend(ctx context.Context, in *RI_SDK_Exec_RGB_LED_ExtendParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RGB_LED_ExtendReturn, error)
 	RI_SDK_Exec_RGB_LED_ExtendToModel(ctx context.Context, in *RI_SDK_Exec_RGB_LED_ExtendToModelParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RGB_LED_ExtendToModelReturn, error)
 	RI_SDK_Exec_RGB_LED_SinglePulse(ctx context.Context, in *RI_SDK_Exec_RGB_LED_SinglePulseParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RGB_LED_SinglePulseReturn, error)
@@ -8224,6 +9392,15 @@ func (c *roboSdkClient) RI_SDK_LinkPWMToController(ctx context.Context, in *RI_S
 func (c *roboSdkClient) RI_SDK_LinkServodriveToController(ctx context.Context, in *RI_SDK_LinkServodriveToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkServodriveToControllerReturn, error) {
 	out := new(RI_SDK_LinkServodriveToControllerReturn)
 	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_LinkServodriveToController", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_LinkRServodriveToController(ctx context.Context, in *RI_SDK_LinkRServodriveToControllerParams, opts ...grpc.CallOption) (*RI_SDK_LinkRServodriveToControllerReturn, error) {
+	out := new(RI_SDK_LinkRServodriveToControllerReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_LinkRServodriveToController", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -8635,6 +9812,87 @@ func (c *roboSdkClient) RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(ctx context
 	return out, nil
 }
 
+func (c *roboSdkClient) RI_SDK_Exec_RServoDrive_Extend(ctx context.Context, in *RI_SDK_Exec_RServoDrive_ExtendParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_ExtendReturn, error) {
+	out := new(RI_SDK_Exec_RServoDrive_ExtendReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_Extend", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Exec_RServoDrive_ExtendToModel(ctx context.Context, in *RI_SDK_Exec_RServoDrive_ExtendToModelParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_ExtendToModelReturn, error) {
+	out := new(RI_SDK_Exec_RServoDrive_ExtendToModelReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_ExtendToModel", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Exec_RServoDrive_CustomDeviceInit(ctx context.Context, in *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn, error) {
+	out := new(RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_CustomDeviceInit", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Exec_RServoDrive_GetState(ctx context.Context, in *RI_SDK_Exec_RServoDrive_GetStateParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_GetStateReturn, error) {
+	out := new(RI_SDK_Exec_RServoDrive_GetStateReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_GetState", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Exec_RServoDrive_Stop(ctx context.Context, in *RI_SDK_Exec_RServoDrive_StopParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_StopReturn, error) {
+	out := new(RI_SDK_Exec_RServoDrive_StopReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_Stop", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(ctx context.Context, in *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn, error) {
+	out := new(RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_RotateByPulseOverTime", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Exec_RServoDrive_RotateByPulse(ctx context.Context, in *RI_SDK_Exec_RServoDrive_RotateByPulseParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_RotateByPulseReturn, error) {
+	out := new(RI_SDK_Exec_RServoDrive_RotateByPulseReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_RotateByPulse", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(ctx context.Context, in *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn, error) {
+	out := new(RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *roboSdkClient) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(ctx context.Context, in *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn, error) {
+	out := new(RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn)
+	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 func (c *roboSdkClient) RI_SDK_Exec_RGB_LED_Extend(ctx context.Context, in *RI_SDK_Exec_RGB_LED_ExtendParams, opts ...grpc.CallOption) (*RI_SDK_Exec_RGB_LED_ExtendReturn, error) {
 	out := new(RI_SDK_Exec_RGB_LED_ExtendReturn)
 	err := c.cc.Invoke(ctx, "/proto.RoboSdk/RI_SDK_Exec_RGB_LED_Extend", in, out, opts...)
@@ -8800,6 +10058,7 @@ type RoboSdkServer interface {
 	RI_SDK_CreateModelComponent(context.Context, *RI_SDK_CreateModelComponentParams) (*RI_SDK_CreateModelComponentReturn, error)
 	RI_SDK_LinkPWMToController(context.Context, *RI_SDK_LinkPWMToControllerParams) (*RI_SDK_LinkPWMToControllerReturn, error)
 	RI_SDK_LinkServodriveToController(context.Context, *RI_SDK_LinkServodriveToControllerParams) (*RI_SDK_LinkServodriveToControllerReturn, error)
+	RI_SDK_LinkRServodriveToController(context.Context, *RI_SDK_LinkRServodriveToControllerParams) (*RI_SDK_LinkRServodriveToControllerReturn, error)
 	RI_SDK_LinkLedToController(context.Context, *RI_SDK_LinkLedToControllerParams) (*RI_SDK_LinkLedToControllerReturn, error)
 	RI_SDK_LinkVoltageSensorToController(context.Context, *RI_SDK_LinkVoltageSensorToControllerParams) (*RI_SDK_LinkVoltageSensorToControllerReturn, error)
 	RI_SDK_Executor_Extend(context.Context, *RI_SDK_Executor_ExtendParams) (*RI_SDK_Executor_ExtendReturn, error)
@@ -8845,6 +10104,15 @@ type RoboSdkServer interface {
 	RI_SDK_Exec_ServoDrive_Rotate(context.Context, *RI_SDK_Exec_ServoDrive_RotateParams) (*RI_SDK_Exec_ServoDrive_RotateReturn, error)
 	RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeed(context.Context, *RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) (*RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn, error)
 	RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(context.Context, *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn, error)
+	RI_SDK_Exec_RServoDrive_Extend(context.Context, *RI_SDK_Exec_RServoDrive_ExtendParams) (*RI_SDK_Exec_RServoDrive_ExtendReturn, error)
+	RI_SDK_Exec_RServoDrive_ExtendToModel(context.Context, *RI_SDK_Exec_RServoDrive_ExtendToModelParams) (*RI_SDK_Exec_RServoDrive_ExtendToModelReturn, error)
+	RI_SDK_Exec_RServoDrive_CustomDeviceInit(context.Context, *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) (*RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn, error)
+	RI_SDK_Exec_RServoDrive_GetState(context.Context, *RI_SDK_Exec_RServoDrive_GetStateParams) (*RI_SDK_Exec_RServoDrive_GetStateReturn, error)
+	RI_SDK_Exec_RServoDrive_Stop(context.Context, *RI_SDK_Exec_RServoDrive_StopParams) (*RI_SDK_Exec_RServoDrive_StopReturn, error)
+	RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(context.Context, *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) (*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn, error)
+	RI_SDK_Exec_RServoDrive_RotateByPulse(context.Context, *RI_SDK_Exec_RServoDrive_RotateByPulseParams) (*RI_SDK_Exec_RServoDrive_RotateByPulseReturn, error)
+	RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(context.Context, *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn, error)
+	RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(context.Context, *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn, error)
 	RI_SDK_Exec_RGB_LED_Extend(context.Context, *RI_SDK_Exec_RGB_LED_ExtendParams) (*RI_SDK_Exec_RGB_LED_ExtendReturn, error)
 	RI_SDK_Exec_RGB_LED_ExtendToModel(context.Context, *RI_SDK_Exec_RGB_LED_ExtendToModelParams) (*RI_SDK_Exec_RGB_LED_ExtendToModelReturn, error)
 	RI_SDK_Exec_RGB_LED_SinglePulse(context.Context, *RI_SDK_Exec_RGB_LED_SinglePulseParams) (*RI_SDK_Exec_RGB_LED_SinglePulseReturn, error)
@@ -8897,6 +10165,9 @@ func (*UnimplementedRoboSdkServer) RI_SDK_LinkPWMToController(ctx context.Contex
 }
 func (*UnimplementedRoboSdkServer) RI_SDK_LinkServodriveToController(ctx context.Context, req *RI_SDK_LinkServodriveToControllerParams) (*RI_SDK_LinkServodriveToControllerReturn, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_LinkServodriveToController not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_LinkRServodriveToController(ctx context.Context, req *RI_SDK_LinkRServodriveToControllerParams) (*RI_SDK_LinkRServodriveToControllerReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_LinkRServodriveToController not implemented")
 }
 func (*UnimplementedRoboSdkServer) RI_SDK_LinkLedToController(ctx context.Context, req *RI_SDK_LinkLedToControllerParams) (*RI_SDK_LinkLedToControllerReturn, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_LinkLedToController not implemented")
@@ -9032,6 +10303,33 @@ func (*UnimplementedRoboSdkServer) RI_SDK_Exec_ServoDrive_RotateWithRelativeSpee
 }
 func (*UnimplementedRoboSdkServer) RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(ctx context.Context, req *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RServoDrive_Extend(ctx context.Context, req *RI_SDK_Exec_RServoDrive_ExtendParams) (*RI_SDK_Exec_RServoDrive_ExtendReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RServoDrive_Extend not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RServoDrive_ExtendToModel(ctx context.Context, req *RI_SDK_Exec_RServoDrive_ExtendToModelParams) (*RI_SDK_Exec_RServoDrive_ExtendToModelReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RServoDrive_ExtendToModel not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RServoDrive_CustomDeviceInit(ctx context.Context, req *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) (*RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RServoDrive_CustomDeviceInit not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RServoDrive_GetState(ctx context.Context, req *RI_SDK_Exec_RServoDrive_GetStateParams) (*RI_SDK_Exec_RServoDrive_GetStateReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RServoDrive_GetState not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RServoDrive_Stop(ctx context.Context, req *RI_SDK_Exec_RServoDrive_StopParams) (*RI_SDK_Exec_RServoDrive_StopReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RServoDrive_Stop not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(ctx context.Context, req *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) (*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RServoDrive_RotateByPulseOverTime not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RServoDrive_RotateByPulse(ctx context.Context, req *RI_SDK_Exec_RServoDrive_RotateByPulseParams) (*RI_SDK_Exec_RServoDrive_RotateByPulseReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RServoDrive_RotateByPulse not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(ctx context.Context, req *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime not implemented")
+}
+func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(ctx context.Context, req *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed not implemented")
 }
 func (*UnimplementedRoboSdkServer) RI_SDK_Exec_RGB_LED_Extend(ctx context.Context, req *RI_SDK_Exec_RGB_LED_ExtendParams) (*RI_SDK_Exec_RGB_LED_ExtendReturn, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method RI_SDK_Exec_RGB_LED_Extend not implemented")
@@ -9265,6 +10563,24 @@ func _RoboSdk_RI_SDK_LinkServodriveToController_Handler(srv interface{}, ctx con
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(RoboSdkServer).RI_SDK_LinkServodriveToController(ctx, req.(*RI_SDK_LinkServodriveToControllerParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_LinkRServodriveToController_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_LinkRServodriveToControllerParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_LinkRServodriveToController(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_LinkRServodriveToController",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_LinkRServodriveToController(ctx, req.(*RI_SDK_LinkRServodriveToControllerParams))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -10079,6 +11395,168 @@ func _RoboSdk_RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed_Handler(srv interface
 	return interceptor(ctx, in, info, handler)
 }
 
+func _RoboSdk_RI_SDK_Exec_RServoDrive_Extend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Exec_RServoDrive_ExtendParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_Extend(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_Extend",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_Extend(ctx, req.(*RI_SDK_Exec_RServoDrive_ExtendParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Exec_RServoDrive_ExtendToModel_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Exec_RServoDrive_ExtendToModelParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_ExtendToModel(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_ExtendToModel",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_ExtendToModel(ctx, req.(*RI_SDK_Exec_RServoDrive_ExtendToModelParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Exec_RServoDrive_CustomDeviceInit_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Exec_RServoDrive_CustomDeviceInitParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_CustomDeviceInit(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_CustomDeviceInit",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_CustomDeviceInit(ctx, req.(*RI_SDK_Exec_RServoDrive_CustomDeviceInitParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Exec_RServoDrive_GetState_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Exec_RServoDrive_GetStateParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_GetState(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_GetState",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_GetState(ctx, req.(*RI_SDK_Exec_RServoDrive_GetStateParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Exec_RServoDrive_Stop_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Exec_RServoDrive_StopParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_Stop(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_Stop",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_Stop(ctx, req.(*RI_SDK_Exec_RServoDrive_StopParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Exec_RServoDrive_RotateByPulseOverTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_RotateByPulseOverTime",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(ctx, req.(*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Exec_RServoDrive_RotateByPulse_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Exec_RServoDrive_RotateByPulseParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_RotateByPulse(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_RotateByPulse",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_RotateByPulse(ctx, req.(*RI_SDK_Exec_RServoDrive_RotateByPulseParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(ctx, req.(*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _RoboSdk_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/proto.RoboSdk/RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(RoboSdkServer).RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(ctx, req.(*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 func _RoboSdk_RI_SDK_Exec_RGB_LED_Extend_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(RI_SDK_Exec_RGB_LED_ExtendParams)
 	if err := dec(in); err != nil {
@@ -10430,6 +11908,10 @@ var _RoboSdk_serviceDesc = grpc.ServiceDesc{
 			Handler:    _RoboSdk_RI_SDK_LinkServodriveToController_Handler,
 		},
 		{
+			MethodName: "RI_SDK_LinkRServodriveToController",
+			Handler:    _RoboSdk_RI_SDK_LinkRServodriveToController_Handler,
+		},
+		{
 			MethodName: "RI_SDK_LinkLedToController",
 			Handler:    _RoboSdk_RI_SDK_LinkLedToController_Handler,
 		},
@@ -10608,6 +12090,42 @@ var _RoboSdk_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed",
 			Handler:    _RoboSdk_RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Exec_RServoDrive_Extend",
+			Handler:    _RoboSdk_RI_SDK_Exec_RServoDrive_Extend_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Exec_RServoDrive_ExtendToModel",
+			Handler:    _RoboSdk_RI_SDK_Exec_RServoDrive_ExtendToModel_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Exec_RServoDrive_CustomDeviceInit",
+			Handler:    _RoboSdk_RI_SDK_Exec_RServoDrive_CustomDeviceInit_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Exec_RServoDrive_GetState",
+			Handler:    _RoboSdk_RI_SDK_Exec_RServoDrive_GetState_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Exec_RServoDrive_Stop",
+			Handler:    _RoboSdk_RI_SDK_Exec_RServoDrive_Stop_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Exec_RServoDrive_RotateByPulseOverTime",
+			Handler:    _RoboSdk_RI_SDK_Exec_RServoDrive_RotateByPulseOverTime_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Exec_RServoDrive_RotateByPulse",
+			Handler:    _RoboSdk_RI_SDK_Exec_RServoDrive_RotateByPulse_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime",
+			Handler:    _RoboSdk_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime_Handler,
+		},
+		{
+			MethodName: "RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed",
+			Handler:    _RoboSdk_RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed_Handler,
 		},
 		{
 			MethodName: "RI_SDK_Exec_RGB_LED_Extend",
