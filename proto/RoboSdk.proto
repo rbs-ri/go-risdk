@@ -863,6 +863,8 @@ message RI_SDK_Sensor_VoltageSensor_CustomDeviceInitParams {
   double lsbBus = 2;
   double lsbShunt = 3;
   double shuntResist = 4;
+  int64 regVoltageShunt = 5;
+  int64 regVoltageBus = 6;
 }
 
 // Возвращаемые значения RI_SDK_Sensor_VoltageSensor_CustomDeviceInit
