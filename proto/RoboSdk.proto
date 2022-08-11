@@ -1068,6 +1068,34 @@ message RI_SDK_Sensor_VoltageSensor_SenseReturn {
   int64 errorCode = 6;
 }
 
+// Аргументы RI_SDK_Sensor_VoltageSensor_WriteRegBytesParams
+message RI_SDK_Sensor_VoltageSensor_WriteRegBytesParams {
+  int64 descriptor = 1;
+  bytes reg = 2;
+  bytes buf = 3;
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_WriteRegBytesReturn
+message RI_SDK_Sensor_VoltageSensor_WriteRegBytesReturn {
+  int64 wroteBytesLen = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+// Аргументы RI_SDK_Sensor_VoltageSensor_ReadRegBytesParams
+message RI_SDK_Sensor_VoltageSensor_ReadRegBytesParams {
+  int64 descriptor = 1;
+  bytes reg = 2;
+  int64 readBytesLen = 3;
+}
+
+// Возвращаемые значения RI_SDK_Sensor_VoltageSensor_ReadRegBytesReturn
+message RI_SDK_Sensor_VoltageSensor_ReadRegBytesReturn {
+  bytes buf = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
 service RoboSdk {
   rpc RI_SDK_InitSDK(RI_SDK_InitSDKParams) returns (RI_SDK_InitSDKReturn);
   rpc RI_SDK_Device_ModelList(RI_SDK_Device_ModelListParams) returns (RI_SDK_Device_ModelListReturn);
@@ -1162,5 +1190,7 @@ service RoboSdk {
   rpc RI_SDK_Sensor_VoltageSensor_Current(RI_SDK_Sensor_VoltageSensor_CurrentParams) returns(RI_SDK_Sensor_VoltageSensor_CurrentReturn);
   rpc RI_SDK_Sensor_VoltageSensor_Power(RI_SDK_Sensor_VoltageSensor_PowerParams) returns(RI_SDK_Sensor_VoltageSensor_PowerReturn);
   rpc RI_SDK_Sensor_VoltageSensor_Sense(RI_SDK_Sensor_VoltageSensor_SenseParams) returns(RI_SDK_Sensor_VoltageSensor_SenseReturn);
-  
+  rpc RI_SDK_Sensor_VoltageSensor_WriteRegBytes(RI_SDK_Sensor_VoltageSensor_WriteRegBytesParams) returns(RI_SDK_Sensor_VoltageSensor_WriteRegBytesReturn);
+  rpc RI_SDK_Sensor_VoltageSensor_ReadRegBytes(RI_SDK_Sensor_VoltageSensor_ReadRegBytesParams) returns(RI_SDK_Sensor_VoltageSensor_ReadRegBytesReturn);
+
 }

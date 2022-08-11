@@ -2,7 +2,7 @@ package proto
 
 import "context"
 
-// RI_SDK_Exec_RServoDrive_Extend -  расширяет исполнитель до сервопривода
+// RI_SDK_Exec_RServoDrive_Extend - расширяет исполнитель до сервопривода вращения
 func (m *GRPCClient) RI_SDK_Exec_RServoDrive_Extend(exec int64) (descriptor int64, errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_RServoDrive_Extend(context.Background(), &RI_SDK_Exec_RServoDrive_ExtendParams{
 		Exec: exec,
@@ -13,7 +13,7 @@ func (m *GRPCClient) RI_SDK_Exec_RServoDrive_Extend(exec int64) (descriptor int6
 	return resp.Descriptor_, resp.ErrorText, resp.ErrorCode, nil
 }
 
-// RI_SDK_Connector_I2C_Extend - расширяет компонент группы
+// RI_SDK_Exec_RServoDrive_Extend - расширяет исполнитель до сервопривода вращения
 func (m *GRPCServer) RI_SDK_Exec_RServoDrive_Extend(
 	ctx context.Context,
 	req *RI_SDK_Exec_RServoDrive_ExtendParams) (*RI_SDK_Exec_RServoDrive_ExtendReturn, error) {
@@ -25,7 +25,7 @@ func (m *GRPCServer) RI_SDK_Exec_RServoDrive_Extend(
 	}, err
 }
 
-// RI_SDK_Exec_RServoDrive_ExtendToModel - расширяет сервопривод до модели
+// RI_SDK_Exec_RServoDrive_ExtendToModel - расширяет сервопривод вращения до модели
 func (m *GRPCClient) RI_SDK_Exec_RServoDrive_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_RServoDrive_ExtendToModel(context.Background(), &RI_SDK_Exec_RServoDrive_ExtendToModelParams{
 		BaseDescriptor: baseDescriptor,
@@ -37,7 +37,7 @@ func (m *GRPCClient) RI_SDK_Exec_RServoDrive_ExtendToModel(baseDescriptor int64,
 	return resp.Descriptor_, resp.ErrorText, resp.ErrorCode, nil
 }
 
-// RI_SDK_Exec_RServoDrive_ExtendToModel - расширяет сервопривод до модели
+// RI_SDK_Exec_RServoDrive_ExtendToModel - расширяет сервопривод вращения до модели
 func (m *GRPCServer) RI_SDK_Exec_RServoDrive_ExtendToModel(
 	ctx context.Context,
 	req *RI_SDK_Exec_RServoDrive_ExtendToModelParams) (*RI_SDK_Exec_RServoDrive_ExtendToModelReturn, error) {
@@ -49,7 +49,7 @@ func (m *GRPCServer) RI_SDK_Exec_RServoDrive_ExtendToModel(
 	}, err
 }
 
-// RI_SDK_Exec_RServoDrive_CustomDeviceInit - Инициализация кастомного сервопривода - Инициализация кастомного сервопривода
+// RI_SDK_Exec_RServoDrive_CustomDeviceInit - Инициализация кастомного сервопривода вращения
 func (m *GRPCClient) RI_SDK_Exec_RServoDrive_CustomDeviceInit(desrciptor, minPulseClockwise, maxPulseClockwise, minPulseCounterClockwise, maxPulseCounterClockwise int64) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_RServoDrive_CustomDeviceInit(context.Background(), &RI_SDK_Exec_RServoDrive_CustomDeviceInitParams{
 		Descriptor_:              desrciptor,
@@ -64,7 +64,7 @@ func (m *GRPCClient) RI_SDK_Exec_RServoDrive_CustomDeviceInit(desrciptor, minPul
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
-// RI_SDK_Exec_RServoDrive_CustomDeviceInit - Инициализация кастомного сервопривода - Инициализация кастомного сервопривода
+// RI_SDK_Exec_RServoDrive_CustomDeviceInit - Инициализация кастомного сервопривода вращения
 func (m *GRPCServer) RI_SDK_Exec_RServoDrive_CustomDeviceInit(
 	ctx context.Context,
 	req *RI_SDK_Exec_RServoDrive_CustomDeviceInitParams) (*RI_SDK_Exec_RServoDrive_CustomDeviceInitReturn, error) {
@@ -75,7 +75,7 @@ func (m *GRPCServer) RI_SDK_Exec_RServoDrive_CustomDeviceInit(
 	}, err
 }
 
-// RI_SDK_Exec_RServoDrive_GetState - Получение состояния сервопривода
+// RI_SDK_Exec_RServoDrive_GetState - Получение состояния сервопривода вращения
 func (m *GRPCClient) RI_SDK_Exec_RServoDrive_GetState(descriptor int64) (state int64, errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_RServoDrive_GetState(context.Background(), &RI_SDK_Exec_RServoDrive_GetStateParams{
 		Descriptor_: descriptor,
@@ -86,7 +86,7 @@ func (m *GRPCClient) RI_SDK_Exec_RServoDrive_GetState(descriptor int64) (state i
 	return resp.State, resp.ErrorText, resp.ErrorCode, nil
 }
 
-// RI_SDK_Exec_RServoDrive_GetState - Получение состояния сервопривода
+// RI_SDK_Exec_RServoDrive_GetState - Получение состояния сервопривода вращения
 func (m *GRPCServer) RI_SDK_Exec_RServoDrive_GetState(
 	ctx context.Context,
 	req *RI_SDK_Exec_RServoDrive_GetStateParams) (*RI_SDK_Exec_RServoDrive_GetStateReturn, error) {
@@ -98,7 +98,7 @@ func (m *GRPCServer) RI_SDK_Exec_RServoDrive_GetState(
 	}, err
 }
 
-// RI_SDK_Exec_RServoDrive_Stop - Прекращает подачу сигнала к сервоприводу
+// RI_SDK_Exec_RServoDrive_Stop - Прекращает подачу сигнала к сервоприводу вращения
 func (m *GRPCClient) RI_SDK_Exec_RServoDrive_Stop(descriptor int64) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_RServoDrive_Stop(context.Background(), &RI_SDK_Exec_RServoDrive_StopParams{
 		Descriptor_: descriptor,
@@ -109,7 +109,7 @@ func (m *GRPCClient) RI_SDK_Exec_RServoDrive_Stop(descriptor int64) (errorText s
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
-// RI_SDK_Exec_RServoDrive_Stop - Прекращает подачу сигнала к сервоприводу
+// RI_SDK_Exec_RServoDrive_Stop - Прекращает подачу сигнала к сервоприводу вращения
 func (m *GRPCServer) RI_SDK_Exec_RServoDrive_Stop(
 	ctx context.Context,
 	req *RI_SDK_Exec_RServoDrive_StopParams) (*RI_SDK_Exec_RServoDrive_StopReturn, error) {
@@ -120,7 +120,8 @@ func (m *GRPCServer) RI_SDK_Exec_RServoDrive_Stop(
 	}, err
 }
 
-// RI_SDK_Exec_RServoDrive_RotateByPulseOverTime - Инициализация кастомного сервопривода - Инициализация кастомного сервопривода
+// RI_SDK_Exec_RServoDrive_RotateByPulseOverTime - Выполняет вращение сервопривода, пока не будет вызван метод Stop
+// или по истечению заданного времени, направление и скорость задаются импульсом.
 func (m *GRPCClient) RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(descriptor, pulse, timeout int64, async bool) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(context.Background(), &RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams{
 		Descriptor_: descriptor,
@@ -134,7 +135,8 @@ func (m *GRPCClient) RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(descriptor, p
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
-// RI_SDK_Exec_RServoDrive_RotateByPulseOverTime - Прекращает подачу сигнала к сервоприводу
+// RI_SDK_Exec_RServoDrive_RotateByPulseOverTime - Выполняет вращение сервопривода, пока не будет вызван метод Stop
+// или по истечению заданного времени, направление и скорость задаются импульсом.
 func (m *GRPCServer) RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(
 	ctx context.Context,
 	req *RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeParams) (*RI_SDK_Exec_RServoDrive_RotateByPulseOverTimeReturn, error) {
@@ -145,7 +147,7 @@ func (m *GRPCServer) RI_SDK_Exec_RServoDrive_RotateByPulseOverTime(
 	}, err
 }
 
-// RI_SDK_Exec_RServoDrive_RotateByPulse - Инициализация кастомного сервопривода - Инициализация кастомного сервопривода
+// RI_SDK_Exec_RServoDrive_RotateByPulse - Выполняет вращение сервопривода, направление и скорость задаются импульсом.
 func (m *GRPCClient) RI_SDK_Exec_RServoDrive_RotateByPulse(descriptor, pulse int64, async bool) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_RServoDrive_RotateByPulse(context.Background(), &RI_SDK_Exec_RServoDrive_RotateByPulseParams{
 		Descriptor_: descriptor,
@@ -158,7 +160,7 @@ func (m *GRPCClient) RI_SDK_Exec_RServoDrive_RotateByPulse(descriptor, pulse int
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
-// RI_SDK_Exec_RServoDrive_RotateByPulse - Прекращает подачу сигнала к сервоприводу
+// RI_SDK_Exec_RServoDrive_RotateByPulse - Выполняет вращение сервопривода, направление и скорость задаются импульсом.
 func (m *GRPCServer) RI_SDK_Exec_RServoDrive_RotateByPulse(
 	ctx context.Context,
 	req *RI_SDK_Exec_RServoDrive_RotateByPulseParams) (*RI_SDK_Exec_RServoDrive_RotateByPulseReturn, error) {
@@ -169,7 +171,8 @@ func (m *GRPCServer) RI_SDK_Exec_RServoDrive_RotateByPulse(
 	}, err
 }
 
-// RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime - Инициализация кастомного сервопривода - Инициализация кастомного сервопривода
+// RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime - Выполняет вращение сервопривода с заданной скоростью до
+// тех пор, пока не будет вызван метод Stop или по истечению заданного времени.
 func (m *GRPCClient) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(descriptor, direction, speed, timeout int64, async bool) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(context.Background(), &RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams{
 		Descriptor_: descriptor,
@@ -184,7 +187,8 @@ func (m *GRPCClient) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(des
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
-// RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime - Инициализация кастомного сервопривода - Инициализация кастомного сервопривода
+// RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime - Выполняет вращение сервопривода с заданной скоростью до
+// тех пор, пока не будет вызван метод Stop или по истечению заданного времени.
 func (m *GRPCServer) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(
 	ctx context.Context,
 	req *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeParams) (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTimeReturn, error) {
@@ -195,7 +199,8 @@ func (m *GRPCServer) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedOverTime(
 	}, err
 }
 
-// RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed - Инициализация кастомного сервопривода - Инициализация кастомного сервопривода
+// RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed - Выполняет вращение сервопривода с заданной скоростью до
+// тех пор, пока не будет вызван метод Stop.
 func (m *GRPCClient) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(descriptor, direction, speed int64, async bool) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(context.Background(), &RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams{
 		Descriptor_: descriptor,
@@ -209,7 +214,8 @@ func (m *GRPCClient) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(descriptor,
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
-// RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed - Инициализация кастомного сервопривода - Инициализация кастомного сервопривода
+// RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed - Выполняет вращение сервопривода с заданной скоростью до
+// тех пор, пока не будет вызван метод Stop.
 func (m *GRPCServer) RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeed(
 	ctx context.Context,
 	req *RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedParams) (*RI_SDK_Exec_RServoDrive_RotateWithRelativeSpeedReturn, error) {

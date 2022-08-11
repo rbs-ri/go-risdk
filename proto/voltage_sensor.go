@@ -96,6 +96,32 @@ func (m *GRPCClient) RI_SDK_Sensor_VoltageSensor_Sense(descriptor int64) (voltag
 	return resp.Voltage, resp.VoltageShunt, resp.Current, resp.Power, resp.ErrorText, resp.ErrorCode, nil
 }
 
+// RI_SDK_Sensor_VoltageSensor_WriteRegBytes - Запись в указанный регистр n-кол-во байт
+func (m *GRPCClient) RI_SDK_Sensor_VoltageSensor_WriteRegBytes(descriptor int64, reg byte, buf []byte) (wroteBytesLen int64, errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_Sensor_VoltageSensor_WriteRegBytes(context.Background(), &RI_SDK_Sensor_VoltageSensor_WriteRegBytesParams{
+		Descriptor_: descriptor,
+		Reg:         []byte{reg},
+		Buf:         buf,
+	})
+	if err != nil {
+		return
+	}
+	return resp.WroteBytesLen, resp.ErrorText, resp.ErrorCode, nil
+}
+
+// RI_SDK_Sensor_VoltageSensor_ReadRegBytes - Читает с указанного регистра n-кол-во байт
+func (m *GRPCClient) RI_SDK_Sensor_VoltageSensor_ReadRegBytes(descriptor int64, reg byte, readBytesLen int64) (buf []byte, errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_Sensor_VoltageSensor_ReadRegBytes(context.Background(), &RI_SDK_Sensor_VoltageSensor_ReadRegBytesParams{
+		Descriptor_:  descriptor,
+		Reg:          []byte{reg},
+		ReadBytesLen: readBytesLen,
+	})
+	if err != nil {
+		return
+	}
+	return resp.Buf, resp.ErrorText, resp.ErrorCode, nil
+}
+
 // RI_SDK_Sensor_VoltageSensor_Extend - расширяет компонент группы
 func (m *GRPCServer) RI_SDK_Sensor_VoltageSensor_Extend(
 	ctx context.Context,
@@ -191,5 +217,29 @@ func (m *GRPCServer) RI_SDK_Sensor_VoltageSensor_Sense(
 		Power:        power,
 		ErrorText:    errorText,
 		ErrorCode:    errorCode,
+	}, err
+}
+
+// RI_SDK_Sensor_VoltageSensor_WriteRegBytes - Запись в указанный регистр n-кол-во байт
+func (m *GRPCServer) RI_SDK_Sensor_VoltageSensor_WriteRegBytes(
+	ctx context.Context,
+	req *RI_SDK_Sensor_VoltageSensor_WriteRegBytesParams) (*RI_SDK_Sensor_VoltageSensor_WriteRegBytesReturn, error) {
+	wroteBytesLen, errorText, errorCode, err := m.Impl.RI_SDK_Sensor_VoltageSensor_WriteRegBytes(req.Descriptor_, req.Reg[0], req.Buf)
+	return &RI_SDK_Sensor_VoltageSensor_WriteRegBytesReturn{
+		WroteBytesLen: wroteBytesLen,
+		ErrorText:     errorText,
+		ErrorCode:     errorCode,
+	}, err
+}
+
+// RI_SDK_Sensor_VoltageSensor_ReadRegBytes - Читает с указанного регистра n-кол-во байт
+func (m *GRPCServer) RI_SDK_Sensor_VoltageSensor_ReadRegBytes(
+	ctx context.Context,
+	req *RI_SDK_Sensor_VoltageSensor_ReadRegBytesParams) (*RI_SDK_Sensor_VoltageSensor_ReadRegBytesReturn, error) {
+	buf, errorText, errorCode, err := m.Impl.RI_SDK_Sensor_VoltageSensor_ReadRegBytes(req.Descriptor_, req.Reg[0], req.ReadBytesLen)
+	return &RI_SDK_Sensor_VoltageSensor_ReadRegBytesReturn{
+		Buf:       buf,
+		ErrorText: errorText,
+		ErrorCode: errorCode,
 	}, err
 }

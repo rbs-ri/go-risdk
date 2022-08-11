@@ -101,6 +101,8 @@ type RoboSdkApi interface {
 	RI_SDK_Sensor_VoltageSensor_Current(descriptor int64) (current float32, errorText string, errorCode int64, err error)
 	RI_SDK_Sensor_VoltageSensor_Power(descriptor int64) (power float32, errorText string, errorCode int64, err error)
 	RI_SDK_Sensor_VoltageSensor_Sense(descriptor int64) (voltage float32, voltageShunt float32, current float32, power float32, errorText string, errorCode int64, err error)
+	RI_SDK_Sensor_VoltageSensor_WriteRegBytes(descriptor int64, reg byte, buf []byte) (wroteBytesLen int64, errorText string, errorCode int64, err error)
+	RI_SDK_Sensor_VoltageSensor_ReadRegBytes(descriptor int64, reg byte, readBytesLen int64) (buf []byte, errorText string, errorCode int64, err error)
 }
 
 // Handshake is a common handshake that is shared by plugin and host.
