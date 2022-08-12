@@ -30,6 +30,7 @@ type RoboSdkApi interface {
 
 	RI_SDK_Connector_Extend(basic int64) (desrciptor int64, errorText string, errorCode int64, err error)
 
+	RI_SDK_Connector_I2C_Check_Connection(descriptor int64) (isConnected bool, errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_Open(descriptor int64, addr uint8) (errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_Extend(connectorDescriptor int64) (descriptor int64, errorText string, errorCode int64, err error)
 	RI_SDK_Connector_I2C_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error)

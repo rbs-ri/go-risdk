@@ -2,6 +2,17 @@ package proto
 
 import "context"
 
+// RI_SDK_Connector_I2C_Check_Connection - проверка подключения устройства
+func (m *GRPCClient) RI_SDK_Connector_I2C_Check_Connection(descriptor int64) (isConnected bool, errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_Connector_I2C_Check_Connection(context.Background(), &RI_SDK_Connector_I2C_Check_ConnectionParams{
+		Descriptor_: descriptor,
+	})
+	if err != nil {
+		return
+	}
+	return resp.IsConnected, resp.ErrorText, resp.ErrorCode, nil
+}
+
 // RI_SDK_Connector_I2C_Open - открывает соединение по указанному адресу
 func (m *GRPCClient) RI_SDK_Connector_I2C_Open(descriptor int64, addr uint8) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_Connector_I2C_Open(context.Background(), &RI_SDK_Connector_I2C_OpenParams{
@@ -121,6 +132,18 @@ func (m *GRPCClient) RI_SDK_Connector_I2C_ReadByte(descriptor int64, addr uint8)
 		return
 	}
 	return resp.Value[0], resp.ErrorText, resp.ErrorCode, nil
+}
+
+// RI_SDK_Connector_I2C_Open - открывает соединение по указанному адресу
+func (m *GRPCServer) RI_SDK_Connector_I2C_Check_Connection(
+	ctx context.Context,
+	req *RI_SDK_Connector_I2C_Check_ConnectionParams) (*RI_SDK_Connector_I2C_Check_ConnectionReturn, error) {
+	isConnected, errorText, errorCode, err := m.Impl.RI_SDK_Connector_I2C_Check_Connection(req.Descriptor_)
+	return &RI_SDK_Connector_I2C_Check_ConnectionReturn{
+		IsConnected: isConnected,
+		ErrorText:   errorText,
+		ErrorCode:   errorCode,
+	}, err
 }
 
 // RI_SDK_Connector_I2C_Open - открывает соединение по указанному адресу

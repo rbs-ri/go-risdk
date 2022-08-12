@@ -59,6 +59,18 @@ message RI_SDK_DestroySDKReturn {
   int64 errorCode = 2;
 }
 
+// Аргументы RI_SDK_Connector_I2C_Check_ConnectionParams
+message RI_SDK_Connector_I2C_Check_ConnectionParams {
+  int64 descriptor = 1;
+}
+
+// Возвращаемые значения RI_SDK_Connector_I2C_Check_ConnectionReturn
+message RI_SDK_Connector_I2C_Check_ConnectionReturn {
+  bool isConnected = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
 // Аргументы RI_SDK_Connector_I2C_OpenParams
 message RI_SDK_Connector_I2C_OpenParams {
   int64 descriptor = 1;
@@ -1119,6 +1131,7 @@ service RoboSdk {
   rpc RI_SDK_Connector_Extend(RI_SDK_Connector_ExtendParams) returns(RI_SDK_Connector_ExtendReturn);
 
 
+  rpc RI_SDK_Connector_I2C_Check_Connection(RI_SDK_Connector_I2C_Check_ConnectionParams) returns (RI_SDK_Connector_I2C_Check_ConnectionReturn);
   rpc RI_SDK_Connector_I2C_Open(RI_SDK_Connector_I2C_OpenParams) returns (RI_SDK_Connector_I2C_OpenReturn);
   rpc RI_SDK_Connector_I2C_ExtendToModel(RI_SDK_Connector_I2C_ExtendToModelParams) returns (RI_SDK_Connector_I2C_ExtendToModelReturn);
   rpc RI_SDK_Connector_I2C_Extend(RI_SDK_Connector_I2C_ExtendParams) returns (RI_SDK_Connector_I2C_ExtendReturn);
