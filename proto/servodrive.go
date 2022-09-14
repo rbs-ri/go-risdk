@@ -1,6 +1,8 @@
 package proto
 
-import "context"
+import (
+	"context"
+)
 
 // RI_SDK_Exec_ServoDrive_Extend -  расширяет исполнитель до сервопривода
 func (m *GRPCClient) RI_SDK_Exec_ServoDrive_Extend(exec int64) (descriptor int64, errorText string, errorCode int64, err error) {
@@ -184,6 +186,17 @@ func (m *GRPCClient) RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(descriptor, an
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
+// RI_SDK_Exec_Servodrive_ConvertAngleToPulse - Конвертирует угол в импульс
+func (m *GRPCClient) RI_SDK_Exec_ServoDrive_ConvertAngleToPulse(descriptor, angle int64) (pulse int64, errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_Exec_ServoDrive_ConvertAngleToPulse(context.Background(), &RI_SDK_Exec_ServoDrive_ConvertAngleToPulseParams{
+		Angle:       angle,
+		Descriptor_: descriptor})
+	if err != nil {
+		return
+	}
+	return resp.Pulse, resp.ErrorText, resp.ErrorCode, err
+}
+
 // RI_SDK_Connector_I2C_Extend - расширяет компонент группы
 func (m *GRPCServer) RI_SDK_Exec_ServoDrive_Extend(
 	ctx context.Context,
@@ -343,6 +356,18 @@ func (m *GRPCServer) RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(
 	req *RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) (*RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn, error) {
 	errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(req.Descriptor_, req.Angle, req.Speed, req.Async)
 	return &RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn{
+		ErrorText: errorText,
+		ErrorCode: errorCode,
+	}, err
+}
+
+// RI_SDK_Exec_Servodrive_ConvertAngleToPulse - Конвертирует угол в импульс
+func (m *GRPCServer) RI_SDK_Exec_ServoDrive_ConvertAngleToPulse(
+	ctx context.Context,
+	req *RI_SDK_Exec_ServoDrive_ConvertAngleToPulseParams) (*RI_SDK_Exec_ServoDrive_ConvertAngleToPulseReturn, error) {
+	pulse, errorText, errorCode, err := m.Impl.RI_SDK_Exec_ServoDrive_ConvertAngleToPulse(req.Descriptor_, req.Angle)
+	return &RI_SDK_Exec_ServoDrive_ConvertAngleToPulseReturn{
+		Pulse:     pulse,
 		ErrorText: errorText,
 		ErrorCode: errorCode,
 	}, err

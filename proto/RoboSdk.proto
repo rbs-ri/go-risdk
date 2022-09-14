@@ -701,6 +701,20 @@ message RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn {
   int64 errorCode = 2;
 }
 
+// Аргументы RI_SDK_Exec_Servodrive_ConvertAngleToPulse
+message RI_SDK_Exec_ServoDrive_ConvertAngleToPulseParams {
+  int64 descriptor = 1;
+  int64 angle = 2;
+}
+
+// Возвращаемые значения RI_SDK_Exec_Servodrive_ConvertAngleToPulseParams
+message RI_SDK_Exec_ServoDrive_ConvertAngleToPulseReturn {
+  int64 pulse = 1;
+  string errorText = 2;
+  int64 errorCode = 3;
+}
+
+
 // Аргументы RI_SDK_Exec_RServoDrive_CustomDeviceInit
 message RI_SDK_Exec_RServoDrive_CustomDeviceInitParams {
   int64 descriptor = 1;
@@ -1174,6 +1188,7 @@ service RoboSdk {
   rpc RI_SDK_Exec_ServoDrive_Rotate(RI_SDK_Exec_ServoDrive_RotateParams) returns(RI_SDK_Exec_ServoDrive_RotateReturn);
   rpc RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeed(RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedParams) returns(RI_SDK_Exec_ServoDrive_RotateWithRelativeSpeedReturn);
   rpc RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeed(RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedParams) returns(RI_SDK_Exec_ServoDrive_TurnWithRelativeSpeedReturn);
+  rpc RI_SDK_Exec_ServoDrive_ConvertAngleToPulse(RI_SDK_Exec_ServoDrive_ConvertAngleToPulseParams) returns(RI_SDK_Exec_ServoDrive_ConvertAngleToPulseReturn);
 
   rpc RI_SDK_Exec_RServoDrive_Extend(RI_SDK_Exec_RServoDrive_ExtendParams) returns(RI_SDK_Exec_RServoDrive_ExtendReturn);
   rpc RI_SDK_Exec_RServoDrive_ExtendToModel(RI_SDK_Exec_RServoDrive_ExtendToModelParams) returns(RI_SDK_Exec_RServoDrive_ExtendToModelReturn);
