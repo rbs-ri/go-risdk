@@ -1,7 +1,6 @@
 package risdk
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -17,7 +16,7 @@ import (
 	"github.com/rbs-ri/go-risdk/proto"
 )
 
-// ClientRPC - объект для работы с API SDK по RPC
+// ClientRPC - объект для работы с API SDK по RPC.
 var clientRPC *ClientRPC
 var mu sync.Mutex
 
@@ -26,11 +25,10 @@ type controlSignal int
 const Stop controlSignal = 0
 
 /*
-	GenerateClientRPC - генератор уникального клиента.
-	SDK находится в директории исполнения программы
+GenerateClientRPC - генератор уникального клиента.
+SDK находится в директории исполнения программы.
 */
 func GenerateClientRPC(path string) *ClientRPC {
-
 	client, roboSdkApi := initClientWithPath(path)
 	newClientRPC := &ClientRPC{
 		Client:        client,
@@ -46,6 +44,7 @@ func GenerateClientRPC(path string) *ClientRPC {
 func GetClientRPC() *ClientRPC {
 	mu.Lock()
 	defer mu.Unlock()
+
 	if clientRPC == nil {
 		client, roboSdkApi := initClient()
 		clientRPC = &ClientRPC{
@@ -55,19 +54,19 @@ func GetClientRPC() *ClientRPC {
 		}
 
 		killAfterCloseSignalGlobal()
-
 	}
 
 	return clientRPC
 }
 
 /*
-	GetClientRPCWithPath - получаем объект для работы с API SDK по RPC.
-	SDK находится в указанной директории
+GetClientRPCWithPath - получаем объект для работы с API SDK по RPC.
+SDK находится в указанной директории.
 */
 func GetClientRPCWithPath(path string) *ClientRPC {
 	mu.Lock()
 	defer mu.Unlock()
+
 	if clientRPC == nil {
 		client, roboSdkApi := initClientWithPath(path)
 		clientRPC = &ClientRPC{
@@ -82,15 +81,31 @@ func GetClientRPCWithPath(path string) *ClientRPC {
 	return clientRPC
 }
 
-// clientRPC - Стуктура для для работы с API SDK по RPC
+// clientRPC - Структура для для работы с API SDK по RPC.
 type ClientRPC struct {
-	Client        *plugin.Client   //клиент
+	Client        *plugin.Client   // клиент
 	RoboSdkApi    proto.RoboSdkApi //
 	controlSignal chan controlSignal
 }
 
+// Kill - Сбрасывает скважность со всех портов ШИМ, останавливает процесс.
+func (client *ClientRPC) Kill() {
+	i2c, _, _, _ := client.RoboSdkApi.RI_SDK_CreateModelComponent("connector", "i2c", "ch341")
+	pwm, _, _, _ := client.RoboSdkApi.RI_SDK_CreateModelComponent("connector", "pwm", "pca9685")
+
+	errText, errCode, _ := client.RoboSdkApi.RI_SDK_LinkPWMToController(pwm, i2c, 0x40)
+	if errText != "" || errCode != 0 {
+		i2c, _, _, _ = client.RoboSdkApi.RI_SDK_CreateModelComponent("connector", "i2c", "cp2112")
+		_, _, _ = client.RoboSdkApi.RI_SDK_LinkPWMToController(pwm, i2c, 0x40)
+	}
+
+	_, _, _ = client.RoboSdkApi.RI_SDK_Sigmod_PWM_ResetAll(pwm)
+
+	client.Client.Kill()
+}
+
 /*
-	StopClient - остановка работы клиента.
+StopClient - остановка работы клиента.
 */
 func StopClient(client *ClientRPC) {
 	client.controlSignal <- Stop
@@ -98,7 +113,7 @@ func StopClient(client *ClientRPC) {
 	return
 }
 
-// initClient - Создает клиента для получения доступа к API SDK по RPC
+// initClient - Создает клиента для получения доступа к API SDK по RPC.
 func initClient() (client *plugin.Client, roboSdkApi proto.RoboSdkApi) {
 	// We don't want to see the plugin logs.
 	log.SetOutput(ioutil.Discard)
@@ -106,46 +121,50 @@ func initClient() (client *plugin.Client, roboSdkApi proto.RoboSdkApi) {
 	// Determine executable path
 	path, err := os.Getwd()
 	if err != nil {
-		fmt.Println(err)
+		log.Println(err)
 		os.Exit(1)
 	}
-	fmt.Println("Current path: ", path)
+
+	log.Println("Current path: ", path)
 
 	// Determine os AND select risdk filename
 	var risdkName string
+
 	switch runtime.GOOS {
 	case "windows":
 		risdkName = "risdk.exe"
 	case "linux":
 		risdkName = "risdk.bin"
 	default:
-		fmt.Println("Incompatible OS (Support windows, linux only)")
+		log.Println("Incompatible OS (Support windows, linux only)")
 		os.Exit(1)
 	}
 
 	client, roboSdkApi = getClient(path, risdkName)
+
 	return
 }
 
-// initClientWithPath - Создает клиента для получения доступа к API SDK по RPC, SDK находится в указанной директории
+// initClientWithPath - Создает клиента для получения доступа к API SDK по RPC, SDK находится в указанной директории.
 func initClientWithPath(path string) (client *plugin.Client, roboSdkApi proto.RoboSdkApi) {
 	// We don't want to see the plugin logs.
 	log.SetOutput(ioutil.Discard)
 
 	// Determine os AND select risdk filename
-
 	var risdkName string
+
 	switch runtime.GOOS {
 	case "windows":
 		risdkName = "risdk.exe"
 	case "linux":
 		risdkName = "risdk.bin"
 	default:
-		fmt.Println("Incompatible OS (Support windows, linux only)")
+		log.Println("Incompatible OS (Support windows, linux only)")
 		os.Exit(1)
 	}
 
 	client, roboSdkApi = getClient(path, risdkName)
+
 	return
 }
 
@@ -161,20 +180,21 @@ func getClient(path, risdkName string) (client *plugin.Client, roboSdkApi proto.
 			Name:   "plugin",
 		}),
 		AllowedProtocols: []plugin.Protocol{
-			plugin.ProtocolNetRPC, plugin.ProtocolGRPC},
+			plugin.ProtocolNetRPC, plugin.ProtocolGRPC,
+		},
 	})
 
 	// Connect via RPC
 	rpcClient, err := client.Client()
 	if err != nil {
-		fmt.Println("Error:", err.Error())
+		log.Println("Error:", err.Error())
 		os.Exit(1)
 	}
 
 	// Request the plugin
 	raw, err := rpcClient.Dispense("robosdk_grpc")
 	if err != nil {
-		fmt.Println("Error:", err.Error())
+		log.Println("Error:", err.Error())
 		os.Exit(1)
 	}
 
@@ -189,15 +209,17 @@ func killAfterCloseSignalGlobal() {
 	// Если не убивать клиент, то процесс остается и может блокировать подачу сигнала на устройство.
 	c := make(chan os.Signal)
 	signal.Notify(c, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM)
+
 	go func() {
 		<-c
 		select {
 		case <-c:
-			clientRPC.Client.Kill()
+			clientRPC.Kill()
 			os.Exit(0)
 		case s := <-clientRPC.controlSignal:
 			if s == Stop {
-				clientRPC.Client.Kill()
+				clientRPC.Kill()
+
 				return
 			}
 		}
@@ -205,17 +227,19 @@ func killAfterCloseSignalGlobal() {
 }
 
 func killAfterCloseSignal(client *ClientRPC) {
-
 	c := make(chan os.Signal)
 	signal.Notify(c, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM)
 	go func(client *ClientRPC) {
 		select {
 		case <-c:
-			client.Client.Kill()
+			client.Kill()
 			os.Exit(0)
-		case <-client.controlSignal:
-			return
-		}
+		case s := <-client.controlSignal:
+			if s == Stop {
+				client.Kill()
 
+				return
+			}
+		}
 	}(client)
 }
