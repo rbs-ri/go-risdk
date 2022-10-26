@@ -482,6 +482,18 @@ message RI_SDK_LinkVoltageSensorToControllerReturn {
   int64 errorCode = 2;
 }
 
+// Аргументы RI_SDK_ComponentUnlink
+message RI_SDK_ComponentUnlinkParams {
+  int64 controller = 1;
+  int64 linkable = 2;
+}
+
+// Возвращаемые значения RI_SDK_ComponentUnlink
+message RI_SDK_ComponentUnlinkReturn {
+  string errorText = 1; 
+  int64 errorCode = 2;
+}
+
 // Аргументы RI_SDK_Exec_ServoDrive_CustomDeviceInit
 message RI_SDK_Exec_ServoDrive_CustomDeviceInitParams {
   int64 desrciptor = 1;
@@ -1136,7 +1148,7 @@ service RoboSdk {
   rpc RI_SDK_LinkRServodriveToController(RI_SDK_LinkRServodriveToControllerParams) returns (RI_SDK_LinkRServodriveToControllerReturn);
   rpc RI_SDK_LinkLedToController(RI_SDK_LinkLedToControllerParams) returns (RI_SDK_LinkLedToControllerReturn);
   rpc RI_SDK_LinkVoltageSensorToController(RI_SDK_LinkVoltageSensorToControllerParams) returns (RI_SDK_LinkVoltageSensorToControllerReturn);
-
+  rpc RI_SDK_ComponentUnlink(RI_SDK_ComponentUnlinkParams) returns (RI_SDK_ComponentUnlinkReturn);
 
 
   rpc RI_SDK_Executor_Extend(RI_SDK_Executor_ExtendParams) returns(RI_SDK_Executor_ExtendReturn);

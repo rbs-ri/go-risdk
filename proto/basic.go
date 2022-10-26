@@ -136,6 +136,18 @@ func (m *GRPCClient) RI_SDK_LinkVoltageSensorToController(SensorDescriptor, I2CA
 	return resp.ErrorText, resp.ErrorCode, nil
 }
 
+// RI_SDK_ComponentUnlink - отвязывание компонента с дескриптором controller от компонента с дескриптором linkable.
+func (m *GRPCClient) RI_SDK_ComponentUnlink(controller, linkable int64) (errorText string, errorCode int64, err error) {
+	resp, err := m.client.RI_SDK_ComponentUnlink(context.Background(), &RI_SDK_ComponentUnlinkParams{
+		Controller: controller,
+		Linkable:   linkable,
+	})
+	if err != nil {
+		return
+	}
+	return resp.ErrorText, resp.ErrorCode, nil
+}
+
 // RI_SDK_DestroyComponent - удаление компонента
 func (m *GRPCClient) RI_SDK_DestroyComponent(descriptor int64) (errorText string, errorCode int64, err error) {
 	resp, err := m.client.RI_SDK_DestroyComponent(context.Background(), &RI_SDK_DestroyComponentParams{
@@ -279,6 +291,17 @@ func (m *GRPCServer) RI_SDK_LinkVoltageSensorToController(
 	req *RI_SDK_LinkVoltageSensorToControllerParams) (*RI_SDK_LinkVoltageSensorToControllerReturn, error) {
 	errorText, errorCode, err := m.Impl.RI_SDK_LinkVoltageSensorToController(req.SensorDescriptor, req.I2CAdapterDescriptor, req.Addr)
 	return &RI_SDK_LinkVoltageSensorToControllerReturn{
+		ErrorText: errorText,
+		ErrorCode: errorCode,
+	}, err
+}
+
+// RI_SDK_ComponentUnlink - отвязывание компонента с дескриптором controller от компонента с дескриптором linkable.
+func (m *GRPCServer) RI_SDK_ComponentUnlink(
+	ctx context.Context,
+	req *RI_SDK_ComponentUnlinkParams) (*RI_SDK_ComponentUnlinkReturn, error) {
+	errorText, errorCode, err := m.Impl.RI_SDK_ComponentUnlink(req.Controller, req.Linkable)
+	return &RI_SDK_ComponentUnlinkReturn{
 		ErrorText: errorText,
 		ErrorCode: errorCode,
 	}, err

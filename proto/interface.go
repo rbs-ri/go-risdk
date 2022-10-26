@@ -24,6 +24,7 @@ type RoboSdkApi interface {
 	RI_SDK_LinkLedToController(ledDescriptor, pwmDescriptor, rport, gport, bport int64) (errorText string, errorCode int64, err error)
 	RI_SDK_LinkPWMToController(pwmDescriptor, controllerDescriptor int64, addr uint64) (errorText string, errorCode int64, err error)
 	RI_SDK_LinkVoltageSensorToController(sensorDescriptor, i2cAdapterDescriptor int64, addr uint64) (errorText string, errorCode int64, err error)
+	RI_SDK_ComponentUnlink(controller, linkable int64) (errorText string, errorCode int64, err error)
 
 	RI_SDK_Executor_Extend(basic int64) (desrciptor int64, errorText string, errorCode int64, err error)
 	RI_SDK_Executor_State(desrciptor int64) (state int64, errorText string, errorCode int64, err error)
