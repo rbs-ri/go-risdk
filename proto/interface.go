@@ -24,7 +24,6 @@ type RoboSdkApi interface {
 	RI_SDK_LinkLedToController(ledDescriptor, pwmDescriptor, rport, gport, bport int64) (errorText string, errorCode int64, err error)
 	RI_SDK_LinkPWMToController(pwmDescriptor, controllerDescriptor int64, addr uint64) (errorText string, errorCode int64, err error)
 	RI_SDK_LinkVoltageSensorToController(sensorDescriptor, i2cAdapterDescriptor int64, addr uint64) (errorText string, errorCode int64, err error)
-	RI_SDK_ComponentUnlink(controller, linkable int64) (errorText string, errorCode int64, err error)
 
 	RI_SDK_Executor_Extend(basic int64) (desrciptor int64, errorText string, errorCode int64, err error)
 	RI_SDK_Executor_State(desrciptor int64) (state int64, errorText string, errorCode int64, err error)
@@ -106,6 +105,20 @@ type RoboSdkApi interface {
 	RI_SDK_Sensor_VoltageSensor_Sense(descriptor int64) (voltage float32, voltageShunt float32, current float32, power float32, errorText string, errorCode int64, err error)
 	RI_SDK_Sensor_VoltageSensor_WriteRegBytes(descriptor int64, reg byte, buf []byte) (wroteBytesLen int64, errorText string, errorCode int64, err error)
 	RI_SDK_Sensor_VoltageSensor_ReadRegBytes(descriptor int64, reg byte, readBytesLen int64) (buf []byte, errorText string, errorCode int64, err error)
+
+	// GPIO I2C адаптер (PCF8574T и аналоги)
+	RI_SDK_LinkGPIOI2CAdapterToController(gpioI2CDescriptor, i2cAdapterDescriptor int64, addr uint64) (errorText string, errorCode int64, err error)
+	RI_SDK_LinkGPIODeviceToController(deviceDescriptor, gpioAdapterDescriptor int64) (errorText string, errorCode int64, err error)
+	RI_SDK_Connector_GPIO_I2C_Extend(connectorDescriptor int64) (descriptor int64, errorText string, errorCode int64, err error)
+	RI_SDK_Connector_GPIO_I2C_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error)
+	RI_SDK_Connector_GPIO_I2C_SetAddr(descriptor int64, addr uint64) (errorText string, errorCode int64, err error)
+
+	// Датчик расстояния (HC-SR04 и аналоги)
+	RI_SDK_Sensor_Extend(basic int64) (descriptor int64, errorText string, errorCode int64, err error)
+	RI_SDK_Sensor_DistanceSensor_Extend(exec int64) (descriptor int64, errorText string, errorCode int64, err error)
+	RI_SDK_Sensor_DistanceSensor_ExtendToModel(baseDescriptor int64, modelName string) (descriptor int64, errorText string, errorCode int64, err error)
+	RI_SDK_Sensor_DistanceSensor_SetPins(descriptor, trigPin, echoPin int64) (errorText string, errorCode int64, err error)
+	RI_SDK_Sensor_DistanceSensor_Distance(descriptor int64) (dist float64, errorText string, errorCode int64, err error)
 }
 
 // Handshake is a common handshake that is shared by plugin and host.
