@@ -1,0 +1,12 @@
+services:
+  protogen:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+      args:
+        PLATFORM: ${PLATFORM}
+        PROTOC_VERSION: ${PROTOC_VERSION}
+    working_dir: "/source"
+    volumes:
+      - "../proto:/source/proto"
+    command: /bin/sh -c "protoc -I proto proto/RoboSdk.proto --go_out=plugins=grpc:."
