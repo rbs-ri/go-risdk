@@ -4,7 +4,6 @@ services:
       context: ..
       dockerfile: docker/Dockerfile
       args:
-        PLATFORM: ${PLATFORM}
         PROTOC_VERSION: ${PROTOC_VERSION}
     working_dir: "/source"
     volumes:
